@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-enum Type {
-    case opening
-    case ending
-}
+//  - dialogueText: View에서 보여지는 대사
+//  - dialogues: 파일에서 읽어온 데이터를 저장하는 배열
+//  - currentDialogueIndex: dialogues 배열에 접근하기 위한 index
+//  - currentLineIndex: dialogues배열 중 currentDialogueIndex에 해당하는 lines 배열에 접근하기 위한 index
 
 class MainViewModel: ObservableObject {
-    @Published var plantName = "Emptypot.scn"
+    @Published var plant3DFileName = "Emptypot.scn"
     @Published var plantWidth: CGFloat = 200
     
     @Published var dialogueText = ""
@@ -38,7 +38,7 @@ class MainViewModel: ObservableObject {
             getDialogue(plant.characterFileName)
             isShowAddButton = false
             isShowDialogueBox = true
-            plantName = plant.character3DFiles[missionDay]
+            plant3DFileName = plant.character3DFiles[missionDay]
             plantWidth = 350
             
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
@@ -47,7 +47,7 @@ class MainViewModel: ObservableObject {
     }
     
     func setEmptyPot() {
-        plantName = "Emptypot.scn"
+        plant3DFileName = "Emptypot.scn"
         missionDay = 0
         plantWidth = 200
         
@@ -132,7 +132,7 @@ class MainViewModel: ObservableObject {
             if missionDay == plant.totalDay {
                 isCompleteMission = true
             } else {
-                plantName = plant.character3DFiles[missionDay]
+                plant3DFileName = plant.character3DFiles[missionDay]
             }
         }
     }

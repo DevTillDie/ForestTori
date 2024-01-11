@@ -23,7 +23,7 @@ struct PlantView: View {
             addNewPlantButton
                 .hidden(viewModel.isShowAddButton)
             
-            PlantPotView(sceneViewName: viewModel.plantName)
+            PlantPotView(sceneViewName: viewModel.plant3DFileName)
                 .scaledToFit()
                 .frame(width: viewModel.plantWidth)
                 .padding(.bottom, 16)
