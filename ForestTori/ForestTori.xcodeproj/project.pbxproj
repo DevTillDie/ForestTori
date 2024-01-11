@@ -12,6 +12,11 @@
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
+		0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */; };
+		0EF5FEB92B4FC46400D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEB82B4FC46400D64E5E /* InitFile.swift */; };
+		0EF5FEBB2B4FC46900D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */; };
+		0EF5FEBD2B4FC46E00D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBC2B4FC46E00D64E5E /* InitFile.swift */; };
+		0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,11 @@
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
+		0EF5FEB82B4FC46400D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
+		0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
+		0EF5FEBC2B4FC46E00D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
+		0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */,
-				0EF5FE972B4FC02100D64E5E /* ContentView.swift */,
-				0EF5FE992B4FC02200D64E5E /* Assets.xcassets */,
+				0EF5FEC02B4FC4A300D64E5E /* Source */,
+				0EF5FEA62B4FC2DF00D64E5E /* Resource */,
 				0EF5FE9B2B4FC02200D64E5E /* Preview Content */,
 				0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */,
 			);
@@ -68,6 +78,83 @@
 				0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0EF5FEA62B4FC2DF00D64E5E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FE992B4FC02200D64E5E /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0EF5FEA72B4FC2F500D64E5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FE972B4FC02100D64E5E /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EF5FEA82B4FC2FC00D64E5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EF5FEA92B4FC30300D64E5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FEBC2B4FC46E00D64E5E /* InitFile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0EF5FEAA2B4FC39300D64E5E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FEAD2B4FC3C300D64E5E /* Component */,
+				0EF5FEAB2B4FC3A300D64E5E /* Extension */,
+				0EF5FEAC2B4FC3AE00D64E5E /* Modifier */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0EF5FEAB2B4FC3A300D64E5E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FEB82B4FC46400D64E5E /* InitFile.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0EF5FEAC2B4FC3AE00D64E5E /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		0EF5FEAD2B4FC3C300D64E5E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		0EF5FEC02B4FC4A300D64E5E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5FEA72B4FC2F500D64E5E /* View */,
+				0EF5FEA82B4FC2FC00D64E5E /* ViewModel */,
+				0EF5FEA92B4FC30300D64E5E /* Model */,
+				0EF5FEAA2B4FC39300D64E5E /* Utils */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */,
+				0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */,
+				0EF5FEB92B4FC46400D64E5E /* InitFile.swift in Sources */,
+				0EF5FEBB2B4FC46900D64E5E /* InitFile.swift in Sources */,
+				0EF5FEBD2B4FC46E00D64E5E /* InitFile.swift in Sources */,
 				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 			);
