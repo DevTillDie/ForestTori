@@ -12,6 +12,7 @@ import Foundation
 /// - chapterId: 챕터 번호
 /// - chapterTitle: 챕터 제목
 /// - chapterDescription: 챕터 소개
+/// - lastChapterEnding: 지난 챕터 결말
 /// - chapterPlants: 챕터에 속한 식물 목록
 struct Chapter {
     var chapterId: Int

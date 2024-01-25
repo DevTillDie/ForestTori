@@ -15,6 +15,14 @@ class DataManager: ObservableObject {
     
     /// DataManager의 chapters에 데이터 추가
     init() {
+        // chapters 초기화
+        setupChapterData()
+    }
+}
+
+// MARK: - Data Initialization
+extension DataManager {
+    private func setupChapterData() {
         // 식물 데이터 초기화
         let dandelion = Plant(characterName: "민들레씨",
                               characterDescription: "겁이 많은 민들레씨들이 하늘로 날아가지 못하고 있어요. 용기를 낼 수 있게 매일 창문을 열어 민들레씨들을 도와줄래요?",
