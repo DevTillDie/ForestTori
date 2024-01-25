@@ -15,12 +15,16 @@
 		0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */; };
 		0EF5FEB92B4FC46400D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEB82B4FC46400D64E5E /* InitFile.swift */; };
 		0EF5FEBB2B4FC46900D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */; };
-		0EF5FEBD2B4FC46E00D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBC2B4FC46E00D64E5E /* InitFile.swift */; };
 		0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */; };
 		5B7E02B02B5FE8DA0067B2FA /* SpringCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */; };
 		5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */; };
 		5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */; };
 		5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */; };
+		5BA931112B62602200F48AF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931102B62602200F48AF1 /* User.swift */; };
+		5BA931132B62603200F48AF1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931122B62603200F48AF1 /* Plant.swift */; };
+		5BA931152B62604800F48AF1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931142B62604800F48AF1 /* Chapter.swift */; };
+		5BA931172B62605D00F48AF1 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931162B62605D00F48AF1 /* Mission.swift */; };
+		5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931182B6260CC00F48AF1 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +37,16 @@
 		0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
 		0EF5FEB82B4FC46400D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
 		0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
-		0EF5FEBC2B4FC46E00D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
 		0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
 		5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.csv; sourceTree = "<group>"; };
+		5BA931102B62602200F48AF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5BA931122B62603200F48AF1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		5BA931142B62604800F48AF1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		5BA931162B62605D00F48AF1 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		5BA931182B6260CC00F48AF1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +124,11 @@
 		0EF5FEA92B4FC30300D64E5E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0EF5FEBC2B4FC46E00D64E5E /* InitFile.swift */,
+				5BA931102B62602200F48AF1 /* User.swift */,
+				5BA931122B62603200F48AF1 /* Plant.swift */,
+				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
+				5BA931142B62604800F48AF1 /* Chapter.swift */,
+				5BA931162B62605D00F48AF1 /* Mission.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,10 +290,14 @@
 				0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */,
 				0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */,
 				0EF5FEB92B4FC46400D64E5E /* InitFile.swift in Sources */,
+				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
 				0EF5FEBB2B4FC46900D64E5E /* InitFile.swift in Sources */,
-				0EF5FEBD2B4FC46E00D64E5E /* InitFile.swift in Sources */,
 				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
+				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
+				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
+				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
+				5BA931112B62602200F48AF1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
