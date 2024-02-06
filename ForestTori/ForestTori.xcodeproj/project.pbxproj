@@ -22,6 +22,7 @@
 		5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */; };
 		5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */; };
 		5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */; };
+		5BA395442B7252C00019A545 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395432B7252C00019A545 /* GameManager.swift */; };
 		5BA931112B62602200F48AF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931102B62602200F48AF1 /* User.swift */; };
 		5BA931132B62603200F48AF1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931122B62603200F48AF1 /* Plant.swift */; };
 		5BA931152B62604800F48AF1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931142B62604800F48AF1 /* Chapter.swift */; };
@@ -44,6 +45,7 @@
 		5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.csv; sourceTree = "<group>"; };
+		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		5BA931102B62602200F48AF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BA931122B62603200F48AF1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		5BA931142B62604800F48AF1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
 				5BA931142B62604800F48AF1 /* Chapter.swift */,
 				5BA931162B62605D00F48AF1 /* Mission.swift */,
+				5BA395432B7252C00019A545 /* GameManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */,
+				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
 				0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */,
 				0EF5FEB92B4FC46400D64E5E /* InitFile.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
