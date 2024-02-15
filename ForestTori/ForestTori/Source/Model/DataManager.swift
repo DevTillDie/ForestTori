@@ -13,7 +13,7 @@ import Foundation
 class DataManager: ObservableObject {
     @Published var chapters: [Chapter] = []
     
-    /// DataManager의 chapters에 데이터 추가
+    // DataManager의 chapters에 데이터 추가
     init() {
         // chapters 초기화
         setupChapterData()
@@ -21,6 +21,7 @@ class DataManager: ObservableObject {
 }
 
 // MARK: - Data Initialization
+
 extension DataManager {
     private func setupChapterData() {
         // 식물 데이터 초기화
@@ -70,7 +71,8 @@ extension DataManager {
                                totalDay: 3)
         
         // 챕터 데이터 초기화
-        let spring = Chapter(chapterId: 1, chapterTitle: "봄, 숲을 만나다",
+        let spring = Chapter(chapterId: 1, 
+                             chapterTitle: "봄, 숲을 만나다",
                              chatperDescription: "토리의 숲 속 반짝이는 무언가",
                              lastChapterEnding: "",
                              chapterPlants: [dandelion])
