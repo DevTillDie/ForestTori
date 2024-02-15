@@ -31,6 +31,9 @@
 		0EADEAA12B7DEB4F0036D190 /* MapleAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */; };
 		0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */; };
 		0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */; };
+		0EADEAB02B7DF4FD0036D190 /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EADEAAF2B7DF4FD0036D190 /* InitFile.swift */; };
+		0EADEAB32B7DF5110036D190 /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EADEAB22B7DF5110036D190 /* InitFile.swift */; };
+		0EADEAB62B7DF5290036D190 /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EADEAB52B7DF5290036D190 /* InitFile.swift */; };
 		0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */; };
 		0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */; };
 		0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */; };
@@ -89,6 +92,9 @@
 		0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation2.scn; sourceTree = "<group>"; };
 		0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation3.scn; sourceTree = "<group>"; };
 		0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation1.scn; sourceTree = "<group>"; };
+		0EADEAAF2B7DF4FD0036D190 /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
+		0EADEAB22B7DF5110036D190 /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
+		0EADEAB52B7DF5290036D190 /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
 		0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Emptypot.scn; sourceTree = "<group>"; };
 		0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bubble.scn; sourceTree = "<group>"; };
 		0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground.scn; sourceTree = "<group>"; };
@@ -195,6 +201,30 @@
 				0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */,
 			);
 			path = Maple_WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EADEAAE2B7DF4E90036D190 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEAAF2B7DF4FD0036D190 /* InitFile.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		0EADEAB12B7DF5060036D190 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEAB22B7DF5110036D190 /* InitFile.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		0EADEAB42B7DF5140036D190 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEAB52B7DF5290036D190 /* InitFile.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		0EEBB6C52B7DDA4B003E09C6 /* 3D_Objects */ = {
@@ -382,32 +412,11 @@
 		0EF5FEAA2B4FC39300D64E5E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0EF5FEAD2B4FC3C300D64E5E /* Component */,
-				0EF5FEAB2B4FC3A300D64E5E /* Extension */,
-				0EF5FEAC2B4FC3AE00D64E5E /* Modifier */,
+				0EADEAAE2B7DF4E90036D190 /* Component */,
+				0EADEAB42B7DF5140036D190 /* Extension */,
+				0EADEAB12B7DF5060036D190 /* Modifier */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		0EF5FEAB2B4FC3A300D64E5E /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		0EF5FEAC2B4FC3AE00D64E5E /* Modifier */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modifier;
-			sourceTree = "<group>";
-		};
-		0EF5FEAD2B4FC3C300D64E5E /* Component */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		0EF5FEC02B4FC4A300D64E5E /* Source */ = {
@@ -583,6 +592,9 @@
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
+				0EADEAB02B7DF4FD0036D190 /* InitFile.swift in Sources */,
+				0EADEAB32B7DF5110036D190 /* InitFile.swift in Sources */,
+				0EADEAB62B7DF5290036D190 /* InitFile.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
 			);
