@@ -29,10 +29,14 @@ struct MainView: View {
 extension MainView {
     private var mainHeader: some View {
         HStack {
-            Image("MainButton")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 45, height: 45)
+            Button {
+                //TODO: Move to Garden
+            } label: {
+                Image("MainButton")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 45, height: 45)
+            }
             Spacer()
             Image("PotProgress1")
         }
