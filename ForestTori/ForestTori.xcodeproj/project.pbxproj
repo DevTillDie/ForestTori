@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */; };
+		0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7142B80A833001C9A30 /* Dialogue.swift */; };
 		0E2D96C32B635759006CAAC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C22B635759006CAAC4 /* Realm */; };
 		0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C42B635759006CAAC4 /* RealmSwift */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0E1AE7142B80A833001C9A30 /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
 		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
 		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				5BA931142B62604800F48AF1 /* Chapter.swift */,
 				5BA931162B62605D00F48AF1 /* Mission.swift */,
 				5BA395432B7252C00019A545 /* GameManager.swift */,
+				0E1AE7142B80A833001C9A30 /* Dialogue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
+				0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */,
 				5BA395572B7E2EE80019A545 /* Font+.swift in Sources */,
 				0EADEAB02B7DF4FD0036D190 /* ComponentInitFile.swift in Sources */,
 				0EADEAB32B7DF5110036D190 /* ModifierInitFile.swift in Sources */,
