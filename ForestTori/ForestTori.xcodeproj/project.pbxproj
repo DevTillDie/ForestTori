@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */; };
 		0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7142B80A833001C9A30 /* Dialogue.swift */; };
+		0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */; };
+		0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */; };
+		0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */; };
+		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E2D96C32B635759006CAAC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C22B635759006CAAC4 /* Realm */; };
 		0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C42B635759006CAAC4 /* RealmSwift */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
@@ -57,10 +61,6 @@
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
-		5B7E02B02B5FE8DA0067B2FA /* SpringCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */; };
-		5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */; };
-		5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */; };
-		5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */; };
 		5BA395442B7252C00019A545 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395432B7252C00019A545 /* GameManager.swift */; };
 		5BA395572B7E2EE80019A545 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395562B7E2EE80019A545 /* Font+.swift */; };
 		5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */; };
@@ -77,6 +77,10 @@
 /* Begin PBXFileReference section */
 		0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0E1AE7142B80A833001C9A30 /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
+		0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
 		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
 		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
@@ -124,10 +128,6 @@
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.csv; sourceTree = "<group>"; };
-		5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.csv; sourceTree = "<group>"; };
-		5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.csv; sourceTree = "<group>"; };
-		5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.csv; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		5BA395562B7E2EE80019A545 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
@@ -445,10 +445,10 @@
 		5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */ = {
 			isa = PBXGroup;
 			children = (
-				5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */,
-				5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */,
-				5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */,
-				5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */,
+				0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */,
+				0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */,
+				0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */,
+				0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */,
 			);
 			path = CharacterDialogues;
 			sourceTree = "<group>";
@@ -534,20 +534,19 @@
 				0EEBB6ED2B7DEAD7003E09C6 /* Cottontree1.dae in Resources */,
 				0EEBB6EE2B7DEAD7003E09C6 /* Cottontree3.dae in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
+				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
 				0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */,
 				0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */,
 				0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */,
 				5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */,
 				0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */,
+				0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */,
 				0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */,
-				5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */,
 				0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */,
 				0EADEA8C2B7DEB4F0036D190 /* CottontreeAnimation2.scn in Resources */,
 				0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */,
-				5B7E02B02B5FE8DA0067B2FA /* SpringCharacter.csv in Resources */,
 				5BA3956B2B7F54F60019A545 /* Pretendard-Regular.ttf in Resources */,
-				5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */,
 				0EEBB6F32B7DEAD7003E09C6 /* Dandelion1.scn in Resources */,
 				0EADEA922B7DEB4F0036D190 /* CactusAnimation3.scn in Resources */,
 				0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */,
@@ -562,7 +561,6 @@
 				0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */,
 				0EADEA5B2B7DEB0C0036D190 /* ground_dandelion.usdz in Resources */,
 				0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */,
-				5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */,
 				0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */,
 				0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */,
 				0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */,
@@ -571,7 +569,9 @@
 				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
 				0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */,
 				0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */,
+				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
 				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
+				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
 				0EEBB6EF2B7DEAD7003E09C6 /* Cottontree2.dae in Resources */,
 				0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */,
 				0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */,
