@@ -9,9 +9,12 @@ import SwiftUI
 
 struct PlantView: View {
     @State private var isTapDoneButton = false
+    @State private var isShowDialogueBox = false
+    @State private var isShowAddButton = true
+    @State private var isShowMissionBox = false
     
-//    private let plantName = "Emptypot.scn"
-    private let plantName = "Dandelion1.scn"
+    private let plantName = "Emptypot.scn"
+//    private let plantName = "Dandelion1.scn"
     private var plantWidth: CGFloat {
         plantName == "Emptypot.scn" ? 200 : 350
     }
@@ -19,8 +22,11 @@ struct PlantView: View {
     var body: some View {
         VStack(spacing: 0) {
             dialogueBox
+                .hidden(isShowDialogueBox)
+            
             Spacer()
             addNewPlantButton
+                .hidden(isShowAddButton)
             
             PlantPotView(sceneViewName: plantName)
                 .scaledToFit()
@@ -28,6 +34,7 @@ struct PlantView: View {
                 .padding(.bottom, 16)
             
             missionBox
+                .hidden(isShowMissionBox)
         }
         .padding(.top, 24)
         .padding(.bottom, 20)
@@ -66,7 +73,6 @@ extension PlantView {
                 .foregroundColor(.greenSecondary)
                 .padding(.bottom, 4)
         }
-        .hidden()
     }
     
     private var missionBox: some View {
