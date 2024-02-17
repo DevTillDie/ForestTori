@@ -25,6 +25,7 @@ struct PlantView: View {
                 .hidden(isShowDialogueBox)
             
             Spacer()
+            
             addNewPlantButton
                 .hidden(isShowAddButton)
             
@@ -89,6 +90,7 @@ extension PlantView {
                     Text("창문 30분 열어 환기하기")
                         .font(.titleL)
                         .foregroundColor(.brownPrimary)
+                    
                     Spacer()
                     
                     Button {

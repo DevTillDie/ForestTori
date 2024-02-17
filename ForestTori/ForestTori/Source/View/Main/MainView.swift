@@ -15,10 +15,14 @@ struct MainView: View {
             Image("SpringBackground")
                 .resizable()
                 .scaledToFit()
+            
             VStack {
                 mainHeader
+                
                 Spacer()
+                
                 PlantView()
+                
                 customTabBar
             }
         }
@@ -38,7 +42,9 @@ extension MainView {
                     .scaledToFit()
                     .frame(width: 45, height: 45)
             }
+            
             Spacer()
+            
             Image("PotProgress1")
         }
         .padding(.horizontal, 20)
