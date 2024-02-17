@@ -21,7 +21,7 @@ struct PlantPotView: UIViewRepresentable {
         sceneView.allowsCameraControl = true
         sceneView.defaultCameraController.maximumVerticalAngle = 30
         
-        /// UIPanGestureRecognizer를 제외한 모든 gesture 비활성화
+        // UIPanGestureRecognizer를 제외한 모든 gesture 비활성화
         if let gestureRecognizers = sceneView.gestureRecognizers {
             for gestureRecognizer in gestureRecognizers where !(gestureRecognizer is UIPanGestureRecognizer) {
                 gestureRecognizer.isEnabled = false

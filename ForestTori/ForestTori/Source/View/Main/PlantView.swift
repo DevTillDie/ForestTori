@@ -41,6 +41,7 @@ struct PlantView: View {
     }
 }
 
+// MARK: PlantView Elements
 extension PlantView {
     private var dialogueBox: some View {
         ZStack {
