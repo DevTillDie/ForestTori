@@ -27,7 +27,7 @@ class MainViewModel: ObservableObject {
                 for row in dataArr[1..<dataArr.count-1] {
                     // TODO: "닉네임"을 db에 저장된 사용자 닉네임으로 변경
                     let lines = Array(row[3...])
-                        .map {$0.replacingOccurrences(of: "userName", with: "닉네임")}
+                        .map {$0.replacingOccurrences(of: "(userName)", with: "닉네임")}
                         .map {$0.replacingOccurrences(of: "\\n", with: "\n")}
                         .map {$0.replacingOccurrences(of: "\r", with: "")}
                         .filter {!$0.isEmpty}
