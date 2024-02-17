@@ -51,9 +51,13 @@ extension PlantView {
                     VStack(alignment: .trailing, spacing: 0) {
                         Text("하루에 30분씩 창문을 열어 두고 날아갈 연습을 하면 나아질 수 있을 것 같아.")
                         
-                        Image("DialogButton")
-                            .resizable()
-                            .frame(width: 16, height: 10)
+                        Button {
+                            //TODO: show next Dialogue
+                        } label: {
+                            Image("DialogButton")
+                                .resizable()
+                                .frame(width: 16, height: 10)
+                        }
                     }
                     .padding(.vertical, 12)
                     .padding(.horizontal, 14)
