@@ -10,27 +10,27 @@ import SwiftUI
 struct PlantView: View {
     @State private var isTapDoneButton = false
     
+//    private let plantName = "Emptypot.scn"
+    private let plantName = "Dandelion1.scn"
+    private var plantWidth: CGFloat {
+        plantName == "Emptypot.scn" ? 200 : 350
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             dialogueBox
-                .padding(.bottom, 26)
-
             Spacer()
+            addNewPlantButton
             
-            Image(systemName: "plus.square.fill")
-                .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(.greenSecondary)
-            
-            PlantPotView(sceneViewName: "Emptypot.scn")
+            PlantPotView(sceneViewName: plantName)
                 .scaledToFit()
-                .frame(width: 160)
-                .padding(.bottom, 20)
+                .frame(width: plantWidth)
+                .padding(.bottom, 16)
             
             missionBox
-                
         }
-        .padding(.vertical, 24)
+        .padding(.top, 24)
+        .padding(.bottom, 20)
     }
 }
 
@@ -40,7 +40,7 @@ extension PlantView {
             Image("DialogFrame")
                 .resizable()
                 .scaledToFit()
-                .overlay {
+                .overlay(alignment: .top) {
                     VStack(alignment: .trailing, spacing: 0) {
                         Text("하루에 30분씩 창문을 열어 두고 날아갈 연습을 하면 나아질 수 있을 것 같아.")
                         
@@ -48,10 +48,25 @@ extension PlantView {
                             .resizable()
                             .frame(width: 16, height: 10)
                     }
-                    .padding(.horizontal, 8)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 14)
                 }
-                .padding(.horizontal, 20)
         }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 26)
+    }
+    
+    private var addNewPlantButton: some View {
+        Button {
+            //TODO: show select plant Carousel
+        } label: {
+            Image(systemName: "plus.square.fill")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(.greenSecondary)
+                .padding(.bottom, 4)
+        }
+        .hidden()
     }
     
     private var missionBox: some View {
@@ -84,4 +99,3 @@ extension PlantView {
 #Preview {
     MainView()
 }
-

@@ -48,16 +48,20 @@ extension MainView {
             } label: {
                 Image(selectedTab == 0 ? "PotSelectedButton" : "PotLockedButton")
             }
+            
             Button {
                 selectedTab = 1
             } label: {
                 Image(selectedTab == 1 ? "PotSelectedButton" : "PotLockedButton")
             }
+            .disabled(true)
+            
             Button {
                 selectedTab = 2
             } label: {
                 Image(selectedTab == 2 ? "PotSelectedButton" : "PotLockedButton")
             }
+            .disabled(true)
         }
         .padding(.bottom, 42)
     }
