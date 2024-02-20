@@ -15,8 +15,8 @@ struct OnboardingNamingView: View {
     @State var textIndex = 0
     @State var timer: Timer?
     
-    let doneButtonLabel = "시작하기"
-    let imageName = "OnboardingFrezia"
+    private let doneButtonLabel = "시작하기"
+    private let imageName = "OnboardingFrezia"
     
     var body: some View {
         VStack(spacing: 30) {
@@ -26,24 +26,15 @@ struct OnboardingNamingView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            onboardingTextBox(texts: onboardingViewModel.onboardingNamingTexts[textIndex])
+            OnboardingTextBox(texts: onboardingViewModel.onboardingNamingTexts[textIndex])
                 .font(.titleL)
                 .foregroundColor(.brownPrimary)
             
             Spacer()
-            
-            OnboardingDoneButton(action: completeOnboardingProcess, label: doneButtonLabel)
-                .font(.titleL)
-                .foregroundColor(.yellowTertiary)
-                .background {
-                    RoundedRectangle(cornerRadius: 50)
-                        .fill(.brownPrimary)
-                }
-                .opacity(0)
         }
         .padding(20)
         .toolbar {
-            OnboardingSkipButton(action: moveToOnboardingCompletionView)
+            OnboardingSkipButton(action: skipToOnboardingCompletionView)
                 .opacity(setHidden(!isNamingCompleted))
         }
         .overlay {
@@ -71,25 +62,13 @@ extension OnboardingNamingView {
 // MARK: - functions
 
 extension OnboardingNamingView {
-    private func completeOnboardingProcess() {
-        onboardingViewModel.isFirstLaunching = false
-    }
-    
-    private func moveToOnboardingCompletionView() {
+    private func skipToOnboardingCompletionView() {
         stopTimer()
         withAnimation(.easeInOut(duration: 1)) {
-            onboardingViewModel.type = .completion
+            onboardingViewModel.moveToOnboardingCompletionView()
         }
     }
-    
-    private func showNameSettingView() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation(.easeInOut(duration: 1)) {
-                isSettingViewPresented = true
-            }
-        }
-    }
-    
+
     private func stopTimer() {
         timer?.invalidate()
     }
@@ -103,7 +82,7 @@ extension OnboardingNamingView {
             if textIndex > 2 {
                 stopTimer()
                 Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
-                        onboardingViewModel.type = .completion
+                        onboardingViewModel.moveToOnboardingCompletionView()
                 }
             }
         }
@@ -111,9 +90,18 @@ extension OnboardingNamingView {
 }
 
 // MARK: - UI
+
 extension OnboardingNamingView {
     private func setHidden(_ isHidden: Bool) -> CGFloat {
             return isHidden ? 0 : 1
+    }
+    
+    private func showNameSettingView() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation(.easeInOut(duration: 1)) {
+                isSettingViewPresented = true
+            }
+        }
     }
 }
 

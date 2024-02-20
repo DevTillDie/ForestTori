@@ -13,34 +13,36 @@ struct OnboardingGreetingView: View {
     @State var isHidden = true
     @State var textIndex = 0
     
-    let doneButtonLabel = "좋아요"
-    let imageName = "OnboardingFrezia"
+    private let doneButtonLabel = "좋아요"
+    private let imageName = "OnboardingFrezia"
     
     var body: some View {
-        VStack(spacing: 30) {
-            Spacer()
+        ZStack {
+            VStack(spacing: 30) {
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                OnboardingTextBox(texts: onboardingViewModel.onboardingGreetingTexts[textIndex])
+                    .font(.titleL)
+                    .foregroundColor(.brownPrimary)
+            }
             
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
-            onboardingTextBox(texts: onboardingViewModel.onboardingGreetingTexts[textIndex])
-                .font(.titleL)
-                .foregroundColor(.brownPrimary)
-            
-            Spacer()
-            
-            OnboardingDoneButton(action: moveToOnboardingIntroductionView, label: doneButtonLabel)
-                .foregroundColor(.yellowTertiary)
-                .background {
-                    RoundedRectangle(cornerRadius: 50)
-                        .fill(.brownPrimary)
-                }
-                .opacity(setHidden(isHidden))
+            VStack {
+                Spacer()
+                
+                OnboardingDoneButton(action: onboardingViewModel.moveToOnboardingIntroductionView, label: doneButtonLabel)
+                    .foregroundColor(.yellowTertiary)
+                    .background {
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(.brownPrimary)
+                    }
+                    .opacity(setHidden(isHidden))
+            }
         }
         .padding(20)
         .toolbar {
-            OnboardingSkipButton(action: moveToOnboardingSettingView)
+            OnboardingSkipButton(action: onboardingViewModel.moveToOnboardingNamingView)
                 .opacity(setHidden(isHidden))
         }
         .onAppear {
@@ -52,14 +54,6 @@ struct OnboardingGreetingView: View {
 // MARK: - functions
 
 extension OnboardingGreetingView {
-    private func moveToOnboardingIntroductionView() {
-        onboardingViewModel.type = .introduction
-    }
-    
-    private func moveToOnboardingSettingView() {
-        onboardingViewModel.type = .naming
-    }
-    
     private func increaseTextIndex() {
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
             withAnimation(.easeInOut(duration: 1)) {

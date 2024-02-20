@@ -12,11 +12,11 @@ struct OnboardingIntroductionView: View {
     
     @State var isHidden = true
     
-    let doneButtonLabel = "준비됐어요!"
-    let firstPageDescription = "firstPage"
-    let lastPageDescription = "sixthPage"
-    let leftCompactChevron = "chevron.compact.left"
-    let rightCompactChevron = "chevron.compact.right"
+    private let doneButtonLabel = "준비됐어요!"
+    private let firstPageDescription = "firstPage"
+    private let lastPageDescription = "sixthPage"
+    private let leftCompactChevron = "chevron.compact.left"
+    private let rightCompactChevron = "chevron.compact.right"
     
     var body: some View {
         VStack {
@@ -39,31 +39,11 @@ struct OnboardingIntroductionView: View {
             .padding(20)
         }
         .toolbar {
-            OnboardingSkipButton(action: moveToOnboardingNamingView)
+            OnboardingSkipButton(action: onboardingViewModel.moveToOnboardingNamingView)
         }
         .tabViewStyle(.page)
         .onAppear {
             setPageIndicatorColor()
-        }
-    }
-}
-
-// MARK: functions
-
-extension OnboardingIntroductionView {
-    private func moveToOnboardingNamingView() {
-        onboardingViewModel.type = .naming
-    }
-    
-    private func showDoneButton(description: String) {
-        if description == lastPageDescription {
-            withAnimation(.easeInOut(duration: 1)) {
-                isHidden = false
-            }
-        } else {
-            withAnimation(.easeInOut(duration: 1)) {
-                isHidden = true
-            }
         }
     }
 }
@@ -86,7 +66,7 @@ extension OnboardingIntroductionView {
                     .foregroundColor(.brownSecondary)
                     .opacity(setHidden(data.description == lastPageDescription))
             }
-            onboardingTextBox(texts: data.introductionTexts)
+            OnboardingTextBox(texts: data.introductionTexts)
                 .font(.titleM)
                 .foregroundColor(.gray50)
         }
@@ -107,6 +87,18 @@ extension OnboardingIntroductionView {
     private func setPageIndicatorColor() {
         UIPageControl.appearance().currentPageIndicatorTintColor = .greenPrimary
         UIPageControl.appearance().pageIndicatorTintColor = .beigeTertiary
+    }
+    
+    private func showDoneButton(description: String) {
+        if description == lastPageDescription {
+            withAnimation(.easeInOut(duration: 1)) {
+                isHidden = false
+            }
+        } else {
+            withAnimation(.easeInOut(duration: 1)) {
+                isHidden = true
+            }
+        }
     }
 }
 

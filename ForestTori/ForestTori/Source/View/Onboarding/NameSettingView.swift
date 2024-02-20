@@ -17,51 +17,49 @@ struct NameSettingView: View {
     @Binding var isPresented: Bool
     @Binding var textIndex: Int
     
-    let doneButtonLabel = "이름 알려주기"
-    let myNameIsText = "내 이름은"
-    let placeholder = "이름을 입력하세요."
-    let toriText = "토리"
-    let warningDescription = "8자 이하만 가능해요."
+    private let doneButtonLabel = "이름 알려주기"
+    private let myNameIsText = "내 이름은"
+    private let placeholder = "이름을 입력하세요."
+    private let toriText = "토리"
+    private let warningDescription = "8자 이하만 가능해요."
     
     var body: some View {
         ZStack {
             Color.yellowTertiary
                 .ignoresSafeArea()
             
-            VStack {
-                Spacer()
+            VStack(alignment: .leading) {
+                Text(myNameIsText)
+                    .font(.subtitleS)
+                    .foregroundColor(.brownPrimary)
                 
-                VStack(alignment: .leading) {
-                    Text(myNameIsText)
-                        .font(.subtitleS)
-                        .foregroundColor(.brownPrimary)
-                    
-                    HStack {
-                        VStack(spacing: 0) {
-                            TextField(placeholder, text: $name)
-                                .accentColor(.greenSecondary)
-                                .onChange(of: name) {
-                                    checkNameAvailable(name)
-                                    checkNameLength(name)
-                                }
-                            Rectangle()
-                                .frame(height: 2)
-                        }
-                        .foregroundColor(setNameColor())
-
-                        Text(toriText)
-                            .foregroundColor(.brownPrimary)
+                HStack {
+                    VStack(spacing: 0) {
+                        TextField(placeholder, text: $name)
+                            .accentColor(.greenSecondary)
+                            .onChange(of: name) {
+                                checkNameAvailable(name)
+                                checkNameLength(name)
+                            }
+                        Rectangle()
+                            .frame(height: 2)
                     }
-                    .font(.titleXL)
+                    .foregroundColor(setNameColor())
                     
-                    Text(warningDescription)
-                        .font(.bodyXS)
-                        .foregroundColor(.redPrimary)
-                        .opacity(setHidden(isHidden: !isNameLong))
-                    
+                    Text(toriText)
+                        .foregroundColor(.brownPrimary)
                 }
-                .padding(80)
+                .font(.titleXL)
                 
+                Text(warningDescription)
+                    .font(.bodyXS)
+                    .foregroundColor(.redPrimary)
+                    .opacity(setHidden(isHidden: !isNameLong))
+                
+            }
+            .padding(80)
+            
+            VStack {
                 Spacer()
                 
                 OnboardingDoneButton(action: completeSetting, label: doneButtonLabel)
@@ -81,12 +79,6 @@ struct NameSettingView: View {
 // MARK: - functions
 
 extension NameSettingView {
-    private func setUserName(_ name: String) {
-        onboardingViewModel.userName = "\(name)\(toriText)"
-        onboardingViewModel.setOnboardingNamingTexts()
-        onboardingViewModel.setOnboardingCompletionText()
-    }
-    
     private func checkNameAvailable(_ name: String) {
         if !name.isEmpty && name.count < 9 {
             isNameAvailable = true
@@ -105,7 +97,7 @@ extension NameSettingView {
     }
     
     private func completeSetting() {
-        setUserName(name)
+        onboardingViewModel.setUserName(name)
         isCompleted = true
         
         withAnimation(.easeInOut(duration: 1)) {

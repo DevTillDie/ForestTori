@@ -49,14 +49,16 @@
 		0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */; };
 		0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */; };
 		0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */; };
-		0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE972B4FC02100D64E5E /* ContentView.swift */; };
+		0EF5FE982B4FC02100D64E5E /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE972B4FC02100D64E5E /* SwitchView.swift */; };
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
+		5B68A4262B8454790004E89A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ContentView.swift */; };
 		5B7E02B02B5FE8DA0067B2FA /* SpringCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */; };
 		5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */; };
 		5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */; };
 		5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */; };
+		5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9152A72B84402C0068418F /* OnboardingTextBox.swift */; };
 		5BA395442B7252C00019A545 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395432B7252C00019A545 /* GameManager.swift */; };
 		5BA395572B7E2EE80019A545 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395562B7E2EE80019A545 /* Font+.swift */; };
 		5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3955B2B7E359F0019A545 /* OnboardingView.swift */; };
@@ -64,7 +66,6 @@
 		5BA395602B7E37900019A545 /* OnboardingIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3955F2B7E37900019A545 /* OnboardingIntroductionView.swift */; };
 		5BA395642B7E4A230019A545 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */; };
 		5BA395712B7F84410019A545 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395702B7F84410019A545 /* Onboarding.swift */; };
-		5BA3957D2B8233C70019A545 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3957C2B8233C70019A545 /* View+.swift */; };
 		5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3957E2B8235AF0019A545 /* OnboardingSkipButton.swift */; };
 		5BA395812B8235CE0019A545 /* OnboardingDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395802B8235CE0019A545 /* OnboardingDoneButton.swift */; };
 		5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395832B82495B0019A545 /* OnboardingNamingView.swift */; };
@@ -120,14 +121,16 @@
 		0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple1.scn; sourceTree = "<group>"; };
 		0EF5FE922B4FC02100D64E5E /* ForestTori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForestTori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestToriApp.swift; sourceTree = "<group>"; };
-		0EF5FE972B4FC02100D64E5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0EF5FE972B4FC02100D64E5E /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		5B68A4252B8454790004E89A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.csv; sourceTree = "<group>"; };
+		5B9152A72B84402C0068418F /* OnboardingTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextBox.swift; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		5BA3954F2B7CF0900019A545 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5BA395562B7E2EE80019A545 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
@@ -137,7 +140,6 @@
 		5BA3955F2B7E37900019A545 /* OnboardingIntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroductionView.swift; sourceTree = "<group>"; };
 		5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		5BA395702B7F84410019A545 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
-		5BA3957C2B8233C70019A545 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		5BA3957E2B8235AF0019A545 /* OnboardingSkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSkipButton.swift; sourceTree = "<group>"; };
 		5BA395802B8235CE0019A545 /* OnboardingDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDoneButton.swift; sourceTree = "<group>"; };
 		5BA395832B82495B0019A545 /* OnboardingNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNamingView.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				5BA395822B8235D40019A545 /* Buttons */,
+				5B9152A92B8440300068418F /* TextBoxes */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -242,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				5BA395562B7E2EE80019A545 /* Font+.swift */,
-				5BA3957C2B8233C70019A545 /* View+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -405,7 +407,8 @@
 		0EF5FEA72B4FC2F500D64E5E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0EF5FE972B4FC02100D64E5E /* ContentView.swift */,
+				5B68A4252B8454790004E89A /* ContentView.swift */,
+				0EF5FE972B4FC02100D64E5E /* SwitchView.swift */,
 				5B9152A62B834AD90068418F /* Onboarding */,
 			);
 			path = View;
@@ -476,6 +479,14 @@
 				5BA395852B824D950019A545 /* NameSettingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5B9152A92B8440300068418F /* TextBoxes */ = {
+			isa = PBXGroup;
+			children = (
+				5B9152A72B84402C0068418F /* OnboardingTextBox.swift */,
+			);
+			path = TextBoxes;
 			sourceTree = "<group>";
 		};
 		5BA395552B7E2E5C0019A545 /* Recovered References */ = {
@@ -641,15 +652,16 @@
 			files = (
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
 				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
+				5B68A4262B8454790004E89A /* ContentView.swift in Sources */,
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
-				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
+				0EF5FE982B4FC02100D64E5E /* SwitchView.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
+				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
-				5BA3957D2B8233C70019A545 /* View+.swift in Sources */,
 				5BA395572B7E2EE80019A545 /* Font+.swift in Sources */,
 				5BA395812B8235CE0019A545 /* OnboardingDoneButton.swift in Sources */,
 				5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */,
