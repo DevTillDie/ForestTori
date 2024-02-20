@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */; };
+		0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7142B80A833001C9A30 /* Dialogue.swift */; };
+		0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */; };
+		0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */; };
+		0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */; };
+		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
+		0E1AE6FE2B7E185B001C9A30 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
+		0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FF2B7E1880001C9A30 /* MainView.swift */; };
+		0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7022B7E1892001C9A30 /* PlantView.swift */; };
+		0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */; };
 		0E2D96C32B635759006CAAC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C22B635759006CAAC4 /* Realm */; };
 		0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C42B635759006CAAC4 /* RealmSwift */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
@@ -31,6 +41,8 @@
 		0EADEAA12B7DEB4F0036D190 /* MapleAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */; };
 		0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */; };
 		0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */; };
+		0EADEAB02B7DF4FD0036D190 /* ComponentInitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EADEAAF2B7DF4FD0036D190 /* ComponentInitFile.swift */; };
+		0EADEAB32B7DF5110036D190 /* ModifierInitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EADEAB22B7DF5110036D190 /* ModifierInitFile.swift */; };
 		0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */; };
 		0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */; };
 		0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */; };
@@ -70,6 +82,12 @@
 		5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395832B82495B0019A545 /* OnboardingNamingView.swift */; };
 		5BA395862B824D950019A545 /* NameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395852B824D950019A545 /* NameSettingView.swift */; };
 		5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */; };
+		5BA395442B7252C00019A545 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395432B7252C00019A545 /* GameManager.swift */; };
+		5BA395572B7E2EE80019A545 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395562B7E2EE80019A545 /* Font+.swift */; };
+		5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */; };
+		5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA395682B7F54EE0019A545 /* Pretendard-SemiBold.ttf */; };
+		5BA3956B2B7F54F60019A545 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA3956A2B7F54F50019A545 /* Pretendard-Regular.ttf */; };
+		5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA3956C2B7F55020019A545 /* Pretendard-Light.ttf */; };
 		5BA931112B62602200F48AF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931102B62602200F48AF1 /* User.swift */; };
 		5BA931132B62603200F48AF1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931122B62603200F48AF1 /* Plant.swift */; };
 		5BA931152B62604800F48AF1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931142B62604800F48AF1 /* Chapter.swift */; };
@@ -78,6 +96,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0E1AE7142B80A833001C9A30 /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
+		0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE6FD2B7E185B001C9A30 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		0E1AE6FF2B7E1880001C9A30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0E1AE7022B7E1892001C9A30 /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
+		0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPotView.swift; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
 		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
 		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
@@ -101,6 +129,8 @@
 		0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation3.scn; sourceTree = "<group>"; };
 		0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation1.scn; sourceTree = "<group>"; };
 		0EADEAB22B7DF5110036D190 /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
+		0EADEAAF2B7DF4FD0036D190 /* ComponentInitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentInitFile.swift; sourceTree = "<group>"; };
+		0EADEAB22B7DF5110036D190 /* ModifierInitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierInitFile.swift; sourceTree = "<group>"; };
 		0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Emptypot.scn; sourceTree = "<group>"; };
 		0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bubble.scn; sourceTree = "<group>"; };
 		0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground.scn; sourceTree = "<group>"; };
@@ -130,7 +160,6 @@
 		5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.csv; sourceTree = "<group>"; };
 		5B9152A72B84402C0068418F /* OnboardingTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextBox.swift; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		5BA3954F2B7CF0900019A545 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5BA395562B7E2EE80019A545 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5BA3955A2B7E32A70019A545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5BA3955B2B7E359F0019A545 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -143,6 +172,10 @@
 		5BA395832B82495B0019A545 /* OnboardingNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNamingView.swift; sourceTree = "<group>"; };
 		5BA395852B824D950019A545 /* NameSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSettingView.swift; sourceTree = "<group>"; };
 		5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompletionView.swift; sourceTree = "<group>"; };
+		5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		5BA395682B7F54EE0019A545 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		5BA3956A2B7F54F50019A545 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		5BA3956C2B7F55020019A545 /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
 		5BA931102B62602200F48AF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BA931122B62603200F48AF1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		5BA931142B62604800F48AF1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -163,6 +196,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1AE6FC2B7E182A001C9A30 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3954F2B7CF0900019A545 /* Font+.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		0E1AE7012B7E1883001C9A30 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E1AE6FF2B7E1880001C9A30 /* MainView.swift */,
+				0E1AE7022B7E1892001C9A30 /* PlantView.swift */,
+				0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +278,7 @@
 			children = (
 				5BA395822B8235D40019A545 /* Buttons */,
 				5B9152A92B8440300068418F /* TextBoxes */,
+				0EADEAAF2B7DF4FD0036D190 /* ComponentInitFile.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -234,7 +286,7 @@
 		0EADEAB12B7DF5060036D190 /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
-				0EADEAB22B7DF5110036D190 /* InitFile.swift */,
+				0EADEAB22B7DF5110036D190 /* ModifierInitFile.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -242,7 +294,7 @@
 		0EADEAB42B7DF5140036D190 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5BA395562B7E2EE80019A545 /* Font+.swift */,
+				0E1AE6FD2B7E185B001C9A30 /* Font+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -359,7 +411,7 @@
 			children = (
 				0EF5FE942B4FC02100D64E5E /* ForestTori */,
 				0EF5FE932B4FC02100D64E5E /* Products */,
-				5BA395552B7E2E5C0019A545 /* Recovered References */,
+				0E1AE6FC2B7E182A001C9A30 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -395,6 +447,7 @@
 		0EF5FEA62B4FC2DF00D64E5E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5BA395652B7F549D0019A545 /* Pretendard */,
 				5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */,
 				0EEBB6C52B7DDA4B003E09C6 /* 3D_Objects */,
 				0EF5FE992B4FC02200D64E5E /* Assets.xcassets */,
@@ -407,6 +460,7 @@
 			children = (
 				0EF5FE972B4FC02100D64E5E /* ContentView.swift */,
 				5B9152A62B834AD90068418F /* Onboarding */,
+				0E1AE7012B7E1883001C9A30 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */,
+				0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -429,6 +484,7 @@
 				5BA931162B62605D00F48AF1 /* Mission.swift */,
 				5BA395432B7252C00019A545 /* GameManager.swift */,
 				5BA395702B7F84410019A545 /* Onboarding.swift */,
+				0E1AE7142B80A833001C9A30 /* Dialogue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -457,10 +513,10 @@
 		5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */ = {
 			isa = PBXGroup;
 			children = (
-				5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */,
-				5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */,
-				5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */,
-				5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */,
+				0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */,
+				0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */,
+				0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */,
+				0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */,
 			);
 			path = CharacterDialogues;
 			sourceTree = "<group>";
@@ -487,11 +543,15 @@
 			sourceTree = "<group>";
 		};
 		5BA395552B7E2E5C0019A545 /* Recovered References */ = {
+		5BA395652B7F549D0019A545 /* Pretendard */ = {
 			isa = PBXGroup;
 			children = (
-				5BA3954F2B7CF0900019A545 /* Font+.swift */,
+				5BA3956C2B7F55020019A545 /* Pretendard-Light.ttf */,
+				5BA3956A2B7F54F50019A545 /* Pretendard-Regular.ttf */,
+				5BA395682B7F54EE0019A545 /* Pretendard-SemiBold.ttf */,
+				5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */,
 			);
-			name = "Recovered References";
+			path = Pretendard;
 			sourceTree = "<group>";
 		};
 		5BA395822B8235D40019A545 /* Buttons */ = {
@@ -572,18 +632,20 @@
 				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
 				0EEBB6ED2B7DEAD7003E09C6 /* Cottontree1.dae in Resources */,
 				0EEBB6EE2B7DEAD7003E09C6 /* Cottontree3.dae in Resources */,
+				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
+				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
 				0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */,
 				0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */,
 				0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */,
+				5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */,
 				0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */,
+				0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */,
 				0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */,
-				5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */,
 				0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */,
 				0EADEA8C2B7DEB4F0036D190 /* CottontreeAnimation2.scn in Resources */,
 				0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */,
-				5B7E02B02B5FE8DA0067B2FA /* SpringCharacter.csv in Resources */,
-				5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */,
+				5BA3956B2B7F54F60019A545 /* Pretendard-Regular.ttf in Resources */,
 				0EEBB6F32B7DEAD7003E09C6 /* Dandelion1.scn in Resources */,
 				0EADEA922B7DEB4F0036D190 /* CactusAnimation3.scn in Resources */,
 				0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */,
@@ -592,12 +654,12 @@
 				0EADEA9A2B7DEB4F0036D190 /* Garden_CactusAnimation.scn in Resources */,
 				0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */,
 				0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */,
+				5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */,
 				0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */,
 				0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */,
 				0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */,
 				0EADEA5B2B7DEB0C0036D190 /* ground_dandelion.usdz in Resources */,
 				0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */,
-				5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */,
 				0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */,
 				0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */,
 				0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */,
@@ -606,7 +668,9 @@
 				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
 				0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */,
 				0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */,
+				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
 				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
+				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
 				0EEBB6EF2B7DEAD7003E09C6 /* Cottontree2.dae in Resources */,
 				0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */,
 				0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */,
@@ -654,19 +718,29 @@
 				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
+				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
+				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
+				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
+				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
+				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
+				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
+				0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */,
 				5BA395572B7E2EE80019A545 /* Font+.swift in Sources */,
 				5BA395812B8235CE0019A545 /* OnboardingDoneButton.swift in Sources */,
 				5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */,
+				0EADEAB02B7DF4FD0036D190 /* ComponentInitFile.swift in Sources */,
+				0EADEAB32B7DF5110036D190 /* ModifierInitFile.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
 				5BA395642B7E4A230019A545 /* OnboardingViewModel.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
 				5BA395712B7F84410019A545 /* Onboarding.swift in Sources */,
 				5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */,
 				5BA395602B7E37900019A545 /* OnboardingIntroductionView.swift in Sources */,
+				0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
