@@ -11,9 +11,13 @@ import SwiftUI
 /// OnboardingView에서 사용되는 데이터를 관리하는 클래스
 ///
 /// - type: 온보딩 프로세스 유형
-/// - onbaordingIntroductionData: 서비스 소개에 필요한 데이터
+/// - onboardingGreetingTexts: 서비스 환영 단계에서 사용하는 텍스트 집합
+/// - onbaordingIntroductionData: 서비스 소개 단계에서 사용하는 데이터 집합
+/// - onboardingNamingTexts: 사용자 이름 설정 단계에서 사용하는 텍스트 집합
+/// - onboardingCompletionText: 온보딩 완료 단계에서 사용하는 텍스트 집합
 class OnboardingViewModel: ObservableObject {
-    @AppStorage("_isFirstLaunching") var isFirstLaunching = true
+//    @AppStorage("_isFirstLaunching") var isFirstLaunching = true
+    @Published var isFirstLaunching = true
     @AppStorage("userName") var userName = ""
     
     @Published var type: OnboardingType = .greeting
@@ -38,6 +42,32 @@ class OnboardingViewModel: ObservableObject {
     /// - completion: 온보딩 완료 단계
     enum OnboardingType {
         case greeting, introduction, naming, completion
+    }
+}
+
+// MARK: - OnboardingGreetingView Functions
+
+extension OnboardingViewModel {
+    func moveToOnboardingIntroductionView() {
+        type = .introduction
+    }
+    
+    func moveToOnboardingNamingView() {
+        type = .naming
+    }
+    
+    func moveToOnboardingCompletionView() {
+        type = .completion
+    }
+    
+    func setUserName(_ name: String) {
+        userName = "\(name)토리"
+        setOnboardingNamingTexts()
+        setOnboardingCompletionText()
+    }
+    
+    func completeOnboardingProcess() {
+        isFirstLaunching = false
     }
 }
 
