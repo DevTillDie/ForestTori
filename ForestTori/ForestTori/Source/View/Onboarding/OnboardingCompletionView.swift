@@ -10,15 +10,14 @@ import SwiftUI
 struct OnboardingCompletionView: View {
     @ObservedObject var onboardingViewModel: OnboardingViewModel
     
-    private let imageName = "ChapterThumbnail1"
     private let doneButtonLabel = "시작하기"
     
     var body: some View {
         ZStack {
             VStack(spacing: 16) {
-                Image(imageName)
+                Image(.chapterThumbnail1)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .scaledToFit()
                     .padding(20)
                 
                 OnboardingTextBox(texts: onboardingViewModel.onboardingCompletionText)

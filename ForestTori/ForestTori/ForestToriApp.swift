@@ -11,7 +11,7 @@ import SwiftUI
 struct ForestToriApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ServiceStateView()
         }
     }
 }

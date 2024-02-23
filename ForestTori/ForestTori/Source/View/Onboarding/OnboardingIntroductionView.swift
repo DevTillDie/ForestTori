@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingIntroductionView: View {
     @ObservedObject var onboardingViewModel: OnboardingViewModel
     
-    @State var isHidden = true
+    @State var isHidden = false
     
     private let doneButtonLabel = "준비됐어요!"
     private let firstPageDescription = "firstPage"
@@ -35,7 +35,7 @@ struct OnboardingIntroductionView: View {
                     .background(.brownPrimary)
                     .cornerRadius(50)
             }
-            .opacity(setHidden(isHidden))
+            .hidden(isHidden)
             .padding(20)
         }
         .toolbar {
@@ -56,15 +56,15 @@ extension OnboardingIntroductionView {
             HStack {
                 Image(systemName: leftCompactChevron)
                     .foregroundColor(.brownSecondary)
-                    .opacity(setHidden(data.description == firstPageDescription))
+                    .hidden(data.description != firstPageDescription)
                 
                 Image(data.imageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .scaledToFit()
                 
                 Image(systemName: rightCompactChevron)
                     .foregroundColor(.brownSecondary)
-                    .opacity(setHidden(data.description == lastPageDescription))
+                    .hidden(data.description != lastPageDescription)
             }
             OnboardingTextBox(texts: data.introductionTexts)
                 .font(.titleM)
@@ -80,10 +80,6 @@ extension OnboardingIntroductionView {
 // MARK: - UI
 
 extension OnboardingIntroductionView {
-    private func setHidden(_ isHidden: Bool) -> CGFloat {
-        return isHidden ? 0 : 1
-    }
-    
     private func setPageIndicatorColor() {
         UIPageControl.appearance().currentPageIndicatorTintColor = .greenPrimary
         UIPageControl.appearance().pageIndicatorTintColor = .beigeTertiary
@@ -92,11 +88,11 @@ extension OnboardingIntroductionView {
     private func showDoneButton(description: String) {
         if description == lastPageDescription {
             withAnimation(.easeInOut(duration: 1)) {
-                isHidden = false
+                isHidden = true
             }
         } else {
             withAnimation(.easeInOut(duration: 1)) {
-                isHidden = true
+                isHidden = false
             }
         }
     }

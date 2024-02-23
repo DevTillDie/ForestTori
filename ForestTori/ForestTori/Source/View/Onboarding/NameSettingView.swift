@@ -54,7 +54,7 @@ struct NameSettingView: View {
                 Text(warningDescription)
                     .font(.bodyXS)
                     .foregroundColor(.redPrimary)
-                    .opacity(setHidden(isHidden: !isNameLong))
+                    .hidden(isNameLong)
                 
             }
             .padding(80)
@@ -121,10 +121,6 @@ extension NameSettingView {
     
     private func setButtonLabelColor() -> Color {
         return isNameAvailable ? .yellowTertiary : .brownPrimary
-    }
-    
-    private func setHidden(isHidden: Bool) -> CGFloat {
-        return isHidden ? 0 : 1
     }
     
     private func setNameColor() -> Color {

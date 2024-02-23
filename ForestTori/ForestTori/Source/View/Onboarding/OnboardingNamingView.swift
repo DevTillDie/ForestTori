@@ -16,15 +16,14 @@ struct OnboardingNamingView: View {
     @State var timer: Timer?
     
     private let doneButtonLabel = "시작하기"
-    private let imageName = "OnboardingFrezia"
     
     var body: some View {
         VStack(spacing: 30) {
             Spacer()
             
-            Image(imageName)
+            Image(.onboardingFrezia)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .scaledToFit()
             
             OnboardingTextBox(texts: onboardingViewModel.onboardingNamingTexts[textIndex])
                 .font(.titleL)
@@ -35,7 +34,7 @@ struct OnboardingNamingView: View {
         .padding(20)
         .toolbar {
             OnboardingSkipButton(action: skipToOnboardingCompletionView)
-                .opacity(setHidden(!isNamingCompleted))
+                .hidden(isNamingCompleted)
         }
         .overlay {
             overlayView
@@ -92,10 +91,6 @@ extension OnboardingNamingView {
 // MARK: - UI
 
 extension OnboardingNamingView {
-    private func setHidden(_ isHidden: Bool) -> CGFloat {
-            return isHidden ? 0 : 1
-    }
-    
     private func showNameSettingView() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             withAnimation(.easeInOut(duration: 1)) {
