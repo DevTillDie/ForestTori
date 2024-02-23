@@ -10,18 +10,17 @@ import SwiftUI
 struct OnboardingGreetingView: View {
     @ObservedObject var onboardingViewModel: OnboardingViewModel
     
-    @State var isHidden = true
+    @State var isHidden = false
     @State var textIndex = 0
     
     private let doneButtonLabel = "좋아요"
-    private let imageName = "OnboardingFrezia"
     
     var body: some View {
         ZStack {
             VStack(spacing: 30) {
-                Image(imageName)
+                Image(.onboardingFrezia)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .scaledToFit()
                 
                 OnboardingTextBox(texts: onboardingViewModel.onboardingGreetingTexts[textIndex])
                     .font(.titleL)
@@ -37,13 +36,13 @@ struct OnboardingGreetingView: View {
                         RoundedRectangle(cornerRadius: 50)
                             .fill(.brownPrimary)
                     }
-                    .opacity(setHidden(isHidden))
+                    .hidden(isHidden)
             }
         }
         .padding(20)
         .toolbar {
             OnboardingSkipButton(action: onboardingViewModel.moveToOnboardingNamingView)
-                .opacity(setHidden(isHidden))
+                .hidden(isHidden)
         }
         .onAppear {
             increaseTextIndex()
@@ -57,18 +56,10 @@ extension OnboardingGreetingView {
     private func increaseTextIndex() {
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
             withAnimation(.easeInOut(duration: 1)) {
-                isHidden = false
+                isHidden = true
                 textIndex += 1
             }
         }
-    }
-}
-
-// MARK: - UI
-
-extension OnboardingGreetingView {
-    private func setHidden(_ isHidden: Bool) -> CGFloat {
-        return isHidden ? 0 : 1
     }
 }
 

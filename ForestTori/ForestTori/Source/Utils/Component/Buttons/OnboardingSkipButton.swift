@@ -9,14 +9,16 @@ import SwiftUI
 
 struct OnboardingSkipButton: View {
     let action: () -> Void
+    private let skipLabel = "Skip"
+    private let skipSymbolLabel = "chevron.right"
     
     var body: some View {
         Button {
             action()
         } label: {
             HStack {
-                Text("Skip")
-                Image(systemName: "chevron.right")
+                Text(skipLabel)
+                Image(systemName: skipSymbolLabel)
             }
             .font(.bodyM)
             .foregroundColor(.brownPrimary)

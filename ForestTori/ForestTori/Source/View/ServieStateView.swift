@@ -7,24 +7,27 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ServiceStateView: View {
     @StateObject var onboardingViewModel = OnboardingViewModel()
     
     var body: some View {
-        contentView
+        stateBasedView
     }
 }
 
-extension ContentView {
-    @ViewBuilder private var contentView: some View {
+// MARK: - stateBasedView
+
+extension ServiceStateView {
+    @ViewBuilder private var stateBasedView: some View {
+        // TODO: enum으로 관리
         if onboardingViewModel.isFirstLaunching {
             OnboardingView(onboardingViewModel: onboardingViewModel)
         } else {
-            Text("Main")
+            MainView()
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ServiceStateView()
 }
