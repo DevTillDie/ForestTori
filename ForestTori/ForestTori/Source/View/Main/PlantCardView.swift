@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PlantCardView: View {
+    @Binding var isShowSelectPlantView: Bool
+    
     var plant: TestPlantModel
     
     var body: some View {
@@ -40,7 +42,7 @@ struct PlantCardView: View {
                 Spacer()
                 
                 Button {
-                    
+                    isShowSelectPlantView = false
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)

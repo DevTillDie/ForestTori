@@ -18,6 +18,8 @@ struct TestPlantModel: Identifiable {
 struct SelectPlantCarouselView: View {
     @State private var currentIndex = 0
     
+    @Binding var isShowSelectPlantView: Bool
+    
     private let plants: [TestPlantModel] = [
         TestPlantModel(id: 0, plantName: "민들레씨", plantMission: "매일 창문 30분 열어 환기하기", plantImage: "PlantSelect_Spring1", plantDescription: "겁이 많은 민들레씨들이 하늘로 날아가지 못하고 있어요. 용기를 낼 수 있게 매일 창문을 열어 민들레씨들을 도와줄래요?"),
         TestPlantModel(id: 1, plantName: "???", plantMission: "???", plantImage: "PlantSelect_Spring2", plantDescription: "추후 공개예정"),
@@ -26,26 +28,28 @@ struct SelectPlantCarouselView: View {
     ]
     
     var body: some View {
-        ZStack {
-            Color.yellow.ignoresSafeArea()
-                PlantCarousel(index: $currentIndex, plants: plants) { plant in
-                    GeometryReader { proxy in
-                        let width = proxy.size.width
-                        let height = proxy.size.height
-                        let offset = currentIndex == plant.id ? 1 : 0.8
-                        
-                        VStack {
-                            Text("식물 친구를 선택해주세요")
-                                .font(.titleM)
-                                .foregroundColor(.white)
-                                .padding(.bottom, 16)
-                            
-                            PlantCardView(plant: plant)
-                                .frame(width: width, height: height * 0.6 * offset)
-                        }
-                        .position(x: width / 2, y: height/2)
-                    }
+        PlantCarousel(index: $currentIndex, plants: plants) { plant in
+            GeometryReader { proxy in
+                let width = proxy.size.width
+                let height = proxy.size.height/2
+                let offset = currentIndex == plant.id ? 1 : 0.8
+                let spacing: CGFloat = 16
+                
+                VStack {
+                    Text("식물 친구를 선택해주세요")
+                        .font(.titleM)
+                        .foregroundColor(.white)
+                        .padding(.bottom, 16)
+                    
+                    PlantCardView(
+                        isShowSelectPlantView: $isShowSelectPlantView,
+                        plant: plant
+                    )
+                        .frame(width: width, height: height * offset + spacing)
+                        .fixedSize()
                 }
+                .position(x: width/2, y: height)
+            }
         }
     }
 }
@@ -109,5 +113,5 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
 }
 
 #Preview {
-    SelectPlantCarouselView()
+    MainView()
 }
