@@ -13,6 +13,8 @@ struct PlantView: View {
     @State private var isShowAddButton = true
     @State private var isShowMissionBox = false
     
+    @Binding var isShowSelectPlantView: Bool
+    
     private let plantName = "Emptypot.scn"
 //    private let plantName = "Dandelion1.scn"
     private var plantWidth: CGFloat {
@@ -43,6 +45,7 @@ struct PlantView: View {
 }
 
 // MARK: PlantView Elements
+
 extension PlantView {
     private var dialogueBox: some View {
         ZStack {
@@ -71,7 +74,7 @@ extension PlantView {
     
     private var addNewPlantButton: some View {
         Button {
-            //TODO: show select plant Carousel
+            isShowSelectPlantView = true
         } label: {
             Image(systemName: "plus.square.fill")
                 .resizable()

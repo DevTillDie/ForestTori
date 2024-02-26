@@ -11,13 +11,14 @@ import Foundation
 ///
 /// - user: 사용자 정보 모델
 /// - dataManager: 게임 데이터를 관리하는 클래스
-class GameManager {
-    var user: User = User()
-    var dataManager: DataManager
+class GameManager: ObservableObject {
+    @Published var user = User()
+    @Published var plants = [Plant]()
     
-    // 데이터 매니저 초기화
-    init(dataManager: DataManager) {
-        self.dataManager = dataManager
+    private let dataManager = DataManager()
+    
+    init() {
+        plants = dataManager.chapters[user.chapterProgress-1].chapterPlants
     }
     
     /// 게임 시작

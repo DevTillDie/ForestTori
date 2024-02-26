@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var gameManger = GameManager()
+    
     @State private var selectedTab = 0
+    @State private var isShowSelectPlantView = true
     
     var body: some View {
         ZStack {
@@ -21,9 +24,18 @@ struct MainView: View {
                 
                 Spacer()
                 
-                PlantView()
+                PlantView(isShowSelectPlantView: $isShowSelectPlantView)
                 
                 customTabBar
+            }
+            
+            if isShowSelectPlantView {
+                Color.black.opacity(0.4)
+                
+                VStack {
+                    SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                        .environmentObject(gameManger)
+                }
             }
         }
         .ignoresSafeArea()
@@ -31,6 +43,7 @@ struct MainView: View {
 }
 
 // MARK: MainView Elements
+
 extension MainView {
     private var mainHeader: some View {
         HStack {
