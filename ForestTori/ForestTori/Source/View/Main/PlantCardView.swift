@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+// MARK: Carousel에 보여질 CardView
+
 struct PlantCardView: View {
+    @EnvironmentObject var gameManager: GameManager
     @Binding var isShowSelectPlantView: Bool
     
-    var plant: TestPlantModel
+    var plant: Plant
     
     var body: some View {
         ZStack {
@@ -18,22 +21,22 @@ struct PlantCardView: View {
                 .foregroundColor(.white)
             
             VStack(spacing: 0) {
-                Text(plant.plantMission)
+                Text(plant.mainQuest)
                     .foregroundStyle(.greenSecondary)
                     .font(.titleL)
                     .padding(.bottom, 6)
                 
-                Text(plant.plantName)
+                Text(plant.characterName)
                     .font(.subtitleM)
                     .padding(.bottom, 16)
                 
-                Image(plant.plantImage)
+                Image(plant.characterImage)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(8)
                     .padding(.bottom, 16)
                 
-                Text(plant.plantDescription)
+                Text(plant.characterDescription)
                     .font(.bodyS)
                     .foregroundStyle(.gray50)
                     .lineSpacing(1)
@@ -42,6 +45,7 @@ struct PlantCardView: View {
                 Spacer()
                 
                 Button {
+                    gameManager.selectPlant(plant: plant)
                     isShowSelectPlantView = false
                 } label: {
                     ZStack {

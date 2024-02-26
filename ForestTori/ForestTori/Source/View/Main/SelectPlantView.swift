@@ -7,32 +7,18 @@
 
 import SwiftUI
 
-struct TestPlantModel: Identifiable {
-    var id: Int
-    var plantName: String
-    var plantMission: String
-    var plantImage: String
-    var plantDescription: String
-}
-
 struct SelectPlantView: View {
+    @EnvironmentObject var gameManager: GameManager
     @State private var currentIndex = 0
     
     @Binding var isShowSelectPlantView: Bool
     
-    private let plants: [TestPlantModel] = [
-        TestPlantModel(id: 0, plantName: "민들레씨", plantMission: "매일 창문 30분 열어 환기하기", plantImage: "PlantSelect_Spring1", plantDescription: "겁이 많은 민들레씨들이 하늘로 날아가지 못하고 있어요. 용기를 낼 수 있게 매일 창문을 열어 민들레씨들을 도와줄래요?"),
-        TestPlantModel(id: 1, plantName: "???", plantMission: "???", plantImage: "PlantSelect_Spring2", plantDescription: "추후 공개예정"),
-        TestPlantModel(id: 2, plantName: "???", plantMission: "???", plantImage: "PlantSelect_Spring3", plantDescription: "추후 공개예정"),
-        TestPlantModel(id: 3, plantName: "???", plantMission: "???", plantImage: "PlantSelect_Spring4", plantDescription: "추후 공개예정"),
-    ]
-    
     var body: some View {
-        PlantCarousel(index: $currentIndex, plants: plants) { plant in
+        PlantCarousel(index: $currentIndex, plants: gameManager.plants) { plant in
             GeometryReader { proxy in
                 let width = proxy.size.width
                 let height = proxy.size.height/2
-                let offset = currentIndex == plant.id ? 1 : 0.8
+                let offset = currentIndex == plant.id-1 ? 1 : 0.8
                 let spacing: CGFloat = 16
                 
                 VStack {
@@ -45,14 +31,22 @@ struct SelectPlantView: View {
                         isShowSelectPlantView: $isShowSelectPlantView,
                         plant: plant
                     )
-                        .frame(width: width, height: height * offset + spacing)
-                        .fixedSize()
+                    .environmentObject(gameManager)
+                    .frame(width: width, height: height * offset + spacing)
                 }
                 .position(x: width/2, y: height)
             }
         }
     }
 }
+
+// MARK: Plant Carousel View
+//
+//  - offset: drag Gesture value
+//  - currentIndex: 가운데 보여지는 식물의 인덱스
+//  - index: drag Gesture의 값에 따라 현재 인덱스를 계산하기 위한 변수
+//  - spacing: 다음 뷰와의 거리, 피그마 기준으로 22로 설정
+//  - horizontalSpace: 현재 가운데에 있는 뷰의 양 옆 padding 값
 
 struct PlantCarousel<Content: View, T: Identifiable>: View {
     @GestureState var offset: CGFloat = 0
@@ -61,7 +55,7 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
     @Binding var index: Int
     
     private let spacing: CGFloat = 22
-    private let trailingSpace: CGFloat = 80
+    private let horizontalSpace: CGFloat = 100
     
     var content: (T) -> Content
     var plants: [T]
@@ -74,13 +68,13 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
     
     var body: some View {
         GeometryReader { proxy in
-            let width = proxy.size.width - (trailingSpace - spacing)
-            let adjustMentWidh = (trailingSpace/2) - spacing
+            let width = proxy.size.width - (horizontalSpace - spacing)
+            let adjustMentWidh = (horizontalSpace/2) - spacing
             
             HStack(spacing: spacing) {
                 ForEach(plants) { item in
                     content(item)
-                        .frame(width: proxy.size.width - trailingSpace)
+                        .frame(width: proxy.size.width - horizontalSpace)
                 }
             }
             .padding(.horizontal, spacing)
@@ -90,13 +84,7 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
                     .updating($offset) { value, out, _ in
                         out = value.translation.width
                     }
-                    .onEnded { value in
-                        let offsetX = value.translation.width
-                        let progress = -offsetX/width
-                        let roundIndex = progress.rounded()
-                        
-                        currentIndex = max(min(currentIndex+Int(roundIndex), plants.count-1), 0)
-                        
+                    .onEnded { _ in
                         currentIndex = index
                     }
                     .onChanged { value in

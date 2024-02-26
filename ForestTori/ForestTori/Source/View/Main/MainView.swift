@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var gameManger = GameManager()
+    
     @State private var selectedTab = 0
-    @State private var isShowSelectPlantView = false
+    @State private var isShowSelectPlantView = true
     
     var body: some View {
         ZStack {
@@ -32,6 +34,7 @@ struct MainView: View {
                 
                 VStack {
                     SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                        .environmentObject(gameManger)
                 }
             }
         }
