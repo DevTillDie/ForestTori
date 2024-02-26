@@ -60,19 +60,29 @@
 		0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */; };
 		0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */; };
 		0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */; };
-		0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE972B4FC02100D64E5E /* ContentView.swift */; };
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
-		0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */; };
-		0EF5FEB92B4FC46400D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEB82B4FC46400D64E5E /* InitFile.swift */; };
-		0EF5FEBB2B4FC46900D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */; };
-		0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */; };
-		5B7E02B02B5FE8DA0067B2FA /* SpringCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */; };
-		5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */; };
-		5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */; };
-		5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */; };
+		5B68A4262B8454790004E89A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ContentView.swift */; };
+		5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */; };
+		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
+		5B68A4372B845E200004E89A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4362B845E200004E89A /* View+.swift */; };
+		5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9152A72B84402C0068418F /* OnboardingTextBox.swift */; };
 		5BA395442B7252C00019A545 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395432B7252C00019A545 /* GameManager.swift */; };
+		5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3955B2B7E359F0019A545 /* OnboardingView.swift */; };
+		5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3955D2B7E377D0019A545 /* OnboardingGreetingView.swift */; };
+		5BA395602B7E37900019A545 /* OnboardingIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3955F2B7E37900019A545 /* OnboardingIntroductionView.swift */; };
+		5BA395642B7E4A230019A545 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */; };
+		5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */; };
+		5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA395682B7F54EE0019A545 /* Pretendard-SemiBold.ttf */; };
+		5BA3956B2B7F54F60019A545 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA3956A2B7F54F50019A545 /* Pretendard-Regular.ttf */; };
+		5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA3956C2B7F55020019A545 /* Pretendard-Light.ttf */; };
+		5BA395712B7F84410019A545 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395702B7F84410019A545 /* Onboarding.swift */; };
+		5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3957E2B8235AF0019A545 /* OnboardingSkipButton.swift */; };
+		5BA395812B8235CE0019A545 /* OnboardingDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395802B8235CE0019A545 /* OnboardingDoneButton.swift */; };
+		5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395832B82495B0019A545 /* OnboardingNamingView.swift */; };
+		5BA395862B824D950019A545 /* NameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395852B824D950019A545 /* NameSettingView.swift */; };
+		5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */; };
 		5BA931112B62602200F48AF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931102B62602200F48AF1 /* User.swift */; };
 		5BA931132B62603200F48AF1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931122B62603200F48AF1 /* Plant.swift */; };
 		5BA931152B62604800F48AF1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931142B62604800F48AF1 /* Chapter.swift */; };
@@ -134,19 +144,15 @@
 		0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple1.scn; sourceTree = "<group>"; };
 		0EF5FE922B4FC02100D64E5E /* ForestTori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForestTori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestToriApp.swift; sourceTree = "<group>"; };
-		0EF5FE972B4FC02100D64E5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
-		0EF5FEB82B4FC46400D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
-		0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
-		0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFile.swift; sourceTree = "<group>"; };
-		5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.csv; sourceTree = "<group>"; };
-		5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.csv; sourceTree = "<group>"; };
-		5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.csv; sourceTree = "<group>"; };
-		5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.csv; sourceTree = "<group>"; };
+		5B68A4252B8454790004E89A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierInitFile.swift; sourceTree = "<group>"; };
+		5B68A4362B845E200004E89A /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		5B9152A72B84402C0068418F /* OnboardingTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextBox.swift; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		5BA395562B7E2EE80019A545 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5BA3955A2B7E32A70019A545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5BA3955B2B7E359F0019A545 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5BA3955D2B7E377D0019A545 /* OnboardingGreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGreetingView.swift; sourceTree = "<group>"; };
@@ -182,6 +188,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1AE6FC2B7E182A001C9A30 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5BA395562B7E2EE80019A545 /* Font+.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		0E1AE7012B7E1883001C9A30 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +405,7 @@
 			children = (
 				0EF5FE942B4FC02100D64E5E /* ForestTori */,
 				0EF5FE932B4FC02100D64E5E /* Products */,
+				0E1AE6FC2B7E182A001C9A30 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -405,6 +420,7 @@
 		0EF5FE942B4FC02100D64E5E /* ForestTori */ = {
 			isa = PBXGroup;
 			children = (
+				5BA3955A2B7E32A70019A545 /* Info.plist */,
 				0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */,
 				0EF5FEC02B4FC4A300D64E5E /* Source */,
 				0EF5FEA62B4FC2DF00D64E5E /* Resource */,
@@ -425,7 +441,9 @@
 		0EF5FEA62B4FC2DF00D64E5E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5BA395652B7F549D0019A545 /* Pretendard */,
 				5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */,
+				0EEBB6C52B7DDA4B003E09C6 /* 3D_Objects */,
 				0EF5FE992B4FC02200D64E5E /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -444,7 +462,8 @@
 		0EF5FEA82B4FC2FC00D64E5E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0EF5FEBE2B4FC47300D64E5E /* InitFile.swift */,
+				0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */,
+				5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -458,6 +477,8 @@
 				5BA931142B62604800F48AF1 /* Chapter.swift */,
 				5BA931162B62605D00F48AF1 /* Mission.swift */,
 				5BA395432B7252C00019A545 /* GameManager.swift */,
+				0E1AE7142B80A833001C9A30 /* Dialogue.swift */,
+				5BA395702B7F84410019A545 /* Onboarding.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -465,35 +486,11 @@
 		0EF5FEAA2B4FC39300D64E5E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0EF5FEAD2B4FC3C300D64E5E /* Component */,
-				0EF5FEAB2B4FC3A300D64E5E /* Extension */,
-				0EF5FEAC2B4FC3AE00D64E5E /* Modifier */,
+				0EADEAAE2B7DF4E90036D190 /* Component */,
+				0EADEAB42B7DF5140036D190 /* Extension */,
+				0EADEAB12B7DF5060036D190 /* Modifier */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		0EF5FEAB2B4FC3A300D64E5E /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				0EF5FEB82B4FC46400D64E5E /* InitFile.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		0EF5FEAC2B4FC3AE00D64E5E /* Modifier */ = {
-			isa = PBXGroup;
-			children = (
-				0EF5FEB62B4FC43F00D64E5E /* InitFile.swift */,
-			);
-			path = Modifier;
-			sourceTree = "<group>";
-		};
-		0EF5FEAD2B4FC3C300D64E5E /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				0EF5FEBA2B4FC46900D64E5E /* InitFile.swift */,
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		0EF5FEC02B4FC4A300D64E5E /* Source */ = {
@@ -510,12 +507,53 @@
 		5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */ = {
 			isa = PBXGroup;
 			children = (
-				5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */,
-				5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */,
-				5B7E02B12B5FE8E80067B2FA /* WinterCharacter.csv */,
-				5B7E02AF2B5FE8DA0067B2FA /* SpringCharacter.csv */,
+				0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */,
+				0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */,
+				0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */,
+				0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */,
 			);
 			path = CharacterDialogues;
+			sourceTree = "<group>";
+		};
+		5B9152A62B834AD90068418F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3955B2B7E359F0019A545 /* OnboardingView.swift */,
+				5BA3955D2B7E377D0019A545 /* OnboardingGreetingView.swift */,
+				5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */,
+				5BA3955F2B7E37900019A545 /* OnboardingIntroductionView.swift */,
+				5BA395832B82495B0019A545 /* OnboardingNamingView.swift */,
+				5BA395852B824D950019A545 /* NameSettingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5B9152A92B8440300068418F /* TextBoxes */ = {
+			isa = PBXGroup;
+			children = (
+				5B9152A72B84402C0068418F /* OnboardingTextBox.swift */,
+			);
+			path = TextBoxes;
+			sourceTree = "<group>";
+		};
+		5BA395652B7F549D0019A545 /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3956C2B7F55020019A545 /* Pretendard-Light.ttf */,
+				5BA3956A2B7F54F50019A545 /* Pretendard-Regular.ttf */,
+				5BA395682B7F54EE0019A545 /* Pretendard-SemiBold.ttf */,
+				5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */,
+			);
+			path = Pretendard;
+			sourceTree = "<group>";
+		};
+		5BA395822B8235D40019A545 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3957E2B8235AF0019A545 /* OnboardingSkipButton.swift */,
+				5BA395802B8235CE0019A545 /* OnboardingDoneButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,13 +622,56 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
+				0EEBB6ED2B7DEAD7003E09C6 /* Cottontree1.dae in Resources */,
+				0EEBB6EE2B7DEAD7003E09C6 /* Cottontree3.dae in Resources */,
+				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
+				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
+				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
+				0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */,
+				0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */,
+				0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */,
+				5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */,
+				0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */,
+				0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */,
 				0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */,
-				5B7E02B42B5FE8E80067B2FA /* SummerCharacter.csv in Resources */,
-				5B7E02B02B5FE8DA0067B2FA /* SpringCharacter.csv in Resources */,
-				5B7E02B32B5FE8E80067B2FA /* WinterCharacter.csv in Resources */,
-				5B7E02B62B5FE8EE0067B2FA /* AutumnCharacter.csv in Resources */,
+				0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */,
+				0EADEA8C2B7DEB4F0036D190 /* CottontreeAnimation2.scn in Resources */,
+				0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */,
+				5BA3956B2B7F54F60019A545 /* Pretendard-Regular.ttf in Resources */,
+				0EEBB6F32B7DEAD7003E09C6 /* Dandelion1.scn in Resources */,
+				0EADEA922B7DEB4F0036D190 /* CactusAnimation3.scn in Resources */,
+				0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */,
+				0EADEA852B7DEB4F0036D190 /* FreesiaAnimation.scn in Resources */,
+				0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */,
+				0EADEA9A2B7DEB4F0036D190 /* Garden_CactusAnimation.scn in Resources */,
+				0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */,
+				0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */,
+				5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */,
+				0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */,
+				0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */,
+				0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */,
+				0EADEA5B2B7DEB0C0036D190 /* ground_dandelion.usdz in Resources */,
+				0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */,
+				0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */,
+				0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */,
+				0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */,
+				0EADEA972B7DEB4F0036D190 /* DandelionAnimation3.scn in Resources */,
 				0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */,
+				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
+				0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */,
+				0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */,
+				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
+				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
+				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
+				0EEBB6EF2B7DEAD7003E09C6 /* Cottontree2.dae in Resources */,
+				0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */,
+				0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */,
+				0EEBB6EC2B7DEAD7003E09C6 /* Freesia.dae in Resources */,
+				0EADEAA12B7DEB4F0036D190 /* MapleAnimation2.scn in Resources */,
+				0EADEA962B7DEB4F0036D190 /* DandelionAnimation2.scn in Resources */,
 				0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */,
+				0EEBB6F82B7DEAD7003E09C6 /* Cactus2.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,7 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */,
+				5B68A4352B845DFE0004E89A /* Font+.swift in Sources */,
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
 				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
 				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
@@ -633,16 +714,25 @@
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
-				0EF5FEBB2B4FC46900D64E5E /* InitFile.swift in Sources */,
-				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
+				5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
+				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
+				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
 				0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
+				0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */,
+				5BA395812B8235CE0019A545 /* OnboardingDoneButton.swift in Sources */,
+				5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
+				5BA395642B7E4A230019A545 /* OnboardingViewModel.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
+				0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */,
+				5BA395712B7F84410019A545 /* Onboarding.swift in Sources */,
+				5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */,
+				5BA395602B7E37900019A545 /* OnboardingIntroductionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,9 +870,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ForestTori/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -810,9 +900,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ForestTori/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

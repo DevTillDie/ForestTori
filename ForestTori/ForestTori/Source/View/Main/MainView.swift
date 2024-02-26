@@ -43,6 +43,7 @@ struct MainView: View {
 }
 
 // MARK: MainView Elements
+
 extension MainView {
     private var mainHeader: some View {
         HStack {
