@@ -7,8 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FF2B7E1880001C9A30 /* MainView.swift */; };
+		0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7022B7E1892001C9A30 /* PlantView.swift */; };
+		0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */; };
+		0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */; };
+		0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7142B80A833001C9A30 /* Dialogue.swift */; };
+		0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */; };
+		0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */; };
+		0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */; };
+		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E2D96C32B635759006CAAC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C22B635759006CAAC4 /* Realm */; };
 		0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C42B635759006CAAC4 /* RealmSwift */; };
+		0E58AB822B85BF5C00EB8C78 /* SelectPlantCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantCarouselView.swift */; };
+		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
+		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
+		0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */; };
+		0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA552B7DEB0C0036D190 /* ground_none.usdz */; };
+		0EADEA5B2B7DEB0C0036D190 /* ground_dandelion.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA562B7DEB0C0036D190 /* ground_dandelion.usdz */; };
+		0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA572B7DEB0C0036D190 /* ground_cactus.usdz */; };
+		0EADEA852B7DEB4F0036D190 /* FreesiaAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA5E2B7DEB4F0036D190 /* FreesiaAnimation.scn */; };
+		0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA642B7DEB4F0036D190 /* CottontreeAnimation1.scn */; };
+		0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA652B7DEB4F0036D190 /* CottontreeAnimation3.scn */; };
+		0EADEA8C2B7DEB4F0036D190 /* CottontreeAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA662B7DEB4F0036D190 /* CottontreeAnimation2.scn */; };
+		0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA6B2B7DEB4F0036D190 /* CactusAnimation1.scn */; };
+		0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA6C2B7DEB4F0036D190 /* CactusAnimation2.scn */; };
+		0EADEA922B7DEB4F0036D190 /* CactusAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA6D2B7DEB4F0036D190 /* CactusAnimation3.scn */; };
+		0EADEA962B7DEB4F0036D190 /* DandelionAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA722B7DEB4F0036D190 /* DandelionAnimation2.scn */; };
+		0EADEA972B7DEB4F0036D190 /* DandelionAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA732B7DEB4F0036D190 /* DandelionAnimation3.scn */; };
+		0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA742B7DEB4F0036D190 /* DandelionAnimation1.scn */; };
+		0EADEA9A2B7DEB4F0036D190 /* Garden_CactusAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA772B7DEB4F0036D190 /* Garden_CactusAnimation.scn */; };
+		0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA782B7DEB4F0036D190 /* Garden_DandelionAnimation.scn */; };
+		0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7A2B7DEB4F0036D190 /* Garden_MapleAnimation.scn */; };
+		0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7D2B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn */; };
+		0EADEAA12B7DEB4F0036D190 /* MapleAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */; };
+		0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */; };
+		0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */; };
+		0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */; };
+		0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */; };
+		0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */; };
+		0EEBB6EC2B7DEAD7003E09C6 /* Freesia.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */; };
+		0EEBB6ED2B7DEAD7003E09C6 /* Cottontree1.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D32B7DEAD7003E09C6 /* Cottontree1.dae */; };
+		0EEBB6EE2B7DEAD7003E09C6 /* Cottontree3.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D42B7DEAD7003E09C6 /* Cottontree3.dae */; };
+		0EEBB6EF2B7DEAD7003E09C6 /* Cottontree2.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D52B7DEAD7003E09C6 /* Cottontree2.dae */; };
+		0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */; };
+		0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */; };
+		0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */; };
+		0EEBB6F32B7DEAD7003E09C6 /* Dandelion1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6DA2B7DEAD7003E09C6 /* Dandelion1.scn */; };
+		0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6DF2B7DEAD7003E09C6 /* Cactus3.scn */; };
+		0EEBB6F82B7DEAD7003E09C6 /* Cactus2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6E02B7DEAD7003E09C6 /* Cactus2.scn */; };
+		0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6E12B7DEAD7003E09C6 /* Cactus1.scn */; };
+		0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6E92B7DEAD7003E09C6 /* Maple3.scn */; };
+		0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */; };
+		0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */; };
 		0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */; };
 		0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE972B4FC02100D64E5E /* ContentView.swift */; };
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
@@ -31,6 +81,57 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1AE6FD2B7E185B001C9A30 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		0E1AE6FF2B7E1880001C9A30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0E1AE7022B7E1892001C9A30 /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
+		0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPotView.swift; sourceTree = "<group>"; };
+		0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0E1AE7142B80A833001C9A30 /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
+		0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.tsv; sourceTree = "<group>"; };
+		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
+		0E58AB812B85BF5C00EB8C78 /* SelectPlantCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantCarouselView.swift; sourceTree = "<group>"; };
+		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
+		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
+		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
+		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
+		0EADEA562B7DEB0C0036D190 /* ground_dandelion.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_dandelion.usdz; sourceTree = "<group>"; };
+		0EADEA572B7DEB0C0036D190 /* ground_cactus.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cactus.usdz; sourceTree = "<group>"; };
+		0EADEA5E2B7DEB4F0036D190 /* FreesiaAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = FreesiaAnimation.scn; sourceTree = "<group>"; };
+		0EADEA642B7DEB4F0036D190 /* CottontreeAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CottontreeAnimation1.scn; sourceTree = "<group>"; };
+		0EADEA652B7DEB4F0036D190 /* CottontreeAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CottontreeAnimation3.scn; sourceTree = "<group>"; };
+		0EADEA662B7DEB4F0036D190 /* CottontreeAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CottontreeAnimation2.scn; sourceTree = "<group>"; };
+		0EADEA6B2B7DEB4F0036D190 /* CactusAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CactusAnimation1.scn; sourceTree = "<group>"; };
+		0EADEA6C2B7DEB4F0036D190 /* CactusAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CactusAnimation2.scn; sourceTree = "<group>"; };
+		0EADEA6D2B7DEB4F0036D190 /* CactusAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CactusAnimation3.scn; sourceTree = "<group>"; };
+		0EADEA722B7DEB4F0036D190 /* DandelionAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DandelionAnimation2.scn; sourceTree = "<group>"; };
+		0EADEA732B7DEB4F0036D190 /* DandelionAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DandelionAnimation3.scn; sourceTree = "<group>"; };
+		0EADEA742B7DEB4F0036D190 /* DandelionAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DandelionAnimation1.scn; sourceTree = "<group>"; };
+		0EADEA772B7DEB4F0036D190 /* Garden_CactusAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_CactusAnimation.scn; sourceTree = "<group>"; };
+		0EADEA782B7DEB4F0036D190 /* Garden_DandelionAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_DandelionAnimation.scn; sourceTree = "<group>"; };
+		0EADEA7A2B7DEB4F0036D190 /* Garden_MapleAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_MapleAnimation.scn; sourceTree = "<group>"; };
+		0EADEA7D2B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_CottontreeAnimation.scn; sourceTree = "<group>"; };
+		0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation2.scn; sourceTree = "<group>"; };
+		0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation3.scn; sourceTree = "<group>"; };
+		0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation1.scn; sourceTree = "<group>"; };
+		0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Emptypot.scn; sourceTree = "<group>"; };
+		0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bubble.scn; sourceTree = "<group>"; };
+		0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground.scn; sourceTree = "<group>"; };
+		0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Freesia.dae; sourceTree = "<group>"; };
+		0EEBB6D32B7DEAD7003E09C6 /* Cottontree1.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Cottontree1.dae; sourceTree = "<group>"; };
+		0EEBB6D42B7DEAD7003E09C6 /* Cottontree3.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Cottontree3.dae; sourceTree = "<group>"; };
+		0EEBB6D52B7DEAD7003E09C6 /* Cottontree2.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Cottontree2.dae; sourceTree = "<group>"; };
+		0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion2.scn; sourceTree = "<group>"; };
+		0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion3.scn; sourceTree = "<group>"; };
+		0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dandelion.png; sourceTree = "<group>"; };
+		0EEBB6DA2B7DEAD7003E09C6 /* Dandelion1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion1.scn; sourceTree = "<group>"; };
+		0EEBB6DF2B7DEAD7003E09C6 /* Cactus3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus3.scn; sourceTree = "<group>"; };
+		0EEBB6E02B7DEAD7003E09C6 /* Cactus2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus2.scn; sourceTree = "<group>"; };
+		0EEBB6E12B7DEAD7003E09C6 /* Cactus1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus1.scn; sourceTree = "<group>"; };
+		0EEBB6E92B7DEAD7003E09C6 /* Maple3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple3.scn; sourceTree = "<group>"; };
+		0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple2.scn; sourceTree = "<group>"; };
+		0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple1.scn; sourceTree = "<group>"; };
 		0EF5FE922B4FC02100D64E5E /* ForestTori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForestTori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestToriApp.swift; sourceTree = "<group>"; };
 		0EF5FE972B4FC02100D64E5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +147,21 @@
 		5B7E02B22B5FE8E80067B2FA /* SummerCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.csv; sourceTree = "<group>"; };
 		5B7E02B52B5FE8EE0067B2FA /* AutumnCharacter.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.csv; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		5BA3955A2B7E32A70019A545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5BA3955B2B7E359F0019A545 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5BA3955D2B7E377D0019A545 /* OnboardingGreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGreetingView.swift; sourceTree = "<group>"; };
+		5BA3955F2B7E37900019A545 /* OnboardingIntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroductionView.swift; sourceTree = "<group>"; };
+		5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		5BA395662B7F54E10019A545 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		5BA395682B7F54EE0019A545 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		5BA3956A2B7F54F50019A545 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		5BA3956C2B7F55020019A545 /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
+		5BA395702B7F84410019A545 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		5BA3957E2B8235AF0019A545 /* OnboardingSkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSkipButton.swift; sourceTree = "<group>"; };
+		5BA395802B8235CE0019A545 /* OnboardingDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDoneButton.swift; sourceTree = "<group>"; };
+		5BA395832B82495B0019A545 /* OnboardingNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNamingView.swift; sourceTree = "<group>"; };
+		5BA395852B824D950019A545 /* NameSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSettingView.swift; sourceTree = "<group>"; };
+		5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompletionView.swift; sourceTree = "<group>"; };
 		5BA931102B62602200F48AF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BA931122B62603200F48AF1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		5BA931142B62604800F48AF1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -66,6 +182,210 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1AE7012B7E1883001C9A30 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E1AE6FF2B7E1880001C9A30 /* MainView.swift */,
+				0E1AE7022B7E1892001C9A30 /* PlantView.swift */,
+				0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */,
+				0E58AB812B85BF5C00EB8C78 /* SelectPlantCarouselView.swift */,
+				0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA5E2B7DEB4F0036D190 /* FreesiaAnimation.scn */,
+			);
+			path = Freesia_WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EADEA602B7DEB4F0036D190 /* Cottontree_WithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA642B7DEB4F0036D190 /* CottontreeAnimation1.scn */,
+				0EADEA662B7DEB4F0036D190 /* CottontreeAnimation2.scn */,
+				0EADEA652B7DEB4F0036D190 /* CottontreeAnimation3.scn */,
+			);
+			path = Cottontree_WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EADEA672B7DEB4F0036D190 /* Cactus_WithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA6B2B7DEB4F0036D190 /* CactusAnimation1.scn */,
+				0EADEA6C2B7DEB4F0036D190 /* CactusAnimation2.scn */,
+				0EADEA6D2B7DEB4F0036D190 /* CactusAnimation3.scn */,
+			);
+			path = Cactus_WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EADEA6E2B7DEB4F0036D190 /* Dandelion_WithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA742B7DEB4F0036D190 /* DandelionAnimation1.scn */,
+				0EADEA722B7DEB4F0036D190 /* DandelionAnimation2.scn */,
+				0EADEA732B7DEB4F0036D190 /* DandelionAnimation3.scn */,
+			);
+			path = Dandelion_WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EADEA752B7DEB4F0036D190 /* GardenPlant_WithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA772B7DEB4F0036D190 /* Garden_CactusAnimation.scn */,
+				0EADEA782B7DEB4F0036D190 /* Garden_DandelionAnimation.scn */,
+				0EADEA7A2B7DEB4F0036D190 /* Garden_MapleAnimation.scn */,
+				0EADEA7D2B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn */,
+			);
+			path = GardenPlant_WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EADEA7E2B7DEB4F0036D190 /* Maple_WithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */,
+				0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */,
+				0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */,
+			);
+			path = Maple_WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EADEAAE2B7DF4E90036D190 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5BA395822B8235D40019A545 /* Buttons */,
+				5B9152A92B8440300068418F /* TextBoxes */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		0EADEAB12B7DF5060036D190 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		0EADEAB42B7DF5140036D190 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0E1AE6FD2B7E185B001C9A30 /* Font+.swift */,
+				5B68A4362B845E200004E89A /* View+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0EEBB6C52B7DDA4B003E09C6 /* 3D_Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6CC2B7DEA77003E09C6 /* 3D_Components */,
+				0EEBB6CD2B7DEA8D003E09C6 /* 3D_Plants */,
+				0EEBB6CE2B7DEA98003E09C6 /* AR_Objects */,
+				0EEBB6CF2B7DEAB2003E09C6 /* WithAnimation */,
+			);
+			path = 3D_Objects;
+			sourceTree = "<group>";
+		};
+		0EEBB6CC2B7DEA77003E09C6 /* 3D_Components */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */,
+				0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */,
+				0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */,
+			);
+			path = 3D_Components;
+			sourceTree = "<group>";
+		};
+		0EEBB6CD2B7DEA8D003E09C6 /* 3D_Plants */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6D02B7DEAD6003E09C6 /* Freesia */,
+				0EEBB6D62B7DEAD7003E09C6 /* Dandelion */,
+				0EEBB6DE2B7DEAD7003E09C6 /* Cactus */,
+				0EEBB6E52B7DEAD7003E09C6 /* Maple */,
+				0EEBB6D22B7DEAD7003E09C6 /* Cottontree */,
+			);
+			path = 3D_Plants;
+			sourceTree = "<group>";
+		};
+		0EEBB6CE2B7DEA98003E09C6 /* AR_Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA572B7DEB0C0036D190 /* ground_cactus.usdz */,
+				0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */,
+				0EADEA562B7DEB0C0036D190 /* ground_dandelion.usdz */,
+				0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */,
+				0EADEA552B7DEB0C0036D190 /* ground_none.usdz */,
+			);
+			path = AR_Objects;
+			sourceTree = "<group>";
+		};
+		0EEBB6CF2B7DEAB2003E09C6 /* WithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */,
+				0EADEA6E2B7DEB4F0036D190 /* Dandelion_WithAnimation */,
+				0EADEA672B7DEB4F0036D190 /* Cactus_WithAnimation */,
+				0EADEA7E2B7DEB4F0036D190 /* Maple_WithAnimation */,
+				0EADEA602B7DEB4F0036D190 /* Cottontree_WithAnimation */,
+				0EADEA752B7DEB4F0036D190 /* GardenPlant_WithAnimation */,
+			);
+			path = WithAnimation;
+			sourceTree = "<group>";
+		};
+		0EEBB6D02B7DEAD6003E09C6 /* Freesia */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */,
+			);
+			path = Freesia;
+			sourceTree = "<group>";
+		};
+		0EEBB6D22B7DEAD7003E09C6 /* Cottontree */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6D32B7DEAD7003E09C6 /* Cottontree1.dae */,
+				0EEBB6D52B7DEAD7003E09C6 /* Cottontree2.dae */,
+				0EEBB6D42B7DEAD7003E09C6 /* Cottontree3.dae */,
+			);
+			path = Cottontree;
+			sourceTree = "<group>";
+		};
+		0EEBB6D62B7DEAD7003E09C6 /* Dandelion */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6DA2B7DEAD7003E09C6 /* Dandelion1.scn */,
+				0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */,
+				0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */,
+				0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */,
+			);
+			path = Dandelion;
+			sourceTree = "<group>";
+		};
+		0EEBB6DE2B7DEAD7003E09C6 /* Cactus */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6E12B7DEAD7003E09C6 /* Cactus1.scn */,
+				0EEBB6E02B7DEAD7003E09C6 /* Cactus2.scn */,
+				0EEBB6DF2B7DEAD7003E09C6 /* Cactus3.scn */,
+			);
+			path = Cactus;
+			sourceTree = "<group>";
+		};
+		0EEBB6E52B7DEAD7003E09C6 /* Maple */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */,
+				0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */,
+				0EEBB6E92B7DEAD7003E09C6 /* Maple3.scn */,
+			);
+			path = Maple;
+			sourceTree = "<group>";
+		};
 		0EF5FE892B4FC02100D64E5E = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +434,9 @@
 		0EF5FEA72B4FC2F500D64E5E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0EF5FE972B4FC02100D64E5E /* ContentView.swift */,
+				0E1AE7012B7E1883001C9A30 /* Main */,
+				5B68A4252B8454790004E89A /* ContentView.swift */,
+				5B9152A62B834AD90068418F /* Onboarding */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,13 +625,21 @@
 			files = (
 				0EF5FEB72B4FC43F00D64E5E /* InitFile.swift in Sources */,
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
-				0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */,
-				0EF5FEB92B4FC46400D64E5E /* InitFile.swift in Sources */,
+				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
+				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
+				5B68A4372B845E200004E89A /* View+.swift in Sources */,
+				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
+				5B68A4262B8454790004E89A /* ContentView.swift in Sources */,
+				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
+				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
 				0EF5FEBB2B4FC46900D64E5E /* InitFile.swift in Sources */,
 				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
+				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
+				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
+				0E58AB822B85BF5C00EB8C78 /* SelectPlantCarouselView.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
