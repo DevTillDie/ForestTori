@@ -86,6 +86,7 @@
 		5BA931152B62604800F48AF1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931142B62604800F48AF1 /* Chapter.swift */; };
 		5BA931172B62605D00F48AF1 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931162B62605D00F48AF1 /* Mission.swift */; };
 		5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931182B6260CC00F48AF1 /* DataManager.swift */; };
+		5BABC2C92B899D8B00C74E3C /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABC2C82B899D8B00C74E3C /* GardenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +170,7 @@
 		5BA931142B62604800F48AF1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		5BA931162B62605D00F48AF1 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		5BA931182B6260CC00F48AF1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5BABC2C82B899D8B00C74E3C /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +451,7 @@
 				5B68A4252B8454790004E89A /* ServieStateView.swift */,
 				0E1AE7012B7E1883001C9A30 /* Main */,
 				5B9152A62B834AD90068418F /* Onboarding */,
+				5B314A222B8DE06300719C55 /* Garden */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -496,6 +499,14 @@
 				0EF5FEAA2B4FC39300D64E5E /* Utils */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		5B314A222B8DE06300719C55 /* Garden */ = {
+			isa = PBXGroup;
+			children = (
+				5BABC2C82B899D8B00C74E3C /* GardenView.swift */,
+			);
+			path = Garden;
 			sourceTree = "<group>";
 		};
 		5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */ = {
@@ -701,6 +712,7 @@
 				5B68A4352B845DFE0004E89A /* Font+.swift in Sources */,
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
 				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
+				5BABC2C92B899D8B00C74E3C /* GardenView.swift in Sources */,
 				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
 				5B68A4372B845E200004E89A /* View+.swift in Sources */,
 				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
