@@ -31,7 +31,7 @@ struct MainView: View {
                 Color.black.opacity(0.4)
                 
                 VStack {
-                    SelectPlantCarouselView(isShowSelectPlantView: $isShowSelectPlantView)
+                    SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
                 }
             }
         }

@@ -1,5 +1,5 @@
 //
-//  SelectPlantCarouselView.swift
+//  SelectPlantView.swift
 //  ForestTori
 //
 //  Created by hyebin on 2/21/24.
@@ -15,7 +15,7 @@ struct TestPlantModel: Identifiable {
     var plantDescription: String
 }
 
-struct SelectPlantCarouselView: View {
+struct SelectPlantView: View {
     @State private var currentIndex = 0
     
     @Binding var isShowSelectPlantView: Bool
