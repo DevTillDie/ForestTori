@@ -21,19 +21,12 @@ struct SelectPlantView: View {
                 let offset = currentIndex == plant.id-1 ? 1 : 0.8
                 let spacing: CGFloat = 16
                 
-                VStack {
-                    Text("식물 친구를 선택해주세요")
-                        .font(.titleM)
-                        .foregroundColor(.white)
-                        .padding(.bottom, 16)
-                    
-                    PlantCardView(
-                        isShowSelectPlantView: $isShowSelectPlantView,
-                        plant: plant
-                    )
-                    .environmentObject(gameManager)
-                    .frame(width: width, height: height * offset + spacing)
-                }
+                PlantCardView(
+                    isShowSelectPlantView: $isShowSelectPlantView,
+                    plant: plant
+                )
+                .environmentObject(gameManager)
+                .frame(width: width, height: height * offset + spacing)
                 .position(x: width/2, y: height)
             }
         }
@@ -69,7 +62,7 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
     var body: some View {
         GeometryReader { proxy in
             let width = proxy.size.width - (horizontalSpace - spacing)
-            let adjustMentWidh = (horizontalSpace/2) - spacing
+            let adjustMentWidh = (horizontalSpace / 2) - spacing
             
             HStack(spacing: spacing) {
                 ForEach(plants) { item in
@@ -89,10 +82,10 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
                     }
                     .onChanged { value in
                         let offsetX = value.translation.width
-                        let progress = -offsetX/width
+                        let progress = -offsetX / width
                         let roundIndex = progress.rounded()
                         
-                        index = max(min(currentIndex+Int(roundIndex), plants.count-1), 0)
+                        index = max(min(currentIndex + Int(roundIndex), plants.count - 1), 0)
                     }
             )
         }

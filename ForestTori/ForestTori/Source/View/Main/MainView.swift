@@ -35,10 +35,14 @@ struct MainView: View {
             if isShowSelectPlantView {
                 Color.black.opacity(0.4)
                 
-                VStack {
-                    SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                        .environmentObject(gameManager)
-                }
+                Text("식물 친구를 선택해주세요")
+                    .font(.titleM)
+                    .foregroundColor(.white)
+                    .padding(.top, 160)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    
+                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    .environmentObject(gameManager)
             }
             
             if viewModel.isCompleteMission {
