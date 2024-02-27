@@ -21,19 +21,12 @@ struct SelectPlantView: View {
                 let offset = currentIndex == plant.id-1 ? 1 : 0.8
                 let spacing: CGFloat = 16
                 
-                VStack {
-                    Text("식물 친구를 선택해주세요")
-                        .font(.titleM)
-                        .foregroundColor(.white)
-                        .padding(.bottom, 16)
-                    
-                    PlantCardView(
-                        isShowSelectPlantView: $isShowSelectPlantView,
-                        plant: plant
-                    )
-                    .environmentObject(gameManager)
-                    .frame(width: width, height: height * offset + spacing)
-                }
+                PlantCardView(
+                    isShowSelectPlantView: $isShowSelectPlantView,
+                    plant: plant
+                )
+                .environmentObject(gameManager)
+                .frame(width: width, height: height * offset + spacing)
                 .position(x: width/2, y: height)
             }
         }
