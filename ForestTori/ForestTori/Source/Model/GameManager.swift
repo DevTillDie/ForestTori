@@ -43,6 +43,8 @@ class GameManager: ObservableObject {
             user.selectedPlant = nil
         }
         
+        isSelectPlant = false
+        
         checkLevelUpAndChapterProgress()
     }
     
@@ -51,5 +53,12 @@ class GameManager: ObservableObject {
     /// 미션 완료 후 호출되어 사용자의 레벌업 및 챕터 진행 상태를 확인합니다
     func checkLevelUpAndChapterProgress() {
         // TODO: 레벨업 및 챕터 진행 체크 코드 추가
+        user.chapterProgress += 1
+        
+        if user.chapterProgress == 5 {
+            // TODO: 엔딩
+        }
+        
+        plants = dataManager.chapters[user.chapterProgress-1].chapterPlants
     }
 }

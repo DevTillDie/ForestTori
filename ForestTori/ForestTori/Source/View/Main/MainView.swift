@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var gameManger = GameManager()
+    @StateObject var gameManager = GameManager()
     @StateObject var viewModel = MainViewModel()
     
     @State private var selectedTab = 0
@@ -26,7 +26,7 @@ struct MainView: View {
                 Spacer()
                 
                 PlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                    .environmentObject(gameManger)
+                    .environmentObject(gameManager)
                     .environmentObject(viewModel)
                 
                 customTabBar
@@ -37,11 +37,25 @@ struct MainView: View {
                 
                 VStack {
                     SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                        .environmentObject(gameManger)
+                        .environmentObject(gameManager)
                 }
+            }
+            
+            if viewModel.isCompleteMission {
+                Color.black.opacity(0.4)
+                
+                CompleteMissionView()
+                    .environmentObject(gameManager)
             }
         }
         .ignoresSafeArea()
+        .onChange(of: gameManager.isSelectPlant) {
+            if  gameManager.isSelectPlant {
+                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
+            } else {
+                viewModel.setEmptyPot()
+            }
+        }
     }
 }
 

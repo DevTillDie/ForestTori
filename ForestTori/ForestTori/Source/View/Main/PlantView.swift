@@ -33,13 +33,6 @@ struct PlantView: View {
         }
         .padding(.top, 24)
         .padding(.bottom, 20)
-        .onChange(of: gameManager.isSelectPlant) {
-            if  gameManager.isSelectPlant {
-                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-            } else {
-                viewModel.setEmptyPot()
-            }
-        }
     }
 }
 

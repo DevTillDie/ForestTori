@@ -20,6 +20,7 @@
 		0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C42B635759006CAAC4 /* RealmSwift */; };
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
+		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
 		0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */; };
 		0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA552B7DEB0C0036D190 /* ground_none.usdz */; };
@@ -103,6 +104,7 @@
 		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
+		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
 		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
 		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */,
 				0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */,
 				0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */,
+				0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
 				5BA395642B7E4A230019A545 /* OnboardingViewModel.swift in Sources */,
+				0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
 				0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */,
 				5BA395712B7F84410019A545 /* Onboarding.swift in Sources */,

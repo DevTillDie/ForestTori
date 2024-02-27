@@ -14,7 +14,6 @@ enum Type {
 
 class MainViewModel: ObservableObject {
     @Published var plantName = "Emptypot.scn"
-    @Published var missionDay = 0
     @Published var plantWidth: CGFloat = 200
     
     @Published var dialogueText = ""
@@ -24,8 +23,10 @@ class MainViewModel: ObservableObject {
     @Published var isShowMissionBox = false
     @Published var isTapDoneButton = false
     @Published var isDisableDoneButton = false
+    @Published var isCompleteMission = false
     
     private var plant: Plant?
+    private var missionDay = 0
     private var dialogues = [Dialogue]()
     private var currentDialogueIndex = 0
     private var currentLineIndex = 0
@@ -57,6 +58,7 @@ class MainViewModel: ObservableObject {
         isShowMissionBox = false
         isTapDoneButton = false
         isDisableDoneButton = false
+        isCompleteMission = false
         
         currentDialogueIndex = 0
         currentLineIndex = 0
@@ -101,7 +103,7 @@ class MainViewModel: ObservableObject {
             let dataEncoded = String(data: data, encoding: .utf8)
             
             if let dataArr = dataEncoded?.components(separatedBy: "\n").map({$0.components(separatedBy: "\t")}) {
-                for row in dataArr[1..<dataArr.count-1] {
+                for row in dataArr[1..<dataArr.count] {
                     // TODO: "닉네임"을 db에 저장된 사용자 닉네임으로 변경
                     let lines = Array(row[3...])
                         .map {$0.replacingOccurrences(of: "(userName)", with: "닉네임")}
@@ -125,9 +127,13 @@ class MainViewModel: ObservableObject {
     
     private func nextDay() {
         missionDay += 1
-        
+
         if let plant = plant {
-            plantName = plant.character3DFiles[missionDay]
+            if missionDay == plant.totalDay {
+                isCompleteMission = true
+            } else {
+                plantName = plant.character3DFiles[missionDay]
+            }
         }
     }
 }
