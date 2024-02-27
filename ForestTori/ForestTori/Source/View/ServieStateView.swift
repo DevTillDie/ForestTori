@@ -11,7 +11,8 @@ struct ServiceStateView: View {
     @StateObject var onboardingViewModel = OnboardingViewModel()
     
     var body: some View {
-        stateBasedView
+//        stateBasedView
+        MainView()
     }
 }
 

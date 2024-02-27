@@ -14,6 +14,7 @@ import Foundation
 class GameManager: ObservableObject {
     @Published var user = User()
     @Published var plants = [Plant]()
+    @Published var isSelectPlant = false
     
     private let dataManager = DataManager()
     
@@ -24,6 +25,7 @@ class GameManager: ObservableObject {
     /// 게임 시작
     func startNewGame() {
         user.selectedPlant = nil
+        isSelectPlant = false
     }
     
     /// 식물 선택
@@ -31,6 +33,7 @@ class GameManager: ObservableObject {
     /// - Parameter plant: 사용자가 식물 선택 화면에서 선택한 식물 이름
     func selectPlant(plant: Plant) {
         user.selectedPlant = plant
+        isSelectPlant = true
     }
     
     /// 미션 완료

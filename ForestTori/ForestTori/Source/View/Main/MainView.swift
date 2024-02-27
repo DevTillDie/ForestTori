@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var gameManger = GameManager()
+    @StateObject var viewModel = MainViewModel()
     
     @State private var selectedTab = 0
-    @State private var isShowSelectPlantView = true
+    @State private var isShowSelectPlantView = false
     
     var body: some View {
         ZStack {
@@ -25,6 +26,8 @@ struct MainView: View {
                 Spacer()
                 
                 PlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    .environmentObject(gameManger)
+                    .environmentObject(viewModel)
                 
                 customTabBar
             }
@@ -48,7 +51,7 @@ extension MainView {
     private var mainHeader: some View {
         HStack {
             Button {
-                //TODO: Move to Garden
+                // TODO: Move to Garden
             } label: {
                 Image("MainButton")
                     .resizable()

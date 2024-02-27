@@ -7,11 +7,88 @@
 
 import SwiftUI
 
+enum Type {
+    case opening
+    case ending
+}
+
 class MainViewModel: ObservableObject {
-    @Published var dialogues = [Dialogue]()
+    @Published var plantName = "Emptypot.scn"
+    @Published var missionDay = 0
+    @Published var plantWidth: CGFloat = 200
+    
+    @Published var dialogueText = ""
+    
+    @Published var isShowDialogueBox = false
+    @Published var isShowAddButton = true
+    @Published var isShowMissionBox = false
+    @Published var isTapDoneButton = false
+    @Published var isDisableDoneButton = false
+    
+    private var plant: Plant?
+    private var dialogues = [Dialogue]()
+    private var currentDialogueIndex = 0
+    private var currentLineIndex = 0
+    
+    func setNewPlant(plant: Plant?) {
+        self.plant = plant
+        
+        if let plant = plant {
+            getDialogue(plant.characterFileName)
+            isShowAddButton = false
+            isShowDialogueBox = true
+            plantName = plant.character3DFiles[missionDay]
+            plantWidth = 350
+            
+            dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
+            currentLineIndex += 1
+        }
+    }
+    
+    func setEmptyPot() {
+        plantName = "Emptypot.scn"
+        missionDay = 0
+        plantWidth = 200
+        
+        dialogueText = ""
+        
+        isShowDialogueBox = false
+        isShowAddButton = true
+        isShowMissionBox = false
+        isTapDoneButton = false
+        isDisableDoneButton = false
+        
+        currentDialogueIndex = 0
+        currentLineIndex = 0
+    }
+    
+    func showNextDialogue() {
+        if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
+            isShowDialogueBox = false
+            isShowMissionBox = true
+            isTapDoneButton = false
+            isDisableDoneButton = false
+            
+            if dialogues[currentDialogueIndex].type == "Ending" {
+                nextDay()
+            }
+        } else {
+            dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
+            currentLineIndex += 1
+        }
+    }
+    
+    func completMission() {
+        currentDialogueIndex += 1
+        currentLineIndex = 0
+        
+        isShowDialogueBox = true
+        isDisableDoneButton = true
+        showNextDialogue()
+    }
     
     // csv 파일에 저장된 식물의 대사를 반환
-    func getDialogue(_ fileName: String) {
+    private func getDialogue(_ fileName: String) {
         dialogues = []
         
         guard let path = Bundle.main.path(forResource: fileName, ofType: "tsv") else {
@@ -44,5 +121,13 @@ class MainViewModel: ObservableObject {
             print("Error reading CSV file")
         }
         print(dialogues)
+    }
+    
+    private func nextDay() {
+        missionDay += 1
+        
+        if let plant = plant {
+            plantName = plant.character3DFiles[missionDay]
+        }
     }
 }

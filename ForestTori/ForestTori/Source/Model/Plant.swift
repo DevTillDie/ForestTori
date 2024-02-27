@@ -26,6 +26,16 @@ struct Plant: Identifiable {
     var characterLevel = 1
     var mainQuest: String
     var missions: [Mission]
+    var characterFileName: String = "SpringCharacter"
+    var character3DFiles: [String] = [
+        "Dandelion1.scn",
+        "Dandelion2.scn",
+        "Dandelion3.scn",
+        "Dandelion3.scn",
+        "Dandelion3.scn",
+        "Dandelion3.scn",
+        "Dandelion3.scn",
+    ]
     var progressDay: Int = 1
     var totalDay: Int
 }
