@@ -47,28 +47,33 @@ struct PlantView: View {
 
 extension PlantView {
     private var dialogueBox: some View {
-        ZStack {
-            Image("DialogFrame")
-                .resizable()
-                .scaledToFit()
-                .overlay(alignment: .top) {
-                    VStack(alignment: .trailing, spacing: 0) {
-                        Text(viewModel.dialogueText)
-                        
-                        Button {
-                            viewModel.showNextDialogue()
-                        } label: {
-                            Image("DialogButton")
-                                .resizable()
-                                .frame(width: 16, height: 10)
-                        }
-                    }
-                    .padding(.vertical, 12)
-                    .padding(.horizontal, 14)
+        Image("DialogFrame")
+            .resizable()
+            .scaledToFit()
+            .overlay(alignment: .top) {
+                ZStack(alignment: .topLeading) {
+                    Text(viewModel.dialogueText)
+                        .font(.pretendard(size: 17.5, .regular))
+                        .foregroundStyle(Color.black)
+                        .multilineTextAlignment(.leading)
+                        .lineSpacing(1)
+                        .padding(.horizontal, 16)
+                    
+                    Image("DialogButton")
+                        .resizable()
+                        .frame(width: 16, height: 10)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                        .padding(.bottom, 18)
+                        .padding(.trailing, 18)
                 }
-        }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 26)
+                .padding(.vertical, 12)
+                
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 26)
+            .onTapGesture {
+                viewModel.showNextDialogue()
+            }
     }
     
     private var addNewPlantButton: some View {
