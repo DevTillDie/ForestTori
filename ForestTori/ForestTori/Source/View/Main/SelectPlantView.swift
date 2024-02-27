@@ -69,7 +69,7 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
     var body: some View {
         GeometryReader { proxy in
             let width = proxy.size.width - (horizontalSpace - spacing)
-            let adjustMentWidh = (horizontalSpace/2) - spacing
+            let adjustMentWidh = (horizontalSpace / 2) - spacing
             
             HStack(spacing: spacing) {
                 ForEach(plants) { item in
@@ -89,10 +89,10 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
                     }
                     .onChanged { value in
                         let offsetX = value.translation.width
-                        let progress = -offsetX/width
+                        let progress = -offsetX / width
                         let roundIndex = progress.rounded()
                         
-                        index = max(min(currentIndex+Int(roundIndex), plants.count-1), 0)
+                        index = max(min(currentIndex + Int(roundIndex), plants.count - 1), 0)
                     }
             )
         }
