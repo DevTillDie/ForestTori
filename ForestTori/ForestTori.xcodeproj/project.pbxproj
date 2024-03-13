@@ -213,6 +213,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		0E5AA5482BA17F3B00727C79 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5BA395432B7252C00019A545 /* GameManager.swift */,
+				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,10 +488,8 @@
 			children = (
 				5BA931102B62602200F48AF1 /* User.swift */,
 				5BA931122B62603200F48AF1 /* Plant.swift */,
-				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
 				5BA931142B62604800F48AF1 /* Chapter.swift */,
 				5BA931162B62605D00F48AF1 /* Mission.swift */,
-				5BA395432B7252C00019A545 /* GameManager.swift */,
 				0E1AE7142B80A833001C9A30 /* Dialogue.swift */,
 				5BA395702B7F84410019A545 /* Onboarding.swift */,
 			);
@@ -492,6 +499,7 @@
 		0EF5FEAA2B4FC39300D64E5E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0E5AA5482BA17F3B00727C79 /* Manager */,
 				0EADEAAE2B7DF4E90036D190 /* Component */,
 				0EADEAB42B7DF5140036D190 /* Extension */,
 				0EADEAB12B7DF5060036D190 /* Modifier */,
