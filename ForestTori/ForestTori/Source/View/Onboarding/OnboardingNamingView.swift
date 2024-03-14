@@ -16,6 +16,7 @@ struct OnboardingNamingView: View {
     @State var timer: Timer?
     
     private let doneButtonLabel = "시작하기"
+    private let lastIndex = 3
     
     var body: some View {
         VStack(spacing: 30) {
@@ -78,7 +79,7 @@ extension OnboardingNamingView {
                 textIndex += 1
             }
             
-            if textIndex > 2 {
+            if textIndex == lastIndex {
                 stopTimer()
                 Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
                         onboardingViewModel.moveToOnboardingCompletionView()

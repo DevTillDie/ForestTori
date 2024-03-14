@@ -68,6 +68,7 @@
 		5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */; };
 		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
 		5B68A4372B845E200004E89A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4362B845E200004E89A /* View+.swift */; };
+		5B72DDC82B91BA8B002EA734 /* EndingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */; };
 		5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9152A72B84402C0068418F /* OnboardingTextBox.swift */; };
 		5BA395442B7252C00019A545 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395432B7252C00019A545 /* GameManager.swift */; };
 		5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3955B2B7E359F0019A545 /* OnboardingView.swift */; };
@@ -84,6 +85,7 @@
 		5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395832B82495B0019A545 /* OnboardingNamingView.swift */; };
 		5BA395862B824D950019A545 /* NameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395852B824D950019A545 /* NameSettingView.swift */; };
 		5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */; };
+		5BA885842B90698900041393 /* EndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA885832B90698900041393 /* EndingView.swift */; };
 		5BA931112B62602200F48AF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931102B62602200F48AF1 /* User.swift */; };
 		5BA931132B62603200F48AF1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931122B62603200F48AF1 /* Plant.swift */; };
 		5BA931152B62604800F48AF1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931142B62604800F48AF1 /* Chapter.swift */; };
@@ -153,6 +155,7 @@
 		5B68A4252B8454790004E89A /* ServieStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServieStateView.swift; sourceTree = "<group>"; };
 		5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierInitFile.swift; sourceTree = "<group>"; };
 		5B68A4362B845E200004E89A /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewModel.swift; sourceTree = "<group>"; };
 		5B9152A72B84402C0068418F /* OnboardingTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextBox.swift; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		5BA395562B7E2EE80019A545 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 		5BA395832B82495B0019A545 /* OnboardingNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNamingView.swift; sourceTree = "<group>"; };
 		5BA395852B824D950019A545 /* NameSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSettingView.swift; sourceTree = "<group>"; };
 		5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompletionView.swift; sourceTree = "<group>"; };
+		5BA885832B90698900041393 /* EndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingView.swift; sourceTree = "<group>"; };
 		5BA931102B62602200F48AF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BA931122B62603200F48AF1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		5BA931142B62604800F48AF1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -479,6 +483,7 @@
 			children = (
 				0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */,
 				5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */,
+				5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				0EF5FEA72B4FC2F500D64E5E /* View */,
+				5BA885832B90698900041393 /* EndingView.swift */,
 				0EF5FEA82B4FC2FC00D64E5E /* ViewModel */,
 				0EF5FEA92B4FC30300D64E5E /* Model */,
 				0EF5FEAA2B4FC39300D64E5E /* Utils */,
@@ -733,6 +739,7 @@
 				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
 				5B68A4372B845E200004E89A /* View+.swift in Sources */,
 				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
+				5BA885842B90698900041393 /* EndingView.swift in Sources */,
 				5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */,
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
@@ -742,6 +749,7 @@
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
+				5B72DDC82B91BA8B002EA734 /* EndingViewModel.swift in Sources */,
 				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
 				0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */,
