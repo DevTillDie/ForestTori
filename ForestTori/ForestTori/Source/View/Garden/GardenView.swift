@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GardenView: View {
+    @StateObject var gameManager: GameManager
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
     
     var body: some View {
@@ -20,14 +21,12 @@ struct GardenView: View {
                 VStack(spacing: 40) {
                     Spacer()
                     Spacer()
-                    Spacer()
                     
-                    // TODO: 정원 오브젝트로 변경
-                    Image(.onboardingFrezia)
-                        .resizable()
+                    GardenScene()
                         .scaledToFit()
                     
                     noPlantCaptionBox
+                        .hidden(gameManager.user.completedPlants.isEmpty)
                     
                     Spacer()
                     Spacer()
@@ -114,5 +113,5 @@ extension GardenView {
 }
 
 #Preview {
-    GardenView()
+    GardenView(gameManager: GameManager())
 }
