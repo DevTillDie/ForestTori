@@ -13,13 +13,12 @@ import Foundation
 class DataManager: ObservableObject {
     @Published var chapters: [Chapter] = []
     
-    // DataManager의 chapters에 데이터 추가
+    // UserDefaults에 데이터가 있다면 그 데이터를 읽어오고, 없다면 파일에서 읽어와 UserDefaults에 저장
     init() {
         if let data = UserDefaults.standard.data(forKey: "chapterData"),
            let decodedChapters = try? JSONDecoder().decode([Chapter].self, from: data) {
             self.chapters = decodedChapters
         } else {
-            // chapters 초기화
             setupChapterData()
             saveChapterDataToUserDefaults()
         }
@@ -29,6 +28,7 @@ class DataManager: ObservableObject {
 // MARK: - Data Initialization
 
 extension DataManager {
+    // chapters 파일을 읽어와 데이터 저장
     private func setupChapterData() {
         if let filePath = Bundle.main.path(forResource: "Chapters", ofType: "tsv") {
             do {
@@ -69,6 +69,7 @@ extension DataManager {
         }
     }
     
+    // chapter에 해당하는 식물 파일을 읽어옴
     private func readChapterPlants(_ fileName: String) -> [Plant] {
         var plants = [Plant]()
         
@@ -130,6 +131,7 @@ extension DataManager {
         return plants
     }
     
+    // 파일에서 읽어온 데이터를 UserDefaults에 저장
     private func saveChapterDataToUserDefaults() {
         do {
             let encodedData = try JSONEncoder().encode(chapters)
