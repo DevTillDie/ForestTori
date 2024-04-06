@@ -14,7 +14,7 @@ struct SelectPlantView: View {
     @Binding var isShowSelectPlantView: Bool
     
     var body: some View {
-        PlantCarousel(index: $currentIndex, plants: gameManager.plants) { plant in
+        PlantCarousel(index: $currentIndex, plants: gameManager.chapter.chapterPlants) { plant in
             GeometryReader { proxy in
                 let width = proxy.size.width
                 let height = proxy.size.height/2

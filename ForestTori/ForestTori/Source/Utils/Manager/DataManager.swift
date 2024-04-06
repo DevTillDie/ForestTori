@@ -53,7 +53,7 @@ extension DataManager {
                             Chapter(
                                 chapterId: chapterId,
                                 chapterTitle: chapterTitle,
-                                chatperDescription: chapterDescription,
+                                chapterDescription: chapterDescription,
                                 lastChapterEnding: lastChapterEnding,
                                 chatperBackgroundImage: chapterBackgroundImage,
                                 chapterPlants: chapterPlants

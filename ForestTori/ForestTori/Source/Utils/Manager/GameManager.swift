@@ -13,18 +13,21 @@ import Foundation
 /// - dataManager: 게임 데이터를 관리하는 클래스
 class GameManager: ObservableObject {
     @Published var user = User()
-    @Published var plants = [Plant]()
+    @Published var chapter: Chapter
     @Published var isSelectPlant = false
     
     private let dataManager = DataManager()
     
     init() {
-        plants = dataManager.chapters[user.chapterProgress-1].chapterPlants
+        chapter = dataManager.chapters[0]
     }
     
-    /// 게임 시작
     func startNewGame() {
-        user.selectedPlant = nil
+        if let plant = user.selectedPlant {
+            user.completedPlants.append(plant)
+            user.selectedPlant = nil
+        }
+        
         isSelectPlant = false
     }
     
@@ -36,22 +39,10 @@ class GameManager: ObservableObject {
         isSelectPlant = true
     }
     
-    /// 미션 완료
-    func completeMission() {
-        if let plant = user.selectedPlant {
-            user.completedPlants.append(plant)
-            user.selectedPlant = nil
-        }
-        
-        isSelectPlant = false
-        
-        checkLevelUpAndChapterProgress()
-    }
-    
-    /// 레벨업 및 챕터 진행 체크
+    /// 미션 완료 레벨업 및 챕터 진행 체크
     ///
     /// 미션 완료 후 호출되어 사용자의 레벌업 및 챕터 진행 상태를 확인합니다
-    func checkLevelUpAndChapterProgress() {
+    func completeMission() {
         // TODO: 레벨업 및 챕터 진행 체크 코드 추가
         user.chapterProgress += 1
         
@@ -59,6 +50,6 @@ class GameManager: ObservableObject {
             // TODO: 엔딩
         }
         
-        plants = dataManager.chapters[user.chapterProgress-1].chapterPlants
+        chapter = dataManager.chapters[user.chapterProgress-1]
     }
 }

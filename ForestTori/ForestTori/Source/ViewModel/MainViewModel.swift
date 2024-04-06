@@ -17,6 +17,7 @@ class MainViewModel: ObservableObject {
     @Published var plantWidth: CGFloat = 200
     
     @Published var dialogueText = ""
+    @Published var missionText = ""
     
     @Published var isShowDialogueBox = false
     @Published var isShowAddButton = true
@@ -42,6 +43,7 @@ class MainViewModel: ObservableObject {
             plantWidth = 350
             
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
+            missionText = plant.missions[missionDay].content
             currentLineIndex += 1
         }
     }
@@ -52,6 +54,7 @@ class MainViewModel: ObservableObject {
         plantWidth = 200
         
         dialogueText = ""
+        missionText = ""
         
         isShowDialogueBox = false
         isShowAddButton = true
@@ -131,8 +134,20 @@ class MainViewModel: ObservableObject {
         if let plant = plant {
             if missionDay == plant.totalDay {
                 isCompleteMission = true
+                isShowDialogueBox = false
+                isShowMissionBox = false
             } else {
                 plant3DFileName = plant.character3DFiles[missionDay]
+                missionText = plant.missions[missionDay].content
+                
+                if dialogues[currentDialogueIndex+1].type == "Opening" {
+                    currentDialogueIndex += 1
+                    currentLineIndex = 0
+                    
+                    isShowDialogueBox = true
+                    isDisableDoneButton = true
+                    showNextDialogue()
+                }
             }
         }
     }

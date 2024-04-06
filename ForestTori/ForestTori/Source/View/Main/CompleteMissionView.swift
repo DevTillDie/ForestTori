@@ -21,10 +21,10 @@ struct CompleteMissionView: View {
                     .font(.titleL)
                     .padding(.bottom, 6)
                 
-                Text("민들레씨들이 용기를 얻었어요")
+                Text(gameManager.chapter.lastChapterEnding)
                     .font(.subtitleM)
                 
-                Image("ChapterThumbnail1")
+                Image("ChapterThumbnail\(gameManager.user.chapterProgress)")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 186)
@@ -33,13 +33,13 @@ struct CompleteMissionView: View {
                     .cornerRadius(8)
                 
                 VStack(spacing: 0) {
-                    Text("여름, 안녕? 토리야")
+                    Text(gameManager.chapter.chapterTitle)
                         .font(.titleS)
                         .foregroundStyle(.brownPrimary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 4)
                     
-                    Text("여름이 찾아오고 장마가 시작되었어요. 오두막에서 홀로 반짝이는 빗방울을 구경하던 토리에게 “나는 누구일까?”하는 궁금증이 생겼어요.")
+                    Text(gameManager.chapter.chapterDescription)
                         .font(.bodyS)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .fixedSize(horizontal: false, vertical: true)
@@ -62,7 +62,7 @@ struct CompleteMissionView: View {
                     }
                     
                     Button {
-                        gameManager.completeMission()
+                        gameManager.startNewGame()
                     } label: {
                         Text("메인으로")
                             .font(.titleS)

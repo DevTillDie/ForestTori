@@ -16,7 +16,7 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Image("SpringBackground")
+            Image(gameManager.chapter.chatperBackgroundImage)
                 .resizable()
                 .scaledToFit()
             
@@ -50,6 +50,9 @@ struct MainView: View {
                 
                 CompleteMissionView()
                     .environmentObject(gameManager)
+                    .onAppear {
+                        gameManager.completeMission()
+                    }
             }
         }
         .ignoresSafeArea()

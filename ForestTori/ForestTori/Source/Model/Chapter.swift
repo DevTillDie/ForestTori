@@ -18,7 +18,7 @@ import Foundation
 struct Chapter: Codable {
     var chapterId: Int
     var chapterTitle: String
-    var chatperDescription: String
+    var chapterDescription: String
     var lastChapterEnding: String
     var chatperBackgroundImage: String
     var chapterPlants: [Plant]

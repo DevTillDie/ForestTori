@@ -87,7 +87,7 @@ extension PlantView {
             .frame(height: 68)
             .overlay {
                 HStack {
-                    Text("창문 30분 열어 환기하기")
+                    Text(viewModel.missionText)
                         .font(.titleL)
                         .foregroundColor(.brownPrimary)
                     
