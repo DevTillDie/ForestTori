@@ -15,8 +15,14 @@ class DataManager: ObservableObject {
     
     // DataManager의 chapters에 데이터 추가
     init() {
-        // chapters 초기화
-        setupChapterData()
+        if let data = UserDefaults.standard.data(forKey: "chapterData"),
+           let decodedChapters = try? JSONDecoder().decode([Chapter].self, from: data) {
+            self.chapters = decodedChapters
+        } else {
+            // chapters 초기화
+            setupChapterData()
+            saveChapterDataToUserDefaults()
+        }
     }
 }
 
@@ -122,5 +128,14 @@ extension DataManager {
         }
         
         return plants
+    }
+    
+    private func saveChapterDataToUserDefaults() {
+        do {
+            let encodedData = try JSONEncoder().encode(chapters)
+            UserDefaults.standard.set(encodedData, forKey: "chapterData")
+        } catch {
+            print("Error encoding chapters: \(error)")
+        }
     }
 }
