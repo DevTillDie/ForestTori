@@ -11,9 +11,7 @@ import Foundation
 ///
 /// - day: 미션 일차
 /// - content: 미션 내용
-/// - isCopmleted: 미션 완료 여부
-struct Mission {
+struct Mission: Codable {
     var day: Int
     var content: String
-    var isCompleted: Bool = false
 }

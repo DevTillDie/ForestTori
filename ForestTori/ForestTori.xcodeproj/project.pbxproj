@@ -16,11 +16,14 @@
 		0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */; };
 		0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */; };
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
-		0E2D96C32B635759006CAAC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C22B635759006CAAC4 /* Realm */; };
-		0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C42B635759006CAAC4 /* RealmSwift */; };
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
 		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
+		0E6AB0E32BC115A300B12610 /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */; };
+		0E6AB0E42BC115A300B12610 /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0DF2BC115A300B12610 /* Chapters.tsv */; };
+		0E6AB0E52BC115A300B12610 /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0E02BC115A300B12610 /* SpringPlants.tsv */; };
+		0E6AB0E62BC115A300B12610 /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */; };
+		0E6AB0E72BC115A300B12610 /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
 		0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */; };
 		0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA552B7DEB0C0036D190 /* ground_none.usdz */; };
@@ -60,6 +63,8 @@
 		0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6E92B7DEAD7003E09C6 /* Maple3.scn */; };
 		0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */; };
 		0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */; };
+		0EF09D212BA42DE30067C625 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0EF09D202BA42DE30067C625 /* Realm */; };
+		0EF09D232BA42DE30067C625 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EF09D222BA42DE30067C625 /* RealmSwift */; };
 		0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */; };
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
@@ -108,6 +113,11 @@
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
+		0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
+		0E6AB0DF2BC115A300B12610 /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
+		0E6AB0E02BC115A300B12610 /* SpringPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
+		0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
+		0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
 		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
 		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
@@ -188,8 +198,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */,
-				0E2D96C32B635759006CAAC4 /* Realm in Frameworks */,
+				0EF09D232BA42DE30067C625 /* RealmSwift in Frameworks */,
+				0EF09D212BA42DE30067C625 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +234,18 @@
 				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		0E6AB0DD2BC1159700B12610 /* Chapters */ = {
+			isa = PBXGroup;
+			children = (
+				0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */,
+				0E6AB0DF2BC115A300B12610 /* Chapters.tsv */,
+				0E6AB0E02BC115A300B12610 /* SpringPlants.tsv */,
+				0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */,
+				0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */,
+			);
+			path = Chapters;
 			sourceTree = "<group>";
 		};
 		0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */ = {
@@ -459,6 +481,7 @@
 		0EF5FEA62B4FC2DF00D64E5E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0E6AB0DD2BC1159700B12610 /* Chapters */,
 				5BA395652B7F549D0019A545 /* Pretendard */,
 				5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */,
 				0EEBB6C52B7DDA4B003E09C6 /* 3D_Objects */,
@@ -602,8 +625,8 @@
 			);
 			name = ForestTori;
 			packageProductDependencies = (
-				0E2D96C22B635759006CAAC4 /* Realm */,
-				0E2D96C42B635759006CAAC4 /* RealmSwift */,
+				0EF09D202BA42DE30067C625 /* Realm */,
+				0EF09D222BA42DE30067C625 /* RealmSwift */,
 			);
 			productName = ForestTori;
 			productReference = 0EF5FE922B4FC02100D64E5E /* ForestTori.app */;
@@ -634,7 +657,7 @@
 			);
 			mainGroup = 0EF5FE892B4FC02100D64E5E;
 			packageReferences = (
-				0E2D96C12B635759006CAAC4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				0EF09D1F2BA42DE30067C625 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 0EF5FE932B4FC02100D64E5E /* Products */;
 			projectDirPath = "";
@@ -651,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
+				0E6AB0E42BC115A300B12610 /* Chapters.tsv in Resources */,
 				0EEBB6ED2B7DEAD7003E09C6 /* Cottontree1.dae in Resources */,
 				0EEBB6EE2B7DEAD7003E09C6 /* Cottontree3.dae in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
@@ -675,7 +699,9 @@
 				0EADEA9A2B7DEB4F0036D190 /* Garden_CactusAnimation.scn in Resources */,
 				0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */,
 				0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */,
+				0E6AB0E72BC115A300B12610 /* WinterPlants.tsv in Resources */,
 				5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */,
+				0E6AB0E62BC115A300B12610 /* AutumnPlants.tsv in Resources */,
 				0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */,
 				0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */,
 				0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */,
@@ -684,6 +710,7 @@
 				0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */,
 				0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */,
 				0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */,
+				0E6AB0E52BC115A300B12610 /* SpringPlants.tsv in Resources */,
 				0EADEA972B7DEB4F0036D190 /* DandelionAnimation3.scn in Resources */,
 				0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */,
 				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
@@ -692,6 +719,7 @@
 				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
 				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
 				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
+				0E6AB0E32BC115A300B12610 /* SummerPlants.tsv in Resources */,
 				0EEBB6EF2B7DEAD7003E09C6 /* Cottontree2.dae in Resources */,
 				0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */,
 				0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */,
@@ -974,7 +1002,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E2D96C12B635759006CAAC4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		0EF09D1F2BA42DE30067C625 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -985,14 +1013,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E2D96C22B635759006CAAC4 /* Realm */ = {
+		0EF09D202BA42DE30067C625 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E2D96C12B635759006CAAC4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0EF09D1F2BA42DE30067C625 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		0E2D96C42B635759006CAAC4 /* RealmSwift */ = {
+		0EF09D222BA42DE30067C625 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E2D96C12B635759006CAAC4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0EF09D1F2BA42DE30067C625 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
