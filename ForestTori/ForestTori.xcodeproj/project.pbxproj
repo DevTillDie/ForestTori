@@ -16,6 +16,7 @@
 		0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */; };
 		0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */; };
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
+		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
 		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
@@ -110,6 +111,7 @@
 		0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.tsv; sourceTree = "<group>"; };
 		0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.tsv; sourceTree = "<group>"; };
 		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
+		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			children = (
 				5BA395822B8235D40019A545 /* Buttons */,
 				5B9152A92B8440300068418F /* TextBoxes */,
+				0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				5B68A4372B845E200004E89A /* View+.swift in Sources */,
 				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
 				5BA885842B90698900041393 /* EndingView.swift in Sources */,
+				0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */,
 				5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */,
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,

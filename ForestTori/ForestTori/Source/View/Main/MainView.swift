@@ -13,6 +13,7 @@ struct MainView: View {
     
     @State private var selectedTab = 0
     @State private var isShowSelectPlantView = false
+    @State private var progressValue = 50.0
     
     var body: some View {
         ZStack {
@@ -82,7 +83,11 @@ extension MainView {
             
             Spacer()
             
-            Image("PotProgress1")
+            ProgressView(value: progressValue, total: 100)
+                .frame(width: 119, height: 50)
+                .progressViewStyle(
+                    ProgressStyle(width: 119, color: .brown.opacity(0.7))
+                )
         }
         .padding(.horizontal, 20)
         .padding(.top, 69)
