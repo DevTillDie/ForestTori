@@ -10,6 +10,7 @@ import SwiftUI
 struct ProgressStyle: ProgressViewStyle {
     let width: Double
     let color: Color
+    let text: String
     
     func makeBody(configuration: Configuration) -> some View {
         let progress = configuration.fractionCompleted ?? 0.0
@@ -31,7 +32,7 @@ struct ProgressStyle: ProgressViewStyle {
                     .stroke(.white, lineWidth: 2)
                 
                 VStack {
-                    Text("식물")
+                    Text(text)
                         .font(.titleS)
                     Text("\(Int(progress*100))%")
                         .font(.titleL)

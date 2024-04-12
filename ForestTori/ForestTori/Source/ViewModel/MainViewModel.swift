@@ -26,6 +26,9 @@ class MainViewModel: ObservableObject {
     @Published var isDisableDoneButton = false
     @Published var isCompleteMission = false
     
+    @Published var progressValue: Float = 0.0
+    @Published var plantName = ""
+    
     private var plant: Plant?
     private var missionDay = 0
     private var dialogues = [Dialogue]()
@@ -37,10 +40,12 @@ class MainViewModel: ObservableObject {
         
         if let plant = plant {
             getDialogue(plant.characterFileName)
-            isShowAddButton = false
-            isShowDialogueBox = true
             plant3DFileName = plant.character3DFiles[missionDay]
             plantWidth = 350
+            plantName = plant.characterName
+            
+            isShowAddButton = false
+            isShowDialogueBox = true
             
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
             missionText = plant.missions[missionDay].content
@@ -52,6 +57,8 @@ class MainViewModel: ObservableObject {
         plant3DFileName = "Emptypot.scn"
         missionDay = 0
         plantWidth = 200
+        progressValue = 0.0
+        plantName = ""
         
         dialogueText = ""
         missionText = ""
@@ -86,6 +93,7 @@ class MainViewModel: ObservableObject {
     func completMission() {
         currentDialogueIndex += 1
         currentLineIndex = 0
+        progressValue = (Float(missionDay+1)/Float(plant?.totalDay ?? 0)) * 100
         
         isShowDialogueBox = true
         isDisableDoneButton = true
