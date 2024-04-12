@@ -87,7 +87,7 @@ extension MainView {
                 .progressViewStyle(
                     ProgressStyle(
                         width: 119,
-                        color: .brown.opacity(0.7),
+                        color: .brown.opacity(0.8),
                         text: viewModel.plantName
                     )
                 )
