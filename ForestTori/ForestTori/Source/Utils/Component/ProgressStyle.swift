@@ -21,6 +21,7 @@ struct ProgressStyle: ProgressViewStyle {
             Rectangle()
                 .fill(color)
                 .frame(width: width * progress)
+                .animation(.easeInOut(duration: 0.5), value: progress)
         }
         .mask {
             RoundedRectangle(cornerRadius: 45)
