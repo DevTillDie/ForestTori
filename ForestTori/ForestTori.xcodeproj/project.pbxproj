@@ -98,6 +98,7 @@
 		5BA931172B62605D00F48AF1 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931162B62605D00F48AF1 /* Mission.swift */; };
 		5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931182B6260CC00F48AF1 /* DataManager.swift */; };
 		5BABC2C92B899D8B00C74E3C /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABC2C82B899D8B00C74E3C /* GardenView.swift */; };
+		5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2F62F2BC03AF90049A988 /* GardenScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +194,7 @@
 		5BA931162B62605D00F48AF1 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		5BA931182B6260CC00F48AF1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5BABC2C82B899D8B00C74E3C /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		5BE2F62F2BC03AF90049A988 /* GardenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 				5BA395822B8235D40019A545 /* Buttons */,
 				5B9152A92B8440300068418F /* TextBoxes */,
 				0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */,
+				5BE2F6312BC03B000049A988 /* Scenes */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -610,6 +613,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		5BE2F6312BC03B000049A988 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5BE2F62F2BC03AF90049A988 /* GardenScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -777,6 +788,7 @@
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
 				5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */,
+				5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
