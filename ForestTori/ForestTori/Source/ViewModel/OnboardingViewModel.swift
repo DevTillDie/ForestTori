@@ -152,12 +152,12 @@ extension OnboardingViewModel {
         ]
         
         let thirdText = [
-            OnboardingText(text: "여기 \(Text(userName).foregroundStyle(.greenPrimary))를 위해"),
+            OnboardingText(text: "여기 \(Text(userName).foregroundColor(.greenPrimary))를 위해"),
             OnboardingText(text: "신비한 화분을 줄게요."),
         ]
         
         let fourthText = [
-            OnboardingText(text: "이제부터 \(Text(userName).foregroundStyle(.greenPrimary))의"),
+            OnboardingText(text: "이제부터 \(Text(userName).foregroundColor(.greenPrimary))의"),
             OnboardingText(text: "마법 능력으로 식물을 잘 키워주세요."),
         ]
         
