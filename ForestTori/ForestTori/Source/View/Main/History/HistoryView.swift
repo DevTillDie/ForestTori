@@ -18,6 +18,8 @@ struct HistoryView: View {
         VStack {
             hisoryViewHeader
             selectImageView
+                .aspectRatio(4/3, contentMode: .fit)
+                .padding(.horizontal)
             writeHistoryView
         }
         .fullScreenCover(isPresented: $isShowCameraPicker) {
@@ -61,23 +63,28 @@ extension HistoryView {
     }
     
     private var selectImageView: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .aspectRatio(4/3, contentMode: .fit)
-            .padding(.horizontal)
-            .foregroundStyle(.gray.opacity(0.2))
-            .overlay(
-                Image(systemName: "photo")
-                    .foregroundColor(.gray)
-            )
-            .onTapGesture {
-                withAnimation {
-                    showCustomPopup.toggle()
-                }
+        VStack {
+            if let image = selectedImage {
+                Image(uiImage: image)
+                    .resizable()
+            } else {
+                RoundedRectangle(cornerRadius: 8)
+                    .foregroundStyle(.gray.opacity(0.2))
+                    .overlay(
+                        Image(systemName: "photo")
+                            .foregroundColor(.gray)
+                    )
+                    .onTapGesture {
+                        withAnimation {
+                            showCustomPopup.toggle()
+                        }
+                    }
+                    .overlay {
+                        selectImagePopup
+                            .hidden(showCustomPopup)
+                    }
             }
-            .overlay {
-                selectImagePopup
-                    .hidden(showCustomPopup)
-            }
+        }
     }
     
     private var writeHistoryView: some View {
