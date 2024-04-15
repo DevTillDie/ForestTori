@@ -8,26 +8,30 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @State private var todayHistory = ""
-    @State private var showCustomPopup = false
+    @StateObject var viewModel = HistoryViewModel()
+    
+    @State private var isShowCustomPopup = false
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
-    @State private var selectedImage: UIImage?
+    
+    private let placeHolder = "오늘의 활동과 감정을 적어보세요"
     
     var body: some View {
         VStack {
             hisoryViewHeader
+            
             selectImageView
                 .aspectRatio(4/3, contentMode: .fit)
                 .padding(.horizontal)
+            
             writeHistoryView
         }
         .fullScreenCover(isPresented: $isShowCameraPicker) {
-            ImagePicker(selectedImage: $selectedImage, sourceType: .camera)
+            ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .camera)
                 .ignoresSafeArea()
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
-            ImagePicker(selectedImage: $selectedImage, sourceType: .photoLibrary)
+            ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .photoLibrary)
         }
     }
 }
@@ -52,7 +56,7 @@ extension HistoryView {
             Spacer()
             
             Button {
-                // TODO: save Realm
+                viewModel.saveHistory()
             } label: {
                 Text("완료")
                     .font(.subtitleM)
@@ -64,7 +68,7 @@ extension HistoryView {
     
     private var selectImageView: some View {
         VStack {
-            if let image = selectedImage {
+            if let image = viewModel.selectedImage {
                 Image(uiImage: image)
                     .resizable()
             } else {
@@ -76,12 +80,12 @@ extension HistoryView {
                     )
                     .onTapGesture {
                         withAnimation {
-                            showCustomPopup.toggle()
+                            isShowCustomPopup.toggle()
                         }
                     }
                     .overlay {
                         selectImagePopup
-                            .hidden(showCustomPopup)
+                            .hidden(isShowCustomPopup)
                     }
             }
         }
@@ -92,7 +96,7 @@ extension HistoryView {
             .fill(Color.gray10)
             .stroke(.brownSecondary, lineWidth: 2)
             .overlay(alignment: .top) {
-                TextField("오늘의 활동과 감정을 적어보세요", text: $todayHistory, axis: .vertical)
+                TextField(placeHolder, text: $viewModel.todayHistory, axis: .vertical)
                     .tint(.greenSecondary)
                     .padding()
             }
