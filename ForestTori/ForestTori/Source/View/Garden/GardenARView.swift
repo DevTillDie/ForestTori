@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GardenARView: View {
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var gardenARViewModel = GardenARViewModel()
     
     private var backButtonLabel = "돌아가기"
     private var backButtonImage = "chevron.backward"
@@ -21,13 +22,15 @@ struct GardenARView: View {
             VStack {
                 Spacer()
                 
-                cameraButtomBar
+                cameraBottomBar
             }
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
     }
 }
+
+// MARK: - ARView
 
 extension GardenARView {
     @ViewBuilder private var ARView: some View {
@@ -36,14 +39,23 @@ extension GardenARView {
             
             CameraPreview()
             
-            GardenScene()
-                .scaledToFit()
+            VStack {
+                Spacer()
+                
+                GardenScene()
+                    .scaledToFit()
+                
+                Spacer()
+                Spacer()
+            }
         }
     }
 }
 
+// MARK: - cameraBottomBar
+
 extension GardenARView {
-    @ViewBuilder private var cameraButtomBar: some View {
+    @ViewBuilder private var cameraBottomBar: some View {
         ZStack {
             Button {
                 presentationMode.wrappedValue.dismiss()
@@ -60,7 +72,7 @@ extension GardenARView {
             }
             
             Button {
-                if let image = captureScreen() {
+                if let image = gardenARViewModel.captureScreen() {
                     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                 }
             } label: {
@@ -74,22 +86,6 @@ extension GardenARView {
             }
         }
         .background(.black)
-    }
-}
-
-extension GardenARView {
-    func captureScreen() -> UIImage? {
-        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200)
-        
-        guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return nil }
-        
-        UIGraphicsBeginImageContextWithOptions(frame.size, false, 0.0)
-        defer { UIGraphicsEndImageContext() }
-        
-        window.drawHierarchy(in: window.bounds, afterScreenUpdates: true)
-        let capturedImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        return capturedImage
     }
 }
 

@@ -99,6 +99,7 @@
 		5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931182B6260CC00F48AF1 /* DataManager.swift */; };
 		5BABC2C92B899D8B00C74E3C /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABC2C82B899D8B00C74E3C /* GardenView.swift */; };
 		5BBABDE12BCD180A00F51288 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE02BCD180A00F51288 /* CameraPreview.swift */; };
+		5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */; };
 		5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA85462BCC156400C5C67C /* GardenARView.swift */; };
 		5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2F62F2BC03AF90049A988 /* GardenScene.swift */; };
 /* End PBXBuildFile section */
@@ -197,6 +198,7 @@
 		5BA931182B6260CC00F48AF1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5BABC2C82B899D8B00C74E3C /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
 		5BBABDE02BCD180A00F51288 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARViewModel.swift; sourceTree = "<group>"; };
 		5BDA85462BCC156400C5C67C /* GardenARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARView.swift; sourceTree = "<group>"; };
 		5BE2F62F2BC03AF90049A988 /* GardenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -517,6 +519,7 @@
 				0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */,
 				5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */,
 				5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */,
+				5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
+				5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				5B72DDC82B91BA8B002EA734 /* EndingViewModel.swift in Sources */,
