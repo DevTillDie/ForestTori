@@ -10,12 +10,22 @@ import SwiftUI
 struct HistoryView: View {
     @State private var todayHistory = ""
     @State private var showCustomPopup = false
+    @State private var isShowCameraPicker = false
+    @State private var isShowPhotoLibraryPicker = false
+    @State private var selectedImage: UIImage?
     
     var body: some View {
         VStack {
             hisoryViewHeader
             selectImageView
             writeHistoryView
+        }
+        .fullScreenCover(isPresented: $isShowCameraPicker) {
+            ImagePicker(selectedImage: $selectedImage, sourceType: .camera)
+                .ignoresSafeArea()
+        }
+        .sheet(isPresented: $isShowPhotoLibraryPicker) {
+            ImagePicker(selectedImage: $selectedImage, sourceType: .photoLibrary)
         }
     }
 }
@@ -88,7 +98,7 @@ extension HistoryView {
             
             VStack {
                 Button {
-                    // TODO: show camera
+                    isShowCameraPicker = true
                 }label: {
                     HStack {
                         Text("사진 찍기")
@@ -101,7 +111,7 @@ extension HistoryView {
                 Divider()
                 
                 Button {
-                    // TODO: show imagePicker
+                    isShowPhotoLibraryPicker = true
                 }label: {
                     HStack {
                         Text("사진 선택")
