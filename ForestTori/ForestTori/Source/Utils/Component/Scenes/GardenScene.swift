@@ -10,7 +10,7 @@ import SwiftUI
 import SceneKit
 
 struct GardenScene: UIViewRepresentable {
-    @EnvironmentObject var gameManager: GameManager
+    @StateObject var gameManager = GameManager()
     
     private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
@@ -19,11 +19,12 @@ struct GardenScene: UIViewRepresentable {
     func makeUIView(context: Context) -> some UIView {
         setSceneView()
         
-        // TODO: gameManager 연결
-        guard let newNode = addNode() else {
-            return sceneView
+        for index in 0..<gameManager.user.completedPlants.count {
+            guard let newNode = addNode(index: index) else {
+                return sceneView
+            }
+            sceneView.scene?.rootNode.addChildNode(newNode)
         }
-        sceneView.scene?.rootNode.addChildNode(newNode)
         
         return sceneView
     }
@@ -69,12 +70,18 @@ extension GardenScene {
         }
     }
     
-    private func addNode() -> SCNNode? {
+    private func addNode(index: Int) -> SCNNode? {
         let plantNode = SCNNode()
         
-        guard let plantScene = SCNScene(named: "Dandelion3.scn") else {
+        let plant = gameManager.user.completedPlants[index]
+        
+        guard let plantScene = SCNScene(named: plant.garden3DFile) else {
             return nil
         }
+        
+        let plantPositionX = plant.gardenPositionX
+        let plantPositionY = plant.gardenPositionY
+        let plantPositionZ = plant.gardenPositionZ
         
         let node = SCNNode()
         
@@ -82,8 +89,8 @@ extension GardenScene {
             node.addChildNode(childNode)
         }
         
-        node.position = SCNVector3(x: 0.0, y: 1.0, z: 0.0)
-        node.scale = SCNVector3(x: 0.8, y: 0.8, z: 0.8)
+        node.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
+        node.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
         
         plantNode.addChildNode(node)
         

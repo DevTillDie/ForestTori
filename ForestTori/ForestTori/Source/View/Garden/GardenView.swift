@@ -8,43 +8,50 @@
 import SwiftUI
 
 struct GardenView: View {
-    @StateObject var gameManager: GameManager
+    @StateObject var gameManager = GameManager()
+    
+    @State var showSummerMessage = true
+    
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
+    private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
     
     var body: some View {
         NavigationView {
             ZStack {
-                Image(.springBackground)
+                Image(gameManager.chapter.chatperBackgroundImage)
                     .resizable()
                     .scaledToFit()
                 
-                VStack(spacing: 40) {
-                    Spacer()
-                    Spacer()
-                    
-                    GardenScene()
-                        .scaledToFit()
-                    
-                    noPlantCaptionBox
-                        .hidden(gameManager.user.completedPlants.isEmpty)
+                VStack {
+                    gardenHeader
                     
                     Spacer()
+                    
+                    VStack(spacing: 0) {
+                        dialogueBox
+                            .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
+                        
+                        GardenScene()
+                            .scaledToFit()
+                        
+                        noPlantCaptionBox
+                            .hidden(gameManager.user.completedPlants.isEmpty)
+                    }
+                    .padding(.top, 24)
+                    .padding(.bottom, 60)
+                    
                     Spacer()
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    toMainButton
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    totalProgressBar
-                }
-                ToolbarItem(placement: .bottomBar) {
+                    
                     ARButton
                 }
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
+            .onAppear{
+                print(gameManager.chapter.chapterTitle)
+                print(gameManager.chapter.chatperBackgroundImage)
+                print(gameManager.user.chapterProgress)
+            }
         }
     }
 }
@@ -52,32 +59,69 @@ struct GardenView: View {
 // MARK: - toMainButton
 
 extension GardenView {
-    @ViewBuilder private var toMainButton: some View {
-        Button {
-            // action
-        } label: {
-            Image(.gardenButton)
+    @ViewBuilder private var gardenHeader: some View {
+        HStack {
+            NavigationLink(
+                destination: MainView().navigationBarBackButtonHidden(true)
+            ) {
+                Image(.gardenButton)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 45, height: 45)
+            }
+            
+            Spacer()
+            
+            // TODO: TotalProgressBar 수정
+            ZStack {
+                Image(.gardenProgressSpring3)
+                VStack {
+                    Text(gameManager.chapter.chapterTitle)
+                        .font(.titleS)
+                    Text("21%")
+                        .font(.titleL)
+                }
+                .foregroundColor(.white)
+                .shadow(color: .gray30, radius: 4.0)
+            }
         }
-        .padding(.top)
+        .padding(.horizontal, 20)
+        .padding(.top, 69)
+        .padding(.bottom, 8)
     }
 }
 
-// MARK: - totalProgressBar
+// MARK: - dialogueBox
 
 extension GardenView {
-    @ViewBuilder private var totalProgressBar: some View {
-        ZStack {
-            Image(.gardenProgressSpring3)
-            VStack {
-                Text("봄, 숲을 만나다")
-                    .font(.titleS)
-                Text("21%")
-                    .font(.titleL)
+    // TODO: 컴포넌트화
+    private var dialogueBox: some View {
+        Image("DialogFrame")
+            .resizable()
+            .scaledToFit()
+            .overlay(alignment: .top) {
+                ZStack(alignment: .topLeading) {
+                    Text(summerMessage)
+                        .font(.pretendard(size: 17.5, .regular))
+                        .foregroundStyle(Color.black)
+                        .multilineTextAlignment(.leading)
+                        .lineSpacing(1)
+                        .padding(.horizontal, 16)
+                    
+                    Image("DialogButton")
+                        .resizable()
+                        .frame(width: 16, height: 10)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                        .padding(.bottom, 18)
+                        .padding(.trailing, 18)
+                }
+                .padding(.vertical, 12)
+                
             }
-            .foregroundColor(.white)
-            .shadow(color: .gray30, radius: 4.0)
-        }
-        .padding(.top)
+            .padding(.horizontal, 20)
+            .onTapGesture {
+                showSummerMessage = false
+            }
     }
 }
 
@@ -108,6 +152,7 @@ extension GardenView {
                 .scaledToFit()
                 .frame(maxWidth: 50.0, minHeight: 50.0)
         }
+        .padding(.bottom, 42)
     }
 }
 

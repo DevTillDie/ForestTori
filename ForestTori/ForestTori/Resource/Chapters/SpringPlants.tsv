@@ -1,6 +1,6 @@
-id	characterName	characterImage	characterDescription	mainQuest	missions	characterFileName	character3DFiles	totalDay
-1	민들레씨	PlantSelect_Spring1	겁이 많은 민들레씨들이 하늘로 날아가지 못하고 있어요. 용기를 낼 수 있게 매일 창문을 열어 민들레씨들을 도와줄래요?	창문 열고 30분 환기하기	1:창문 열고 30분 환기하기 1|2:창문 열고 30분 환기하기 2|3:창문 열고 30분 환기하기 3|4:창문 열고 30분 환기하기 4|5:창문 열고 30분 환기하기 5|6:창문 열고 30분 환기하기 6|7:창문 열고 30분 환기하기 7	SpringCharacter	Dandelion1.scn|Dandelion2.scn|Dandelion3.scn|Dandelion3.scn|Dandelion3.scn|Dandelion3.scn|Dandelion3.scn	7
-2	???	PlantSelect_Spring2	???	???				0
-3	???	PlantSelect_Spring3	???	???				0
-4	???	PlantSelect_Spring4	???	???				0
-5	???	PlantSelect_Spring5	???	???				0
+id	characterName	characterImage	characterDescription	mainQuest	missions	characterFileName	character3DFiles	totalDay	garden3DFile	gardenPositionX	gardenPositionZ
+1	민들레씨	PlantSelect_Spring1	겁이 많은 민들레씨들이 하늘로 날아가지 못하고 있어요. 용기를 낼 수 있게 매일 창문을 열어 민들레씨들을 도와줄래요?	창문 열고 30분 환기하기	1:창문 열고 30분 환기하기 1|2:창문 열고 30분 환기하기 2|3:창문 열고 30분 환기하기 3|4:창문 열고 30분 환기하기 4|5:창문 열고 30분 환기하기 5|6:창문 열고 30분 환기하기 6|7:창문 열고 30분 환기하기 7	SpringCharacter	Dandelion1.scn|Dandelion2.scn|Dandelion3.scn|Dandelion3.scn|Dandelion3.scn|Dandelion3.scn|Dandelion3.scn	7	Garden_DandelionAnimation.scn	-1.5	2
+2	???	PlantSelect_Spring2	???	???				0			
+3	???	PlantSelect_Spring3	???	???				0			
+4	???	PlantSelect_Spring4	???	???				0			
+5	???	PlantSelect_Spring5	???	???				0			

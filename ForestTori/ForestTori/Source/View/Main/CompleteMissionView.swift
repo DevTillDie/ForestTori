@@ -24,7 +24,7 @@ struct CompleteMissionView: View {
                 Text(gameManager.chapter.lastChapterEnding)
                     .font(.subtitleM)
                 
-                Image("ChapterThumbnail\(gameManager.user.chapterProgress)")
+                Image("ChapterThumbnail\( gameManager.user.chapterProgress)")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 186)

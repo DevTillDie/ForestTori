@@ -5,12 +5,13 @@
 //  Created by Nayeon Kim on 2/6/24.
 //
 
-import Foundation
+import SwiftUI
 
 /// 게임 진행을 관리하는 클래스
 ///
 /// - user: 사용자 정보 모델
 /// - dataManager: 게임 데이터를 관리하는 클래스
+/// - isSelectPlant: 식물 선택 여부
 class GameManager: ObservableObject {
     @Published var user = User()
     @Published var chapter: Chapter
@@ -19,16 +20,31 @@ class GameManager: ObservableObject {
     private let dataManager = DataManager()
     
     init() {
-        chapter = dataManager.chapters[0]
+        // 진행 중인 정보를 유지하기 위해 UserDefault에 저장
+        if let userData = UserDefaults.standard.data(forKey: "_userData"),
+           let decodeData = try? JSONDecoder().decode(User.self, from: userData) {
+            self.user = decodeData
+        }
+        
+        if let chapterData = UserDefaults.standard.data(forKey: "_chapterData"),
+           let decodeData = try? JSONDecoder().decode(Chapter.self, from: chapterData) {
+            self.chapter = decodeData
+        } else {
+            chapter = dataManager.chapters[0]
+            saveChapterDataToUserDefaults()
+        }
     }
     
+    /// 새로운 게임 시작
     func startNewGame() {
         if let plant = user.selectedPlant {
             user.completedPlants.append(plant)
-            user.selectedPlant = nil
         }
         
+        user.selectedPlant = nil
         isSelectPlant = false
+        
+        saveUserDataToUserDefaults()
     }
     
     /// 식물 선택
@@ -37,19 +53,43 @@ class GameManager: ObservableObject {
     func selectPlant(plant: Plant) {
         user.selectedPlant = plant
         isSelectPlant = true
+        
+        saveUserDataToUserDefaults()
     }
     
     /// 미션 완료 레벨업 및 챕터 진행 체크
     ///
     /// 미션 완료 후 호출되어 사용자의 레벌업 및 챕터 진행 상태를 확인합니다
     func completeMission() {
-        // TODO: 레벨업 및 챕터 진행 체크 코드 추가
         user.chapterProgress += 1
         
         if user.chapterProgress == 5 {
             // TODO: 엔딩
+        } else {
+            chapter = dataManager.chapters[user.chapterProgress - 1]
         }
         
-        chapter = dataManager.chapters[user.chapterProgress-1]
+        saveUserDataToUserDefaults()
+        saveChapterDataToUserDefaults()
+    }
+    
+    /// 사용자 모델 데이터를 userDefaults에 저장
+    private func saveUserDataToUserDefaults() {
+        do {
+            let encodedData = try JSONEncoder().encode(user)
+            UserDefaults.standard.set(encodedData, forKey: "_userData")
+        } catch {
+            print("Error encoding user ata: \(error)")
+        }
+    }
+    
+    /// 챕터 모델 데이터를 userDefaults에 저장
+    private func saveChapterDataToUserDefaults() {
+        do {
+            let encodedData = try JSONEncoder().encode(chapter)
+            UserDefaults.standard.set(encodedData, forKey: "_chapterData")
+        } catch {
+            print("Error encoding chapter data: \(error)")
+        }
     }
 }
