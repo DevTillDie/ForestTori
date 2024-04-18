@@ -10,12 +10,12 @@ import SwiftUI
 struct HistoryView: View {
     @StateObject var viewModel = HistoryViewModel()
     
-    @State private var isShowCustomPopup = false
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
     
     @Binding var isComplete: Bool
     @Binding var isShowHistoryView: Bool
+    @Binding var isTapDoneButton: Bool
     
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
     
@@ -48,6 +48,7 @@ extension HistoryView {
             Button {
                 withAnimation {
                     isShowHistoryView = false
+                    isTapDoneButton = false
                 }
             } label: {
                 Image(systemName: "xmark")
@@ -67,8 +68,9 @@ extension HistoryView {
             } label: {
                 Text("완료")
                     .font(.subtitleM)
-                    .foregroundStyle(.greenSecondary)
+                    .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
             }
+            .disabled(viewModel.isCompleteButtonDisable)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 8)
@@ -79,22 +81,13 @@ extension HistoryView {
             if let image = viewModel.selectedImage {
                 Image(uiImage: image)
                     .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
             } else {
-                RoundedRectangle(cornerRadius: 8)
-                    .foregroundStyle(.gray.opacity(0.2))
-                    .overlay(
-                        Image(systemName: "photo")
-                            .foregroundColor(.gray)
-                    )
-                    .onTapGesture {
-                        withAnimation {
-                            isShowCustomPopup.toggle()
-                        }
-                    }
-                    .overlay {
-                        selectImagePopup
-                            .hidden(isShowCustomPopup)
-                    }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundStyle(.gray.opacity(0.2))
+                    selectImagePopup
+                }
             }
         }
     }
@@ -150,4 +143,8 @@ extension HistoryView {
             Spacer(minLength: 56)
         }
     }
+}
+
+#Preview {
+    MainView()
 }

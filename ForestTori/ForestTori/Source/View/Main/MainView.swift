@@ -147,13 +147,15 @@ extension MainView {
                     .onTapGesture {
                         withAnimation {
                             viewModel.isShowHistoryView = false
+                            viewModel.isTapDoneButton = false
                         }
                     }
                     .transition(.opacity)
                 
                 HistoryView(
                     isComplete: $viewModel.isComplteTodayMission,
-                    isShowHistoryView: $viewModel.isShowHistoryView
+                    isShowHistoryView: $viewModel.isShowHistoryView,
+                    isTapDoneButton: $viewModel.isTapDoneButton
                 )
                 .padding(.vertical)
                 .transition(.move(edge: .bottom))
@@ -164,7 +166,7 @@ extension MainView {
                 )
             }
         }
-        .animation(.easeIn(duration: 0.2), value: viewModel.isShowHistoryView)
+        .animation(.easeInOut(duration: 0.2), value: viewModel.isShowHistoryView)
     }
 }
 
