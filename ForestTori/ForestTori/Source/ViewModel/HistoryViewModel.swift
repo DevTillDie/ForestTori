@@ -8,13 +8,13 @@
 import SwiftUI
 
 class HistoryViewModel: ObservableObject {
-    @Published var todayHistory = ""  {
+    @Published var todayHistory = "" {
         didSet {
             updateIsCompleteButtonDisable()
         }
     }
     
-    @Published var selectedImage: UIImage?  {
+    @Published var selectedImage: UIImage? {
         didSet {
             updateIsCompleteButtonDisable()
         }
