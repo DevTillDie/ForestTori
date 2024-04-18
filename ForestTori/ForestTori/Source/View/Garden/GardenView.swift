@@ -44,6 +44,7 @@ struct GardenView: View {
                 }
             }
             .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
@@ -101,9 +102,7 @@ extension GardenView {
 
 extension GardenView {
     @ViewBuilder private var ARButton: some View {
-        Button {
-            // action
-        } label: {
+        NavigationLink(destination: GardenARView()) {
             Image(.arButton)
                 .resizable()
                 .scaledToFit()
