@@ -43,6 +43,5 @@ struct ImagePicker: UIViewControllerRepresentable {
             }
             picker.dismiss(animated: true, completion: nil)
         }
-        
     }
 }

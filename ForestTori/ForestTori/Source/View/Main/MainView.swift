@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject var gameManager = GameManager()
     @StateObject var viewModel = MainViewModel()
+    @StateObject private var keyboardHandler = KeyboardHandler()
     
     @State private var selectedTab = 0
     @State private var isShowSelectPlantView = false
@@ -18,7 +19,7 @@ struct MainView: View {
         ZStack {
             Image(gameManager.chapter.chatperBackgroundImage)
                 .resizable()
-                .scaledToFit()
+                .ignoresSafeArea()
             
             VStack {
                 mainHeader
@@ -144,6 +145,7 @@ extension MainView {
         ZStack {
             if viewModel.isShowHistoryView {
                 Color.black.opacity(0.4)
+                    .ignoresSafeArea()
                     .onTapGesture {
                         withAnimation {
                             viewModel.isShowHistoryView = false
@@ -164,9 +166,11 @@ extension MainView {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(.white)
                 )
+                .padding(.bottom, keyboardHandler.keyboardHeight/4)
             }
         }
         .animation(.easeInOut(duration: 0.2), value: viewModel.isShowHistoryView)
+        .animation(.default, value: keyboardHandler.keyboardHeight)
     }
 }
 

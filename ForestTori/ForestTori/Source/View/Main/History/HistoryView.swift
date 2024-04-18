@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @StateObject var viewModel = HistoryViewModel()
+    @FocusState private var isFocused: Bool
     
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
@@ -36,6 +37,9 @@ struct HistoryView: View {
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .photoLibrary)
                 .ignoresSafeArea()
+        }
+        .onTapGesture {
+            isFocused = false
         }
     }
 }
@@ -97,11 +101,28 @@ extension HistoryView {
             .fill(Color.gray10)
             .stroke(.brownSecondary, lineWidth: 2)
             .overlay(alignment: .top) {
-                TextField(placeHolder, text: $viewModel.todayHistory, axis: .vertical)
+                TextField(
+                    placeHolder,
+                    text: Binding(
+                        get: {viewModel.todayHistory},
+                        set: { newValue, _ in
+                            if newValue.lastIndex(of: "\n") != nil {
+                                isFocused = false
+                            } else {
+                                viewModel.todayHistory = newValue
+                            }
+                        }),
+                    axis: .vertical)
+                    .focused($isFocused)
+                    .submitLabel(.done)
+                    .disableAutocorrection(true)
                     .tint(.greenSecondary)
                     .padding()
             }
             .padding(.horizontal)
+            .onTapGesture {
+                isFocused = true
+            }
     }
     
     private var selectImagePopup: some View {
@@ -110,6 +131,7 @@ extension HistoryView {
             
             VStack {
                 Button {
+                    isFocused = false
                     isShowCameraPicker = true
                 }label: {
                     HStack {
@@ -123,6 +145,7 @@ extension HistoryView {
                 Divider()
                 
                 Button {
+                    isFocused = false
                     isShowPhotoLibraryPicker = true
                 }label: {
                     HStack {

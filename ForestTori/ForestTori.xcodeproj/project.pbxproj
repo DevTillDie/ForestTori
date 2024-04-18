@@ -24,6 +24,7 @@
 		0E4AB2342BCD6CE900ADB623 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */; };
 		0E4AB2362BCD70F400ADB623 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2352BCD70F400ADB623 /* RealmManager.swift */; };
 		0E4AB2382BCD721700ADB623 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2372BCD721700ADB623 /* History.swift */; };
+		0E4AB23F2BD0FD6400ADB623 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB23E2BD0FD6400ADB623 /* KeyboardHandler.swift */; };
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
 		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
@@ -123,6 +124,7 @@
 		0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		0E4AB2352BCD70F400ADB623 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0E4AB2372BCD721700ADB623 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		0E4AB23E2BD0FD6400ADB623 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				0EADEAAE2B7DF4E90036D190 /* Component */,
 				0EADEAB42B7DF5140036D190 /* Extension */,
 				0EADEAB12B7DF5060036D190 /* Modifier */,
+				0E4AB23E2BD0FD6400ADB623 /* KeyboardHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
+				0E4AB23F2BD0FD6400ADB623 /* KeyboardHandler.swift in Sources */,
 				5B72DDC82B91BA8B002EA734 /* EndingViewModel.swift in Sources */,
 				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
