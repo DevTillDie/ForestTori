@@ -20,13 +20,16 @@ class RealmManager {
         }
     }
     
-    func saveHistory(image: UIImage?, text: String) {
+    func saveHistory(plantName: String, image: UIImage?, text: String) {
         let newHistory = History()
         newHistory.text = text
         
         if let imageData = image?.jpegData(compressionQuality: 0.5) {
             newHistory.imageData = imageData
         }
+        
+        newHistory.date = Date().toString()
+        newHistory.plantName = plantName
         
         do {
             try realm.write {

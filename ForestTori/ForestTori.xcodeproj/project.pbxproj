@@ -24,6 +24,7 @@
 		0E4AB2342BCD6CE900ADB623 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */; };
 		0E4AB2362BCD70F400ADB623 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2352BCD70F400ADB623 /* RealmManager.swift */; };
 		0E4AB2382BCD721700ADB623 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2372BCD721700ADB623 /* History.swift */; };
+		0E4AB2412BD1090B00ADB623 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2402BD1090B00ADB623 /* Date+.swift */; };
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
 		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
@@ -126,6 +127,7 @@
 		0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		0E4AB2352BCD70F400ADB623 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0E4AB2372BCD721700ADB623 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		0E4AB2402BD1090B00ADB623 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 			children = (
 				0E1AE6FD2B7E185B001C9A30 /* Font+.swift */,
 				5B68A4362B845E200004E89A /* View+.swift */,
+				0E4AB2402BD1090B00ADB623 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				5BA885842B90698900041393 /* EndingView.swift in Sources */,
 				0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */,
 				0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */,
+				0E4AB2412BD1090B00ADB623 /* Date+.swift in Sources */,
 				5BBABDE12BCD180A00F51288 /* CameraPreview.swift in Sources */,
 				5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */,
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
@@ -982,7 +986,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Z238234D5;
+				DEVELOPMENT_TEAM = HQS8MXQ7B5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1014,7 +1018,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Z238234D5;
+				DEVELOPMENT_TEAM = HQS8MXQ7B5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

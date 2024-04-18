@@ -15,6 +15,7 @@ struct HistoryView: View {
     @State private var isShowPhotoLibraryPicker = false
     
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
+    var plantName: String
     
     var body: some View {
         VStack {
@@ -32,6 +33,9 @@ struct HistoryView: View {
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .photoLibrary)
+        }
+        .onAppear {
+            viewModel.plantName = plantName
         }
     }
 }
@@ -142,8 +146,4 @@ extension HistoryView {
             Spacer(minLength: 56)
         }
     }
-}
-
-#Preview {
-    HistoryView()
 }

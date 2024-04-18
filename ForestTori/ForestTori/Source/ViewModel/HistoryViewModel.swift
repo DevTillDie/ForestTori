@@ -11,7 +11,9 @@ class HistoryViewModel: ObservableObject {
     @Published var todayHistory = ""
     @Published var selectedImage: UIImage?
     
+    var plantName = ""
+    
     func saveHistory() {
-        RealmManager.shared.saveHistory(image: selectedImage, text: todayHistory)
+        RealmManager.shared.saveHistory(plantName: plantName, image: selectedImage, text: todayHistory)
     }
 }
