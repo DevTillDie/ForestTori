@@ -95,8 +95,7 @@ extension PlantView {
                     
                     Button {
                         viewModel.isTapDoneButton = true
-                        viewModel.completMission()
-                        // TODO: Show Write Diary View
+                        viewModel.isShowHistoryView = true
                     } label: {
                         Image(systemName: viewModel.isTapDoneButton ? "checkmark.circle.fill" : "circle")
                             .resizable()

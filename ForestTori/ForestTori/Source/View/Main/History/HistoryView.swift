@@ -14,6 +14,9 @@ struct HistoryView: View {
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
     
+    @Binding var isComplete: Bool
+    @Binding var isShowHistoryView: Bool
+    
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
     
     var body: some View {
@@ -21,7 +24,7 @@ struct HistoryView: View {
             hisoryViewHeader
             
             selectImageView
-                .aspectRatio(4/3, contentMode: .fit)
+                .aspectRatio(5/3, contentMode: .fit)
                 .padding(.horizontal)
             
             writeHistoryView
@@ -32,6 +35,7 @@ struct HistoryView: View {
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .photoLibrary)
+                .ignoresSafeArea()
         }
     }
 }
@@ -42,7 +46,9 @@ extension HistoryView {
     private var hisoryViewHeader: some View {
         HStack {
             Button {
-                // TODO: Dismiss
+                withAnimation {
+                    isShowHistoryView = false
+                }
             } label: {
                 Image(systemName: "xmark")
                     .foregroundStyle(.redPrimary)
@@ -57,6 +63,7 @@ extension HistoryView {
             
             Button {
                 viewModel.saveHistory()
+                isComplete = true
             } label: {
                 Text("완료")
                     .font(.subtitleM)
@@ -64,6 +71,7 @@ extension HistoryView {
             }
         }
         .padding(.horizontal, 20)
+        .padding(.vertical, 8)
     }
     
     private var selectImageView: some View {
@@ -100,7 +108,7 @@ extension HistoryView {
                     .tint(.greenSecondary)
                     .padding()
             }
-            .padding()
+            .padding(.horizontal)
     }
     
     private var selectImagePopup: some View {
@@ -142,8 +150,4 @@ extension HistoryView {
             Spacer(minLength: 56)
         }
     }
-}
-
-#Preview {
-    HistoryView()
 }
