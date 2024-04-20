@@ -14,7 +14,7 @@ struct GardenScene: UIViewRepresentable {
     
     private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
-    private let sceneView = SCNView()
+    let sceneView = SCNView()
     
     func makeUIView(context: Context) -> some UIView {
         setSceneView()

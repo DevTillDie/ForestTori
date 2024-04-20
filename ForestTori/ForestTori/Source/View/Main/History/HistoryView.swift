@@ -17,7 +17,7 @@ struct HistoryView: View {
     @Binding var isComplete: Bool
     @Binding var isShowHistoryView: Bool
     @Binding var isTapDoneButton: Bool
-    
+
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
     
     var body: some View {
