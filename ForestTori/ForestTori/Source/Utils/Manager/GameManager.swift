@@ -35,7 +35,7 @@ class GameManager: ObservableObject {
         }
     }
     
-    /// 새로운 게임 시작
+    /// 새로운 스토리 시작
     func startNewGame() {
         if let plant = user.selectedPlant {
             user.completedPlants.append(plant)

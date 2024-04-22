@@ -45,11 +45,11 @@ struct CompleteMissionView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.horizontal, 23)
-              
+                
                 HStack(spacing: 16) {
-                    Button {
-                        
-                    } label: {
+                    NavigationLink(destination: GardenView()
+                        .navigationBarBackButtonHidden(true)
+                    ) {
                         Text("정원으로")
                             .font(.titleS)
                             .foregroundStyle(.white)
