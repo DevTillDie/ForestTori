@@ -19,6 +19,7 @@ struct HistoryView: View {
     @Binding var isTapDoneButton: Bool
 
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
+    var plantName: String
     
     var body: some View {
         VStack {
@@ -40,6 +41,9 @@ struct HistoryView: View {
         }
         .onTapGesture {
             isFocused = false
+        }
+        .onAppear {
+            viewModel.plantName = plantName
         }
     }
 }

@@ -22,8 +22,10 @@ class HistoryViewModel: ObservableObject {
     
     @Published var isCompleteButtonDisable = true
 
+    var plantName = ""
+    
     func saveHistory() {
-        RealmManager.shared.saveHistory(image: selectedImage, text: todayHistory)
+        RealmManager.shared.saveHistory(plantName: plantName, image: selectedImage, text: todayHistory)
     }
     
     private func updateIsCompleteButtonDisable() {
