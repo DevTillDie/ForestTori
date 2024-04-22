@@ -17,6 +17,15 @@
 		0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */; };
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
+		0E4AB22B2BCD3E7E00ADB623 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* HistoryView.swift */; };
+		0E4AB22E2BCD3EBE00ADB623 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E4AB22D2BCD3EBE00ADB623 /* Realm */; };
+		0E4AB2302BCD3EBE00ADB623 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E4AB22F2BCD3EBE00ADB623 /* RealmSwift */; };
+		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
+		0E4AB2342BCD6CE900ADB623 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */; };
+		0E4AB2362BCD70F400ADB623 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2352BCD70F400ADB623 /* RealmManager.swift */; };
+		0E4AB2382BCD721700ADB623 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2372BCD721700ADB623 /* History.swift */; };
+		0E4AB23F2BD0FD6400ADB623 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB23E2BD0FD6400ADB623 /* KeyboardHandler.swift */; };
+		0E4AB2412BD1090B00ADB623 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2402BD1090B00ADB623 /* Date+.swift */; };
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
 		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
@@ -116,6 +125,13 @@
 		0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.tsv; sourceTree = "<group>"; };
 		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
 		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
+		0E4AB22A2BCD3E7E00ADB623 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		0E4AB2352BCD70F400ADB623 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		0E4AB2372BCD721700ADB623 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		0E4AB23E2BD0FD6400ADB623 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		0E4AB2402BD1090B00ADB623 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
@@ -227,6 +243,7 @@
 		0E1AE7012B7E1883001C9A30 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0E4AB2292BCD3E6F00ADB623 /* History */,
 				0E1AE6FF2B7E1880001C9A30 /* MainView.swift */,
 				0E1AE7022B7E1892001C9A30 /* PlantView.swift */,
 				0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */,
@@ -237,11 +254,21 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		0E4AB2292BCD3E6F00ADB623 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0E4AB22A2BCD3E7E00ADB623 /* HistoryView.swift */,
+				0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		0E5AA5482BA17F3B00727C79 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				5BA395432B7252C00019A545 /* GameManager.swift */,
 				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
+				0E4AB2352BCD70F400ADB623 /* RealmManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -341,6 +368,7 @@
 			children = (
 				0E1AE6FD2B7E185B001C9A30 /* Font+.swift */,
 				5B68A4362B845E200004E89A /* View+.swift */,
+				0E4AB2402BD1090B00ADB623 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -519,6 +547,7 @@
 				0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */,
 				5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */,
 				5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */,
+				0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */,
 				5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */,
 			);
 			path = ViewModel;
@@ -533,6 +562,7 @@
 				5BA931162B62605D00F48AF1 /* Mission.swift */,
 				0E1AE7142B80A833001C9A30 /* Dialogue.swift */,
 				5BA395702B7F84410019A545 /* Onboarding.swift */,
+				0E4AB2372BCD721700ADB623 /* History.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -544,6 +574,7 @@
 				0EADEAAE2B7DF4E90036D190 /* Component */,
 				0EADEAB42B7DF5140036D190 /* Extension */,
 				0EADEAB12B7DF5060036D190 /* Modifier */,
+				0E4AB23E2BD0FD6400ADB623 /* KeyboardHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -680,7 +711,7 @@
 			);
 			mainGroup = 0EF5FE892B4FC02100D64E5E;
 			packageReferences = (
-				0E6AB0E82BC12B8300B12610 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 0EF5FE932B4FC02100D64E5E /* Products */;
 			projectDirPath = "";
@@ -788,10 +819,13 @@
 				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
 				5BABC2C92B899D8B00C74E3C /* GardenView.swift in Sources */,
 				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
+				0E4AB2342BCD6CE900ADB623 /* HistoryViewModel.swift in Sources */,
 				5B68A4372B845E200004E89A /* View+.swift in Sources */,
 				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
 				5BA885842B90698900041393 /* EndingView.swift in Sources */,
+				0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */,
 				0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */,
+				0E4AB2412BD1090B00ADB623 /* Date+.swift in Sources */,
 				5BBABDE12BCD180A00F51288 /* CameraPreview.swift in Sources */,
 				5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */,
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
@@ -804,17 +838,21 @@
 				5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
+				0E4AB23F2BD0FD6400ADB623 /* KeyboardHandler.swift in Sources */,
 				5B72DDC82B91BA8B002EA734 /* EndingViewModel.swift in Sources */,
 				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
 				0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
+				0E4AB2362BCD70F400ADB623 /* RealmManager.swift in Sources */,
 				0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */,
+				0E4AB22B2BCD3E7E00ADB623 /* HistoryView.swift in Sources */,
 				5BA395812B8235CE0019A545 /* OnboardingDoneButton.swift in Sources */,
 				5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
 				5BA395642B7E4A230019A545 /* OnboardingViewModel.swift in Sources */,
 				0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */,
+				0E4AB2382BCD721700ADB623 /* History.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
 				5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */,
 				0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */,
@@ -954,7 +992,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Z238234D5;
+				DEVELOPMENT_TEAM = HQS8MXQ7B5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -986,7 +1024,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Z238234D5;
+				DEVELOPMENT_TEAM = HQS8MXQ7B5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1034,7 +1072,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E6AB0E82BC12B8300B12610 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -1047,12 +1085,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5BFED7C72BD65DF10051D91B /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E6AB0E82BC12B8300B12610 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
 		5BFED7C92BD65DF10051D91B /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E6AB0E82BC12B8300B12610 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

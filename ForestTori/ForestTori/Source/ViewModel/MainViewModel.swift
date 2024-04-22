@@ -25,6 +25,17 @@ class MainViewModel: ObservableObject {
     @Published var isTapDoneButton = false
     @Published var isDisableDoneButton = false
     @Published var isCompleteMission = false
+    @Published var isShowHistoryView = false
+    
+    @Published var isComplteTodayMission = false {
+        didSet {
+            if isComplteTodayMission == true {
+                isShowHistoryView = false
+                completMission()
+                isComplteTodayMission = false
+            }
+        }
+    }
     
     @Published var progressValue: Float = 0.0
     @Published var plantName = ""

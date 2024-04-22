@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject var gameManager = GameManager()
     @StateObject var viewModel = MainViewModel()
+    @StateObject private var keyboardHandler = KeyboardHandler()
     
     @State private var selectedTab = 0
     @State private var isShowSelectPlantView = false
@@ -122,6 +123,74 @@ extension MainView {
             .disabled(true)
         }
         .padding(.bottom, 42)
+    }
+}
+
+// MARK: elements shown based on conditions
+
+extension MainView {
+    private var showSelectPlantView: some View {
+        ZStack {
+            if isShowSelectPlantView {
+                Color.black.opacity(0.4)
+                
+                Text("식물 친구를 선택해주세요")
+                    .font(.titleM)
+                    .foregroundColor(.white)
+                    .padding(.top, 160)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                
+                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    .environmentObject(gameManager)
+            }
+        }
+    }
+    
+    private var showCompleteMission: some View {
+        ZStack {
+            if viewModel.isCompleteMission {
+                Color.black.opacity(0.4)
+                
+                CompleteMissionView()
+                    .environmentObject(gameManager)
+                    .onAppear {
+                        gameManager.completeMission()
+                    }
+            }
+        }
+    }
+    
+    private var showHistoryView: some View {
+        ZStack {
+            if viewModel.isShowHistoryView {
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        withAnimation {
+                            viewModel.isShowHistoryView = false
+                            viewModel.isTapDoneButton = false
+                        }
+                    }
+                    .transition(.opacity)
+                
+                HistoryView(
+                    isComplete: $viewModel.isComplteTodayMission,
+                    isShowHistoryView: $viewModel.isShowHistoryView,
+                    isTapDoneButton: $viewModel.isTapDoneButton,
+                    plantName: viewModel.plantName
+                )
+                .padding(.vertical)
+                .transition(.move(edge: .bottom))
+                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.white)
+                )
+                .padding(.bottom, keyboardHandler.keyboardHeight/4)
+            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: viewModel.isShowHistoryView)
+        .animation(.default, value: keyboardHandler.keyboardHeight)
     }
 }
 
