@@ -157,7 +157,8 @@ extension MainView {
                 HistoryView(
                     isComplete: $viewModel.isComplteTodayMission,
                     isShowHistoryView: $viewModel.isShowHistoryView,
-                    isTapDoneButton: $viewModel.isTapDoneButton
+                    isTapDoneButton: $viewModel.isTapDoneButton,
+                    plantName: viewModel.plantName
                 )
                 .padding(.vertical)
                 .transition(.move(edge: .bottom))
