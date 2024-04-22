@@ -10,7 +10,7 @@ import SwiftUI
 import SceneKit
 
 struct GardenScene: UIViewRepresentable {
-    @StateObject var gameManager = GameManager()
+    @StateObject var gameManager: GameManager
     
     private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
