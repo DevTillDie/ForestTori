@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var gameManager = GameManager()
+    @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
     @StateObject var viewModel = MainViewModel()
     @StateObject private var keyboardHandler = KeyboardHandler()
     
@@ -20,7 +21,7 @@ struct MainView: View {
             ZStack {
                 Image(gameManager.chapter.chatperBackgroundImage)
                     .resizable()
-                    .scaledToFit()
+                    .ignoresSafeArea()
                 
                 VStack {
                     mainHeader
@@ -34,28 +35,11 @@ struct MainView: View {
                     customTabBar
                 }
                 
-                if isShowSelectPlantView {
-                    Color.black.opacity(0.4)
-                    
-                    Text("식물 친구를 선택해주세요")
-                        .font(.titleM)
-                        .foregroundColor(.white)
-                        .padding(.top, 160)
-                        .frame(maxHeight: .infinity, alignment: .top)
-                    
-                    SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                        .environmentObject(gameManager)
-                }
+                showSelectPlantView
                 
-                if viewModel.isCompleteMission {
-                    Color.black.opacity(0.4)
-                    
-                    CompleteMissionView()
-                        .environmentObject(gameManager)
-                        .onAppear {
-                            gameManager.completeMission()
-                        }
-                }
+                showCompleteMission
+                
+                showHistoryView
             }
             .ignoresSafeArea()
             .onChange(of: gameManager.isSelectPlant) {
@@ -64,6 +48,10 @@ struct MainView: View {
                 } else {
                     viewModel.setEmptyPot()
                 }
+            }
+            .onChange(of: viewModel.showEnding) {
+                gameManager.completeMission()
+                serviceStateViewModel.state = .ending
             }
         }
     }
@@ -75,6 +63,7 @@ extension MainView {
     private var mainHeader: some View {
         HStack {
             NavigationLink(destination: GardenView()
+                .environmentObject(gameManager)
                 .navigationBarBackButtonHidden(true)
             ) {
                 Image("MainButton")

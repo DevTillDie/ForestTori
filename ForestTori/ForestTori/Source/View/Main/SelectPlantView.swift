@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SelectPlantView: View {
     @EnvironmentObject var gameManager: GameManager
-    @State private var currentIndex = 0
     
+    @State private var currentIndex = 0
     @Binding var isShowSelectPlantView: Bool
     
     var body: some View {

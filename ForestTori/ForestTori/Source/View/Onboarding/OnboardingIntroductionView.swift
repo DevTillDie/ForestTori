@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingIntroductionView: View {
-    @ObservedObject var onboardingViewModel: OnboardingViewModel
+    @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     @State var isHidden = false
     
@@ -99,5 +99,5 @@ extension OnboardingIntroductionView {
 }
 
 #Preview {
-    OnboardingIntroductionView(onboardingViewModel: OnboardingViewModel())
+    OnboardingView()
 }

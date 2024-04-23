@@ -11,10 +11,9 @@ import SwiftUI
 ///  EndingView에서 사용하는 데이터를 관리하는 클래스
 ///
 ///  - endingTexts: 엔딩에서 사용하는 텍스트 데이터 집합
-class EndingViewModel: ObservableObject {
+class EpilogueViewModel: ObservableObject {
     @Published var endingTexts: [[OnboardingText]] = []
     
-    // TODO: 사용자 관련 변수 분리해서 관리하기
     let onboardingViewModel = OnboardingViewModel()
     let userName: String
     
@@ -24,7 +23,7 @@ class EndingViewModel: ObservableObject {
     }
 }
 
-extension EndingViewModel {
+extension EpilogueViewModel {
     func completeEndingProcess() {
         // TODO: 엔딩 완료 함수 수정
         print("complete ending process")
@@ -33,7 +32,7 @@ extension EndingViewModel {
 
 // MARK: Data Initialization
 
-extension EndingViewModel {
+extension EpilogueViewModel {
     private func setEndingTexts() {
         let firstText = [
             OnboardingText(text: "\(Text(userName).foregroundColor(.greenPrimary))"),

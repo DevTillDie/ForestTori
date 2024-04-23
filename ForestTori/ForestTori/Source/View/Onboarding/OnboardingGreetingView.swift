@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingGreetingView: View {
-    @ObservedObject var onboardingViewModel: OnboardingViewModel
+    @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     @State var isHidden = false
     @State var textIndex = 0
@@ -64,5 +64,5 @@ extension OnboardingGreetingView {
 }
 
 #Preview {
-    OnboardingGreetingView(onboardingViewModel: OnboardingViewModel())
+    OnboardingView()
 }

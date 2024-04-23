@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NameSettingView: View {
-    @ObservedObject var onboardingViewModel: OnboardingViewModel
+    @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     @State var name = ""
     @State var isNameAvailable = false
@@ -129,5 +129,5 @@ extension NameSettingView {
 }
 
 #Preview {
-    NameSettingView(onboardingViewModel: OnboardingViewModel(), isCompleted: .constant(false), isPresented: .constant(true), textIndex: .constant(0))
+    NameSettingView(isCompleted: .constant(false), isPresented: .constant(true), textIndex: .constant(0))
 }

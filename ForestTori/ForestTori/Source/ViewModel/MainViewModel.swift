@@ -37,6 +37,8 @@ class MainViewModel: ObservableObject {
         }
     }
     
+    @Published var showEnding = false
+    
     @Published var progressValue: Float = 0.0
     @Published var plantName = ""
     
@@ -104,7 +106,7 @@ class MainViewModel: ObservableObject {
     func completMission() {
         currentDialogueIndex += 1
         currentLineIndex = 0
-        progressValue = (Float(missionDay+1)/Float(plant?.totalDay ?? 0)) * 100
+        progressValue = (Float(missionDay + 1)/Float(plant?.totalDay ?? 0)) * 100
         
         isShowDialogueBox = true
         isDisableDoneButton = true
@@ -152,14 +154,18 @@ class MainViewModel: ObservableObject {
 
         if let plant = plant {
             if missionDay == plant.totalDay {
-                isCompleteMission = true
-                isShowDialogueBox = false
-                isShowMissionBox = false
+                if plant.characterImage.contains("Winter") {
+                    showEnding = true
+                } else {
+                    isCompleteMission = true
+                    isShowDialogueBox = false
+                    isShowMissionBox = false
+                }
             } else {
                 plant3DFileName = plant.character3DFiles[missionDay]
                 missionText = plant.missions[missionDay].content
                 
-                if dialogues[currentDialogueIndex+1].type == "Opening" {
+                if dialogues[currentDialogueIndex + 1].type == "Opening" {
                     currentDialogueIndex += 1
                     currentLineIndex = 0
                     

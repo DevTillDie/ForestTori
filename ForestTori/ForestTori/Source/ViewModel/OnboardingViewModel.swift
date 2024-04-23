@@ -16,7 +16,7 @@ import SwiftUI
 /// - onboardingNamingTexts: 사용자 이름 설정 단계에서 사용하는 텍스트 집합
 /// - onboardingCompletionText: 온보딩 완료 단계에서 사용하는 텍스트 집합
 class OnboardingViewModel: ObservableObject {
-    @AppStorage("_isFirstLaunching") var isFirstLaunching = true
+//    @AppStorage("_isFirstLaunching") var isFirstLaunching = true
     // TODO: 사용자 관련 변수 분리해서 관리하기
     @AppStorage("userName") var userName = ""
     
@@ -66,9 +66,9 @@ extension OnboardingViewModel {
         setOnboardingCompletionText()
     }
     
-    func completeOnboardingProcess() {
-        isFirstLaunching = false
-    }
+//    func completeOnboardingProcess() {
+//        isFirstLaunching = false
+//    }
 }
 
 // MARK: - Data Initialization

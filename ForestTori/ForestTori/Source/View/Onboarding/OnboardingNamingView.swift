@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct OnboardingNamingView: View {
-    @ObservedObject var onboardingViewModel: OnboardingViewModel
+    @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     @State var isNamingCompleted = false
     @State var isSettingViewPresented = false
@@ -52,7 +53,7 @@ struct OnboardingNamingView: View {
 extension OnboardingNamingView {
     @ViewBuilder private var overlayView: some View {
         if isSettingViewPresented {
-            NameSettingView(onboardingViewModel: onboardingViewModel, isCompleted: $isNamingCompleted, isPresented: $isSettingViewPresented, textIndex: $textIndex)
+            NameSettingView(isCompleted: $isNamingCompleted, isPresented: $isSettingViewPresented, textIndex: $textIndex)
         } else {
             EmptyView()
         }
@@ -102,5 +103,5 @@ extension OnboardingNamingView {
 }
 
 #Preview {
-    OnboardingNamingView(onboardingViewModel: OnboardingViewModel())
+    OnboardingView()
 }

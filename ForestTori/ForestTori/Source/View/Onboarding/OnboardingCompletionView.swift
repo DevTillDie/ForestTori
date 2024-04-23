@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct OnboardingCompletionView: View {
-    @ObservedObject var onboardingViewModel: OnboardingViewModel
+    @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
+    @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     private let doneButtonLabel = "시작하기"
     
@@ -27,7 +28,8 @@ struct OnboardingCompletionView: View {
             VStack {
                 Spacer()
                 
-                OnboardingDoneButton(action: onboardingViewModel.completeOnboardingProcess, label: doneButtonLabel)
+                OnboardingDoneButton(action: { serviceStateViewModel.state = .main
+                }, label: doneButtonLabel)
                     .font(.titleL)
                     .foregroundColor(.yellowTertiary)
                     .background {
@@ -41,5 +43,5 @@ struct OnboardingCompletionView: View {
 }
 
 #Preview {
-    OnboardingCompletionView(onboardingViewModel: OnboardingViewModel())
+    OnboardingView()
 }

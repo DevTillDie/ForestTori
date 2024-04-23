@@ -18,8 +18,6 @@
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E4AB22B2BCD3E7E00ADB623 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* HistoryView.swift */; };
-		0E4AB22E2BCD3EBE00ADB623 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E4AB22D2BCD3EBE00ADB623 /* Realm */; };
-		0E4AB2302BCD3EBE00ADB623 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E4AB22F2BCD3EBE00ADB623 /* RealmSwift */; };
 		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
 		0E4AB2342BCD6CE900ADB623 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */; };
 		0E4AB2362BCD70F400ADB623 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2352BCD70F400ADB623 /* RealmManager.swift */; };
@@ -81,7 +79,7 @@
 		5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */; };
 		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
 		5B68A4372B845E200004E89A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4362B845E200004E89A /* View+.swift */; };
-		5B72DDC82B91BA8B002EA734 /* EndingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */; };
+		5B72DDC82B91BA8B002EA734 /* EpilogueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */; };
 		5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9152A72B84402C0068418F /* OnboardingTextBox.swift */; };
 		5BA395442B7252C00019A545 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395432B7252C00019A545 /* GameManager.swift */; };
 		5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3955B2B7E359F0019A545 /* OnboardingView.swift */; };
@@ -98,7 +96,7 @@
 		5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395832B82495B0019A545 /* OnboardingNamingView.swift */; };
 		5BA395862B824D950019A545 /* NameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395852B824D950019A545 /* NameSettingView.swift */; };
 		5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */; };
-		5BA885842B90698900041393 /* EndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA885832B90698900041393 /* EndingView.swift */; };
+		5BA885842B90698900041393 /* EpilogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA885832B90698900041393 /* EpilogueView.swift */; };
 		5BA931112B62602200F48AF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931102B62602200F48AF1 /* User.swift */; };
 		5BA931132B62603200F48AF1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931122B62603200F48AF1 /* Plant.swift */; };
 		5BA931152B62604800F48AF1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA931142B62604800F48AF1 /* Chapter.swift */; };
@@ -109,8 +107,10 @@
 		5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */; };
 		5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA85462BCC156400C5C67C /* GardenARView.swift */; };
 		5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2F62F2BC03AF90049A988 /* GardenScene.swift */; };
-		5BFED7C82BD65DF10051D91B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFED7C72BD65DF10051D91B /* Realm */; };
-		5BFED7CA2BD65DF10051D91B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFED7C92BD65DF10051D91B /* RealmSwift */; };
+		5BEA73022BD77D8C00BF5ADA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5BEA73012BD77D8C00BF5ADA /* Realm */; };
+		5BEA73042BD77D8C00BF5ADA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BEA73032BD77D8C00BF5ADA /* RealmSwift */; };
+		5BEA73062BD77F6E00BF5ADA /* ServiceStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA73052BD77F6E00BF5ADA /* ServiceStateViewModel.swift */; };
+		5BEA730C2BD7D17700BF5ADA /* EndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA730B2BD7D17700BF5ADA /* EndingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,7 +187,7 @@
 		5B68A4252B8454790004E89A /* ServieStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServieStateView.swift; sourceTree = "<group>"; };
 		5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierInitFile.swift; sourceTree = "<group>"; };
 		5B68A4362B845E200004E89A /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
-		5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewModel.swift; sourceTree = "<group>"; };
+		5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpilogueViewModel.swift; sourceTree = "<group>"; };
 		5B9152A72B84402C0068418F /* OnboardingTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextBox.swift; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		5BA395562B7E2EE80019A545 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		5BA395832B82495B0019A545 /* OnboardingNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNamingView.swift; sourceTree = "<group>"; };
 		5BA395852B824D950019A545 /* NameSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSettingView.swift; sourceTree = "<group>"; };
 		5BA395872B826CEA0019A545 /* OnboardingCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompletionView.swift; sourceTree = "<group>"; };
-		5BA885832B90698900041393 /* EndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingView.swift; sourceTree = "<group>"; };
+		5BA885832B90698900041393 /* EpilogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpilogueView.swift; sourceTree = "<group>"; };
 		5BA931102B62602200F48AF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BA931122B62603200F48AF1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		5BA931142B62604800F48AF1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -217,6 +217,8 @@
 		5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARViewModel.swift; sourceTree = "<group>"; };
 		5BDA85462BCC156400C5C67C /* GardenARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARView.swift; sourceTree = "<group>"; };
 		5BE2F62F2BC03AF90049A988 /* GardenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenScene.swift; sourceTree = "<group>"; };
+		5BEA73052BD77F6E00BF5ADA /* ServiceStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStateViewModel.swift; sourceTree = "<group>"; };
+		5BEA730B2BD7D17700BF5ADA /* EndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +226,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BFED7CA2BD65DF10051D91B /* RealmSwift in Frameworks */,
-				5BFED7C82BD65DF10051D91B /* Realm in Frameworks */,
+				5BEA73042BD77D8C00BF5ADA /* RealmSwift in Frameworks */,
+				5BEA73022BD77D8C00BF5ADA /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +548,8 @@
 			children = (
 				0E1AE7102B80A77A001C9A30 /* MainViewModel.swift */,
 				5BA395632B7E4A230019A545 /* OnboardingViewModel.swift */,
-				5B72DDC72B91BA8B002EA734 /* EndingViewModel.swift */,
+				5BEA73052BD77F6E00BF5ADA /* ServiceStateViewModel.swift */,
+				5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */,
 				0E4AB2332BCD6CE900ADB623 /* HistoryViewModel.swift */,
 				5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */,
 			);
@@ -583,7 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				0EF5FEA72B4FC2F500D64E5E /* View */,
-				5BA885832B90698900041393 /* EndingView.swift */,
+				5BEA730A2BD7D14600BF5ADA /* Ending */,
 				0EF5FEA82B4FC2FC00D64E5E /* ViewModel */,
 				0EF5FEA92B4FC30300D64E5E /* Model */,
 				0EF5FEAA2B4FC39300D64E5E /* Utils */,
@@ -661,6 +664,15 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		5BEA730A2BD7D14600BF5ADA /* Ending */ = {
+			isa = PBXGroup;
+			children = (
+				5BA885832B90698900041393 /* EpilogueView.swift */,
+				5BEA730B2BD7D17700BF5ADA /* EndingView.swift */,
+			);
+			path = Ending;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -679,8 +691,8 @@
 			);
 			name = ForestTori;
 			packageProductDependencies = (
-				5BFED7C72BD65DF10051D91B /* Realm */,
-				5BFED7C92BD65DF10051D91B /* RealmSwift */,
+				5BEA73012BD77D8C00BF5ADA /* Realm */,
+				5BEA73032BD77D8C00BF5ADA /* RealmSwift */,
 			);
 			productName = ForestTori;
 			productReference = 0EF5FE922B4FC02100D64E5E /* ForestTori.app */;
@@ -817,12 +829,13 @@
 				5B68A4352B845DFE0004E89A /* Font+.swift in Sources */,
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
 				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
+				5BEA730C2BD7D17700BF5ADA /* EndingView.swift in Sources */,
 				5BABC2C92B899D8B00C74E3C /* GardenView.swift in Sources */,
 				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
 				0E4AB2342BCD6CE900ADB623 /* HistoryViewModel.swift in Sources */,
 				5B68A4372B845E200004E89A /* View+.swift in Sources */,
 				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
-				5BA885842B90698900041393 /* EndingView.swift in Sources */,
+				5BA885842B90698900041393 /* EpilogueView.swift in Sources */,
 				0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */,
 				0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */,
 				0E4AB2412BD1090B00ADB623 /* Date+.swift in Sources */,
@@ -839,7 +852,7 @@
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				0E4AB23F2BD0FD6400ADB623 /* KeyboardHandler.swift in Sources */,
-				5B72DDC82B91BA8B002EA734 /* EndingViewModel.swift in Sources */,
+				5B72DDC82B91BA8B002EA734 /* EpilogueViewModel.swift in Sources */,
 				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
 				0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */,
@@ -854,6 +867,7 @@
 				0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */,
 				0E4AB2382BCD721700ADB623 /* History.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
+				5BEA73062BD77F6E00BF5ADA /* ServiceStateViewModel.swift in Sources */,
 				5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */,
 				0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */,
 				5BA395712B7F84410019A545 /* Onboarding.swift in Sources */,
@@ -1083,12 +1097,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5BFED7C72BD65DF10051D91B /* Realm */ = {
+		5BEA73012BD77D8C00BF5ADA /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		5BFED7C92BD65DF10051D91B /* RealmSwift */ = {
+		5BEA73032BD77D8C00BF5ADA /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;

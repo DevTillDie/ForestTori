@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct EndingView: View {
-    @ObservedObject var endingViewModel: EndingViewModel
+struct EpliogueView: View {
+    @EnvironmentObject var gameManager: GameManager
+    @StateObject var epilgoueViewModel = EpilogueViewModel()
     
+    @Binding var isEpilogueShowed: Bool
     @State var isHidden = false
     @State var textIndex = 0
     @State var timer: Timer?
@@ -29,7 +31,7 @@ struct EndingView: View {
                             .resizable()
                             .scaledToFit()
                         
-                        OnboardingTextBox(texts: endingViewModel.endingTexts[textIndex])
+                        OnboardingTextBox(texts: epilgoueViewModel.endingTexts[textIndex])
                             .font(.titleL)
                             .foregroundColor(.brownPrimary)
                     }
@@ -37,22 +39,32 @@ struct EndingView: View {
                     VStack {
                         Spacer()
                         
-                        OnboardingDoneButton(action: endingViewModel.completeEndingProcess, label: doneButtonLabel)
-                            .foregroundColor(.yellowTertiary)
-                            .background {
-                                RoundedRectangle(cornerRadius: 50)
-                                    .fill(.brownPrimary)
-                            }
-                            .hidden(isHidden)
+                        NavigationLink(destination: GardenView()
+                            .environmentObject(gameManager).navigationBarBackButtonHidden(true)) {
+                            Text(doneButtonLabel)
+                                .font(.titleL)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.yellowTertiary)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 50)
+                                        .fill(.brownPrimary)
+                                }
+                                .hidden(isHidden)
+                        }
                     }
                 }
                 .padding(20)
                 .toolbar {
                     OnboardingSkipButton(action: skipToLastText)
+                        .hidden(!isHidden)
                 }
             }
             .onAppear {
                 increaseTextIndex()
+            }
+            .onDisappear {
+                isEpilogueShowed = true
             }
         }
     }
@@ -60,7 +72,7 @@ struct EndingView: View {
 
 // MARK: - functions
 
-extension EndingView {
+extension EpliogueView {
     private func skipToLastText() {
         stopTimer()
         withAnimation(.easeInOut(duration: 1)) {
@@ -88,5 +100,5 @@ extension EndingView {
 }
 
 #Preview {
-    EndingView(endingViewModel: EndingViewModel())
+    EpliogueView(isEpilogueShowed: .constant(false))
 }

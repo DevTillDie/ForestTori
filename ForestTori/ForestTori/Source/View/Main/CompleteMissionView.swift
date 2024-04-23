@@ -48,6 +48,7 @@ struct CompleteMissionView: View {
                 
                 HStack(spacing: 16) {
                     NavigationLink(destination: GardenView()
+                        .environmentObject(gameManager)
                         .navigationBarBackButtonHidden(true)
                     ) {
                         Text("정원으로")

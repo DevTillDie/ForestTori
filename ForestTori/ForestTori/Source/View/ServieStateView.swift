@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ServiceStateView: View {
-    @StateObject var onboardingViewModel = OnboardingViewModel()
+    @StateObject var gameManager = GameManager()
+    @StateObject var serviceStateViewModel = ServiceStateViewModel()
     
     var body: some View {
-//        stateBasedView
-        MainView()
+        stateBasedView
+//        MainView()
     }
 }
 
@@ -20,11 +21,17 @@ struct ServiceStateView: View {
 
 extension ServiceStateView {
     @ViewBuilder private var stateBasedView: some View {
-        // TODO: enum으로 관리
-        if onboardingViewModel.isFirstLaunching {
-            OnboardingView(onboardingViewModel: onboardingViewModel)
-        } else {
+        switch serviceStateViewModel.state {
+        case .onboarding:
+            OnboardingView()
+                .environmentObject(serviceStateViewModel)
+        case .main:
             MainView()
+                .environmentObject(gameManager)
+                .environmentObject(serviceStateViewModel)
+        case .ending:
+            EndingView()
+                .environmentObject(gameManager)
         }
     }
 }

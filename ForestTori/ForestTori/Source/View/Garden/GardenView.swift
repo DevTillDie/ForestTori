@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct GardenView: View {
-    @StateObject var gameManager = GameManager()
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var gameManager: GameManager
     
     @State var showSummerMessage = true
     
@@ -24,6 +25,7 @@ struct GardenView: View {
                 
                 VStack {
                     gardenHeader
+                        .hidden(gameManager.user.chapterProgress <= 4)
                     
                     Spacer()
                     
@@ -32,6 +34,7 @@ struct GardenView: View {
                             .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
                         
                         GardenScene()
+                            .environmentObject(gameManager)
                             .scaledToFit()
                         
                         noPlantCaptionBox
@@ -47,11 +50,6 @@ struct GardenView: View {
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
-            .onAppear{
-                print(gameManager.chapter.chapterTitle)
-                print(gameManager.chapter.chatperBackgroundImage)
-                print(gameManager.user.chapterProgress)
-            }
         }
     }
 }
@@ -61,9 +59,9 @@ struct GardenView: View {
 extension GardenView {
     @ViewBuilder private var gardenHeader: some View {
         HStack {
-            NavigationLink(
-                destination: MainView().navigationBarBackButtonHidden(true)
-            ) {
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
                 Image(.gardenButton)
                     .resizable()
                     .scaledToFit()
@@ -157,5 +155,5 @@ extension GardenView {
 }
 
 #Preview {
-    GardenView(gameManager: GameManager())
+    GardenView()
 }

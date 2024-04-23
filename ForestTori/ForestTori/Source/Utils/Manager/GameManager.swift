@@ -13,6 +13,7 @@ import SwiftUI
 /// - dataManager: 게임 데이터를 관리하는 클래스
 /// - isSelectPlant: 식물 선택 여부
 class GameManager: ObservableObject {
+    @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
     @Published var user = User()
     @Published var chapter: Chapter
     @Published var isSelectPlant = false
@@ -63,9 +64,7 @@ class GameManager: ObservableObject {
     func completeMission() {
         user.chapterProgress += 1
         
-        if user.chapterProgress == 5 {
-            // TODO: 엔딩
-        } else {
+        if user.chapterProgress < 5 {
             chapter = dataManager.chapters[user.chapterProgress - 1]
         }
         

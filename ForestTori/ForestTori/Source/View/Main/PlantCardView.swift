@@ -11,6 +11,7 @@ import SwiftUI
 
 struct PlantCardView: View {
     @EnvironmentObject var gameManager: GameManager
+    
     @Binding var isShowSelectPlantView: Bool
     
     var plant: Plant

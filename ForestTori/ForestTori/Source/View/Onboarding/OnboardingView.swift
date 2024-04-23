@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @ObservedObject var onboardingViewModel: OnboardingViewModel
+    @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
+    @StateObject var onboardingViewModel = OnboardingViewModel()
     
     var body: some View {
         NavigationView {
@@ -29,13 +30,18 @@ extension OnboardingView {
     @ViewBuilder private var onboardingScreen: some View {
         switch onboardingViewModel.type {
         case .greeting:
-            OnboardingGreetingView(onboardingViewModel: onboardingViewModel)
+            OnboardingGreetingView()
+                .environmentObject(onboardingViewModel)
         case .introduction:
-            OnboardingIntroductionView(onboardingViewModel: onboardingViewModel)
+            OnboardingIntroductionView()
+                .environmentObject(onboardingViewModel)
         case .naming:
-            OnboardingNamingView(onboardingViewModel: onboardingViewModel)
+            OnboardingNamingView()
+                .environmentObject(onboardingViewModel)
         case .completion:
-            OnboardingCompletionView(onboardingViewModel: onboardingViewModel)
+            OnboardingCompletionView()
+                .environmentObject(serviceStateViewModel)
+                .environmentObject(onboardingViewModel)
         }
     }
 }
