@@ -29,6 +29,7 @@ class HistoryViewModel: ObservableObject {
     }
     
     private func updateIsCompleteButtonDisable() {
-        isCompleteButtonDisable = todayHistory.isEmpty || selectedImage == nil
+//        isCompleteButtonDisable = todayHistory.isEmpty || selectedImage == nil
+        isCompleteButtonDisable = todayHistory.isEmpty
     }
 }

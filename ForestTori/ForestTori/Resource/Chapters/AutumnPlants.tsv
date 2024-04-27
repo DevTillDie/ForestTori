@@ -1,5 +1,5 @@
 id	characterName	characterImage	characterDescription	mainQuest	missions	characterFileName	character3DFiles	totalDay	garden3DFile	gardenPositionX	gardenPositionZ
-1	단풍나무	PlantSelect_Autumn1	부끄럼이 많아 집에만 머무르던 단풍나무가 새로운 곳으로 여행을 떠나보려 해요. 단풍나무와 함께 여행을 준비해볼까요?	여행계획 세워보기	1:가보고 싶은 여행지 정하기|2:여행지에서 무엇을 하고싶은지 정하기|3:여행지까지 교통편 알아보기	AutumnCharacter	Maple1.scn|Maple2.scn|Maple3.scn	3	Garden_MapleAnimation.scn	1.5	2
+1	단풍나무	maple	부끄럼이 많아 집에만 머무르던 단풍나무가 새로운 곳으로 여행을 떠나보려 해요. 단풍나무와 함께 여행을 준비해볼까요?	여행계획 세워보기	1:가보고 싶은 여행지 정하기|2:여행지에서 무엇을 하고싶은지 정하기|3:여행지까지 교통편 알아보기	AutumnCharacter	Maple1.scn|Maple2.scn|Maple3.scn	3	Garden_MapleAnimation.scn	1.5	2
 2	???	PlantSelect_Autumn2	???	???				0			
 3	???	PlantSelect_Autumn3	???	???				0			
 4	???	PlantSelect_Autumn4	???	???				0			
