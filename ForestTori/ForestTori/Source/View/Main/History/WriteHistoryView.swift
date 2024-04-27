@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WriteHistoryView: View {
-    @StateObject var viewModel = HistoryViewModel()
+    @StateObject var viewModel = WriteHistoryViewModel()
     @FocusState private var isFocused: Bool
     
     @State private var isShowCameraPicker = false
