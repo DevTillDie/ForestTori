@@ -53,7 +53,7 @@ struct GardenView: View {
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: $showHistoryView, onDismiss: {showHistoryView = false},
                    content: {
-                Rectangle()
+                
             })
         }
     }

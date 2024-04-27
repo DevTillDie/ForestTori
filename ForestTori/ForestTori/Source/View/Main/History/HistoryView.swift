@@ -1,5 +1,5 @@
 //
-//  HistoryView.swift
+//  WriteHistoryView.swift
 //  ForestTori
 //
 //  Created by hyebin on 4/15/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct WriteHistoryView: View {
     @StateObject var viewModel = HistoryViewModel()
     @FocusState private var isFocused: Bool
     
@@ -50,7 +50,7 @@ struct HistoryView: View {
 
 // MARK: - UI
 
-extension HistoryView {
+extension WriteHistoryView {
     private var hisoryViewHeader: some View {
         HStack {
             Button {

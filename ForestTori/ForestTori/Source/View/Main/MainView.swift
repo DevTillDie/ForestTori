@@ -162,7 +162,7 @@ extension MainView {
                     }
                     .transition(.opacity)
                 
-                HistoryView(
+                WriteHistoryView(
                     isComplete: $viewModel.isComplteTodayMission,
                     isShowHistoryView: $viewModel.isShowHistoryView,
                     isTapDoneButton: $viewModel.isTapDoneButton,
