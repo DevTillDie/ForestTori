@@ -10,7 +10,9 @@ import SwiftUI
 struct HistoryView: View {
     @StateObject private var viewModel = HistoryViewModel()
     
+    @Binding var isShowHistoryDetail: Bool
     @Binding var plant: Plant?
+    @Binding var selectedHistory: (image: UIImage, record: String)?
     
     var body: some View {
         if let plant = plant {
@@ -19,7 +21,6 @@ struct HistoryView: View {
                     Text(plant.mainQuest)
                         .foregroundStyle(.brownPrimary)
                         .font(.titleL)
-                        .padding(.top)
                     
                     Text(plant.characterName)
                         .foregroundStyle(.greenSecondary)
@@ -48,11 +49,14 @@ struct HistoryView: View {
     }
 }
 
+// MARK: - UI
+
 extension HistoryView {
     private var plantView: some View {
         ZStack {
-            if let sceneName = plant?.character3DFiles.last {
-                Image("SpringBackground")
+            if let sceneName = plant?.character3DFiles.last,
+               let chapterName = plant?.characterFileName {
+                Image(viewModel.setBackgroundImage(chapterName))
                     .resizable()
                     .overlay {
                         PlantPotView(sceneViewName: sceneName)
@@ -72,6 +76,13 @@ extension HistoryView {
         LazyVStack {
             ForEach(viewModel.plantHistory, id: \.self) { history in
                 historyListRow(history)
+                    .onTapGesture {
+                        if let imageName = history.imageData,
+                           let image = UIImage(data: imageName) {
+                            selectedHistory = (image, history.text)
+                            isShowHistoryDetail = true
+                        }
+                    }
             }
         }
     }
@@ -95,6 +106,7 @@ extension HistoryView {
             VStack(alignment: .leading) {
                 Text(history.text)
                     .font(.titleM)
+                    .lineLimit(1)
                 
                 Text(history.date)
                     .font(.caption)

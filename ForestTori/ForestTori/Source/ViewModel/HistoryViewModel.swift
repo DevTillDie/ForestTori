@@ -13,4 +13,23 @@ class HistoryViewModel: ObservableObject {
     func loadHistoryData(plantName: String) {
         plantHistory = RealmManager.shared.loadHistory(plantName: plantName)
     }
+
+    func setBackgroundImage(_ chapter: String) -> String {
+        switch chapter {
+        case "SpringCharacter":
+            return "SpringBackground"
+            
+        case "SummerCharacter":
+            return "SummerBackground"
+            
+        case "AutumnCharacter":
+            return "AutumnBackground"
+            
+        case "WinterCharacter":
+            return "WinterCharacter"
+            
+        default:
+            return "DefaultBackground"
+        }
+    }
 }
