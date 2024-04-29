@@ -61,13 +61,13 @@ extension HistoryView {
                     .overlay {
                         PlantPotView(sceneViewName: sceneName)
                             .scaledToFit()
-                            .frame(width: UIScreen.main.bounds.width*0.6)
+                            .frame(width: UIScreen.main.bounds.width * 0.6)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                     .aspectRatio(1, contentMode: .fill)
             } else {
                 RoundedRectangle(cornerRadius: 16)
-                    .frame(width: UIScreen.main.bounds.width*0.6)
+                    .frame(width: UIScreen.main.bounds.width * 0.6)
             }
         }
     }
@@ -95,12 +95,12 @@ extension HistoryView {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width*0.15)
+                    .frame(width: UIScreen.main.bounds.width * 0.15)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             } else {
                 RoundedRectangle(cornerRadius: 8)
                     .aspectRatio(1, contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width*0.15)
+                    .frame(width: UIScreen.main.bounds.width * 0.15)
             }
             
             VStack(alignment: .leading) {

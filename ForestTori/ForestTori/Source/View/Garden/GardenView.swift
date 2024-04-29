@@ -163,7 +163,7 @@ extension GardenView {
                 }
             
             if isShowHistoryView {
-                BottomSheet($isShowHistoryView, height: UIScreen.main.bounds.height*0.8) {
+                BottomSheet($isShowHistoryView, height: UIScreen.main.bounds.height * 0.8) {
                     HistoryView(
                         isShowHistoryDetail: $showHistoryDetail,
                         plant: $selectedPlant,
