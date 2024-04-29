@@ -43,7 +43,7 @@ struct MainView: View {
             }
             .ignoresSafeArea()
             .onChange(of: gameManager.isSelectPlant) {
-                if  gameManager.isSelectPlant {
+                if gameManager.isSelectPlant {
                     viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
                 } else {
                     viewModel.setEmptyPot()
@@ -142,11 +142,16 @@ extension MainView {
                 
                 CompleteMissionView()
                     .environmentObject(gameManager)
+                    .environmentObject(viewModel)
                     .onAppear {
-                        gameManager.completeMission()
+                        if gameManager.user.selectedPlant != nil {
+                            viewModel.isShowCompleteMissionView = true
+                            gameManager.completeMission()
+                        }
                     }
             }
         }
+        .hidden(viewModel.isShowCompleteMissionView)
     }
     
     private var showHistoryView: some View {
@@ -163,7 +168,7 @@ extension MainView {
                     .transition(.opacity)
                 
                 HistoryView(
-                    isComplete: $viewModel.isComplteTodayMission,
+                    isComplete: $viewModel.isCompleteTodayMission,
                     isShowHistoryView: $viewModel.isShowHistoryView,
                     isTapDoneButton: $viewModel.isTapDoneButton,
                     plantName: viewModel.plantName

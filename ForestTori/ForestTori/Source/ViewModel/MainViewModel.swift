@@ -19,20 +19,21 @@ class MainViewModel: ObservableObject {
     @Published var dialogueText = ""
     @Published var missionText = ""
     
-    @Published var isShowDialogueBox = false
     @Published var isShowAddButton = true
+    @Published var isShowDialogueBox = false
+    @Published var isShowHistoryView = false
     @Published var isShowMissionBox = false
+    @Published var isShowCompleteMissionView = false
     @Published var isTapDoneButton = false
     @Published var isDisableDoneButton = false
     @Published var isCompleteMission = false
-    @Published var isShowHistoryView = false
     
-    @Published var isComplteTodayMission = false {
+    @Published var isCompleteTodayMission = false {
         didSet {
-            if isComplteTodayMission == true {
+            if isCompleteTodayMission == true {
                 isShowHistoryView = false
                 completMission()
-                isComplteTodayMission = false
+                isCompleteTodayMission = false
             }
         }
     }
@@ -76,8 +77,8 @@ class MainViewModel: ObservableObject {
         dialogueText = ""
         missionText = ""
         
-        isShowDialogueBox = false
         isShowAddButton = true
+        isShowDialogueBox = false
         isShowMissionBox = false
         isTapDoneButton = false
         isDisableDoneButton = false
