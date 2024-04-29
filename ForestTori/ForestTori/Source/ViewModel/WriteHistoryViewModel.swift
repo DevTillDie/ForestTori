@@ -29,7 +29,6 @@ class WriteHistoryViewModel: ObservableObject {
     }
     
     private func updateIsCompleteButtonDisable() {
-//        isCompleteButtonDisable = todayHistory.isEmpty || selectedImage == nil
-        isCompleteButtonDisable = todayHistory.isEmpty
+        isCompleteButtonDisable = todayHistory.isEmpty || selectedImage == nil
     }
 }
