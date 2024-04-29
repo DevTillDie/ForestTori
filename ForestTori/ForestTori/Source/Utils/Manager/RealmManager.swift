@@ -42,6 +42,6 @@ class RealmManager {
     
     func loadHistory(plantName: String) -> [History] {
         let histories = realm.objects(History.self) 
-        return Array(histories.filter{$0.plantName == plantName})
+        return Array(histories.filter {$0.plantName == plantName})
     }
 }

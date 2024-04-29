@@ -13,46 +13,102 @@ struct HistoryView: View {
     @Binding var plant: Plant?
     
     var body: some View {
-        VStack {
-            Text("매일 창문 30분 열어 환기하기")
-                .foregroundStyle(.brownPrimary)
-                .font(.titleL)
-            
-            Text("민들레씨")
-                .foregroundStyle(.greenSecondary)
-                .font(.titleM)
-            
-            Image("")
-            
-            Text("겁 많은 민들레씨들이 하늘로 날아기지 못하고 있었어요. 용기를 낼 수 있게 창문을 열러 민들레씨들을 도와줬어요.")
-                .font(.bodyS)
-            
-            LazyVStack {
-                HStack {
-                    Spacer()
-                    Image(systemName: "house")
-                        .aspectRatio(1, contentMode: .fit)
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        Text("민들레꽃 모양 구름을 본 날이었다.")
-                            .font(.titleM)
+        if let plant = plant {
+            ScrollView {
+                VStack {
+                    Text(plant.mainQuest)
+                        .foregroundStyle(.brownPrimary)
+                        .font(.titleL)
+                        .padding(.top)
+                    
+                    Text(plant.characterName)
+                        .foregroundStyle(.greenSecondary)
+                        .font(.titleM)
+                        .padding(.top, 2)
+                    
+                    plantView
+                        .padding(.top)
                         
-                        Text("2024.00.00")
-                            .font(.caption)
-                    }
-                    Spacer()
+                    Text(plant.characterDescription)
+                        .foregroundStyle(.gray50)
+                        .font(.bodyS)
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 4)
+                    
+                    historyList
+                        .padding(.horizontal, 4)
                 }
-                .background {
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.beigeSecondary)
-                        .fill(.gray10)
-                }
+                .padding()
+            }
+            .scrollIndicators(.hidden)
+            .onAppear {
+                viewModel.loadHistoryData(plantName: plant.characterName)
             }
         }
-        .onAppear {
-            if let plantName = plant?.characterName {
-                viewModel.loadHistoryData(plantName: plantName)
+    }
+}
+
+extension HistoryView {
+    private var plantView: some View {
+        ZStack {
+            if let sceneName = plant?.character3DFiles.last {
+                Image("SpringBackground")
+                    .resizable()
+                    .overlay {
+                        PlantPotView(sceneViewName: sceneName)
+                            .scaledToFit()
+                            .frame(width: UIScreen.main.bounds.width*0.6)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .aspectRatio(1, contentMode: .fill)
+            } else {
+                RoundedRectangle(cornerRadius: 16)
+                    .frame(width: UIScreen.main.bounds.width*0.6)
             }
+        }
+    }
+    
+    private var historyList: some View {
+        LazyVStack {
+            ForEach(viewModel.plantHistory, id: \.self) { history in
+                historyListRow(history)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func historyListRow(_ history: History) -> some View {
+        HStack {
+            if let imageName = history.imageData,
+               let image = UIImage(data: imageName) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width*0.15)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            } else {
+                RoundedRectangle(cornerRadius: 8)
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width*0.15)
+            }
+            
+            VStack(alignment: .leading) {
+                Text(history.text)
+                    .font(.titleM)
+                
+                Text(history.date)
+                    .font(.caption)
+            }
+            .padding(.horizontal)
+            
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background {
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(.beigeSecondary, lineWidth: 2)
+                .fill(.gray10)
         }
     }
 }

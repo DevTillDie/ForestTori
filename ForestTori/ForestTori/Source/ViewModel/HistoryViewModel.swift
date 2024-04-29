@@ -12,6 +12,5 @@ class HistoryViewModel: ObservableObject {
     
     func loadHistoryData(plantName: String) {
         plantHistory = RealmManager.shared.loadHistory(plantName: plantName)
-        print(plantHistory)
     }
 }
