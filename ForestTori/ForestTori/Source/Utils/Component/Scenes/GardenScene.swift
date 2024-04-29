@@ -12,6 +12,7 @@ import SceneKit
 struct GardenScene: UIViewRepresentable {
     @EnvironmentObject var gameManager: GameManager
     
+    @Binding var selectedPlant: Plant?
     @Binding var showHistoryView: Bool
     
     private let gardenObject = "Gardenground.scn"
@@ -58,7 +59,8 @@ struct GardenScene: UIViewRepresentable {
             
             if let hitNode = hitTestResults.first?.node {
                 if let selectedName = hitNode.geometry?.name {
-                    if parent.gameManager.user.completedPlants.contains(where: {$0.characterImage == selectedName}) {
+                    if let selectedPlant = parent.gameManager.user.completedPlants.first(where: {$0.characterImage == selectedName}) {
+                        parent.selectedPlant =  selectedPlant
                         parent.showHistoryView = true
                     }
                 }

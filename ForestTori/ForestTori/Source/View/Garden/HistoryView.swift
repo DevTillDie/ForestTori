@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @StateObject private var viewModel = HistoryViewModel()
+    
+    @Binding var plant: Plant?
     
     var body: some View {
         VStack {
@@ -44,12 +47,12 @@ struct HistoryView: View {
                         .stroke(.beigeSecondary)
                         .fill(.gray10)
                 }
-               
+            }
+        }
+        .onAppear {
+            if let plantName = plant?.characterName {
+                viewModel.loadHistoryData(plantName: plantName)
             }
         }
     }
-}
-
-#Preview {
-    HistoryView()
 }

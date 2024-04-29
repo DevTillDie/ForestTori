@@ -13,6 +13,7 @@ struct GardenView: View {
     
     @State var showSummerMessage = true
     @State var showHistoryView = false
+    @State var selectedPlant: Plant?
     
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
@@ -34,7 +35,10 @@ struct GardenView: View {
                         dialogueBox
                             .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
                         
-                        GardenScene(showHistoryView: $showHistoryView)
+                        GardenScene(
+                            selectedPlant: $selectedPlant,
+                            showHistoryView: $showHistoryView
+                        )
                             .environmentObject(gameManager)
                             .scaledToFit()
                         
@@ -53,7 +57,7 @@ struct GardenView: View {
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: $showHistoryView, onDismiss: {showHistoryView = false},
                    content: {
-                HistoryView()
+                HistoryView(plant: $selectedPlant)
                     .presentationCornerRadius(10)
                     .presentationDetents([.fraction(0.9)])
                     .presentationDragIndicator(.visible)
