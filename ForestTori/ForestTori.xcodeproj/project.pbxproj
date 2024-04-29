@@ -16,6 +16,7 @@
 		0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */; };
 		0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */; };
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
+		0E214B5F2BDFC85500558004 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B5E2BDFC85500558004 /* BottomSheet.swift */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E4AB22B2BCD3E7E00ADB623 /* WriteHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */; };
 		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
@@ -126,6 +127,7 @@
 		0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.tsv; sourceTree = "<group>"; };
 		0E1AE71A2B80B9B2001C9A30 /* SpringCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringCharacter.tsv; sourceTree = "<group>"; };
 		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
+		0E214B5E2BDFC85500558004 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
 		0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteHistoryView.swift; sourceTree = "<group>"; };
 		0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				5B9152A92B8440300068418F /* TextBoxes */,
 				0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */,
 				5BE2F6312BC03B000049A988 /* Scenes */,
+				0E214B5E2BDFC85500558004 /* BottomSheet.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				0E4AB2362BCD70F400ADB623 /* RealmManager.swift in Sources */,
 				0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */,
 				0E4AB22B2BCD3E7E00ADB623 /* WriteHistoryView.swift in Sources */,
+				0E214B5F2BDFC85500558004 /* BottomSheet.swift in Sources */,
 				5BA395812B8235CE0019A545 /* OnboardingDoneButton.swift in Sources */,
 				5BA395882B826CEA0019A545 /* OnboardingCompletionView.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
