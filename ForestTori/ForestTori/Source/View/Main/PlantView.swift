@@ -112,4 +112,6 @@ extension PlantView {
 
 #Preview {
     MainView()
+        .environmentObject(GameManager())
+        .environmentObject(ServiceStateViewModel())
 }

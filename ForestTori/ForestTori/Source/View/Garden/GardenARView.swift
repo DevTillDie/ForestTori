@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GardenARView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var gameManager: GameManager
     @StateObject var gardenARViewModel = GardenARViewModel()
     
     private var backButtonLabel = "돌아가기"
@@ -47,6 +48,7 @@ extension GardenARView {
                     showHistoryView: .constant(false)
                 )
                     .scaledToFit()
+                    .environmentObject(gameManager)
                 
                 Spacer()
                 Spacer()
@@ -94,4 +96,5 @@ extension GardenARView {
 
 #Preview {
     GardenARView()
+        .environmentObject(GameManager())
 }

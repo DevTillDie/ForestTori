@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompleteMissionView: View {
     @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var mainViewModel: MainViewModel
     
     var body: some View {
         ZStack {
@@ -50,6 +51,12 @@ struct CompleteMissionView: View {
                     NavigationLink(destination: GardenView()
                         .environmentObject(gameManager)
                         .navigationBarBackButtonHidden(true)
+                        .onAppear {
+                            mainViewModel.isShowCompleteMissionView = false
+                        }
+                        .onDisappear {
+                            gameManager.startNewGame()
+                        }
                     ) {
                         Text("정원으로")
                             .font(.titleS)
@@ -89,4 +96,6 @@ struct CompleteMissionView: View {
 
 #Preview {
     CompleteMissionView()
+        .environmentObject(GameManager())
+        .environmentObject(ServiceStateViewModel())
 }

@@ -38,11 +38,6 @@ class GameManager: ObservableObject {
     
     /// 새로운 스토리 시작
     func startNewGame() {
-        if let plant = user.selectedPlant {
-            user.completedPlants.append(plant)
-        }
-        
-        user.selectedPlant = nil
         isSelectPlant = false
         
         saveUserDataToUserDefaults()
@@ -62,6 +57,12 @@ class GameManager: ObservableObject {
     ///
     /// 미션 완료 후 호출되어 사용자의 레벌업 및 챕터 진행 상태를 확인합니다
     func completeMission() {
+        if let plant = user.selectedPlant {
+            user.completedPlants.append(plant)
+        }
+        
+        user.selectedPlant = nil
+    
         user.chapterProgress += 1
         
         if user.chapterProgress < 5 {
