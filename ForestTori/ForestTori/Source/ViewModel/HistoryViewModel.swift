@@ -2,33 +2,34 @@
 //  HistoryViewModel.swift
 //  ForestTori
 //
-//  Created by hyebin on 4/15/24.
+//  Created by hyebin on 4/27/24.
 //
 
-import SwiftUI
+import Foundation
 
 class HistoryViewModel: ObservableObject {
-    @Published var todayHistory = "" {
-        didSet {
-            updateIsCompleteButtonDisable()
-        }
-    }
+    @Published var plantHistory = [History]()
     
-    @Published var selectedImage: UIImage? {
-        didSet {
-            updateIsCompleteButtonDisable()
-        }
+    func loadHistoryData(plantName: String) {
+        plantHistory = RealmManager.shared.loadHistory(plantName: plantName)
     }
-    
-    @Published var isCompleteButtonDisable = true
 
-    var plantName = ""
-    
-    func saveHistory() {
-        RealmManager.shared.saveHistory(plantName: plantName, image: selectedImage, text: todayHistory)
-    }
-    
-    private func updateIsCompleteButtonDisable() {
-        isCompleteButtonDisable = todayHistory.isEmpty || selectedImage == nil
+    func setBackgroundImage(_ chapter: String) -> String {
+        switch chapter {
+        case "SpringCharacter":
+            return "SpringBackground"
+            
+        case "SummerCharacter":
+            return "SummerBackground"
+            
+        case "AutumnCharacter":
+            return "AutumnBackground"
+            
+        case "WinterCharacter":
+            return "WinterCharacter"
+            
+        default:
+            return "DefaultBackground"
+        }
     }
 }

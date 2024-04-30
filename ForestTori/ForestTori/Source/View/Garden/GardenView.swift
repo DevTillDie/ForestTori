@@ -11,7 +11,11 @@ struct GardenView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var gameManager: GameManager
     
-    @State var showSummerMessage = true
+    @State private var showSummerMessage = true
+    @State private var isShowHistoryView = false
+    @State private var showHistoryDetail = false
+    @State private var selectedPlant: Plant?
+    @State private var selectedHistory: (image: UIImage, record: String)?
     
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
@@ -33,7 +37,10 @@ struct GardenView: View {
                         dialogueBox
                             .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
                         
-                        GardenScene()
+                        GardenScene(
+                            selectedPlant: $selectedPlant,
+                            showHistoryView: $isShowHistoryView
+                        )
                             .environmentObject(gameManager)
                             .scaledToFit()
                         
@@ -47,6 +54,10 @@ struct GardenView: View {
                     
                     ARButton
                 }
+                
+                showHistoryView
+                
+                showDetailHistory
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
@@ -137,6 +148,65 @@ extension GardenView {
                     .foregroundColor(.black)
                     .opacity(0.4)
             }
+    }
+}
+
+// MARK: - history
+
+extension GardenView {
+    private var showHistoryView: some View {
+        ZStack(alignment: .bottom) {
+            Color.black.opacity(0.1)
+                .opacity(isShowHistoryView ? 1 : 0)
+                .onTapGesture {
+                    isShowHistoryView = false
+                }
+            
+            if isShowHistoryView {
+                BottomSheet($isShowHistoryView, height: UIScreen.main.bounds.height * 0.8) {
+                    HistoryView(
+                        isShowHistoryDetail: $showHistoryDetail,
+                        plant: $selectedPlant,
+                        selectedHistory: $selectedHistory
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .edgesIgnoringSafeArea([.bottom, .horizontal])
+                }
+            }
+        }
+        .ignoresSafeArea()
+        .animation(.interactiveSpring(), value: isShowHistoryView)
+    }
+    
+    private var showDetailHistory: some View {
+        ZStack {
+            if let history = selectedHistory {
+                if showHistoryDetail {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            withAnimation {
+                                showHistoryDetail = false
+                            }
+                        }
+                        .transition(.opacity)
+                    
+                    HistoryDetailView(
+                        isShowHistoryDetailView: $showHistoryDetail,
+                        image: history.image,
+                        record: history.record
+                    )
+                    .padding(.vertical)
+                    .transition(.move(edge: .bottom))
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.white)
+                    )
+                }
+            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: showHistoryDetail)
     }
 }
 

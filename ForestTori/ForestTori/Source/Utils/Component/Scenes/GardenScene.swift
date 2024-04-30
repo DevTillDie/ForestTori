@@ -12,6 +12,9 @@ import SceneKit
 struct GardenScene: UIViewRepresentable {
     @EnvironmentObject var gameManager: GameManager
     
+    @Binding var selectedPlant: Plant?
+    @Binding var showHistoryView: Bool
+    
     private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
     let sceneView = SCNView()
@@ -25,6 +28,12 @@ struct GardenScene: UIViewRepresentable {
             }
             sceneView.scene?.rootNode.addChildNode(newNode)
         }
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(Coordinator.handleTap(_:))
+        )
+        sceneView.addGestureRecognizer(tapGestureRecognizer)
         
         return sceneView
     }
@@ -42,11 +51,26 @@ struct GardenScene: UIViewRepresentable {
         init(_ parent: GardenScene) {
             self.parent = parent
         }
+        
+        @objc func handleTap(_ gestureRecognize: UIGestureRecognizer) {
+            let sceneView = gestureRecognize.view as! SCNView
+            let touchLocation = gestureRecognize.location(in: sceneView)
+            let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
+            
+            if let hitNode = hitTestResults.first?.node {
+                if let selectedName = hitNode.geometry?.name {
+                    if let selectedPlant = parent.gameManager.user.completedPlants.first(where: {$0.characterImage == selectedName}) {
+                        parent.selectedPlant =  selectedPlant
+                        parent.showHistoryView = true
+                    }
+                }
+            }
+        }
     }
 }
 
 extension GardenScene {
-    private func setSceneView() -> Void {
+    private func setSceneView() {
         lightNode.light = SCNLight()
         lightNode.light?.type = .omni
         lightNode.light?.intensity = 10000

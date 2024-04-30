@@ -43,7 +43,10 @@ extension GardenARView {
             VStack {
                 Spacer()
                 
-                GardenScene()
+                GardenScene(
+                    selectedPlant: .constant(nil),
+                    showHistoryView: .constant(false)
+                )
                     .scaledToFit()
                     .environmentObject(gameManager)
                 
