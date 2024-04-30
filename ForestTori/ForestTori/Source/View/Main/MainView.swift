@@ -62,7 +62,7 @@ struct MainView: View {
 extension MainView {
     private var mainHeader: some View {
         HStack {
-            NavigationLink(destination: GardenView()
+            NavigationLink(destination: GardenView(totalProgressValue: viewModel.totalProgressValue)
                 .environmentObject(gameManager)
                 .navigationBarBackButtonHidden(true)
             ) {

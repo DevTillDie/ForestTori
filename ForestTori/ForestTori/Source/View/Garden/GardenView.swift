@@ -19,6 +19,7 @@ struct GardenView: View {
     
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
+    var totalProgressValue: Float?
     
     var body: some View {
         NavigationView {
@@ -81,18 +82,15 @@ extension GardenView {
             
             Spacer()
             
-            // TODO: TotalProgressBar 수정
-            ZStack {
-                Image(.gardenProgressSpring3)
-                VStack {
-                    Text(gameManager.chapter.chapterTitle)
-                        .font(.titleS)
-                    Text("21%")
-                        .font(.titleL)
-                }
-                .foregroundColor(.white)
-                .shadow(color: .gray30, radius: 4.0)
-            }
+            ProgressView(value: totalProgressValue ?? 100, total: 100)
+                .frame(width: 241, height: 50)
+                .progressViewStyle(
+                    ProgressStyle(
+                        width: 241,
+                        color: .ivoryTransparency50,
+                        text: gameManager.chapter.chapterTitle
+                    )
+                )
         }
         .padding(.horizontal, 20)
         .padding(.top, 69)
@@ -227,6 +225,6 @@ extension GardenView {
 }
 
 #Preview {
-    GardenView()
+    GardenView(totalProgressValue: MainViewModel().totalProgressValue)
         .environmentObject(GameManager())
 }

@@ -42,6 +42,7 @@ class MainViewModel: ObservableObject {
     
     @Published var progressValue: Float = 0.0
     @Published var plantName = ""
+    @Published var totalProgressValue: Float = 0.0
     
     private var plant: Plant?
     private var missionDay = 0
@@ -108,6 +109,7 @@ class MainViewModel: ObservableObject {
         currentDialogueIndex += 1
         currentLineIndex = 0
         progressValue = (Float(missionDay + 1)/Float(plant?.totalDay ?? 0)) * 100
+        totalProgressValue += (1 / Float(plant?.totalDay ?? 1)) * 25
         
         isShowDialogueBox = true
         isDisableDoneButton = true

@@ -35,7 +35,7 @@ struct ProgressStyle: ProgressViewStyle {
             VStack {
                 Text(text)
                     .font(.titleS)
-                Text("\(Int(progress*100))%")
+                Text("\(Int(progress * 100))%")
                     .font(.titleL)
             }
             .foregroundStyle(.white)

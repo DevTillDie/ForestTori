@@ -48,7 +48,7 @@ struct CompleteMissionView: View {
                 .padding(.horizontal, 23)
                 
                 HStack(spacing: 16) {
-                    NavigationLink(destination: GardenView()
+                    NavigationLink(destination: GardenView(totalProgressValue: mainViewModel.totalProgressValue)
                         .environmentObject(gameManager)
                         .navigationBarBackButtonHidden(true)
                         .onAppear {
