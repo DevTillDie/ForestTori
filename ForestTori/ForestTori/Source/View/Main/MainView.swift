@@ -190,4 +190,6 @@ extension MainView {
 
 #Preview {
     MainView()
+        .environmentObject(GameManager())
+        .environmentObject(ServiceStateViewModel())
 }

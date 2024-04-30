@@ -101,4 +101,5 @@ extension EpliogueView {
 
 #Preview {
     EpliogueView(isEpilogueShowed: .constant(false))
+        .environmentObject(GameManager())
 }

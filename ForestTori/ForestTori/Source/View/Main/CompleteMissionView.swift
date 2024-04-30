@@ -96,4 +96,6 @@ struct CompleteMissionView: View {
 
 #Preview {
     CompleteMissionView()
+        .environmentObject(GameManager())
+        .environmentObject(ServiceStateViewModel())
 }

@@ -95,4 +95,6 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
 
 #Preview {
     MainView()
+        .environmentObject(GameManager())
+        .environmentObject(ServiceStateViewModel())
 }

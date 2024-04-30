@@ -144,7 +144,9 @@ extension GardenView {
 
 extension GardenView {
     @ViewBuilder private var ARButton: some View {
-        NavigationLink(destination: GardenARView()) {
+        NavigationLink(destination: GardenARView()
+            .environmentObject(gameManager)
+        ) {
             Image(.arButton)
                 .resizable()
                 .scaledToFit()
@@ -156,4 +158,5 @@ extension GardenView {
 
 #Preview {
     GardenView()
+        .environmentObject(GameManager())
 }

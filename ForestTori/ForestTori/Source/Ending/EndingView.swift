@@ -25,4 +25,5 @@ struct EndingView: View {
 
 #Preview {
     EndingView()
+        .environmentObject(GameManager())
 }
