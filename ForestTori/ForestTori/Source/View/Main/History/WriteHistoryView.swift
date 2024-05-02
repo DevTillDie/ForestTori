@@ -121,6 +121,8 @@ extension WriteHistoryView {
                     .submitLabel(.done)
                     .disableAutocorrection(true)
                     .tint(.greenSecondary)
+                    .font(.bodyM)
+                    .foregroundStyle(.gray50)
                     .padding()
             }
             .padding(.horizontal)
