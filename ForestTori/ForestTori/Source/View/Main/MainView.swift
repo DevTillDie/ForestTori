@@ -51,7 +51,9 @@ struct MainView: View {
             }
             .onChange(of: viewModel.showEnding) {
                 gameManager.completeMission()
-                serviceStateViewModel.state = .ending
+                withAnimation {
+                    serviceStateViewModel.state = .ending
+                }
             }
         }
     }
@@ -122,15 +124,24 @@ extension MainView {
         ZStack {
             if isShowSelectPlantView {
                 Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        withAnimation {
+                            isShowSelectPlantView = false
+                        }
+                    }
+                    .transition(.opacity)
                 
                 Text("식물 친구를 선택해주세요")
                     .font(.titleM)
                     .foregroundColor(.white)
                     .padding(.top, 160)
                     .frame(maxHeight: .infinity, alignment: .top)
+                    .transition(.move(edge: .bottom))
                 
                 SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
                     .environmentObject(gameManager)
+                    .transition(.move(edge: .bottom))
             }
         }
     }

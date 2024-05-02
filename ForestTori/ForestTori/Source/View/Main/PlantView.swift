@@ -71,7 +71,9 @@ extension PlantView {
     
     private var addNewPlantButton: some View {
         Button {
-            isShowSelectPlantView = true
+            withAnimation {
+                isShowSelectPlantView = true
+            }
         } label: {
             Image(systemName: "plus.square.fill")
                 .resizable()
