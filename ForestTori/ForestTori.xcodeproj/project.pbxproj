@@ -18,6 +18,8 @@
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E214B5F2BDFC85500558004 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B5E2BDFC85500558004 /* BottomSheet.swift */; };
 		0E214B612BDFD52900558004 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B602BDFD52900558004 /* HistoryDetailView.swift */; };
+		0E214B682BE3519400558004 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E214B672BE3519400558004 /* Realm */; };
+		0E214B6A2BE3519400558004 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E214B692BE3519400558004 /* RealmSwift */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E4AB22B2BCD3E7E00ADB623 /* WriteHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */; };
 		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
@@ -111,8 +113,6 @@
 		5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */; };
 		5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA85462BCC156400C5C67C /* GardenARView.swift */; };
 		5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2F62F2BC03AF90049A988 /* GardenScene.swift */; };
-		5BEA73022BD77D8C00BF5ADA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5BEA73012BD77D8C00BF5ADA /* Realm */; };
-		5BEA73042BD77D8C00BF5ADA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BEA73032BD77D8C00BF5ADA /* RealmSwift */; };
 		5BEA73062BD77F6E00BF5ADA /* ServiceStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA73052BD77F6E00BF5ADA /* ServiceStateViewModel.swift */; };
 		5BEA730C2BD7D17700BF5ADA /* EndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA730B2BD7D17700BF5ADA /* EndingView.swift */; };
 /* End PBXBuildFile section */
@@ -234,8 +234,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BEA73042BD77D8C00BF5ADA /* RealmSwift in Frameworks */,
-				5BEA73022BD77D8C00BF5ADA /* Realm in Frameworks */,
+				0E214B6A2BE3519400558004 /* RealmSwift in Frameworks */,
+				0E214B682BE3519400558004 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,8 +703,8 @@
 			);
 			name = ForestTori;
 			packageProductDependencies = (
-				5BEA73012BD77D8C00BF5ADA /* Realm */,
-				5BEA73032BD77D8C00BF5ADA /* RealmSwift */,
+				0E214B672BE3519400558004 /* Realm */,
+				0E214B692BE3519400558004 /* RealmSwift */,
 			);
 			productName = ForestTori;
 			productReference = 0EF5FE922B4FC02100D64E5E /* ForestTori.app */;
@@ -735,7 +735,7 @@
 			);
 			mainGroup = 0EF5FE892B4FC02100D64E5E;
 			packageReferences = (
-				0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				0E214B662BE3519400558004 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 0EF5FE932B4FC02100D64E5E /* Products */;
 			projectDirPath = "";
@@ -1102,7 +1102,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		0E214B662BE3519400558004 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -1113,14 +1113,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5BEA73012BD77D8C00BF5ADA /* Realm */ = {
+		0E214B672BE3519400558004 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0E214B662BE3519400558004 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		5BEA73032BD77D8C00BF5ADA /* RealmSwift */ = {
+		0E214B692BE3519400558004 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0E214B662BE3519400558004 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

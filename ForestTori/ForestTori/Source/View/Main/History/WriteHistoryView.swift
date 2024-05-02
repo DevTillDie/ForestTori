@@ -11,6 +11,7 @@ struct WriteHistoryView: View {
     @StateObject var viewModel = WriteHistoryViewModel()
     @FocusState private var isFocused: Bool
     
+    @State private var isShowSelectImagePopup = false
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
     
@@ -34,10 +35,16 @@ struct WriteHistoryView: View {
         .fullScreenCover(isPresented: $isShowCameraPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .camera)
                 .ignoresSafeArea()
+                .onAppear {
+                    isShowSelectImagePopup = false
+                }
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .photoLibrary)
                 .ignoresSafeArea()
+                .onAppear {
+                    isShowSelectImagePopup = false
+                }
         }
         .onTapGesture {
             isFocused = false
@@ -87,9 +94,33 @@ extension WriteHistoryView {
     private var selectImageView: some View {
         VStack {
             if let image = viewModel.selectedImage {
-                Image(uiImage: image)
-                    .resizable()
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                ZStack {
+                    Image(uiImage: image)
+                        .resizable()
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay(alignment: .bottomTrailing) {
+                            Button {
+                                withAnimation {
+                                    isShowSelectImagePopup.toggle()
+                                }
+                            } label: {
+                                Image(systemName: "camera")
+                                    .font(.system(size: 14))
+                                    .foregroundStyle(.white)
+                                    .background {
+                                        Circle()
+                                            .fill(.gray50)
+                                            .scaledToFit()
+                                            .padding(-8)
+                                    }
+                                    .padding()
+                            }
+                        }
+                    
+                    if isShowSelectImagePopup {
+                        selectImagePopup
+                    }
+                }
             } else {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
