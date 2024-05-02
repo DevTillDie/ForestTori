@@ -37,7 +37,7 @@ struct PlantCardView: View {
                     .cornerRadius(8)
                     .padding(.bottom, 16)
                 
-                Text(plant.characterDescription)
+                Text(plant.characterDescription.splitChatacter())
                     .font(.bodyS)
                     .foregroundStyle(.gray50)
                     .lineSpacing(1)
