@@ -13,7 +13,6 @@ struct ServiceStateView: View {
     
     var body: some View {
         stateBasedView
-//        MainView()
     }
 }
 

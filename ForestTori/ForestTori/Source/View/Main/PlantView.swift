@@ -68,6 +68,7 @@ extension PlantView {
             .onTapGesture {
                 viewModel.showNextDialogue()
             }
+            .hidden(gameManager.isSelectPlant)
     }
     
     private var addNewPlantButton: some View {
