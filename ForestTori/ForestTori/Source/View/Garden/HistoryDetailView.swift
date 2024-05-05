@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HistoryDetailView: View {
+    @Binding var selectedHistoryIndex: Int?
     @Binding var isShowHistoryDetailView: Bool
     
     var image: UIImage
@@ -31,6 +32,7 @@ extension HistoryDetailView {
         HStack {
             Button {
                 withAnimation {
+                    selectedHistoryIndex = nil
                     isShowHistoryDetailView = false
                 }
             } label: {

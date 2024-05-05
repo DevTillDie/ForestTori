@@ -11,6 +11,7 @@ struct GardenView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var gameManager: GameManager
     
+    @State private var selectedHistoryIndex: Int?
     @State private var showSummerMessage = true
     @State private var isShowHistoryView = false
     @State private var showHistoryDetail = false
@@ -158,11 +159,13 @@ extension GardenView {
                 .opacity(isShowHistoryView ? 1 : 0)
                 .onTapGesture {
                     isShowHistoryView = false
+                    selectedHistoryIndex = nil
                 }
             
             if isShowHistoryView {
                 BottomSheet($isShowHistoryView, height: UIScreen.main.bounds.height * 0.8) {
                     HistoryView(
+                        selectedHistoryIndex: $selectedHistoryIndex,
                         isShowHistoryDetail: $showHistoryDetail,
                         plant: $selectedPlant,
                         selectedHistory: $selectedHistory
@@ -185,11 +188,13 @@ extension GardenView {
                         .onTapGesture {
                             withAnimation {
                                 showHistoryDetail = false
+                                selectedHistoryIndex = nil
                             }
                         }
                         .transition(.opacity)
                     
                     HistoryDetailView(
+                        selectedHistoryIndex: $selectedHistoryIndex,
                         isShowHistoryDetailView: $showHistoryDetail,
                         image: history.image,
                         record: history.record

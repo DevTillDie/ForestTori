@@ -10,6 +10,7 @@ import SwiftUI
 struct HistoryView: View {
     @StateObject private var viewModel = HistoryViewModel()
     
+    @Binding var selectedHistoryIndex: Int?
     @Binding var isShowHistoryDetail: Bool
     @Binding var plant: Plant?
     @Binding var selectedHistory: (image: UIImage, record: String)?
@@ -74,9 +75,10 @@ extension HistoryView {
     
     private var historyList: some View {
         LazyVStack {
-            ForEach(viewModel.plantHistory, id: \.self) { history in
-                historyListRow(history)
+            ForEach(Array(viewModel.plantHistory.enumerated()), id: \.element) { index, history in
+                historyListRow(history, index: index)
                     .onTapGesture {
+                        selectedHistoryIndex = index
                         if let imageName = history.imageData,
                            let image = UIImage(data: imageName) {
                             selectedHistory = (image, history.text)
@@ -88,7 +90,7 @@ extension HistoryView {
     }
     
     @ViewBuilder
-    private func historyListRow(_ history: History) -> some View {
+    private func historyListRow(_ history: History, index: Int) -> some View {
         HStack {
             if let imageName = history.imageData,
                let image = UIImage(data: imageName) {
@@ -111,6 +113,7 @@ extension HistoryView {
                 Text(history.date)
                     .font(.caption)
             }
+            .foregroundStyle(index == selectedHistoryIndex ? .white : .black)
             .padding(.horizontal)
             
             Spacer()
@@ -119,8 +122,8 @@ extension HistoryView {
         .padding()
         .background {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(.beigeSecondary, lineWidth: 2)
-                .fill(.gray10)
+                .stroke(index == selectedHistoryIndex ? .greenTertiary : .beigeSecondary, lineWidth: 2)
+                .fill(index == selectedHistoryIndex ? .greenSecondary : .gray10)
         }
     }
 }
