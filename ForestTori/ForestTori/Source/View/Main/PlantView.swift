@@ -14,24 +14,22 @@ struct PlantView: View {
     @Binding var isShowSelectPlantView: Bool
     
     var body: some View {
-        ZStack {
-            VStack(spacing: 0) {
-                dialogueBox
-                    .hidden(viewModel.isShowDialogueBox)
-                
-                Spacer()
-                
-                addNewPlantButton
-                    .hidden(viewModel.isShowAddButton)
-                
-                PlantPotView(sceneViewName: viewModel.plant3DFileName)
-                    .scaledToFit()
-                    .frame(width: viewModel.plantWidth)
-                    .padding(.bottom, 16)
-                
-                missionBox
-                    .hidden(viewModel.isShowMissionBox)
-            }
+        VStack(spacing: 0) {
+            dialogueBox
+                .hidden(viewModel.isShowDialogueBox)
+            
+            Spacer()
+            
+            addNewPlantButton
+                .hidden(viewModel.isShowAddButton)
+            
+            PlantPotView(sceneViewName: viewModel.plant3DFileName)
+                .scaledToFit()
+                .frame(width: viewModel.plantWidth)
+                .padding(.bottom, 16)
+            
+            missionBox
+                .hidden(viewModel.isShowMissionBox)
         }
         .padding(.top, 24)
         .padding(.bottom, 20)
