@@ -14,13 +14,7 @@ import SwiftUI
 class EpilogueViewModel: ObservableObject {
     @Published var endingTexts: [[OnboardingText]] = []
     
-    let onboardingViewModel = OnboardingViewModel()
-    let userName: String
-    
-    init() {
-        self.userName = onboardingViewModel.userName
-        setEndingTexts()
-    }
+    private let userName = UserDefaults.standard.value(forKey: "userName") as! String
 }
 
 extension EpilogueViewModel {

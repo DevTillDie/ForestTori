@@ -49,6 +49,7 @@ class MainViewModel: ObservableObject {
     private var dialogues = [Dialogue]()
     private var currentDialogueIndex = 0
     private var currentLineIndex = 0
+    private let userName = UserDefaults.standard.value(forKey: "userName") as! String
     
     func setNewPlant(plant: Plant?) {
         self.plant = plant
@@ -131,9 +132,8 @@ class MainViewModel: ObservableObject {
             
             if let dataArr = dataEncoded?.components(separatedBy: "\n").map({$0.components(separatedBy: "\t")}) {
                 for row in dataArr[1..<dataArr.count] {
-                    // TODO: "닉네임"을 db에 저장된 사용자 닉네임으로 변경
                     let lines = Array(row[3...])
-                        .map {$0.replacingOccurrences(of: "(userName)", with: "닉네임")}
+                        .map {$0.replacingOccurrences(of: "(userName)토리", with: userName)}
                         .map {$0.replacingOccurrences(of: "\\n", with: "\n")}
                         .map {$0.replacingOccurrences(of: "\r", with: "")}
                         .filter {!$0.isEmpty}
