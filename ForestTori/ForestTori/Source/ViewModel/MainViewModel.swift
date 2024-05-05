@@ -14,7 +14,7 @@ import SwiftUI
 
 class MainViewModel: ObservableObject {
     @Published var plant3DFileName = "Emptypot.scn"
-    @Published var plantWidth: CGFloat = 200
+    @Published var plantWidth: CGFloat = 250
     
     @Published var dialogueText = ""
     @Published var missionText = ""
@@ -149,7 +149,6 @@ class MainViewModel: ObservableObject {
         } catch {
             print("Error reading CSV file")
         }
-        print(dialogues)
     }
     
     private func nextDay() {
