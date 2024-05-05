@@ -72,6 +72,7 @@ extension DataManager {
     // chapter에 해당하는 식물 파일을 읽어옴
     private func readChapterPlants(_ fileName: String) -> [Plant] {
         var plants = [Plant]()
+        var prevID = 0
         
         if let filePath = Bundle.main.path(forResource: fileName, ofType: "tsv") {
             do {
@@ -86,6 +87,7 @@ extension DataManager {
                     
                     if data.count >= 12 {
                         let id = Int(data[0]) ?? 0
+                        prevID = id
                         let characterName = data[1]
                         let characterImage = data[2]
                         let characterDescription = data[3]
@@ -122,6 +124,25 @@ extension DataManager {
                                 garden3DFile: garden3DFile,
                                 gardenPositionX: gardenPositionX,
                                 gardenPositionZ: gardenPositionZ
+                            )
+                        )
+                    } else {
+                        prevID += 1
+                        
+                        plants.append(
+                            Plant(
+                                id: prevID,
+                                characterName: "",
+                                characterImage: "",
+                                characterDescription: "",
+                                mainQuest: "",
+                                missions: [],
+                                characterFileName: "",
+                                character3DFiles: [],
+                                totalDay: 0,
+                                garden3DFile: "",
+                                gardenPositionX: 0,
+                                gardenPositionZ: 0
                             )
                         )
                     }
