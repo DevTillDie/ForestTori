@@ -83,6 +83,7 @@ extension MainView {
                         text: viewModel.plantName
                     )
                 )
+                .hidden(gameManager.isSelectPlant)
         }
         .padding(.horizontal, 20)
         .padding(.top, 69)
