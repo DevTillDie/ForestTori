@@ -40,16 +40,18 @@ struct PlantView: View {
 
 extension PlantView {
     private var dialogueBox: some View {
-        Image("DialogFrame")
+        let fontSize: CGFloat = 17.5
+        
+        return Image("DialogFrame")
             .resizable()
             .scaledToFit()
             .overlay(alignment: .top) {
                 ZStack(alignment: .topLeading) {
-                    Text(viewModel.dialogueText)
-                        .font(.pretendard(size: 17.5, .regular))
-                        .foregroundStyle(Color.black)
+                    Text(viewModel.dialogueText.splitChatacter())
+                        .font(.pretendard(size: fontSize, .regular))
+                        .tracking(-0.015 * fontSize)
+                        .foregroundStyle(.black)
                         .multilineTextAlignment(.leading)
-                        .lineSpacing(1)
                         .padding(.horizontal, 16)
                     
                     Image("DialogButton")
@@ -59,8 +61,7 @@ extension PlantView {
                         .padding(.bottom, 18)
                         .padding(.trailing, 18)
                 }
-                .padding(.vertical, 12)
-                
+                .padding(.vertical, 10)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 26)
@@ -71,7 +72,9 @@ extension PlantView {
     
     private var addNewPlantButton: some View {
         Button {
-            isShowSelectPlantView = true
+            withAnimation {
+                isShowSelectPlantView = true
+            }
         } label: {
             Image(systemName: "plus.square.fill")
                 .resizable()

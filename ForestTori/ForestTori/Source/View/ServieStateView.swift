@@ -27,10 +27,12 @@ extension ServiceStateView {
                 .environmentObject(serviceStateViewModel)
         case .main:
             MainView()
+                .transition(.move(edge: .trailing))
                 .environmentObject(gameManager)
                 .environmentObject(serviceStateViewModel)
         case .ending:
             EndingView()
+                .transition(.move(edge: .trailing))
                 .environmentObject(gameManager)
         }
     }

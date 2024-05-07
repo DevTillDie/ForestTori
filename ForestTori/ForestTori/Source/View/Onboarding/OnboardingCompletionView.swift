@@ -28,8 +28,12 @@ struct OnboardingCompletionView: View {
             VStack {
                 Spacer()
                 
-                OnboardingDoneButton(action: { serviceStateViewModel.state = .main
-                }, label: doneButtonLabel)
+                OnboardingDoneButton(
+                    action: {
+                        withAnimation {
+                            serviceStateViewModel.state = .main
+                        }
+                    }, label: doneButtonLabel)
                     .font(.titleL)
                     .foregroundColor(.yellowTertiary)
                     .background {

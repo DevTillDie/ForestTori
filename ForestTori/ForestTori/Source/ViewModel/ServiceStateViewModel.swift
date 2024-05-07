@@ -9,7 +9,7 @@ import SwiftUI
 
 class ServiceStateViewModel: ObservableObject {
     // TODO: 기능 통합 완료 후, .onboarding으로 수정
-    @AppStorage("serviceState") var state: ServiceState = .main
+    @AppStorage("serviceState") var state: ServiceState = .onboarding
     
     /// 서비스 상태 유형
     ///

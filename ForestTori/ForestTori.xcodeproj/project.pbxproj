@@ -131,6 +131,7 @@
 		0E214B5E2BDFC85500558004 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		0E214B602BDFD52900558004 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		0E214B752BE752DE00558004 /* SpringPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
+		0E214B642BE34B5A00558004 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
 		0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteHistoryView.swift; sourceTree = "<group>"; };
 		0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -380,6 +381,7 @@
 				0E1AE6FD2B7E185B001C9A30 /* Font+.swift */,
 				5B68A4362B845E200004E89A /* View+.swift */,
 				0E4AB2402BD1090B00ADB623 /* Date+.swift */,
+				0E214B642BE34B5A00558004 /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -859,6 +861,7 @@
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
 				5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */,
+				0E214B652BE34B5A00558004 /* String+.swift in Sources */,
 				5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
