@@ -50,7 +50,7 @@ class MainViewModel: ObservableObject {
     private var plant: Plant?
     private var dialogues = [Dialogue]()
     private var currentLineIndex = 0
-    private let userName = UserDefaults.standard.value(forKey: "userName") as! String
+    private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? "토리"
     
     func setNewPlant(plant: Plant?) {
         self.plant = plant
@@ -135,7 +135,7 @@ class MainViewModel: ObservableObject {
             if let dataArr = dataEncoded?.components(separatedBy: "\n").map({$0.components(separatedBy: "\t")}) {
                 for row in dataArr[1..<dataArr.count] {
                     let lines = Array(row[3...])
-                        .map {$0.replacingOccurrences(of: "(userName)토리", with: userName)}
+                        .map {$0.replacingOccurrences(of: "(userName)", with: userName)}
                         .map {$0.replacingOccurrences(of: "\\n", with: "\n")}
                         .map {$0.replacingOccurrences(of: "\r", with: "")}
                         .filter {!$0.isEmpty}
