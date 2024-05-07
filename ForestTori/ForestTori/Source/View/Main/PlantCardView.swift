@@ -51,15 +51,19 @@ struct PlantCardView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(.brownPrimary)
+                            .stroke(.brownPrimary, lineWidth: 2)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundStyle(plant.id == 1 ? .brownPrimary : .white)
+                            )
                             .frame(height: 41)
                         
                         Text("선택하기")
                             .font(.titleS)
-                            .foregroundColor(.white)
+                            .foregroundColor(plant.id == 1 ? .white : .brownPrimary)
                     }
-                    
                 }
+                .disabled(plant.id != 1)
                 
             }
             .padding(20)

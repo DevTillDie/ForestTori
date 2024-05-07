@@ -42,6 +42,13 @@ struct MainView: View {
                 showHistoryView
             }
             .ignoresSafeArea()
+            .onAppear {
+                if gameManager.isSelectPlant {
+                    viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
+                } else {
+                    viewModel.setEmptyPot()
+                }
+            }
             .onChange(of: gameManager.isSelectPlant) {
                 if gameManager.isSelectPlant {
                     viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
@@ -85,6 +92,7 @@ extension MainView {
                         text: viewModel.plantName
                     )
                 )
+                .hidden(gameManager.isSelectPlant)
         }
         .padding(.horizontal, 20)
         .padding(.top, 69)

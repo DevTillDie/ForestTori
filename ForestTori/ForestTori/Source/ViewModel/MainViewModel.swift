@@ -13,18 +13,23 @@ import SwiftUI
 //  - currentLineIndex: dialogues배열 중 currentDialogueIndex에 해당하는 lines 배열에 접근하기 위한 index
 
 class MainViewModel: ObservableObject {
+    @AppStorage("missionDay") var missionDay = 0
+    @AppStorage("currentDialogueIndex") var currentDialogueIndex = 0
+    @AppStorage("isShowDialogueBox") var isShowDialogueBox = true
+    @AppStorage("isShowMissionBox") var isShowMissionBox = false
+    @AppStorage("isTapButton") var isTapDoneButton = false
+    @AppStorage("progressValue") var progressValue = 0.0
+    @AppStorage("totalProgressValue") var totalProgressValue = 0.0
+    
     @Published var plant3DFileName = "Emptypot.scn"
-    @Published var plantWidth: CGFloat = 200
+    @Published var plantWidth: CGFloat = 250
     
     @Published var dialogueText = ""
     @Published var missionText = ""
     
     @Published var isShowAddButton = true
-    @Published var isShowDialogueBox = false
     @Published var isShowHistoryView = false
-    @Published var isShowMissionBox = false
     @Published var isShowCompleteMissionView = false
-    @Published var isTapDoneButton = false
     @Published var isDisableDoneButton = false
     @Published var isCompleteMission = false
     
@@ -40,14 +45,10 @@ class MainViewModel: ObservableObject {
     
     @Published var showEnding = false
     
-    @Published var progressValue: Float = 0.0
     @Published var plantName = ""
-    @Published var totalProgressValue: Float = 0.0
     
     private var plant: Plant?
-    private var missionDay = 0
     private var dialogues = [Dialogue]()
-    private var currentDialogueIndex = 0
     private var currentLineIndex = 0
     private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? "토리"
     
@@ -56,16 +57,18 @@ class MainViewModel: ObservableObject {
         
         if let plant = plant {
             getDialogue(plant.characterFileName)
+            
             plant3DFileName = plant.character3DFiles[missionDay]
             plantWidth = 350
             plantName = plant.characterName
             
             isShowAddButton = false
-            isShowDialogueBox = true
             
-            dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
+            if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
+                dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
+            }
+
             missionText = plant.missions[missionDay].content
-            currentLineIndex += 1
         }
     }
     
@@ -80,7 +83,6 @@ class MainViewModel: ObservableObject {
         missionText = ""
         
         isShowAddButton = true
-        isShowDialogueBox = false
         isShowMissionBox = false
         isTapDoneButton = false
         isDisableDoneButton = false
@@ -109,8 +111,8 @@ class MainViewModel: ObservableObject {
     func completMission() {
         currentDialogueIndex += 1
         currentLineIndex = 0
-        progressValue = (Float(missionDay + 1)/Float(plant?.totalDay ?? 0)) * 100
-        totalProgressValue += (1 / Float(plant?.totalDay ?? 1)) * 25
+        progressValue = (Double(missionDay + 1)/Double(plant?.totalDay ?? 0)) * 100
+        totalProgressValue += (1 / Double(plant?.totalDay ?? 1)) * 25
         
         isShowDialogueBox = true
         isDisableDoneButton = true
@@ -149,11 +151,11 @@ class MainViewModel: ObservableObject {
         } catch {
             print("Error reading CSV file")
         }
-        print(dialogues)
     }
     
     private func nextDay() {
         missionDay += 1
+        isTapDoneButton = false
 
         if let plant = plant {
             if missionDay == plant.totalDay {
@@ -161,7 +163,6 @@ class MainViewModel: ObservableObject {
                     showEnding = true
                 } else {
                     isCompleteMission = true
-                    isShowDialogueBox = false
                     isShowMissionBox = false
                 }
             } else {

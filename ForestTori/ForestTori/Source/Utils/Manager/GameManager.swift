@@ -16,7 +16,7 @@ class GameManager: ObservableObject {
     @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
     @Published var user = User()
     @Published var chapter: Chapter
-    @Published var isSelectPlant = false
+    @AppStorage("isSelectPlant") var isSelectPlant = false
     
     private let dataManager = DataManager()
     
