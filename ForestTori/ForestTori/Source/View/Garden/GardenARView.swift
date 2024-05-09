@@ -48,6 +48,7 @@ extension GardenARView {
                     showHistoryView: .constant(false)
                 )
                     .scaledToFit()
+                    .padding(40)
                     .environmentObject(gameManager)
                 
                 Spacer()
