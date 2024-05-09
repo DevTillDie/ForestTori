@@ -81,6 +81,7 @@
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
+		5B6351062BED17AF00A1C6AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B642BE34B5A00558004 /* String+.swift */; };
 		5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ServieStateView.swift */; };
 		5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4332B845DDE0004E89A /* ModifierInitFile.swift */; };
 		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
@@ -840,6 +841,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6351062BED17AF00A1C6AB /* String+.swift in Sources */,
 				5B68A4352B845DFE0004E89A /* Font+.swift in Sources */,
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
 				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
