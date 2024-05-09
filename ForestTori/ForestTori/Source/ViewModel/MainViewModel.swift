@@ -133,7 +133,7 @@ class MainViewModel: ObservableObject {
             let dataEncoded = String(data: data, encoding: .utf8)
             
             if let dataArr = dataEncoded?.components(separatedBy: "\n").map({$0.components(separatedBy: "\t")}) {
-                for row in dataArr[1..<dataArr.count] {
+                for row in dataArr[1..<dataArr.count] where row.count >= 3 {
                     let lines = Array(row[3...])
                         .map {$0.replacingOccurrences(of: "(userName)", with: userName)}
                         .map {$0.replacingOccurrences(of: "\\n", with: "\n")}
