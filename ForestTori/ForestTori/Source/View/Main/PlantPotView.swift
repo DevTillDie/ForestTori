@@ -11,13 +11,23 @@ import SceneKit
 
 struct PlantPotView: UIViewRepresentable {
     private let sceneView = SCNView()
+    private let lightNode = SCNNode()
     var sceneViewName: String
     
     func makeUIView(context: Context) -> SCNView {
+        lightNode.light = SCNLight()
+        lightNode.light?.type = .omni
+        lightNode.light?.intensity = 2000
+        lightNode.position = SCNVector3(x: 100, y: 100, z: 100)
+        
         sceneView.backgroundColor = .clear
         sceneView.scene = SCNScene(named: sceneViewName)
         sceneView.scene?.rootNode.name = sceneViewName
         sceneView.scene?.rootNode.scale = SCNVector3(x: 0.8, y: 0.8, z: 0.8)
+        
+        sceneView.scene?.rootNode.addChildNode(lightNode)
+        sceneView.pointOfView?.camera?.contrast = -2
+        
         sceneView.autoenablesDefaultLighting = true
         sceneView.allowsCameraControl = true
         sceneView.defaultCameraController.maximumVerticalAngle = 30
@@ -33,10 +43,18 @@ struct PlantPotView: UIViewRepresentable {
     }
     
     func updateUIView(_ scnView: SCNView, context: Context) {
+        lightNode.light = SCNLight()
+        lightNode.light?.type = .omni
+        lightNode.light?.intensity = 2000
+        lightNode.position = SCNVector3(x: 100, y: 100, z: 100)
+        
         if sceneViewName != scnView.scene?.rootNode.name {
             scnView.scene = SCNScene(named: sceneViewName)
             scnView.scene?.rootNode.scale = SCNVector3(x: 1, y: 1, z: 1)
             scnView.scene?.rootNode.name = sceneViewName
+            
+            scnView.scene?.rootNode.addChildNode(lightNode)
+            scnView.pointOfView?.camera?.contrast = -2
         }
     }
     
