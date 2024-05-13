@@ -63,7 +63,10 @@ extension HistoryDetailView {
     private var recordView: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(Color.gray10)
-            .stroke(.brownSecondary, lineWidth: 2)
+            .overlay {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(.brownSecondary, lineWidth: 2)
+            }
             .overlay(alignment: .topLeading) {
                 Text(record.splitChatacter())
                     .font(.bodyM)

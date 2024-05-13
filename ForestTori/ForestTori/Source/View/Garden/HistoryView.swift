@@ -122,8 +122,11 @@ extension HistoryView {
         .padding()
         .background {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(index == selectedHistoryIndex ? .greenTertiary : .beigeSecondary, lineWidth: 2)
                 .fill(index == selectedHistoryIndex ? .greenSecondary : .gray10)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(index == selectedHistoryIndex ? .greenTertiary : .beigeSecondary, lineWidth: 2)
+                }
         }
     }
 }

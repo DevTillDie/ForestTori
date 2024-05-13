@@ -18,7 +18,10 @@ struct ProgressStyle: ProgressViewStyle {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 45)
                 .fill(.clear)
-                .stroke(.white, lineWidth: 5)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 45)
+                        .stroke(.white, lineWidth: 5)
+                }
             
             Rectangle()
                 .fill(.clear)

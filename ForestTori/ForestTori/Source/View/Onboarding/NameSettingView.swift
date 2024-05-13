@@ -68,7 +68,11 @@ struct NameSettingView: View {
                     .background {
                         RoundedRectangle(cornerRadius: 50)
                             .fill(setButtonBackgroundColor())
-                            .stroke(setButtonBackgroundStroke(), lineWidth: 2)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 50)
+                                    .stroke(setButtonBackgroundStroke(), lineWidth: 2
+                                    )
+                            }
                     }
             }
             .padding(20)
