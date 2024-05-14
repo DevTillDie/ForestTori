@@ -56,7 +56,7 @@ class MainViewModel: ObservableObject {
         self.plant = plant
         
         if let plant = plant {
-            getDialogue(plant.characterFileName)
+//            getDialogue(plant.characterFileName)
             
             plant3DFileName = plant.character3DFiles[missionDay]
             plantWidth = 350
@@ -128,7 +128,7 @@ class MainViewModel: ObservableObject {
         }
         
         do {
-            let url = URL(filePath: path)
+            let url = URL(fileURLWithPath: path)
             let data = try Data(contentsOf: url)
             let dataEncoded = String(data: data, encoding: .utf8)
             
