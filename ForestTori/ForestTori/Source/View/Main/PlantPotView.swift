@@ -26,7 +26,7 @@ struct PlantPotView: UIViewRepresentable {
         sceneView.scene?.rootNode.scale = SCNVector3(x: 0.8, y: 0.8, z: 0.8)
         
         sceneView.scene?.rootNode.addChildNode(lightNode)
-        sceneView.pointOfView?.camera?.contrast = -2
+        sceneView.pointOfView?.camera?.contrast = -5
         
         sceneView.autoenablesDefaultLighting = true
         sceneView.allowsCameraControl = true
@@ -54,7 +54,7 @@ struct PlantPotView: UIViewRepresentable {
             scnView.scene?.rootNode.name = sceneViewName
             
             scnView.scene?.rootNode.addChildNode(lightNode)
-            scnView.pointOfView?.camera?.contrast = -2
+            scnView.pointOfView?.camera?.contrast = -5
         }
     }
     
