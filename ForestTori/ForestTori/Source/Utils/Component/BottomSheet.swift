@@ -36,11 +36,7 @@ struct BottomSheet<Content>: View where Content: View {
                 .frame(height: height)
         }
         .frame(height: height + 30)
-        .background(
-            UnevenRoundedRectangle(topLeadingRadius: 16, topTrailingRadius: 16)
-                .fill(.white)
-                .edgesIgnoringSafeArea([.bottom, .horizontal])
-        )
+        .cornerRadius(16, corners: [.topLeft, .topRight])
         .transition(.opacity.combined(with: .move(edge: .bottom)))
         .offset(y: translation)
         .gesture(

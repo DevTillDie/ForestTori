@@ -8,7 +8,7 @@
 import SwiftUI
 
 class ServiceStateViewModel: ObservableObject {
-    @AppStorage("serviceState") var state: ServiceState = .onboarding
+    @AppStorage("serviceStatebb6") var state: ServiceState = .onboarding
     
     /// 서비스 상태 유형
     ///
