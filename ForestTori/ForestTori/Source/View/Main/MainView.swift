@@ -49,14 +49,14 @@ struct MainView: View {
                     viewModel.setEmptyPot()
                 }
             }
-            .onChange(of: gameManager.isSelectPlant) {
+            .onChange(of: gameManager.isSelectPlant) { _ in
                 if gameManager.isSelectPlant {
                     viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
                 } else {
                     viewModel.setEmptyPot()
                 }
             }
-            .onChange(of: viewModel.showEnding) {
+            .onChange(of: viewModel.showEnding) { _ in
                 gameManager.completeMission()
                 withAnimation {
                     serviceStateViewModel.state = .ending

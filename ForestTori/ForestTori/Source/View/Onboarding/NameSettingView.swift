@@ -37,7 +37,7 @@ struct NameSettingView: View {
                     VStack(spacing: 0) {
                         TextField(placeholder, text: $name)
                             .accentColor(.greenSecondary)
-                            .onChange(of: name) {
+                            .onChange(of: name) { _ in
                                 checkNameAvailable(name)
                                 checkNameLength(name)
                             }

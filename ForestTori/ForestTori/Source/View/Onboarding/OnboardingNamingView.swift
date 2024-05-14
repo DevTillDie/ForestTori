@@ -44,7 +44,7 @@ struct OnboardingNamingView: View {
         .onAppear {
             showNameSettingView()
         }
-        .onChange(of: isNamingCompleted) {
+        .onChange(of: isNamingCompleted) { _ in
             increaseTextIndex()
         }
     }
