@@ -68,7 +68,7 @@ extension HistoryDetailView {
                     .stroke(.brownSecondary, lineWidth: 2)
             }
             .overlay(alignment: .topLeading) {
-                Text(record.splitChatacter())
+                Text(record.splitCharacter())
                     .font(.bodyM)
                     .foregroundStyle(.gray50)
                     .frame(maxWidth: .infinity, alignment: .leading)

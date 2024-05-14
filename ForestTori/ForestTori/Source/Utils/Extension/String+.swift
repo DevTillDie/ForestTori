@@ -8,7 +8,8 @@
 import Foundation
 
 extension String {
-    func splitChatacter() -> String {
-        return self.split(separator: "").joined(separator: "\u{200B}")
+    func splitCharacter() -> String {
+        return self
+            .replacingOccurrences(of: "", with: "\u{200B}")
     }
 }

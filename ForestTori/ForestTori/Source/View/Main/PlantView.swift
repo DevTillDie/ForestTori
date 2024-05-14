@@ -47,7 +47,7 @@ extension PlantView {
             .scaledToFit()
             .overlay(alignment: .top) {
                 ZStack(alignment: .topLeading) {
-                    Text(viewModel.dialogueText.splitChatacter())
+                    Text(viewModel.dialogueText.splitCharacter())
                         .font(.pretendard(size: fontSize, .regular))
                         .tracking(-0.015 * fontSize)
                         .foregroundStyle(.black)
