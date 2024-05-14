@@ -82,6 +82,7 @@ extension GardenScene {
         
         sceneView.scene?.rootNode.addChildNode(lightNode)
         
+        sceneView.pointOfView?.camera?.contrast = -1
         sceneView.autoenablesDefaultLighting = true
         sceneView.allowsCameraControl = true
         sceneView.defaultCameraController.maximumVerticalAngle = 30

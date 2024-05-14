@@ -82,6 +82,7 @@
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
 		5B42FCC52BF3558300791C2A /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42FCC42BF3558300791C2A /* RoundedCorners.swift */; };
+		5B6351062BED17AF00A1C6AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B642BE34B5A00558004 /* String+.swift */; };
 		5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ServieStateView.swift */; };
 		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
 		5B68A4372B845E200004E89A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4362B845E200004E89A /* View+.swift */; };
@@ -840,6 +841,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6351062BED17AF00A1C6AB /* String+.swift in Sources */,
 				5B68A4352B845DFE0004E89A /* Font+.swift in Sources */,
 				5B42FCC52BF3558300791C2A /* RoundedCorners.swift in Sources */,
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
@@ -861,6 +863,7 @@
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
+				5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */,
 				5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
@@ -1024,7 +1027,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = HQS8MXQ7B5;
+				DEVELOPMENT_TEAM = 5Z238234D5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1060,7 +1063,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = HQS8MXQ7B5;
+				DEVELOPMENT_TEAM = 5Z238234D5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
