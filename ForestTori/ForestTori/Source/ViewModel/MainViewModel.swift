@@ -56,7 +56,7 @@ class MainViewModel: ObservableObject {
         self.plant = plant
         
         if let plant = plant {
-//            getDialogue(plant.characterFileName)
+            getDialogue(plant.characterFileName)
             
             plant3DFileName = plant.character3DFiles[missionDay]
             plantWidth = 350

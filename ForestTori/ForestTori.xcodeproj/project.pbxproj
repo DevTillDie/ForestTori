@@ -863,7 +863,6 @@
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
-				5B68A4342B845DDE0004E89A /* ModifierInitFile.swift in Sources */,
 				5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,

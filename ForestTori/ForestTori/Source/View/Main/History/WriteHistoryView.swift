@@ -138,27 +138,33 @@ extension WriteHistoryView {
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(.brownSecondary, lineWidth: 2)
             }
-//            .overlay(alignment: .top) {
-//                TextField(
-//                    placeHolder,
-//                    text: Binding(
-//                        get: {viewModel.todayHistory},
-//                        set: { newValue, _ in
-//                            if newValue.lastIndex(of: "\n") != nil {
-//                                isFocused = false
-//                            } else {
-//                                viewModel.todayHistory = newValue
-//                            }
-//                        }),
-//                    axis: .vertical)
-//                    .focused($isFocused)
-//                    .submitLabel(.done)
-//                    .disableAutocorrection(true)
-//                    .tint(.greenSecondary)
-//                    .font(.bodyM)
-//                    .foregroundStyle(.gray50)
-//                    .padding()
-//            }
+            .overlay(alignment: .top) {
+                TextEditor(
+                    text: Binding(
+                        get: {viewModel.todayHistory},
+                        set: { newValue, _ in
+                            if newValue.lastIndex(of: "\n") != nil {
+                                isFocused = false
+                            } else {
+                                viewModel.todayHistory = newValue
+                            }
+                        })
+                )
+                .overlay(alignment: .topLeading) {
+                    Text(placeHolder)
+                        .foregroundStyle(viewModel.todayHistory.isEmpty ? .gray30 : .clear)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 4)
+                }
+                .transparentScrolling()
+                .focused($isFocused)
+                .submitLabel(.done)
+                .disableAutocorrection(true)
+                .tint(.greenSecondary)
+                .font(.bodyM)
+                .foregroundStyle(.gray50)
+                .padding()
+            }
             .padding(.horizontal)
             .onTapGesture {
                 isFocused = true
