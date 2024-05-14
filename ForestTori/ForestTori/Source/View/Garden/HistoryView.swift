@@ -17,7 +17,7 @@ struct HistoryView: View {
     
     var body: some View {
         if let plant = plant {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     Text(plant.mainQuest)
                         .foregroundStyle(.brownPrimary)
@@ -42,7 +42,6 @@ struct HistoryView: View {
                 }
                 .padding()
             }
-            .scrollIndicators(.hidden)
             .onAppear {
                 viewModel.loadHistoryData(plantName: plant.characterName)
             }
