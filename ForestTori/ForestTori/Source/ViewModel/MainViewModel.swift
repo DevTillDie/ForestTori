@@ -44,7 +44,6 @@ class MainViewModel: ObservableObject {
     }
     
     @Published var showEnding = false
-    
     @Published var plantName = ""
     
     private var plant: Plant?
@@ -63,6 +62,7 @@ class MainViewModel: ObservableObject {
             plantName = plant.characterName
             
             isShowAddButton = false
+            isShowDialogueBox = true
             
             if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
                 dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
