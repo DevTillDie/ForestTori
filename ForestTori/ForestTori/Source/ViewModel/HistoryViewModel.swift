@@ -26,7 +26,7 @@ class HistoryViewModel: ObservableObject {
             return "AutumnBackground"
             
         case "WinterCharacter":
-            return "WinterCharacter"
+            return "WinterBackground"
             
         default:
             return "DefaultBackground"
