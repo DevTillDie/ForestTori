@@ -16,18 +16,18 @@ class GameManager: ObservableObject {
     @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
     @Published var user = User()
     @Published var chapter: Chapter
-    @AppStorage("isSelectPlantbb6") var isSelectPlant = false
+    @AppStorage("isSelectPlant") var isSelectPlant = false
     
     private let dataManager = DataManager()
     
     init() {
         // 진행 중인 정보를 유지하기 위해 UserDefault에 저장
-        if let userData = UserDefaults.standard.data(forKey: "_userDatabb6"),
+        if let userData = UserDefaults.standard.data(forKey: "_userData"),
            let decodeData = try? JSONDecoder().decode(User.self, from: userData) {
             self.user = decodeData
         }
         
-        if let chapterData = UserDefaults.standard.data(forKey: "_chapterDatabb6"),
+        if let chapterData = UserDefaults.standard.data(forKey: "_chapterData"),
            let decodeData = try? JSONDecoder().decode(Chapter.self, from: chapterData) {
             self.chapter = decodeData
         } else {
@@ -77,9 +77,9 @@ class GameManager: ObservableObject {
     private func saveUserDataToUserDefaults() {
         do {
             let encodedData = try JSONEncoder().encode(user)
-            UserDefaults.standard.set(encodedData, forKey: "_userDatabb6")
+            UserDefaults.standard.set(encodedData, forKey: "_userData")
         } catch {
-            print("Error encoding user ata: \(error)")
+            print("Error encoding user data: \(error)")
         }
     }
     
@@ -87,7 +87,7 @@ class GameManager: ObservableObject {
     private func saveChapterDataToUserDefaults() {
         do {
             let encodedData = try JSONEncoder().encode(chapter)
-            UserDefaults.standard.set(encodedData, forKey: "_chapterDatabb6")
+            UserDefaults.standard.set(encodedData, forKey: "_chapterData")
         } catch {
             print("Error encoding chapter data: \(error)")
         }
