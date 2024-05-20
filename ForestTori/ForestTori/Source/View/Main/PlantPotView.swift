@@ -50,7 +50,7 @@ struct PlantPotView: UIViewRepresentable {
         
         if sceneViewName != scnView.scene?.rootNode.name {
             scnView.scene = SCNScene(named: sceneViewName)
-            scnView.scene?.rootNode.scale = SCNVector3(x: 1, y: 1, z: 1)
+            scnView.scene?.rootNode.scale = SCNVector3(x: 0.8, y: 0.8, z: 0.8)
             scnView.scene?.rootNode.name = sceneViewName
             
             scnView.scene?.rootNode.addChildNode(lightNode)
