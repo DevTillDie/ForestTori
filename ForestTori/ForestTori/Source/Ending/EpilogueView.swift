@@ -61,6 +61,7 @@ struct EpliogueView: View {
                 }
             }
             .onAppear {
+                
                 increaseTextIndex()
             }
             .onDisappear {

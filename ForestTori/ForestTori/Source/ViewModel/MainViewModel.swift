@@ -175,6 +175,7 @@ class MainViewModel: ObservableObject {
                     
                     isShowDialogueBox = true
                     isDisableDoneButton = true
+                    isShowMissionBox = false
                     showNextDialogue()
                 }
             }
