@@ -159,7 +159,7 @@ class MainViewModel: ObservableObject {
 
         if let plant = plant {
             if missionDay == plant.totalDay {
-                if plant.characterImage.contains("Winter") {
+                if plant.characterFileName.contains("Winter") {
                     showEnding = true
                 } else {
                     isCompleteMission = true

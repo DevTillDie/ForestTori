@@ -31,7 +31,7 @@ struct GardenView: View {
                 
                 VStack {
                     gardenHeader
-                        .hidden(gameManager.user.chapterProgress <= 4)
+                        .hidden(gameManager.user.chapterProgress < 5)
                     
                     Spacer()
                     
