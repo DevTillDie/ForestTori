@@ -18,7 +18,8 @@
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E214B5F2BDFC85500558004 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B5E2BDFC85500558004 /* BottomSheet.swift */; };
 		0E214B612BDFD52900558004 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B602BDFD52900558004 /* HistoryDetailView.swift */; };
-		0E214B762BE752DE00558004 /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E214B752BE752DE00558004 /* SpringPlants.tsv */; };
+		0E214B722BE7451600558004 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E214B712BE7451600558004 /* Realm */; };
+		0E214B742BE7451600558004 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E214B732BE7451600558004 /* RealmSwift */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E4AB22B2BCD3E7E00ADB623 /* WriteHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */; };
 		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
@@ -33,13 +34,11 @@
 		0E62B72C2BFB0C1C0011B34E /* Cottontree1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */; };
 		0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72D2BFB0C240011B34E /* Cottontree2.scn */; };
 		0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */; };
-		0E62B73D2BFB178D0011B34E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E62B73C2BFB178D0011B34E /* Realm */; };
-		0E62B73F2BFB178D0011B34E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E62B73E2BFB178D0011B34E /* RealmSwift */; };
-		0E62B7412BFB184C0011B34E /* UnevenRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */; };
-		0E6AB0E32BC115A300B12610 /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */; };
-		0E6AB0E42BC115A300B12610 /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0DF2BC115A300B12610 /* Chapters.tsv */; };
-		0E6AB0E62BC115A300B12610 /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */; };
-		0E6AB0E72BC115A300B12610 /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */; };
+		0E62B7362BFB103B0011B34E /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7312BFB103B0011B34E /* SummerPlants.tsv */; };
+		0E62B7372BFB103B0011B34E /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7322BFB103B0011B34E /* WinterPlants.tsv */; };
+		0E62B7382BFB103B0011B34E /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7332BFB103B0011B34E /* SpringPlants.tsv */; };
+		0E62B7392BFB103B0011B34E /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7342BFB103B0011B34E /* Chapters.tsv */; };
+		0E62B73A2BFB103B0011B34E /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7352BFB103B0011B34E /* AutumnPlants.tsv */; };
 		0E9532FA2BDCB9580081DCE0 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532F92BDCB9580081DCE0 /* HistoryView.swift */; };
 		0E9532FC2BDCBB1A0081DCE0 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
@@ -82,6 +81,7 @@
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
+		5B42FCC52BF3558300791C2A /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42FCC42BF3558300791C2A /* RoundedCorners.swift */; };
 		5B6351062BED17AF00A1C6AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B642BE34B5A00558004 /* String+.swift */; };
 		5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ServieStateView.swift */; };
 		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
@@ -146,11 +146,11 @@
 		0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree1.scn; sourceTree = "<group>"; };
 		0E62B72D2BFB0C240011B34E /* Cottontree2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree2.scn; sourceTree = "<group>"; };
 		0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree3.scn; sourceTree = "<group>"; };
-		0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnevenRoundedRectangle.swift; sourceTree = "<group>"; };
-		0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
-		0E6AB0DF2BC115A300B12610 /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
-		0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
-		0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
+		0E62B7312BFB103B0011B34E /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
+		0E62B7322BFB103B0011B34E /* WinterPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
+		0E62B7332BFB103B0011B34E /* SpringPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
+		0E62B7342BFB103B0011B34E /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
+		0E62B7352BFB103B0011B34E /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
 		0E9532F92BDCB9580081DCE0 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
@@ -194,6 +194,7 @@
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		5B42FCC42BF3558300791C2A /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		5B68A4252B8454790004E89A /* ServieStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServieStateView.swift; sourceTree = "<group>"; };
 		5B68A4362B845E200004E89A /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpilogueViewModel.swift; sourceTree = "<group>"; };
@@ -235,8 +236,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E62B73F2BFB178D0011B34E /* RealmSwift in Frameworks */,
-				0E62B73D2BFB178D0011B34E /* Realm in Frameworks */,
+				0E214B742BE7451600558004 /* RealmSwift in Frameworks */,
+				0E214B722BE7451600558004 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +364,6 @@
 				0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */,
 				5BE2F6312BC03B000049A988 /* Scenes */,
 				0E214B5E2BDFC85500558004 /* BottomSheet.swift */,
-				0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -371,6 +371,7 @@
 		0EADEAB12B7DF5060036D190 /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
+				5B42FCC42BF3558300791C2A /* RoundedCorners.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -705,8 +706,8 @@
 			);
 			name = ForestTori;
 			packageProductDependencies = (
-				0E62B73C2BFB178D0011B34E /* Realm */,
-				0E62B73E2BFB178D0011B34E /* RealmSwift */,
+				0E214B712BE7451600558004 /* Realm */,
+				0E214B732BE7451600558004 /* RealmSwift */,
 			);
 			productName = ForestTori;
 			productReference = 0EF5FE922B4FC02100D64E5E /* ForestTori.app */;
@@ -737,7 +738,7 @@
 			);
 			mainGroup = 0EF5FE892B4FC02100D64E5E;
 			packageReferences = (
-				0E62B73B2BFB178D0011B34E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				0E214B702BE7451600558004 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 0EF5FE932B4FC02100D64E5E /* Products */;
 			projectDirPath = "";
@@ -754,7 +755,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
-				0E6AB0E42BC115A300B12610 /* Chapters.tsv in Resources */,
+				0E62B7392BFB103B0011B34E /* Chapters.tsv in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
 				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
@@ -782,7 +783,6 @@
 				0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */,
 				5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */,
 				0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */,
-				0E6AB0E62BC115A300B12610 /* AutumnPlants.tsv in Resources */,
 				0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */,
 				0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */,
 				0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */,
@@ -802,7 +802,6 @@
 				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
 				0E62B7362BFB103B0011B34E /* SummerPlants.tsv in Resources */,
 				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
-				0E6AB0E32BC115A300B12610 /* SummerPlants.tsv in Resources */,
 				0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */,
 				0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */,
 				0EEBB6EC2B7DEAD7003E09C6 /* Freesia.dae in Resources */,
@@ -844,6 +843,7 @@
 			files = (
 				5B6351062BED17AF00A1C6AB /* String+.swift in Sources */,
 				5B68A4352B845DFE0004E89A /* Font+.swift in Sources */,
+				5B42FCC52BF3558300791C2A /* RoundedCorners.swift in Sources */,
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
 				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
 				5BEA730C2BD7D17700BF5ADA /* EndingView.swift in Sources */,
@@ -868,7 +868,6 @@
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
 				5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */,
 				5BA395862B824D950019A545 /* NameSettingView.swift in Sources */,
-				0E62B7412BFB184C0011B34E /* UnevenRoundedRectangle.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				0E9532FA2BDCB9580081DCE0 /* HistoryView.swift in Sources */,
 				0E4AB23F2BD0FD6400ADB623 /* KeyboardHandler.swift in Sources */,
@@ -1115,7 +1114,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E62B73B2BFB178D0011B34E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		0E214B702BE7451600558004 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -1126,14 +1125,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E62B73C2BFB178D0011B34E /* Realm */ = {
+		0E214B712BE7451600558004 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E62B73B2BFB178D0011B34E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0E214B702BE7451600558004 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		0E62B73E2BFB178D0011B34E /* RealmSwift */ = {
+		0E214B732BE7451600558004 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E62B73B2BFB178D0011B34E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 0E214B702BE7451600558004 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
