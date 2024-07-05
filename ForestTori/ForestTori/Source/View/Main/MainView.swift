@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var notificationManager: NotificationManager
     @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
     @StateObject var viewModel = MainViewModel()
     @StateObject private var keyboardHandler = KeyboardHandler()
@@ -60,6 +61,11 @@ struct MainView: View {
                 gameManager.completeMission()
                 withAnimation {
                     serviceStateViewModel.state = .ending
+                }
+            }
+            .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+                if let newPlantName {
+                    notificationManager.scheduleNotification(for: newPlantName)
                 }
             }
         }

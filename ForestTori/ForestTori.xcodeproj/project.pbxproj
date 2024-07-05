@@ -32,7 +32,6 @@
 		0E62B72C2BFB0C1C0011B34E /* Cottontree1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */; };
 		0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72D2BFB0C240011B34E /* Cottontree2.scn */; };
 		0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */; };
-		0E62B73D2BFB178D0011B34E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E62B73C2BFB178D0011B34E /* Realm */; };
 		0E62B73F2BFB178D0011B34E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E62B73E2BFB178D0011B34E /* RealmSwift */; };
 		0E62B7412BFB184C0011B34E /* UnevenRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */; };
 		0E62B76F2BFCB68F0011B34E /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B76A2BFCB68F0011B34E /* SpringPlants.tsv */; };
@@ -82,6 +81,7 @@
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
 		0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */; };
+		5B1676E12C384B16009DA49F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676E02C384B16009DA49F /* NotificationManager.swift */; };
 		5B6351062BED17AF00A1C6AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B642BE34B5A00558004 /* String+.swift */; };
 		5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ServieStateView.swift */; };
 		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
@@ -198,6 +198,7 @@
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EF5FEA42B4FC0E700D64E5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		5B1676E02C384B16009DA49F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5B68A4252B8454790004E89A /* ServieStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServieStateView.swift; sourceTree = "<group>"; };
 		5B68A4362B845E200004E89A /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpilogueViewModel.swift; sourceTree = "<group>"; };
@@ -240,7 +241,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E62B73F2BFB178D0011B34E /* RealmSwift in Frameworks */,
-				0E62B73D2BFB178D0011B34E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +287,7 @@
 				5BA395432B7252C00019A545 /* GameManager.swift */,
 				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
 				0E4AB2352BCD70F400ADB623 /* RealmManager.swift */,
+				5B1676E02C384B16009DA49F /* NotificationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -373,13 +374,6 @@
 				0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		0EADEAB12B7DF5060036D190 /* Modifier */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modifier;
 			sourceTree = "<group>";
 		};
 		0EADEAB42B7DF5140036D190 /* Extension */ = {
@@ -595,7 +589,6 @@
 				0E5AA5482BA17F3B00727C79 /* Manager */,
 				0EADEAAE2B7DF4E90036D190 /* Component */,
 				0EADEAB42B7DF5140036D190 /* Extension */,
-				0EADEAB12B7DF5060036D190 /* Modifier */,
 				0E4AB23E2BD0FD6400ADB623 /* KeyboardHandler.swift */,
 			);
 			path = Utils;
@@ -712,7 +705,6 @@
 			);
 			name = ForestTori;
 			packageProductDependencies = (
-				0E62B73C2BFB178D0011B34E /* Realm */,
 				0E62B73E2BFB178D0011B34E /* RealmSwift */,
 			);
 			productName = ForestTori;
@@ -877,6 +869,7 @@
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				0E9532FA2BDCB9580081DCE0 /* HistoryView.swift in Sources */,
 				0E4AB23F2BD0FD6400ADB623 /* KeyboardHandler.swift in Sources */,
+				5B1676E12C384B16009DA49F /* NotificationManager.swift in Sources */,
 				5B72DDC82B91BA8B002EA734 /* EpilogueViewModel.swift in Sources */,
 				5B9152A82B84402C0068418F /* OnboardingTextBox.swift in Sources */,
 				5BA3955E2B7E377D0019A545 /* OnboardingGreetingView.swift in Sources */,
@@ -1131,11 +1124,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E62B73C2BFB178D0011B34E /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0E62B73B2BFB178D0011B34E /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
 		0E62B73E2BFB178D0011B34E /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E62B73B2BFB178D0011B34E /* XCRemoteSwiftPackageReference "realm-swift" */;

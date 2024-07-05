@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OnboardingGreetingView: View {
+    @EnvironmentObject private var notificationManager: NotificationManager
     @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     @State var isHidden = false
@@ -44,8 +45,10 @@ struct OnboardingGreetingView: View {
             OnboardingSkipButton(action: onboardingViewModel.moveToOnboardingNamingView)
                 .hidden(isHidden)
         }
-        .onAppear {
-            increaseTextIndex()
+        .onChange(of: notificationManager.isNotificationSet) { newValue in
+            if newValue {
+                increaseTextIndex()
+            }
         }
     }
 }

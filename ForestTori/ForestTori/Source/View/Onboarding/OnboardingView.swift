@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @EnvironmentObject private var notificationManager: NotificationManager
     @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
     @StateObject var onboardingViewModel = OnboardingViewModel()
     
@@ -31,6 +32,7 @@ extension OnboardingView {
         switch onboardingViewModel.type {
         case .greeting:
             OnboardingGreetingView()
+                .environmentObject(notificationManager)
                 .environmentObject(onboardingViewModel)
         case .introduction:
             OnboardingIntroductionView()

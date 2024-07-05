@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ServiceStateView: View {
     @StateObject var gameManager = GameManager()
+    @StateObject private var notificationManager = NotificationManager.instance
     @StateObject var serviceStateViewModel = ServiceStateViewModel()
     
     var body: some View {
         stateBasedView
+            .onAppear {
+                notificationManager.requestAuthorization()
+            }
     }
 }
 
@@ -23,11 +27,13 @@ extension ServiceStateView {
         switch serviceStateViewModel.state {
         case .onboarding:
             OnboardingView()
+                .environmentObject(notificationManager)
                 .environmentObject(serviceStateViewModel)
         case .main:
             MainView()
                 .transition(.move(edge: .trailing))
                 .environmentObject(gameManager)
+                .environmentObject(notificationManager)
                 .environmentObject(serviceStateViewModel)
         case .ending:
             EndingView()
