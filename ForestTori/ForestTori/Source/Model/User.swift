@@ -15,5 +15,5 @@ import SwiftUI
 struct User: Codable {
     var selectedPlant: Plant?
     var chapterProgress = 1
-    var completedPlants: [GardenPlant] = []
+    var completedPlants: [Int: [GardenPlant]] = [:]
 }

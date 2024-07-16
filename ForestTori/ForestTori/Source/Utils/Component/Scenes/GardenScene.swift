@@ -98,26 +98,26 @@ extension GardenScene {
     private func addNode(index: Int) -> SCNNode? {
         let plantNode = SCNNode()
         
-        let plant = gameManager.user.completedPlants[index]
+        guard let plants = gameManager.user.completedPlants[index] else {return nil}
         
-        guard let plantScene = SCNScene(named: plant.garden3DFile) else {
-            return nil
+        for plant in plants {
+            guard let plantScene = SCNScene(named: plant.garden3DFile) else {break}
+            
+            let plantPositionX = plant.gardenPositionX
+            let plantPositionY = plant.gardenPositionY
+            let plantPositionZ = plant.gardenPositionZ
+            
+            let node = SCNNode()
+            
+            for childNode in plantScene.rootNode.childNodes {
+                node.addChildNode(childNode)
+            }
+            
+            node.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
+            node.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
+            
+            plantNode.addChildNode(node)
         }
-        
-        let plantPositionX = plant.gardenPositionX
-        let plantPositionY = plant.gardenPositionY
-        let plantPositionZ = plant.gardenPositionZ
-        
-        let node = SCNNode()
-        
-        for childNode in plantScene.rootNode.childNodes {
-            node.addChildNode(childNode)
-        }
-        
-        node.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
-        node.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
-        
-        plantNode.addChildNode(node)
         
         return plantNode
     }

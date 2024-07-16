@@ -62,7 +62,7 @@ class GameManager: ObservableObject {
                 $0.id == plant.id
             }
             
-            user.completedPlants.append(data[0])
+            user.completedPlants[user.chapterProgress, default: []].append(data[0])
         }
         
         user.selectedPlant = nil
