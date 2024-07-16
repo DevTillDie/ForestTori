@@ -12,6 +12,7 @@ import SceneKit
 struct GardenScene: UIViewRepresentable {
     @EnvironmentObject var gameManager: GameManager
     
+    //TODO: Garden Model로 바꾸기
     @Binding var selectedPlant: Plant?
     @Binding var showHistoryView: Bool
     
@@ -57,9 +58,13 @@ struct GardenScene: UIViewRepresentable {
             let touchLocation = gestureRecognize.location(in: sceneView)
             let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
             
+            
+            //TODO: Garden Model로 바꾸기
             if let hitNode = hitTestResults.first?.node {
                 if let selectedName = hitNode.geometry?.name {
-//                    if let selectedPlant = parent.gameManager.user.completedPlants.first(where: {$0.characterImage == selectedName}) {
+//                    if let selectedPlant = parent.gameManager.user.completedPlants[0]?.first(where: {
+//                        $0.plantName == selectedName
+//                    }) {
 //                        parent.selectedPlant =  selectedPlant
 //                        parent.showHistoryView = true
 //                    }
