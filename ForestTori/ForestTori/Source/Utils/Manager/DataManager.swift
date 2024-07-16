@@ -12,6 +12,7 @@ import Foundation
 /// - chapters: 챕터 정보
 class DataManager: ObservableObject {
     @Published var chapters: [Chapter] = []
+    @Published var gardenPlant: [GardenPlant] = []
     
     // UserDefaults에 데이터가 있다면 그 데이터를 읽어오고, 없다면 파일에서 읽어와 UserDefaults에 저장
     init() {
@@ -120,10 +121,7 @@ extension DataManager {
                                 missions: missions,
                                 characterFileName: characterFileName, 
                                 character3DFiles: character3DFiles,
-                                totalDay: totalDay,
-                                garden3DFile: garden3DFile,
-                                gardenPositionX: gardenPositionX,
-                                gardenPositionZ: gardenPositionZ
+                                totalDay: totalDay
                             )
                         )
                     } else {
@@ -139,10 +137,7 @@ extension DataManager {
                                 missions: [],
                                 characterFileName: "",
                                 character3DFiles: [],
-                                totalDay: 0,
-                                garden3DFile: "",
-                                gardenPositionX: 0,
-                                gardenPositionZ: 0
+                                totalDay: 0
                             )
                         )
                     }

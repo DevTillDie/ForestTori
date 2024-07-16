@@ -59,10 +59,10 @@ struct GardenScene: UIViewRepresentable {
             
             if let hitNode = hitTestResults.first?.node {
                 if let selectedName = hitNode.geometry?.name {
-                    if let selectedPlant = parent.gameManager.user.completedPlants.first(where: {$0.characterImage == selectedName}) {
-                        parent.selectedPlant =  selectedPlant
-                        parent.showHistoryView = true
-                    }
+//                    if let selectedPlant = parent.gameManager.user.completedPlants.first(where: {$0.characterImage == selectedName}) {
+//                        parent.selectedPlant =  selectedPlant
+//                        parent.showHistoryView = true
+//                    }
                 }
             }
         }
