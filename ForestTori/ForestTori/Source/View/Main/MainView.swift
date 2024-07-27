@@ -40,9 +40,17 @@ struct MainView: View {
                 
                 showCompleteMission
                 
-                showHistoryView
+//                showHistoryView
             }
             .ignoresSafeArea()
+            .fullScreenCover(isPresented: $viewModel.isShowHistoryView) {
+                WriteHistoryView(
+                    isComplete: $viewModel.isCompleteTodayMission,
+                    isShowHistoryView: $viewModel.isShowHistoryView,
+                    isTapDoneButton: $viewModel.isTapDoneButton,
+                    plantName: viewModel.plantName
+                )
+            }
             .onAppear {
                 if gameManager.isSelectPlant {
                     viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
@@ -63,11 +71,11 @@ struct MainView: View {
                     serviceStateViewModel.state = .ending
                 }
             }
-            .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
-                if let newPlantName {
-                    notificationManager.scheduleNotification(for: newPlantName)
-                }
-            }
+//            .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+//                if let newPlantName {
+//                    notificationManager.scheduleNotification(for: newPlantName)
+//                }
+//            }
         }
     }
 }

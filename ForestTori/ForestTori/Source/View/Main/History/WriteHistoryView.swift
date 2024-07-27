@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WriteHistoryView: View {
     @StateObject var viewModel = WriteHistoryViewModel()
+    @EnvironmentObject var keyboardHandler: KeyboardHandler
     @FocusState private var isFocused: Bool
     
     @State private var isShowSelectImagePopup = false
@@ -27,8 +28,9 @@ struct WriteHistoryView: View {
             hisoryViewHeader
             
             selectImageView
-                .aspectRatio(5/3, contentMode: .fit)
+                .aspectRatio(1, contentMode: .fill)
                 .padding(.horizontal)
+                .padding(.vertical)
             
             writeHistoryView
         }
@@ -59,36 +61,46 @@ struct WriteHistoryView: View {
 
 extension WriteHistoryView {
     private var hisoryViewHeader: some View {
-        HStack {
-            Button {
-                withAnimation {
-                    isShowHistoryView = false
-                    isTapDoneButton = false
+        VStack {
+            HStack {
+                Button {
+                    withAnimation {
+                        isShowHistoryView = false
+                        isTapDoneButton = false
+                    }
+                } label: {
+                    Text(Image(systemName: "chevron.backward"))
+                        .bold()
+                        .foregroundStyle(.gray40)
                 }
-            } label: {
-                Image(systemName: "xmark")
-                    .foregroundStyle(.redPrimary)
+                
+                Spacer()
+                
+                Text("성장일지")
+                    .font(.subtitleL)
+                
+                Spacer()
+                
+                Button {
+                    viewModel.saveHistory()
+                    isComplete = true
+                } label: {
+                    Text("완료")
+                        .font(.subtitleM)
+                        .bold()
+                        .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
+                }
+                .disabled(viewModel.isCompleteButtonDisable)
             }
+            .padding(.leading, 8)
+            .padding(.trailing, 16)
+            .padding(.top, 11)
+            .padding(.bottom, 6)
             
-            Spacer()
-            
-            Text("성장일지")
-                .font(.subtitleL)
-            
-            Spacer()
-            
-            Button {
-                viewModel.saveHistory()
-                isComplete = true
-            } label: {
-                Text("완료")
-                    .font(.subtitleM)
-                    .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
-            }
-            .disabled(viewModel.isCompleteButtonDisable)
+            Rectangle()
+                .fill(.gray30)
+                .frame(height: 0.33)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 8)
     }
     
     private var selectImageView: some View {
