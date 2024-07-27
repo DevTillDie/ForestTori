@@ -16,7 +16,7 @@ struct GardenView: View {
     @State private var isShowHistoryView = false
     @State private var showHistoryDetail = false
     @State private var selectedPlant: Plant?
-    @State private var selectedHistory: (image: UIImage, record: String)?
+    @State private var selectedHistory: (image: UIImage, date: String, record: String)?
     
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
@@ -59,7 +59,7 @@ struct GardenView: View {
                 
                 showHistoryView
                 
-                showDetailHistory
+//                showDetailHistory
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
@@ -179,38 +179,38 @@ extension GardenView {
         .animation(.interactiveSpring(), value: isShowHistoryView)
     }
     
-    private var showDetailHistory: some View {
-        ZStack {
-            if let history = selectedHistory {
-                if showHistoryDetail {
-                    Color.black.opacity(0.4)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-                            withAnimation {
-                                showHistoryDetail = false
-                                selectedHistoryIndex = nil
-                            }
-                        }
-                        .transition(.opacity)
-                    
-                    HistoryDetailView(
-                        selectedHistoryIndex: $selectedHistoryIndex,
-                        isShowHistoryDetailView: $showHistoryDetail,
-                        image: history.image,
-                        record: history.record
-                    )
-                    .padding(.vertical)
-                    .transition(.move(edge: .bottom))
-                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.white)
-                    )
-                }
-            }
-        }
-        .animation(.easeInOut(duration: 0.2), value: showHistoryDetail)
-    }
+//    private var showDetailHistory: some View {
+//        ZStack {
+//            if let history = selectedHistory {
+//                if showHistoryDetail {
+//                    Color.black.opacity(0.4)
+//                        .ignoresSafeArea()
+//                        .onTapGesture {
+//                            withAnimation {
+//                                showHistoryDetail = false
+//                                selectedHistoryIndex = nil
+//                            }
+//                        }
+//                        .transition(.opacity)
+//                    
+////                    HistoryDetailView(
+////                        selectedHistoryIndex: $selectedHistoryIndex,
+////                        isShowHistoryDetailView: $showHistoryDetail,
+////                        image: history.image,
+////                        record: history.record
+////                    )
+//                    .padding(.vertical)
+//                    .transition(.move(edge: .bottom))
+//                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6)
+//                    .background(
+//                        RoundedRectangle(cornerRadius: 10)
+//                            .fill(.white)
+//                    )
+//                }
+//            }
+//        }
+//        .animation(.easeInOut(duration: 0.2), value: showHistoryDetail)
+//    }
 }
 
 // MARK: - ARButton

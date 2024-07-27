@@ -10,9 +10,10 @@ import SwiftUI
 struct HistoryDetailView: View {
     @Binding var selectedHistoryIndex: Int?
     @Binding var isShowHistoryDetailView: Bool
+    @Binding var selectedHistory: (image: UIImage, date: String, record: String)?
     
-    var image: UIImage
-    var record: String
+//    var image: UIImage
+//    var record: String
     
     var body: some View {
         VStack {
@@ -29,35 +30,44 @@ struct HistoryDetailView: View {
 
 extension HistoryDetailView {
     private var viewHeader: some View {
-        HStack {
-            Button {
-                withAnimation {
-                    selectedHistoryIndex = nil
-                    isShowHistoryDetailView = false
+        VStack {
+            HStack {
+                Button {
+                    withAnimation {
+                        selectedHistoryIndex = nil
+                        isShowHistoryDetailView = false
+                    }
+                } label: {
+                    Text(Image(systemName: "chevron.backward"))
+                        .bold()
+                        .foregroundStyle(.gray40)
                 }
-            } label: {
-                Image(systemName: "xmark")
-                    .foregroundStyle(.redPrimary)
+                
+                Spacer()
+                
+                Text(selectedHistory?.date ?? "0000.00.00")
+                    .font(.subtitleL)
+                
+                Spacer()
+                
             }
+            .padding(.horizontal, 8)
+            .padding(.top, 11)
+            .padding(.bottom, 6)
             
-            Spacer()
-            
-            Text("성장일지")
-                .font(.subtitleL)
-            
-            Spacer()
-            
+            Rectangle()
+                .fill(.gray30)
+                .frame(height: 0.33)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 8)
     }
     
     private var imageView: some View {
-        Image(uiImage: image)
+        Image(uiImage: selectedHistory?.image ?? .onboardingFrezia)
             .resizable()
             .clipShape(RoundedRectangle(cornerRadius: 8))
-            .aspectRatio(5/3, contentMode: .fit)
+            .aspectRatio(1, contentMode: .fill)
             .padding(.horizontal)
+            .padding(.vertical)
     }
     
     private var recordView: some View {
@@ -68,7 +78,7 @@ extension HistoryDetailView {
                     .stroke(.brownSecondary, lineWidth: 2)
             }
             .overlay(alignment: .topLeading) {
-                Text(record.splitCharacter())
+                Text(selectedHistory?.record.splitCharacter() ?? "내용 없음")
                     .font(.bodyM)
                     .foregroundStyle(.gray50)
                     .frame(maxWidth: .infinity, alignment: .leading)
