@@ -27,12 +27,24 @@ struct WriteHistoryView: View {
         VStack {
             hisoryViewHeader
             
-            selectImageView
-                .aspectRatio(1, contentMode: .fill)
-                .padding(.horizontal)
-                .padding(.vertical)
-            
-            writeHistoryView
+            ScrollViewReader { proxy in
+                ScrollView(showsIndicators: false) {
+                    selectImageView
+                        .aspectRatio(1, contentMode: .fill)
+                        .padding(.horizontal)
+                        .padding(.vertical)
+                    
+                    writeHistoryView
+                        .id("writeHistoryView")
+                        .onChange(of: isFocused) { focused in
+                            if focused {
+                                withAnimation {
+                                    proxy.scrollTo("writeHistoryView", anchor: .bottom)
+                                }
+                            }
+                        }
+                }
+            }
         }
         .fullScreenCover(isPresented: $isShowCameraPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .camera)
@@ -146,6 +158,7 @@ extension WriteHistoryView {
     private var writeHistoryView: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(Color.gray10)
+            .frame(height: 298)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(.brownSecondary, lineWidth: 2)
@@ -178,6 +191,7 @@ extension WriteHistoryView {
                 .padding()
             }
             .padding(.horizontal)
+            .padding(.bottom, 26)
             .onTapGesture {
                 isFocused = true
             }

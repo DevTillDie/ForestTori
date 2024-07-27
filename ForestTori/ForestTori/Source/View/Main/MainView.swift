@@ -50,6 +50,7 @@ struct MainView: View {
                     isTapDoneButton: $viewModel.isTapDoneButton,
                     plantName: viewModel.plantName
                 )
+                .environmentObject(keyboardHandler)
             }
             .onAppear {
                 if gameManager.isSelectPlant {
