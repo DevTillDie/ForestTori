@@ -39,8 +39,6 @@ struct MainView: View {
                 showSelectPlantView
                 
                 showCompleteMission
-                
-//                showHistoryView
             }
             .ignoresSafeArea()
             .fullScreenCover(isPresented: $viewModel.isShowHistoryView) {
@@ -72,11 +70,11 @@ struct MainView: View {
                     serviceStateViewModel.state = .ending
                 }
             }
-//            .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
-//                if let newPlantName {
-//                    notificationManager.scheduleNotification(for: newPlantName)
-//                }
-//            }
+            .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+                if let newPlantName {
+                    notificationManager.scheduleNotification(for: newPlantName)
+                }
+            }
         }
     }
 }
@@ -186,39 +184,6 @@ extension MainView {
             }
         }
         .hidden(viewModel.isShowCompleteMissionView)
-    }
-    
-    private var showHistoryView: some View {
-        ZStack {
-            if viewModel.isShowHistoryView {
-                Color.black.opacity(0.4)
-                    .ignoresSafeArea()
-                    .onTapGesture {
-                        withAnimation {
-                            viewModel.isShowHistoryView = false
-                            viewModel.isTapDoneButton = false
-                        }
-                    }
-                    .transition(.opacity)
-                
-                WriteHistoryView(
-                    isComplete: $viewModel.isCompleteTodayMission,
-                    isShowHistoryView: $viewModel.isShowHistoryView,
-                    isTapDoneButton: $viewModel.isTapDoneButton,
-                    plantName: viewModel.plantName
-                )
-                .padding(.vertical)
-                .transition(.move(edge: .bottom))
-                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.white)
-                )
-                .padding(.bottom, keyboardHandler.keyboardHeight/4)
-            }
-        }
-        .animation(.easeInOut(duration: 0.2), value: viewModel.isShowHistoryView)
-        .animation(.default, value: keyboardHandler.keyboardHeight)
     }
 }
 

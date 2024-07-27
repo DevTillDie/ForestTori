@@ -58,8 +58,6 @@ struct GardenView: View {
                 }
                 
                 showHistoryView
-                
-//                showDetailHistory
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
@@ -178,39 +176,6 @@ extension GardenView {
         .ignoresSafeArea()
         .animation(.interactiveSpring(), value: isShowHistoryView)
     }
-    
-//    private var showDetailHistory: some View {
-//        ZStack {
-//            if let history = selectedHistory {
-//                if showHistoryDetail {
-//                    Color.black.opacity(0.4)
-//                        .ignoresSafeArea()
-//                        .onTapGesture {
-//                            withAnimation {
-//                                showHistoryDetail = false
-//                                selectedHistoryIndex = nil
-//                            }
-//                        }
-//                        .transition(.opacity)
-//                    
-////                    HistoryDetailView(
-////                        selectedHistoryIndex: $selectedHistoryIndex,
-////                        isShowHistoryDetailView: $showHistoryDetail,
-////                        image: history.image,
-////                        record: history.record
-////                    )
-//                    .padding(.vertical)
-//                    .transition(.move(edge: .bottom))
-//                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6)
-//                    .background(
-//                        RoundedRectangle(cornerRadius: 10)
-//                            .fill(.white)
-//                    )
-//                }
-//            }
-//        }
-//        .animation(.easeInOut(duration: 0.2), value: showHistoryDetail)
-//    }
 }
 
 // MARK: - ARButton
