@@ -163,23 +163,32 @@ extension WriteHistoryView {
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(.brownSecondary, lineWidth: 2)
             }
-            .overlay(alignment: .top) {
-                TextEditor(
-                    text: Binding(
-                        get: {viewModel.todayHistory},
-                        set: { newValue, _ in
-                            if newValue.lastIndex(of: "\n") != nil {
-                                isFocused = false
-                            } else {
-                                viewModel.todayHistory = newValue
-                            }
-                        })
-                )
+            .overlay(alignment: .center) {
+                    TextEditor(
+                        text: Binding(
+                            get: {viewModel.todayHistory},
+                            set: { newValue, _ in
+                                if newValue.lastIndex(of: "\n") != nil {
+                                    isFocused = false
+                                } else {
+                                    viewModel.todayHistory = newValue
+                                }
+                            })
+                    )
+                    .padding(-8)
                 .overlay(alignment: .topLeading) {
                     Text(placeHolder)
                         .foregroundStyle(viewModel.todayHistory.isEmpty ? .gray30 : .clear)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 4)
+                        .padding(.horizontal, -4)
+                }
+                .overlay(alignment: .bottomTrailing) {
+                    Text("\(viewModel.todayHistory.count) / 300")
+                        .foregroundStyle(.gray30)
+                        .onChange(of: viewModel.todayHistory) { newValue in
+                            if newValue.count > 300 {
+                                viewModel.todayHistory = String(newValue.prefix(300))
+                            }
+                        }
                 }
                 .transparentScrolling()
                 .focused($isFocused)
