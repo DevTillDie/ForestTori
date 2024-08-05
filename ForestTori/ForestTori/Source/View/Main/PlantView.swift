@@ -106,7 +106,7 @@ extension PlantView {
                             .frame(width: 38, height: 38)
                             .foregroundColor(viewModel.missionStatus == .done || viewModel.missionStatus == .completed ? .greenPrimary : .brownSecondary)
                     }
-                    .disabled(viewModel.missionStatus == .receivingMission)
+                    .disabled(viewModel.missionStatus != .inProgress)
                 }
                 .padding(.horizontal, 20)
             }

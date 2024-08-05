@@ -67,6 +67,8 @@ class MainViewModel: ObservableObject {
             
             if missionStatus == .none {
                 missionStatus = .receivingMission
+            } else if missionStatus == .done {
+                missionStatus = .inProgress
             }
             
             if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
