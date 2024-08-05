@@ -187,7 +187,7 @@ extension MainView {
                     .onTapGesture {
                         withAnimation {
                             viewModel.isShowHistoryView = false
-                            viewModel.isTapDoneButton = false
+                            viewModel.missionStatus = .inProgress
                         }
                     }
                     .transition(.opacity)
@@ -195,7 +195,7 @@ extension MainView {
                 WriteHistoryView(
                     isComplete: $viewModel.isCompleteTodayMission,
                     isShowHistoryView: $viewModel.isShowHistoryView,
-                    isTapDoneButton: $viewModel.isTapDoneButton,
+                    currentStatus: $viewModel.missionStatus,
                     plantName: viewModel.plantName
                 )
                 .padding(.vertical)

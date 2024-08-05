@@ -16,12 +16,12 @@ struct PlantView: View {
     var body: some View {
         VStack(spacing: 0) {
             dialogueBox
-                .hidden(viewModel.isShowDialogueBox)
+                .hidden(viewModel.missionStatus == .receivingMission || viewModel.missionStatus == .completed)
             
             Spacer()
             
             addNewPlantButton
-                .hidden(viewModel.isShowAddButton)
+                .hidden(viewModel.missionStatus == .none)
             
             PlantPotView(sceneViewName: viewModel.plant3DFileName)
                 .scaledToFit()
@@ -29,7 +29,7 @@ struct PlantView: View {
                 .padding(.bottom, 16)
             
             missionBox
-                .hidden(viewModel.isShowMissionBox)
+                .hidden(viewModel.missionStatus == .inProgress || viewModel.missionStatus == .completed)
         }
         .padding(.top, 24)
         .padding(.bottom, 20)
@@ -98,15 +98,15 @@ extension PlantView {
                     Spacer()
                     
                     Button {
-                        viewModel.isTapDoneButton = true
+                        viewModel.missionStatus = .done
                         viewModel.isShowHistoryView = true
                     } label: {
-                        Image(systemName: viewModel.isTapDoneButton ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: viewModel.missionStatus == .done || viewModel.missionStatus == .completed ? "checkmark.circle.fill" : "circle")
                             .resizable()
                             .frame(width: 38, height: 38)
-                            .foregroundColor(viewModel.isTapDoneButton ? .greenPrimary : .brownSecondary)
+                            .foregroundColor(viewModel.missionStatus == .done || viewModel.missionStatus == .completed ? .greenPrimary : .brownSecondary)
                     }
-                    .disabled(viewModel.isDisableDoneButton)
+                    .disabled(viewModel.missionStatus == .receivingMission)
                 }
                 .padding(.horizontal, 20)
             }

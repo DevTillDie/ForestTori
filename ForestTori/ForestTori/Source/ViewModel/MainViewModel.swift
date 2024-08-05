@@ -12,14 +12,20 @@ import SwiftUI
 //  - currentDialogueIndex: dialogues 배열에 접근하기 위한 index
 //  - currentLineIndex: dialogues배열 중 currentDialogueIndex에 해당하는 lines 배열에 접근하기 위한 index
 
+enum MissionStatus: String, Codable {
+    case none             // 미션 없음
+    case receivingMission // 미션을 받는 중
+    case inProgress       // 미션 하는 중
+    case done             // 미션 완료
+    case completed        // 식물일지 작성까지 완료
+}
+
 class MainViewModel: ObservableObject {
     @AppStorage("missionDay") var missionDay = 0
     @AppStorage("currentDialogueIndex") var currentDialogueIndex = 0
-    @AppStorage("isShowDialogueBox") var isShowDialogueBox = true
-    @AppStorage("isShowMissionBox") var isShowMissionBox = false
-    @AppStorage("isTapButton") var isTapDoneButton = false
     @AppStorage("progressValue") var progressValue = 0.0
     @AppStorage("totalProgressValue") var totalProgressValue = 0.0
+    @AppStorage("missionStatus") var missionStatus: MissionStatus = .none
     
     @Published var plant3DFileName = "Emptypot.scn"
     @Published var plantWidth: CGFloat = 250
@@ -27,11 +33,9 @@ class MainViewModel: ObservableObject {
     @Published var dialogueText = ""
     @Published var missionText = ""
     
-    @Published var isShowAddButton = true
     @Published var isShowHistoryView = false
-    @Published var isShowCompleteMissionView = false
-    @Published var isDisableDoneButton = false
     @Published var isCompleteMission = false
+    @Published var isShowCompleteMissionView = false
     
     @Published var isCompleteTodayMission = false {
         didSet {
@@ -61,8 +65,9 @@ class MainViewModel: ObservableObject {
             plantWidth = 350
             plantName = plant.characterName
             
-            isShowAddButton = false
-            isShowDialogueBox = true
+            if missionStatus == .none {
+                missionStatus = .receivingMission
+            }
             
             if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
                 dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
@@ -82,10 +87,7 @@ class MainViewModel: ObservableObject {
         dialogueText = ""
         missionText = ""
         
-        isShowAddButton = true
-        isShowMissionBox = false
-        isTapDoneButton = false
-        isDisableDoneButton = false
+        missionStatus = .none
         isCompleteMission = false
         
         currentDialogueIndex = 0
@@ -94,11 +96,8 @@ class MainViewModel: ObservableObject {
     
     func showNextDialogue() {
         if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
-            isShowDialogueBox = false
-            isShowMissionBox = true
-            isTapDoneButton = false
-            isDisableDoneButton = false
-            
+            missionStatus = .inProgress
+
             if dialogues[currentDialogueIndex].type == "Ending" {
                 nextDay()
             }
@@ -114,8 +113,7 @@ class MainViewModel: ObservableObject {
         progressValue = (Double(missionDay + 1)/Double(plant?.totalDay ?? 0)) * 100
         totalProgressValue += (1 / Double(plant?.totalDay ?? 1)) * 25
         
-        isShowDialogueBox = true
-        isDisableDoneButton = true
+        missionStatus = .completed
         showNextDialogue()
     }
     
@@ -155,7 +153,6 @@ class MainViewModel: ObservableObject {
     
     private func nextDay() {
         missionDay += 1
-        isTapDoneButton = false
 
         if let plant = plant {
             if missionDay == plant.totalDay {
@@ -163,7 +160,7 @@ class MainViewModel: ObservableObject {
                     showEnding = true
                 } else {
                     isCompleteMission = true
-                    isShowMissionBox = false
+                    missionStatus = .none
                 }
             } else {
                 plant3DFileName = plant.character3DFiles[missionDay]
@@ -173,9 +170,7 @@ class MainViewModel: ObservableObject {
                     currentDialogueIndex += 1
                     currentLineIndex = 0
                     
-                    isShowDialogueBox = true
-                    isDisableDoneButton = true
-                    isShowMissionBox = false
+                    missionStatus = .receivingMission
                     showNextDialogue()
                 }
             }
