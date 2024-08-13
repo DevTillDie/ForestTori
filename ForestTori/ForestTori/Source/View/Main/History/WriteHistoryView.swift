@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WriteHistoryView: View {
     @StateObject var viewModel = WriteHistoryViewModel()
+    @EnvironmentObject var keyboardHandler: KeyboardHandler
     @FocusState private var isFocused: Bool
     
     @State private var isShowSelectImagePopup = false
@@ -26,11 +27,24 @@ struct WriteHistoryView: View {
         VStack {
             hisoryViewHeader
             
-            selectImageView
-                .aspectRatio(5/3, contentMode: .fit)
-                .padding(.horizontal)
-            
-            writeHistoryView
+            ScrollViewReader { proxy in
+                ScrollView(showsIndicators: false) {
+                    selectImageView
+                        .aspectRatio(1, contentMode: .fill)
+                        .padding(.horizontal)
+                        .padding(.vertical)
+                    
+                    writeHistoryView
+                        .id("writeHistoryView")
+                        .onChange(of: isFocused) { focused in
+                            if focused {
+                                withAnimation {
+                                    proxy.scrollTo("writeHistoryView", anchor: .bottom)
+                                }
+                            }
+                        }
+                }
+            }
         }
         .fullScreenCover(isPresented: $isShowCameraPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .camera)
@@ -59,36 +73,46 @@ struct WriteHistoryView: View {
 
 extension WriteHistoryView {
     private var hisoryViewHeader: some View {
-        HStack {
-            Button {
-                withAnimation {
-                    isShowHistoryView = false
-                    currentStatus = .inProgress
+        VStack {
+            HStack {
+                Button {
+                    withAnimation {
+                        isShowHistoryView = false
+                        currentStatus = .inProgress
+                    }
+                } label: {
+                    Text(Image(systemName: "chevron.backward"))
+                        .bold()
+                        .foregroundStyle(.gray40)
                 }
-            } label: {
-                Image(systemName: "xmark")
-                    .foregroundStyle(.redPrimary)
+                
+                Spacer()
+                
+                Text("성장일지")
+                    .font(.subtitleL)
+                
+                Spacer()
+                
+                Button {
+                    viewModel.saveHistory()
+                    isComplete = true
+                } label: {
+                    Text("완료")
+                        .font(.subtitleM)
+                        .bold()
+                        .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
+                }
+                .disabled(viewModel.isCompleteButtonDisable)
             }
+            .padding(.leading, 8)
+            .padding(.trailing, 16)
+            .padding(.top, 11)
+            .padding(.bottom, 6)
             
-            Spacer()
-            
-            Text("성장일지")
-                .font(.subtitleL)
-            
-            Spacer()
-            
-            Button {
-                viewModel.saveHistory()
-                isComplete = true
-            } label: {
-                Text("완료")
-                    .font(.subtitleM)
-                    .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
-            }
-            .disabled(viewModel.isCompleteButtonDisable)
+            Rectangle()
+                .fill(.gray30)
+                .frame(height: 0.33)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 8)
     }
     
     private var selectImageView: some View {
@@ -134,27 +158,37 @@ extension WriteHistoryView {
     private var writeHistoryView: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(Color.gray10)
+            .frame(height: 298)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(.brownSecondary, lineWidth: 2)
             }
-            .overlay(alignment: .top) {
-                TextEditor(
-                    text: Binding(
-                        get: {viewModel.todayHistory},
-                        set: { newValue, _ in
-                            if newValue.lastIndex(of: "\n") != nil {
-                                isFocused = false
-                            } else {
-                                viewModel.todayHistory = newValue
-                            }
-                        })
-                )
+            .overlay(alignment: .center) {
+                    TextEditor(
+                        text: Binding(
+                            get: {viewModel.todayHistory},
+                            set: { newValue, _ in
+                                if newValue.lastIndex(of: "\n") != nil {
+                                    isFocused = false
+                                } else {
+                                    viewModel.todayHistory = newValue
+                                }
+                            })
+                    )
+                    .padding(-8)
                 .overlay(alignment: .topLeading) {
                     Text(placeHolder)
                         .foregroundStyle(viewModel.todayHistory.isEmpty ? .gray30 : .clear)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 4)
+                        .padding(.horizontal, -4)
+                }
+                .overlay(alignment: .bottomTrailing) {
+                    Text("\(viewModel.todayHistory.count) / 300")
+                        .foregroundStyle(.gray30)
+                        .onChange(of: viewModel.todayHistory) { newValue in
+                            if newValue.count > 300 {
+                                viewModel.todayHistory = String(newValue.prefix(300))
+                            }
+                        }
                 }
                 .transparentScrolling()
                 .focused($isFocused)
@@ -166,6 +200,7 @@ extension WriteHistoryView {
                 .padding()
             }
             .padding(.horizontal)
+            .padding(.bottom, 26)
             .onTapGesture {
                 isFocused = true
             }

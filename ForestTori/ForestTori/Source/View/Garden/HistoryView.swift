@@ -13,7 +13,7 @@ struct HistoryView: View {
     @Binding var selectedHistoryIndex: Int?
     @Binding var isShowHistoryDetail: Bool
     @Binding var plant: Plant?
-    @Binding var selectedHistory: (image: UIImage, record: String)?
+    @Binding var selectedHistory: (image: UIImage, date: String, record: String)?
     
     var body: some View {
         if let plant = plant {
@@ -44,6 +44,9 @@ struct HistoryView: View {
             }
             .onAppear {
                 viewModel.loadHistoryData(plantName: plant.characterName)
+            }
+            .fullScreenCover(isPresented: $isShowHistoryDetail) {
+                HistoryDetailView(selectedHistoryIndex: $selectedHistoryIndex, isShowHistoryDetailView: $isShowHistoryDetail, selectedHistory: $selectedHistory)
             }
         }
     }
@@ -80,7 +83,7 @@ extension HistoryView {
                         selectedHistoryIndex = index
                         if let imageName = history.imageData,
                            let image = UIImage(data: imageName) {
-                            selectedHistory = (image, history.text)
+                            selectedHistory = (image, history.date, history.text)
                             isShowHistoryDetail = true
                         }
                     }
