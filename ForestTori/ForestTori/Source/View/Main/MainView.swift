@@ -45,7 +45,7 @@ struct MainView: View {
                 WriteHistoryView(
                     isComplete: $viewModel.isCompleteTodayMission,
                     isShowHistoryView: $viewModel.isShowHistoryView,
-                    isTapDoneButton: $viewModel.isTapDoneButton,
+                    currentStatus: $viewModel.missionStatus,
                     plantName: viewModel.plantName
                 )
                 .environmentObject(keyboardHandler)

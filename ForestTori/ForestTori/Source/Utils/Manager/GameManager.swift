@@ -58,7 +58,7 @@ class GameManager: ObservableObject {
     /// 미션 완료 후 호출되어 사용자의 레벌업 및 챕터 진행 상태를 확인합니다
     func completeMission() {
         if let plant = user.selectedPlant {
-            if let data = dataManager.gardenPlant.first(where: {
+            if let data = dataManager.gardenPlants.first(where: {
                 $0.id == plant.id
             }) {
                 user.completedPlants[user.chapterProgress, default: []].append(data)

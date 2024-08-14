@@ -18,6 +18,7 @@ import Foundation
 /// - characterFileName: 식물 Dialogue file 이름
 /// - character3DFiles: 식물 3D file 이름
 /// - totalDay: 식물의 성장 완료에 필요한 총 일수
+/// - characterEnding: 엔딩에 나타나는 문구
 struct Plant: Identifiable, Codable {
     var id: Int
     var characterName: String
@@ -28,4 +29,5 @@ struct Plant: Identifiable, Codable {
     var characterFileName: String
     var character3DFiles: [String]
     var totalDay: Int
+    var characterEnding: String
 }
