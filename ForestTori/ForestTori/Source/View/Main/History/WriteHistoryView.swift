@@ -12,9 +12,11 @@ struct WriteHistoryView: View {
     @EnvironmentObject var keyboardHandler: KeyboardHandler
     @FocusState private var isFocused: Bool
     
+    @State private var croppedImage: UIImage?
     @State private var isShowSelectImagePopup = false
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
+    @State var isShowCropView = false
     
     @Binding var isComplete: Bool
     @Binding var isShowHistoryView: Bool
@@ -47,18 +49,39 @@ struct WriteHistoryView: View {
             }
         }
         .fullScreenCover(isPresented: $isShowCameraPicker) {
-            ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .camera)
+            ImagePicker(selectedImage: $viewModel.selectedImage,
+                        sourceType: .camera)
                 .ignoresSafeArea()
                 .onAppear {
                     isShowSelectImagePopup = false
+                }
+                .onDisappear {
+                    isShowCropView = true
                 }
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
-            ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .photoLibrary)
+            ImagePicker(selectedImage: $viewModel.selectedImage,
+                        sourceType: .photoLibrary)
                 .ignoresSafeArea()
                 .onAppear {
                     isShowSelectImagePopup = false
                 }
+                .onDisappear {
+                    isShowCropView = true
+                }
+        }
+        .sheet(isPresented: $isShowCropView) {
+            isShowCropView = false
+            isShowCameraPicker = false
+            isShowPhotoLibraryPicker = false
+        } content: {
+            ImageCropView(
+                isShowCropView: $isShowCropView, image: viewModel.selectedImage
+            ) { croppedImage, _ in
+                if let croppedImage {
+                    viewModel.selectedImage = croppedImage
+                }
+            }
         }
         .onTapGesture {
             isFocused = false
