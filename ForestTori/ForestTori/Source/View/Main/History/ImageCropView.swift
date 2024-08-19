@@ -11,18 +11,18 @@ import PhotosUI
 struct ImageCropView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var viewModel: WriteHistoryViewModel
-
-    @Binding var isShowCropView: Bool
     @GestureState private var isInteracting: Bool = false
+
     @State private var scale: CGFloat = 1
     @State private var lastScale: CGFloat = 0
     @State private var offset: CGSize = .zero
     @State private var lastStoredOffset: CGSize = .zero
+    @Binding var isShowCropView: Bool
     
-    var image: UIImage?
-    var onCrop: (UIImage?, Bool) -> Void
     let padding = UIScreen.main.bounds.height / 844
     let yOffset = -(UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) / 2
+    var image: UIImage?
+    var onCrop: (UIImage?, Bool) -> Void
 
     var body: some View {
         NavigationView {
