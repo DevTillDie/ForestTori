@@ -12,16 +12,25 @@ import Foundation
 /// - chapters: 챕터 정보
 class DataManager: ObservableObject {
     @Published var chapters: [Chapter] = []
-    @Published var gardenPlant: [GardenPlant] = []
+    @Published var gardenPlants: [GardenPlant] = []
+    
+    private let backgrounds = ["DefaultBackground","SpringBackground", "SummerBackground", "AutumnBackground", "WinterBackground"]
     
     // UserDefaults에 데이터가 있다면 그 데이터를 읽어오고, 없다면 파일에서 읽어와 UserDefaults에 저장
     init() {
-        if let data = UserDefaults.standard.data(forKey: "_chaptersData"),
-           let decodedChapters = try? JSONDecoder().decode([Chapter].self, from: data) {
+        loadData()
+    }
+    
+    private func loadData() {
+        if let chapterData = UserDefaults.standard.data(forKey: "_chaptersData"),
+           let decodedChapters = try? JSONDecoder().decode([Chapter].self, from: chapterData),
+           let garendData = UserDefaults.standard.data(forKey: "_gardenData"),
+           let decodedGardenPlants = try? JSONDecoder().decode([GardenPlant].self, from: garendData) {
             self.chapters = decodedChapters
+            self.gardenPlants = decodedGardenPlants
         } else {
             setupChapterData()
-            saveChapterDataToUserDefaults()
+            saveDataToUserDefaults()
         }
     }
 }
@@ -47,8 +56,8 @@ extension DataManager {
                         let chapterTitle = data[1]
                         let chapterDescription = data[2]
                         let lastChapterEnding = data[3]
-                        let chapterBackgroundImage = data[4]
-                        let chapterPlants = readChapterPlants(data[5])
+                        let chapterBackgroundImage = backgrounds[chapterId]
+                        let chapterPlants = readChapterPlants(data[4])
                         
                         chapters.append(
                             Chapter(
@@ -107,9 +116,12 @@ extension DataManager {
                         let characterFileName = data[6]
                         let character3DFiles = data[7].components(separatedBy: "|").map {String($0)}
                         let totalDay = Int(data[8]) ?? 0
-                        let garden3DFile = data[9]
-                        let gardenPositionX = Float(data[10]) ?? 0.0
-                        let gardenPositionZ = Float(data[11]) ?? 0.0
+                        let characterEnding = data[9]
+                        
+                        let gardenMessage = data[10]
+                        let garden3DFile = data[11]
+                        let gardenPositionX = Float(data[12]) ?? 0.0
+                        let gardenPositionZ = Float(data[13]) ?? 0.0
                         
                         plants.append(
                             Plant(
@@ -121,23 +133,20 @@ extension DataManager {
                                 missions: missions,
                                 characterFileName: characterFileName, 
                                 character3DFiles: character3DFiles,
-                                totalDay: totalDay
+                                totalDay: totalDay,
+                                characterEnding: characterEnding
                             )
                         )
-                    } else {
-                        prevID += 1
                         
-                        plants.append(
-                            Plant(
-                                id: prevID,
-                                characterName: "",
-                                characterImage: "",
-                                characterDescription: "",
-                                mainQuest: "",
-                                missions: [],
-                                characterFileName: "",
-                                character3DFiles: [],
-                                totalDay: 0
+                        gardenPlants.append(
+                            GardenPlant(
+                                id: id,
+                                plantName: characterName,
+                                gardenMessage: gardenMessage,
+                                garden3DFile: garden3DFile,
+                                gardenPositionX: gardenPositionX,
+                                gardenPositionZ: gardenPositionZ,
+                                completeDescription: characterEnding
                             )
                         )
                     }
@@ -154,10 +163,13 @@ extension DataManager {
     }
     
     // 파일에서 읽어온 데이터를 UserDefaults에 저장
-    private func saveChapterDataToUserDefaults() {
+    private func saveDataToUserDefaults() {
         do {
-            let encodedData = try JSONEncoder().encode(chapters)
-            UserDefaults.standard.set(encodedData, forKey: "_chaptersData")
+            let encodedChaptersData = try JSONEncoder().encode(chapters)
+            UserDefaults.standard.set(encodedChaptersData, forKey: "_chaptersData")
+            
+            let encodedGardensData = try JSONEncoder().encode(gardenPlants)
+            UserDefaults.standard.set(encodedGardensData, forKey: "_gardenData")
         } catch {
             print("Error encoding chapters: \(error)")
         }
