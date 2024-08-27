@@ -18,13 +18,18 @@ struct GardenScene: UIViewRepresentable {
     
     private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
-    let sceneView = SCNView()
+    private let sceneView = SCNView()
+    var currentChapter: Int
     
     func makeUIView(context: Context) -> some UIView {
         setSceneView()
         
-        for index in 0..<gameManager.user.completedPlants.count {
-            guard let newNode = addNode(index: index) else {
+        guard let plants = gameManager.user.completedPlants.filter({$0.key == currentChapter}).first else {
+            return sceneView
+        }
+        
+        for plant in plants.value {
+            guard let newNode = addNode(plant: plant) else {
                 return sceneView
             }
             sceneView.scene?.rootNode.addChildNode(newNode)
@@ -99,29 +104,20 @@ extension GardenScene {
         }
     }
     
-    private func addNode(index: Int) -> SCNNode? {
+    private func addNode(plant: GardenPlant) -> SCNNode? {
         let plantNode = SCNNode()
         
-        guard let plants = gameManager.user.completedPlants[index] else {return nil}
+        guard let plantScene = SCNScene(named: plant.garden3DFile) else {return nil}
+        let plantPositionX = plant.gardenPositionX
+        let plantPositionY = plant.gardenPositionY
+        let plantPositionZ = plant.gardenPositionZ
         
-        for plant in plants {
-            guard let plantScene = SCNScene(named: plant.garden3DFile) else {break}
-            
-            let plantPositionX = plant.gardenPositionX
-            let plantPositionY = plant.gardenPositionY
-            let plantPositionZ = plant.gardenPositionZ
-            
-            let node = SCNNode()
-            
-            for childNode in plantScene.rootNode.childNodes {
-                node.addChildNode(childNode)
-            }
-            
-            node.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
-            node.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
-            
-            plantNode.addChildNode(node)
+        for childNode in plantScene.rootNode.childNodes {
+            plantNode.addChildNode(childNode)
         }
+        
+        plantNode.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
+        plantNode.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
         
         return plantNode
     }

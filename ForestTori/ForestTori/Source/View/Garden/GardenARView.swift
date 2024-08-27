@@ -12,9 +12,10 @@ struct GardenARView: View {
     @EnvironmentObject var gameManager: GameManager
     @StateObject var gardenARViewModel = GardenARViewModel()
     
-    private var backButtonLabel = "돌아가기"
-    private var backButtonImage = "chevron.backward"
-    private var cameraButtomImage = "button.programmable"
+    private let backButtonLabel = "돌아가기"
+    private let backButtonImage = "chevron.backward"
+    private let cameraButtomImage = "button.programmable"
+    var currentChapter: Int
     
     var body: some View {
         ZStack {
@@ -45,11 +46,12 @@ extension GardenARView {
                 
                 GardenScene(
                     selectedPlant: .constant(nil),
-                    showHistoryView: .constant(false)
+                    showHistoryView: .constant(false),
+                    currentChapter: currentChapter
                 )
-                    .scaledToFit()
-                    .padding(40)
-                    .environmentObject(gameManager)
+                .scaledToFit()
+                .padding(40)
+                .environmentObject(gameManager)
                 
                 Spacer()
                 Spacer()
@@ -93,9 +95,4 @@ extension GardenARView {
         }
         .background(.black)
     }
-}
-
-#Preview {
-    GardenARView()
-        .environmentObject(GameManager())
 }

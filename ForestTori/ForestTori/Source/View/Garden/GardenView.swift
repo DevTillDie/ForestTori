@@ -18,14 +18,19 @@ struct GardenView: View {
     @State private var selectedPlant: Plant?
     @State private var selectedHistory: (image: UIImage, date: String, record: String)?
     
+    @State private var currentChapter = 0
+    
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
+    private let chapter = ["봄", "여름", "가을", "겨울"]
+    private let backgroundImages = ["SpringBackground", "SummerBackground", "AutumnBackground", "WinterBackground"]
+    private let chapterTitle = ["봄, 숲을 만나다", "여름, 안녕? 토리야", "가을, 꿈의 형태", "겨울, 새로운 봄을 기다리며"]
     var totalProgressValue: Double?
     
     var body: some View {
         NavigationView {
             ZStack {
-                Image(gameManager.chapter.chatperBackgroundImage)
+                Image(backgroundImages[currentChapter])
                     .resizable()
                     .scaledToFit()
                 
@@ -39,18 +44,29 @@ struct GardenView: View {
                         dialogueBox
                             .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
                         
-                        GardenScene(
-                            selectedPlant: $selectedPlant,
-                            showHistoryView: $isShowHistoryView
-                        )
-                            .environmentObject(gameManager)
-                            .scaledToFit()
+                        TabView(selection: $currentChapter) {
+                            ForEach(0..<4) { index in
+                                GardenScene(
+                                    selectedPlant: $selectedPlant,
+                                    showHistoryView: $isShowHistoryView,
+                                    currentChapter: index
+                                )
+                                .environmentObject(gameManager)
+                                .scaledToFit()
+                                .tag(index)
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         
                         noPlantCaptionBox
                             .hidden(gameManager.user.completedPlants.isEmpty)
                     }
                     .padding(.top, 24)
                     .padding(.bottom, 60)
+                    
+                    Spacer()
+                    
+                    chapterButton
                     
                     Spacer()
                     
@@ -87,7 +103,7 @@ extension GardenView {
                     ProgressStyle(
                         width: 241,
                         color: .ivoryTransparency50,
-                        text: gameManager.chapter.chapterTitle
+                        text: chapterTitle[currentChapter]
                     )
                 )
         }
@@ -178,17 +194,49 @@ extension GardenView {
     }
 }
 
+// MARK: - chapterButton
+
+extension GardenView {
+    private var chapterButton: some View {
+        return HStack {
+            ForEach(0..<4, id: \.self) {idx in
+                Text(chapter[idx])
+                    .font(.titleS)
+                    .foregroundColor(idx == currentChapter ? .gray10 : .brownPrimary)
+                    .background {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(idx == currentChapter ? .greenPrimary : .ivoryTransparency50)
+                            .frame(width: 50, height: 37)
+                    }
+                    .onTapGesture {
+                        currentChapter = idx
+                    }
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+        }
+        .padding(.horizontal, 80)
+        .padding(.bottom, 40)
+    }
+    
+}
+
 // MARK: - ARButton
 
 extension GardenView {
     @ViewBuilder private var ARButton: some View {
-        NavigationLink(destination: GardenARView()
-            .environmentObject(gameManager)
+        NavigationLink(
+            destination: GardenARView(currentChapter: currentChapter)
+                            .environmentObject(gameManager)
         ) {
-            Image(.arButton)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 50.0, minHeight: 50.0)
+            Text("AR로 보기")
+                .foregroundColor(.greenPrimary)
+                .font(.titleS)
+                .padding()
+                .padding(.horizontal)
+                .background {
+                    RoundedRectangle(cornerRadius: 100)
+                        .fill(.gray10)
+                }
         }
         .padding(.bottom, 42)
     }
