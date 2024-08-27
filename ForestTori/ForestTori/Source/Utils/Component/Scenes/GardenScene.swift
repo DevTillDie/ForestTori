@@ -10,25 +10,23 @@ import SwiftUI
 import SceneKit
 
 struct GardenScene: UIViewRepresentable {
-    @EnvironmentObject var gameManager: GameManager
-    
-    //TODO: Garden Model로 바꾸기
-    @Binding var selectedPlant: Plant?
+    @Binding var selectedPlant: GardenPlant?
     @Binding var showHistoryView: Bool
     
     private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
     private let sceneView = SCNView()
+    var chapterPlants: [GardenPlant]?
     var currentChapter: Int
     
     func makeUIView(context: Context) -> some UIView {
         setSceneView()
         
-        guard let plants = gameManager.user.completedPlants.filter({$0.key == currentChapter}).first else {
+        guard let plants = chapterPlants else {
             return sceneView
         }
-        
-        for plant in plants.value {
+                
+        for plant in plants {
             guard let newNode = addNode(plant: plant) else {
                 return sceneView
             }
@@ -66,12 +64,12 @@ struct GardenScene: UIViewRepresentable {
             //TODO: Garden Model로 바꾸기
             if let hitNode = hitTestResults.first?.node {
                 if let selectedName = hitNode.geometry?.name {
-//                    if let selectedPlant = parent.gameManager.user.completedPlants[0]?.first(where: {
-//                        $0.plantName == selectedName
-//                    }) {
-//                        parent.selectedPlant =  selectedPlant
-//                        parent.showHistoryView = true
-//                    }
+                    if let selectedPlant = parent.chapterPlants?.first(where: {
+                        $0.plantName == selectedName
+                    }) {
+                        parent.selectedPlant =  selectedPlant
+                        parent.showHistoryView = true
+                    }
                 }
             }
         }

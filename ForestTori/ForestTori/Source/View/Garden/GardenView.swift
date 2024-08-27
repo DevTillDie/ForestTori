@@ -15,7 +15,7 @@ struct GardenView: View {
     @State private var showSummerMessage = true
     @State private var isShowHistoryView = false
     @State private var showHistoryDetail = false
-    @State private var selectedPlant: Plant?
+    @State private var selectedPlant: GardenPlant?
     @State private var selectedHistory: (image: UIImage, date: String, record: String)?
     
     @State private var currentChapter = 0
@@ -49,9 +49,9 @@ struct GardenView: View {
                                 GardenScene(
                                     selectedPlant: $selectedPlant,
                                     showHistoryView: $isShowHistoryView,
+                                    chapterPlants: loadChapterPlants(),
                                     currentChapter: index
                                 )
-                                .environmentObject(gameManager)
                                 .scaledToFit()
                                 .tag(index)
                             }
@@ -182,7 +182,8 @@ extension GardenView {
                         selectedHistoryIndex: $selectedHistoryIndex,
                         isShowHistoryDetail: $showHistoryDetail,
                         plant: $selectedPlant,
-                        selectedHistory: $selectedHistory
+                        selectedHistory: $selectedHistory,
+                        backgroundImage: backgroundImages[currentChapter]
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea([.bottom, .horizontal])
@@ -217,7 +218,6 @@ extension GardenView {
         .padding(.horizontal, 80)
         .padding(.bottom, 40)
     }
-    
 }
 
 // MARK: - ARButton
@@ -226,7 +226,6 @@ extension GardenView {
     @ViewBuilder private var ARButton: some View {
         NavigationLink(
             destination: GardenARView(currentChapter: currentChapter)
-                            .environmentObject(gameManager)
         ) {
             Text("AR로 보기")
                 .foregroundColor(.greenPrimary)
@@ -239,6 +238,16 @@ extension GardenView {
                 }
         }
         .padding(.bottom, 42)
+    }
+}
+
+extension GardenView {
+    func loadChapterPlants() -> [GardenPlant]? {
+        if let plants = gameManager.user.completedPlants.filter({$0.key == currentChapter}).first {
+            return plants.value
+        }
+        
+        return nil
     }
 }
 

@@ -146,7 +146,9 @@ extension DataManager {
                                 garden3DFile: garden3DFile,
                                 gardenPositionX: gardenPositionX,
                                 gardenPositionZ: gardenPositionZ,
-                                completeDescription: characterEnding
+                                completeDescription: characterEnding,
+                                plantMainQuest: mainQuest,
+                                plant3DFile: character3DFiles.last
                             )
                         )
                     }
