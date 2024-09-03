@@ -255,7 +255,10 @@ extension GardenView {
 extension GardenView {
     @ViewBuilder private var ARButton: some View {
         NavigationLink(
-            destination: GardenARView(currentChapter: currentChapter)
+            destination: GardenARView(
+                chapterPlants: loadChapterPlants(),
+                currentChapter: currentChapter
+            )
         ) {
             Text("AR로 보기")
                 .foregroundColor(.greenPrimary)
