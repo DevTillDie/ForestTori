@@ -19,6 +19,7 @@
 		0E214B5F2BDFC85500558004 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B5E2BDFC85500558004 /* BottomSheet.swift */; };
 		0E214B612BDFD52900558004 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B602BDFD52900558004 /* HistoryDetailView.swift */; };
 		0E2F50A82C86E0010054628F /* GardenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F50A72C86E0010054628F /* GardenViewModel.swift */; };
+		0E2F50AA2C86F6010054628F /* ChapterButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F50A92C86F6010054628F /* ChapterButtonStyle.swift */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E4AB22B2BCD3E7E00ADB623 /* WriteHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */; };
 		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
@@ -136,6 +137,7 @@
 		0E214B602BDFD52900558004 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		0E214B642BE34B5A00558004 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0E2F50A72C86E0010054628F /* GardenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenViewModel.swift; sourceTree = "<group>"; };
+		0E2F50A92C86F6010054628F /* ChapterButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterButtonStyle.swift; sourceTree = "<group>"; };
 		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
 		0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteHistoryView.swift; sourceTree = "<group>"; };
 		0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				5BE2F6312BC03B000049A988 /* Scenes */,
 				0E214B5E2BDFC85500558004 /* BottomSheet.swift */,
 				0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */,
+				0E2F50A92C86F6010054628F /* ChapterButtonStyle.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 				5BA395712B7F84410019A545 /* Onboarding.swift in Sources */,
 				0E2F50A82C86E0010054628F /* GardenViewModel.swift in Sources */,
 				5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */,
+				0E2F50AA2C86F6010054628F /* ChapterButtonStyle.swift in Sources */,
 				5BA395602B7E37900019A545 /* OnboardingIntroductionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
