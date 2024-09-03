@@ -71,7 +71,8 @@ struct GardenScene: UIViewRepresentable {
             let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
             
             if let hitNode = hitTestResults.first?.node {
-                if let selectedName = hitNode.name, selectedName.contains("bubble") {
+                if let selectedName = hitNode.name, 
+                    selectedName.contains("bubble") {
                     if let selectedPlant = parent.chapterPlants?.first(where: {
                         selectedName.contains($0.plantName)
                     }) {
