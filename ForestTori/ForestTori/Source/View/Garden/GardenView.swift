@@ -14,7 +14,7 @@ struct GardenView: View {
     @StateObject private var viewModel = GardenViewModel()
     
     @State private var selectedHistoryIndex: Int?
-    @State private var showSummerMessage = true
+    @State private var isShowDialogueBox = false
     @State private var isShowHistoryView = false
     @State private var showHistoryDetail = false
     @State private var selectedPlant: GardenPlant?
@@ -42,16 +42,17 @@ struct GardenView: View {
                     
                     VStack(spacing: 0) {
                         dialogueBox
-                            .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
+                            .hidden(isShowDialogueBox)
                         
                         TabView(selection: $currentChapter) {
                             ForEach(1..<5) { index in
                                 GardenScene(
                                     selectedPlant: $selectedPlant,
                                     showHistoryView: $isShowHistoryView,
+                                    dialogueMessage: $viewModel.dialogueMessage,
+                                    showDialogueBox: $isShowDialogueBox,
                                     chapterPlants: loadChapterPlants(),
-                                    currentChapter: index
-                                )
+                                    currentChapter: index)
                                 .scaledToFit()
                                 .tag(index)
                             }
@@ -133,7 +134,7 @@ extension GardenView {
             .scaledToFit()
             .overlay(alignment: .top) {
                 ZStack(alignment: .topLeading) {
-                    Text(summerMessage)
+                    Text(viewModel.dialogueMessage)
                         .font(.pretendard(size: 17.5, .regular))
                         .foregroundStyle(Color.black)
                         .multilineTextAlignment(.leading)
@@ -152,7 +153,7 @@ extension GardenView {
             }
             .padding(.horizontal, 20)
             .onTapGesture {
-                showSummerMessage = false
+                isShowDialogueBox = false
             }
     }
 }

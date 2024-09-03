@@ -46,6 +46,8 @@ extension GardenARView {
                 GardenScene(
                     selectedPlant: .constant(nil),
                     showHistoryView: .constant(false),
+                    dialogueMessage: .constant(""),
+                    showDialogueBox: .constant(false),
                     currentChapter: currentChapter
                 )
                 .scaledToFit()
