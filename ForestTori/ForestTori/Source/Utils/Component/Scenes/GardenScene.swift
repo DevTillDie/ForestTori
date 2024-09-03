@@ -71,21 +71,21 @@ struct GardenScene: UIViewRepresentable {
             let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
             
             if let hitNode = hitTestResults.first?.node {
-                if let selectedName = hitNode.name {
-                    if selectedName.contains("bubble") {
-                        if let selectedPlant = parent.chapterPlants?.first(where: {
-                            selectedName.contains($0.plantName)
-                        }) {
-                            parent.dialogueMessage = selectedPlant.gardenMessage
-                            parent.showDialogueBox = true
-                        }
-                    } else {
-                        if let selectedPlant = parent.chapterPlants?.first(where: {
-                            $0.plantName == selectedName
-                        }) {
-                            parent.selectedPlant =  selectedPlant
-                            parent.showHistoryView = true
-                        }
+                if let selectedName = hitNode.name, selectedName.contains("bubble") {
+                    if let selectedPlant = parent.chapterPlants?.first(where: {
+                        selectedName.contains($0.plantName)
+                    }) {
+                        parent.dialogueMessage = selectedPlant.gardenMessage
+                        parent.showDialogueBox = true
+                    }
+                }
+                
+                if let selectedName = hitNode.geometry?.name {
+                    if let selectedPlant = parent.chapterPlants?.first(where: {
+                        $0.garden3DFile.lowercased().contains(selectedName)
+                    }) {
+                        parent.selectedPlant =  selectedPlant
+                        parent.showHistoryView = true
                     }
                 }
             }
@@ -128,7 +128,6 @@ extension GardenScene {
         let plantPositionZ = plant.gardenPositionZ
         
         for childNode in plantScene.rootNode.childNodes {
-            childNode.name = plant.plantName
             plantNode.addChildNode(childNode)
         }
         
