@@ -11,6 +11,8 @@ struct GardenView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var gameManager: GameManager
     
+    @StateObject private var viewModel = GardenViewModel()
+    
     @State private var selectedHistoryIndex: Int?
     @State private var showSummerMessage = true
     @State private var isShowHistoryView = false
@@ -18,19 +20,17 @@ struct GardenView: View {
     @State private var selectedPlant: GardenPlant?
     @State private var selectedHistory: (image: UIImage, date: String, record: String)?
     
-    @State private var currentChapter = 0
+    @State private var currentChapter = 1
     
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
+    private let notOpenChapterCaption = "아직 열리지 않은 계절이에요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
-    private let chapter = ["봄", "여름", "가을", "겨울"]
-    private let backgroundImages = ["SpringBackground", "SummerBackground", "AutumnBackground", "WinterBackground"]
-    private let chapterTitle = ["봄, 숲을 만나다", "여름, 안녕? 토리야", "가을, 꿈의 형태", "겨울, 새로운 봄을 기다리며"]
     var totalProgressValue: Double?
     
     var body: some View {
         NavigationView {
             ZStack {
-                Image(backgroundImages[currentChapter])
+                Image(viewModel.backgroundImages[currentChapter])
                     .resizable()
                     .scaledToFit()
                 
@@ -45,7 +45,7 @@ struct GardenView: View {
                             .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
                         
                         TabView(selection: $currentChapter) {
-                            ForEach(0..<4) { index in
+                            ForEach(1..<5) { index in
                                 GardenScene(
                                     selectedPlant: $selectedPlant,
                                     showHistoryView: $isShowHistoryView,
@@ -58,8 +58,13 @@ struct GardenView: View {
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         
-                        noPlantCaptionBox
-                            .hidden(gameManager.user.completedPlants.isEmpty)
+                        ZStack {
+                            noPlantCaptionBox
+                                .hidden(viewModel.isShowNoPlantBox)
+                            
+                            notOpenChapterBox
+                                .hidden(viewModel.isShowNotChapterBox)
+                        }
                     }
                     .padding(.top, 24)
                     .padding(.bottom, 60)
@@ -77,6 +82,11 @@ struct GardenView: View {
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
+            .onChange(of: currentChapter) { _ in
+                if gameManager.user.completedPlants[currentChapter] == nil {
+                    viewModel.isShowNoPlantBox = true
+                }
+            }
         }
     }
 }
@@ -103,7 +113,7 @@ extension GardenView {
                     ProgressStyle(
                         width: 241,
                         color: .ivoryTransparency50,
-                        text: chapterTitle[currentChapter]
+                        text: viewModel.chapterTitle[currentChapter]
                     )
                 )
         }
@@ -162,6 +172,19 @@ extension GardenView {
                     .opacity(0.4)
             }
     }
+    
+    private var notOpenChapterBox: some View {
+        Text(notOpenChapterCaption)
+            .font(.bodyM)
+            .foregroundColor(.white)
+            .padding(.horizontal, 25)
+            .padding(.vertical, 6)
+            .background {
+                Capsule()
+                    .foregroundColor(.black)
+                    .opacity(0.4)
+            }
+    }
 }
 
 // MARK: - history
@@ -183,7 +206,7 @@ extension GardenView {
                         isShowHistoryDetail: $showHistoryDetail,
                         plant: $selectedPlant,
                         selectedHistory: $selectedHistory,
-                        backgroundImage: backgroundImages[currentChapter]
+                        backgroundImage: viewModel.backgroundImages[currentChapter]
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea([.bottom, .horizontal])
@@ -200,18 +223,24 @@ extension GardenView {
 extension GardenView {
     private var chapterButton: some View {
         return HStack {
-            ForEach(0..<4, id: \.self) {idx in
-                Text(chapter[idx])
-                    .font(.titleS)
-                    .foregroundColor(idx == currentChapter ? .gray10 : .brownPrimary)
-                    .background {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(idx == currentChapter ? .greenPrimary : .ivoryTransparency50)
-                            .frame(width: 50, height: 37)
+            ForEach(1...4, id: \.self) {idx in
+                Button {
+                    if gameManager.user.chapterProgress >= idx {
+                        withAnimation {
+                            currentChapter = idx
+                        }
+                    } else {
+                        viewModel.isShowNotChapterBox = true
                     }
-                    .onTapGesture {
-                        currentChapter = idx
-                    }
+                    
+                } label: {
+                    Text(viewModel.chapter[idx])
+                }
+                .buttonStyle(
+                    ChapterButtonStyle(
+                        isDisabled: gameManager.user.chapterProgress < idx,
+                        isSelected: currentChapter == idx)
+                )
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
@@ -254,4 +283,31 @@ extension GardenView {
 #Preview {
     GardenView(totalProgressValue: MainViewModel().totalProgressValue)
         .environmentObject(GameManager())
+}
+
+struct ChapterButtonStyle: ButtonStyle {
+    var isDisabled: Bool
+    var isSelected: Bool
+  
+    func makeBody(configuration: Configuration) -> some View {
+        if isDisabled {
+            configuration.label
+                .font(.titleS)
+                .foregroundColor(.ivoryTransparency50)
+                .background {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.ivoryTransparency50, lineWidth: 2)
+                        .frame(width: 50, height: 37)
+                }
+        } else {
+            configuration.label
+                .font(.titleS)
+                .foregroundColor(isSelected ? .gray10 : .brownPrimary)
+                .background {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(isSelected ? .greenPrimary : .ivoryTransparency50)
+                        .frame(width: 50, height: 37)
+                }
+        }
+    }
 }

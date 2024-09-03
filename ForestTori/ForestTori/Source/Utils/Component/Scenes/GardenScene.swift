@@ -61,11 +61,10 @@ struct GardenScene: UIViewRepresentable {
             let touchLocation = gestureRecognize.location(in: sceneView)
             let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
             
-            //TODO: Garden Model로 바꾸기
             if let hitNode = hitTestResults.first?.node {
                 if let selectedName = hitNode.geometry?.name {
                     if let selectedPlant = parent.chapterPlants?.first(where: {
-                        $0.plantName == selectedName
+                        $0.garden3DFile.lowercased().contains(selectedName)
                     }) {
                         parent.selectedPlant =  selectedPlant
                         parent.showHistoryView = true

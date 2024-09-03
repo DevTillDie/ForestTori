@@ -61,7 +61,7 @@ class GameManager: ObservableObject {
             if let data = dataManager.gardenPlants.first(where: {
                 $0.id == plant.id
             }) {
-                user.completedPlants[user.chapterProgress-1, default: []].append(data)
+                user.completedPlants[user.chapterProgress, default: []].append(data)
             }
         }
         

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E01EE012C6B6790002E86E1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E01EE002C6B6790002E86E1 /* RealmSwift */; };
 		0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FF2B7E1880001C9A30 /* MainView.swift */; };
 		0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7022B7E1892001C9A30 /* PlantView.swift */; };
 		0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */; };
@@ -19,6 +18,7 @@
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E214B5F2BDFC85500558004 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B5E2BDFC85500558004 /* BottomSheet.swift */; };
 		0E214B612BDFD52900558004 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B602BDFD52900558004 /* HistoryDetailView.swift */; };
+		0E2F50A82C86E0010054628F /* GardenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F50A72C86E0010054628F /* GardenViewModel.swift */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E4AB22B2BCD3E7E00ADB623 /* WriteHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */; };
 		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
@@ -34,11 +34,6 @@
 		0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72D2BFB0C240011B34E /* Cottontree2.scn */; };
 		0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */; };
 		0E62B7412BFB184C0011B34E /* UnevenRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */; };
-		0E62B76F2BFCB68F0011B34E /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B76A2BFCB68F0011B34E /* SpringPlants.tsv */; };
-		0E62B7702BFCB68F0011B34E /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B76B2BFCB68F0011B34E /* AutumnPlants.tsv */; };
-		0E62B7712BFCB68F0011B34E /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B76C2BFCB68F0011B34E /* WinterPlants.tsv */; };
-		0E62B7722BFCB68F0011B34E /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B76D2BFCB68F0011B34E /* Chapters.tsv */; };
-		0E62B7732BFCB68F0011B34E /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B76E2BFCB68F0011B34E /* SummerPlants.tsv */; };
 		0E804A092C465B3000582121 /* GardenPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E804A082C465B3000582121 /* GardenPlant.swift */; };
 		0E9532FA2BDCB9580081DCE0 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532F92BDCB9580081DCE0 /* HistoryView.swift */; };
 		0E9532FC2BDCBB1A0081DCE0 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */; };
@@ -64,6 +59,12 @@
 		0EADEAA12B7DEB4F0036D190 /* MapleAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */; };
 		0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */; };
 		0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */; };
+		0EE630CF2C7DBA3400F2A021 /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EE630CA2C7DBA3400F2A021 /* SpringPlants.tsv */; };
+		0EE630D02C7DBA3400F2A021 /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EE630CB2C7DBA3400F2A021 /* SummerPlants.tsv */; };
+		0EE630D12C7DBA3400F2A021 /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EE630CC2C7DBA3400F2A021 /* Chapters.tsv */; };
+		0EE630D22C7DBA3400F2A021 /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EE630CD2C7DBA3400F2A021 /* WinterPlants.tsv */; };
+		0EE630D32C7DBA3400F2A021 /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EE630CE2C7DBA3400F2A021 /* AutumnPlants.tsv */; };
+		0EE630DD2C7DBADC00F2A021 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EE630DC2C7DBADC00F2A021 /* RealmSwift */; };
 		0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */; };
 		0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */; };
 		0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */; };
@@ -134,6 +135,7 @@
 		0E214B5E2BDFC85500558004 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		0E214B602BDFD52900558004 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		0E214B642BE34B5A00558004 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		0E2F50A72C86E0010054628F /* GardenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenViewModel.swift; sourceTree = "<group>"; };
 		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
 		0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteHistoryView.swift; sourceTree = "<group>"; };
 		0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -149,14 +151,6 @@
 		0E62B72D2BFB0C240011B34E /* Cottontree2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree2.scn; sourceTree = "<group>"; };
 		0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree3.scn; sourceTree = "<group>"; };
 		0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnevenRoundedRectangle.swift; sourceTree = "<group>"; };
-		0E62B76A2BFCB68F0011B34E /* SpringPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
-		0E62B76B2BFCB68F0011B34E /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
-		0E62B76C2BFCB68F0011B34E /* WinterPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
-		0E62B76D2BFCB68F0011B34E /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
-		0E62B76E2BFCB68F0011B34E /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
-		0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
-		0E6AB0DF2BC115A300B12610 /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
-		0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
 		0E804A082C465B3000582121 /* GardenPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlant.swift; sourceTree = "<group>"; };
 		0E9532F92BDCB9580081DCE0 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
@@ -182,6 +176,11 @@
 		0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation2.scn; sourceTree = "<group>"; };
 		0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation3.scn; sourceTree = "<group>"; };
 		0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation1.scn; sourceTree = "<group>"; };
+		0EE630CA2C7DBA3400F2A021 /* SpringPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
+		0EE630CB2C7DBA3400F2A021 /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
+		0EE630CC2C7DBA3400F2A021 /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
+		0EE630CD2C7DBA3400F2A021 /* WinterPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
+		0EE630CE2C7DBA3400F2A021 /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
 		0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Emptypot.scn; sourceTree = "<group>"; };
 		0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bubble.scn; sourceTree = "<group>"; };
 		0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground.scn; sourceTree = "<group>"; };
@@ -207,7 +206,6 @@
 		5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpilogueViewModel.swift; sourceTree = "<group>"; };
 		5B9152A72B84402C0068418F /* OnboardingTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextBox.swift; sourceTree = "<group>"; };
 		5BA395432B7252C00019A545 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		5BA395562B7E2EE80019A545 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5BA3955A2B7E32A70019A545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5BA3955B2B7E359F0019A545 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5BA3955D2B7E377D0019A545 /* OnboardingGreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGreetingView.swift; sourceTree = "<group>"; };
@@ -244,24 +242,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E01EE012C6B6790002E86E1 /* RealmSwift in Frameworks */,
+				0EE630DD2C7DBADC00F2A021 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E1AE6FC2B7E182A001C9A30 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				5BA395562B7E2EE80019A545 /* Font+.swift */,
-				0E6AB0DF2BC115A300B12610 /* Chapters.tsv */,
-				0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */,
-				0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		0E1AE7012B7E1883001C9A30 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,11 +287,11 @@
 		0E6AB0DD2BC1159700B12610 /* Chapters */ = {
 			isa = PBXGroup;
 			children = (
-				0E62B76B2BFCB68F0011B34E /* AutumnPlants.tsv */,
-				0E62B76D2BFCB68F0011B34E /* Chapters.tsv */,
-				0E62B76A2BFCB68F0011B34E /* SpringPlants.tsv */,
-				0E62B76E2BFCB68F0011B34E /* SummerPlants.tsv */,
-				0E62B76C2BFCB68F0011B34E /* WinterPlants.tsv */,
+				0EE630CE2C7DBA3400F2A021 /* AutumnPlants.tsv */,
+				0EE630CC2C7DBA3400F2A021 /* Chapters.tsv */,
+				0EE630CA2C7DBA3400F2A021 /* SpringPlants.tsv */,
+				0EE630CB2C7DBA3400F2A021 /* SummerPlants.tsv */,
+				0EE630CD2C7DBA3400F2A021 /* WinterPlants.tsv */,
 			);
 			path = Chapters;
 			sourceTree = "<group>";
@@ -504,7 +491,6 @@
 			children = (
 				0EF5FE942B4FC02100D64E5E /* ForestTori */,
 				0EF5FE932B4FC02100D64E5E /* Products */,
-				0E1AE6FC2B7E182A001C9A30 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -570,6 +556,7 @@
 				0E4AB2332BCD6CE900ADB623 /* WriteHistoryViewModel.swift */,
 				5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */,
 				0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */,
+				0E2F50A72C86E0010054628F /* GardenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -711,7 +698,7 @@
 			);
 			name = ForestTori;
 			packageProductDependencies = (
-				0E01EE002C6B6790002E86E1 /* RealmSwift */,
+				0EE630DC2C7DBADC00F2A021 /* RealmSwift */,
 			);
 			productName = ForestTori;
 			productReference = 0EF5FE922B4FC02100D64E5E /* ForestTori.app */;
@@ -759,24 +746,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
-				0E62B7722BFCB68F0011B34E /* Chapters.tsv in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
 				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
+				0EE630D22C7DBA3400F2A021 /* WinterPlants.tsv in Resources */,
 				0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */,
 				0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */,
 				0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */,
 				0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */,
-				0E62B76F2BFCB68F0011B34E /* SpringPlants.tsv in Resources */,
+				0EE630CF2C7DBA3400F2A021 /* SpringPlants.tsv in Resources */,
 				5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */,
 				0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */,
 				0E1AE71E2B80B9B2001C9A30 /* SpringCharacter.tsv in Resources */,
 				0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */,
 				0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */,
+				0EE630D12C7DBA3400F2A021 /* Chapters.tsv in Resources */,
+				0EE630D02C7DBA3400F2A021 /* SummerPlants.tsv in Resources */,
 				0EADEA8C2B7DEB4F0036D190 /* CottontreeAnimation2.scn in Resources */,
 				0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */,
 				5BA3956B2B7F54F60019A545 /* Pretendard-Regular.ttf in Resources */,
-				0E62B7732BFCB68F0011B34E /* SummerPlants.tsv in Resources */,
 				0EEBB6F32B7DEAD7003E09C6 /* Dandelion1.scn in Resources */,
 				0EADEA922B7DEB4F0036D190 /* CactusAnimation3.scn in Resources */,
 				0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */,
@@ -795,13 +783,12 @@
 				0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */,
 				0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */,
 				0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */,
-				0E62B7702BFCB68F0011B34E /* AutumnPlants.tsv in Resources */,
 				0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */,
 				0EADEA972B7DEB4F0036D190 /* DandelionAnimation3.scn in Resources */,
-				0E62B7712BFCB68F0011B34E /* WinterPlants.tsv in Resources */,
 				0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */,
 				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
 				0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */,
+				0EE630D32C7DBA3400F2A021 /* AutumnPlants.tsv in Resources */,
 				0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */,
 				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
 				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
@@ -898,6 +885,7 @@
 				5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */,
 				0E1AE7112B80A77A001C9A30 /* MainViewModel.swift in Sources */,
 				5BA395712B7F84410019A545 /* Onboarding.swift in Sources */,
+				0E2F50A82C86E0010054628F /* GardenViewModel.swift in Sources */,
 				5BA3955C2B7E359F0019A545 /* OnboardingView.swift in Sources */,
 				5BA395602B7E37900019A545 /* OnboardingIntroductionView.swift in Sources */,
 			);
@@ -1132,7 +1120,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E01EE002C6B6790002E86E1 /* RealmSwift */ = {
+		0EE630DC2C7DBADC00F2A021 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E01EDFD2C6B6790002E86E1 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
