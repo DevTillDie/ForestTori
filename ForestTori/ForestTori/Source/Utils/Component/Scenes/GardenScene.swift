@@ -10,21 +10,26 @@ import SwiftUI
 import SceneKit
 
 struct GardenScene: UIViewRepresentable {
-    @EnvironmentObject var gameManager: GameManager
-    
-    //TODO: Garden Model로 바꾸기
-    @Binding var selectedPlant: Plant?
+    @Binding var selectedPlant: GardenPlant?
     @Binding var showHistoryView: Bool
+    @Binding var dialogueMessage: String
+    @Binding var showDialogueBox: Bool
     
     private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
-    let sceneView = SCNView()
+    private let sceneView = SCNView()
+    var chapterPlants: [GardenPlant]?
+    var currentChapter: Int
     
     func makeUIView(context: Context) -> some UIView {
         setSceneView()
         
-        for index in 0..<gameManager.user.completedPlants.count {
-            guard let newNode = addNode(index: index) else {
+        guard let plants = chapterPlants else {
+            return sceneView
+        }
+                
+        for plant in plants {
+            guard let newNode = addNode(plant: plant) else {
                 return sceneView
             }
             sceneView.scene?.rootNode.addChildNode(newNode)
@@ -40,6 +45,13 @@ struct GardenScene: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        // TODO: 대사 박스 조건 추가
+        guard let plants = chapterPlants else { return }
+                
+        for plant in plants {
+            guard let newNode = addBubbleNode(plant: plant) else { return }
+            sceneView.scene?.rootNode.addChildNode(newNode)
+        }
     }
     
     func makeCoordinator() -> Coordinator {
@@ -58,15 +70,24 @@ struct GardenScene: UIViewRepresentable {
             let touchLocation = gestureRecognize.location(in: sceneView)
             let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
             
-            //TODO: Garden Model로 바꾸기
             if let hitNode = hitTestResults.first?.node {
+                if let selectedName = hitNode.name, 
+                    selectedName.contains("bubble") {
+                    if let selectedPlant = parent.chapterPlants?.first(where: {
+                        selectedName.contains($0.plantName)
+                    }) {
+                        parent.dialogueMessage = selectedPlant.gardenMessage
+                        parent.showDialogueBox = true
+                    }
+                }
+                
                 if let selectedName = hitNode.geometry?.name {
-//                    if let selectedPlant = parent.gameManager.user.completedPlants[0]?.first(where: {
-//                        $0.plantName == selectedName
-//                    }) {
-//                        parent.selectedPlant =  selectedPlant
-//                        parent.showHistoryView = true
-//                    }
+                    if let selectedPlant = parent.chapterPlants?.first(where: {
+                        $0.garden3DFile.lowercased().contains(selectedName)
+                    }) {
+                        parent.selectedPlant =  selectedPlant
+                        parent.showHistoryView = true
+                    }
                 }
             }
         }
@@ -99,29 +120,39 @@ extension GardenScene {
         }
     }
     
-    private func addNode(index: Int) -> SCNNode? {
+    private func addNode(plant: GardenPlant) -> SCNNode? {
         let plantNode = SCNNode()
         
-        guard let plants = gameManager.user.completedPlants[index] else {return nil}
+        guard let plantScene = SCNScene(named: plant.garden3DFile) else {return nil}
+        let plantPositionX = plant.gardenPositionX
+        let plantPositionY = plant.gardenPositionY
+        let plantPositionZ = plant.gardenPositionZ
         
-        for plant in plants {
-            guard let plantScene = SCNScene(named: plant.garden3DFile) else {break}
-            
-            let plantPositionX = plant.gardenPositionX
-            let plantPositionY = plant.gardenPositionY
-            let plantPositionZ = plant.gardenPositionZ
-            
-            let node = SCNNode()
-            
-            for childNode in plantScene.rootNode.childNodes {
-                node.addChildNode(childNode)
-            }
-            
-            node.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
-            node.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
-            
-            plantNode.addChildNode(node)
+        for childNode in plantScene.rootNode.childNodes {
+            plantNode.addChildNode(childNode)
         }
+        
+        plantNode.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
+        plantNode.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
+        
+        return plantNode
+    }
+    
+    private func addBubbleNode(plant: GardenPlant) -> SCNNode? {
+        let plantNode = SCNNode()
+        
+        guard let plantScene = SCNScene(named: "Bubble.scn") else {return nil}
+        let positionX = plant.gardenPositionX
+        let positionY = plant.gardenPositionY + 2.8
+        let positionZ = plant.gardenPositionZ
+        
+        for childNode in plantScene.rootNode.childNodes {
+            childNode.name = "\(plant.plantName)_bubble"
+            plantNode.addChildNode(childNode)
+        }
+        
+        plantNode.position = SCNVector3(x: positionX, y: positionY, z: positionZ)
+        plantNode.scale = SCNVector3(x: 0.6, y: 0.6, z: 0.6)
         
         return plantNode
     }

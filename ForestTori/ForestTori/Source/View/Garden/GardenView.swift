@@ -11,21 +11,26 @@ struct GardenView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var gameManager: GameManager
     
+    @StateObject private var viewModel = GardenViewModel()
+    
     @State private var selectedHistoryIndex: Int?
-    @State private var showSummerMessage = true
+    @State private var isShowDialogueBox = false
     @State private var isShowHistoryView = false
     @State private var showHistoryDetail = false
-    @State private var selectedPlant: Plant?
+    @State private var selectedPlant: GardenPlant?
     @State private var selectedHistory: (image: UIImage, date: String, record: String)?
     
+    @State private var currentChapter = 1
+    
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
+    private let notOpenChapterCaption = "아직 열리지 않은 계절이에요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
     var totalProgressValue: Double?
     
     var body: some View {
         NavigationView {
             ZStack {
-                Image(gameManager.chapter.chatperBackgroundImage)
+                Image(viewModel.backgroundImages[currentChapter])
                     .resizable()
                     .scaledToFit()
                 
@@ -37,20 +42,37 @@ struct GardenView: View {
                     
                     VStack(spacing: 0) {
                         dialogueBox
-                            .hidden(gameManager.chapter.chapterId == 2 && showSummerMessage)
+                            .hidden(isShowDialogueBox)
                         
-                        GardenScene(
-                            selectedPlant: $selectedPlant,
-                            showHistoryView: $isShowHistoryView
-                        )
-                            .environmentObject(gameManager)
-                            .scaledToFit()
+                        TabView(selection: $currentChapter) {
+                            ForEach(1..<5) { index in
+                                GardenScene(
+                                    selectedPlant: $selectedPlant,
+                                    showHistoryView: $isShowHistoryView,
+                                    dialogueMessage: $viewModel.dialogueMessage,
+                                    showDialogueBox: $isShowDialogueBox,
+                                    chapterPlants: loadChapterPlants(),
+                                    currentChapter: index)
+                                .scaledToFit()
+                                .tag(index)
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         
-                        noPlantCaptionBox
-                            .hidden(gameManager.user.completedPlants.isEmpty)
+                        ZStack {
+                            noPlantCaptionBox
+                                .hidden(viewModel.isShowNoPlantBox)
+                            
+                            notOpenChapterBox
+                                .hidden(viewModel.isShowNotChapterBox)
+                        }
                     }
                     .padding(.top, 24)
                     .padding(.bottom, 60)
+                    
+                    Spacer()
+                    
+                    chapterButton
                     
                     Spacer()
                     
@@ -61,6 +83,11 @@ struct GardenView: View {
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
+            .onChange(of: currentChapter) { _ in
+                if gameManager.user.completedPlants[currentChapter] == nil {
+                    viewModel.isShowNoPlantBox = true
+                }
+            }
         }
     }
 }
@@ -87,7 +114,7 @@ extension GardenView {
                     ProgressStyle(
                         width: 241,
                         color: .ivoryTransparency50,
-                        text: gameManager.chapter.chapterTitle
+                        text: viewModel.chapterTitle[currentChapter]
                     )
                 )
         }
@@ -107,7 +134,7 @@ extension GardenView {
             .scaledToFit()
             .overlay(alignment: .top) {
                 ZStack(alignment: .topLeading) {
-                    Text(summerMessage)
+                    Text(viewModel.dialogueMessage)
                         .font(.pretendard(size: 17.5, .regular))
                         .foregroundStyle(Color.black)
                         .multilineTextAlignment(.leading)
@@ -126,7 +153,7 @@ extension GardenView {
             }
             .padding(.horizontal, 20)
             .onTapGesture {
-                showSummerMessage = false
+                isShowDialogueBox = false
             }
     }
 }
@@ -136,6 +163,19 @@ extension GardenView {
 extension GardenView {
     @ViewBuilder private var noPlantCaptionBox: some View {
         Text(noPlantCaption)
+            .font(.bodyM)
+            .foregroundColor(.white)
+            .padding(.horizontal, 25)
+            .padding(.vertical, 6)
+            .background {
+                Capsule()
+                    .foregroundColor(.black)
+                    .opacity(0.4)
+            }
+    }
+    
+    private var notOpenChapterBox: some View {
+        Text(notOpenChapterCaption)
             .font(.bodyM)
             .foregroundColor(.white)
             .padding(.horizontal, 25)
@@ -166,7 +206,8 @@ extension GardenView {
                         selectedHistoryIndex: $selectedHistoryIndex,
                         isShowHistoryDetail: $showHistoryDetail,
                         plant: $selectedPlant,
-                        selectedHistory: $selectedHistory
+                        selectedHistory: $selectedHistory,
+                        backgroundImage: viewModel.backgroundImages[currentChapter]
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea([.bottom, .horizontal])
@@ -178,19 +219,68 @@ extension GardenView {
     }
 }
 
+// MARK: - chapterButton
+
+extension GardenView {
+    private var chapterButton: some View {
+        return HStack {
+            ForEach(1...4, id: \.self) {idx in
+                Button {
+                    if gameManager.user.chapterProgress >= idx {
+                        withAnimation {
+                            currentChapter = idx
+                        }
+                    } else {
+                        viewModel.isShowNotChapterBox = true
+                    }
+                    
+                } label: {
+                    Text(viewModel.chapter[idx])
+                }
+                .buttonStyle(
+                    ChapterButtonStyle(
+                        isDisabled: gameManager.user.chapterProgress < idx,
+                        isSelected: currentChapter == idx)
+                )
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+        }
+        .padding(.horizontal, 80)
+        .padding(.bottom, 40)
+    }
+}
+
 // MARK: - ARButton
 
 extension GardenView {
     @ViewBuilder private var ARButton: some View {
-        NavigationLink(destination: GardenARView()
-            .environmentObject(gameManager)
+        NavigationLink(
+            destination: GardenARView(
+                chapterPlants: loadChapterPlants(),
+                currentChapter: currentChapter
+            )
         ) {
-            Image(.arButton)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 50.0, minHeight: 50.0)
+            Text("AR로 보기")
+                .foregroundColor(.greenPrimary)
+                .font(.titleS)
+                .padding()
+                .padding(.horizontal)
+                .background {
+                    RoundedRectangle(cornerRadius: 100)
+                        .fill(.gray10)
+                }
         }
         .padding(.bottom, 42)
+    }
+}
+
+extension GardenView {
+    func loadChapterPlants() -> [GardenPlant]? {
+        if let plants = gameManager.user.completedPlants.filter({$0.key == currentChapter}).first {
+            return plants.value
+        }
+        
+        return nil
     }
 }
 

@@ -12,18 +12,20 @@ struct HistoryView: View {
     
     @Binding var selectedHistoryIndex: Int?
     @Binding var isShowHistoryDetail: Bool
-    @Binding var plant: Plant?
+    @Binding var plant: GardenPlant?
     @Binding var selectedHistory: (image: UIImage, date: String, record: String)?
+    
+    var backgroundImage: String
     
     var body: some View {
         if let plant = plant {
             ScrollView(showsIndicators: false) {
                 VStack {
-                    Text(plant.mainQuest)
+                    Text(plant.plantMainQuest)
                         .foregroundStyle(.brownPrimary)
                         .font(.titleL)
                     
-                    Text(plant.characterName)
+                    Text(plant.plantName)
                         .foregroundStyle(.greenSecondary)
                         .font(.titleM)
                         .padding(.top, 2)
@@ -31,7 +33,7 @@ struct HistoryView: View {
                     plantView
                         .padding(.top)
                         
-                    Text(plant.characterDescription)
+                    Text(plant.completeDescription)
                         .foregroundStyle(.gray50)
                         .font(.bodyS)
                         .padding(.vertical, 16)
@@ -43,7 +45,7 @@ struct HistoryView: View {
                 .padding()
             }
             .onAppear {
-                viewModel.loadHistoryData(plantName: plant.characterName)
+                viewModel.loadHistoryData(plantName: plant.plantName)
             }
             .fullScreenCover(isPresented: $isShowHistoryDetail) {
                 HistoryDetailView(selectedHistoryIndex: $selectedHistoryIndex, isShowHistoryDetailView: $isShowHistoryDetail, selectedHistory: $selectedHistory)
@@ -57,21 +59,17 @@ struct HistoryView: View {
 extension HistoryView {
     private var plantView: some View {
         ZStack {
-            if let sceneName = plant?.character3DFiles.last,
-               let chapterName = plant?.characterFileName {
-                Image(viewModel.setBackgroundImage(chapterName))
-                    .resizable()
-                    .overlay {
+            Image(backgroundImage)
+                .resizable()
+                .overlay {
+                    if let sceneName = plant?.plant3DFile {
                         PlantPotView(sceneViewName: sceneName)
                             .scaledToFit()
                             .frame(width: UIScreen.main.bounds.width * 0.6)
                     }
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .aspectRatio(1, contentMode: .fill)
-            } else {
-                RoundedRectangle(cornerRadius: 16)
-                    .frame(width: UIScreen.main.bounds.width * 0.6)
-            }
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .aspectRatio(1, contentMode: .fill)
         }
     }
     

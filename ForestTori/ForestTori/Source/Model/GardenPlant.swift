@@ -17,6 +17,8 @@ import Foundation
 /// - gardenPositionY: 정원 배치 y position 값
 /// - gardenPositionZ: 정원 배치 z position 값
 /// - completeDescription: 정원의 historyView에 나타날 문장
+/// - plantMainQuest: 정원의 historyView에 나타날 식물의 미션
+/// - plant3DFile: 정원의 historyView에 나타날 식물 3d file
 struct GardenPlant: Identifiable, Codable {
     var id: Int
     var plantName: String
@@ -26,4 +28,6 @@ struct GardenPlant: Identifiable, Codable {
     var gardenPositionY: Float = 0.5
     var gardenPositionZ: Float
     var completeDescription: String
+    var plantMainQuest: String
+    var plant3DFile: String?
 }
