@@ -13,10 +13,23 @@ struct PlantView: View {
     
     @Binding var isShowSelectPlantView: Bool
     
+    private let url = "https://www.1365.go.kr/vols/1472176623798/wpge/volsguide1365.do"
+    
     var body: some View {
         VStack(spacing: 0) {
-            dialogueBox
-                .hidden(viewModel.missionStatus == .receivingMission || viewModel.missionStatus == .completed)
+            ZStack {
+                dialogueBox
+                    .hidden(viewModel.missionStatus == .receivingMission || viewModel.missionStatus == .completed)
+                
+                Button {
+                    viewModel.openWebsite(urlString: url)
+                } label: {
+                    Image(.infoButton)
+                        .resizable()
+                        .frame(width: 40, height: 34)
+                }
+                .hidden(viewModel.missionStatus == .inProgress && viewModel.plantName == "목화나무")
+            }
             
             Spacer()
             

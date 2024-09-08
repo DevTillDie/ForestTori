@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "STR_Img_asset_button_info.png",
+      "filename" : "Button_Message.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Button_Message@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Button_Message@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

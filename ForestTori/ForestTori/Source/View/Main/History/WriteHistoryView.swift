@@ -55,9 +55,6 @@ struct WriteHistoryView: View {
                 .onAppear {
                     isShowSelectImagePopup = false
                 }
-                .onDisappear {
-                    isShowCropView = true
-                }
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage,
