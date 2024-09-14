@@ -47,6 +47,8 @@ class MainViewModel: ObservableObject {
         }
     }
     
+    @Published var isShowNotAvailable = false
+    
     @Published var showEnding = false
     @Published var plantName = ""
     
@@ -175,6 +177,18 @@ class MainViewModel: ObservableObject {
                     missionStatus = .receivingMission
                     showNextDialogue()
                 }
+            }
+        }
+    }
+    
+    func showNotAvailable() {
+        withAnimation(.easeInOut(duration: 1)) {
+            isShowNotAvailable = true
+        }
+            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            withAnimation(.easeInOut(duration: 1)) {
+                self.isShowNotAvailable = false
             }
         }
     }

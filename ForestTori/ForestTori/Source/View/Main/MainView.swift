@@ -17,6 +17,8 @@ struct MainView: View {
     @State private var selectedTab = 0
     @State private var isShowSelectPlantView = false
     
+    private let notAvailableLine = "현재 식물의 성장 완료 후 잠금 해제됩니다."
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,14 +26,14 @@ struct MainView: View {
                     .resizable()
                     .ignoresSafeArea()
                 
-                VStack {
+                VStack(spacing: 0) {
                     mainHeader
-                    
-                    Spacer()
                     
                     PlantView(isShowSelectPlantView: $isShowSelectPlantView)
                         .environmentObject(gameManager)
                         .environmentObject(viewModel)
+                    
+                    notAvailableText
                     
                     customTabBar
                 }
@@ -112,6 +114,20 @@ extension MainView {
         .padding(.bottom, 8)
     }
     
+    private var notAvailableText: some View {
+        Text(notAvailableLine)
+            .font(.bodyM)
+            .foregroundStyle(.white)
+            .padding(.horizontal, 25)
+            .padding(.vertical, 6)
+            .background {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(.black.opacity(0.4))
+            }
+            .padding(.bottom, 10)
+            .hidden(viewModel.isShowNotAvailable)
+    }
+    
     private var customTabBar: some View {
         HStack(spacing: 20) {
             Button {
@@ -126,6 +142,9 @@ extension MainView {
                 Image(selectedTab == 1 ? "PotSelectedButton" : "PotLockedButton")
             }
             .disabled(true)
+            .onTapGesture {
+                viewModel.showNotAvailable()
+            }
             
             Button {
                 selectedTab = 2
@@ -133,6 +152,9 @@ extension MainView {
                 Image(selectedTab == 2 ? "PotSelectedButton" : "PotLockedButton")
             }
             .disabled(true)
+            .onTapGesture {
+                viewModel.showNotAvailable()
+            }
         }
         .padding(.bottom, 42)
     }

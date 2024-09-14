@@ -39,13 +39,12 @@ struct PlantView: View {
             PlantPotView(sceneViewName: viewModel.plant3DFileName)
                 .scaledToFit()
                 .frame(width: viewModel.plantWidth)
-                .padding(.bottom, 16)
             
             missionBox
                 .hidden(viewModel.missionStatus == .inProgress || viewModel.missionStatus == .completed)
         }
         .padding(.top, 24)
-        .padding(.bottom, 20)
+        .padding(.bottom, 10)
     }
 }
 
