@@ -15,6 +15,7 @@ struct PlantCardView: View {
     @Binding var isShowSelectPlantView: Bool
     
     var plant: Plant
+    var tabIndex: Int
     
     var body: some View {
         ZStack {
@@ -47,7 +48,11 @@ struct PlantCardView: View {
                 
                 Button {
                     gameManager.selectPlant(plant: plant)
-                    isShowSelectPlantView = false
+                    withAnimation(.easeInOut(duration: 0.6)) {
+                        gameManager.isPlantSelected[tabIndex]
+                        = true
+                        isShowSelectPlantView = false
+                    }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)

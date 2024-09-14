@@ -15,6 +15,8 @@ struct MainView: View {
     @StateObject private var keyboardHandler = KeyboardHandler()
     
     @State private var selectedTab = 0
+    @State private var plantPlayStatus: [Bool] = UserDefaults.standard.array(forKey: "plantPlayStatus") as? [Bool] ?? [false, false, false]
+    @State private var plantLevels: [Int] = UserDefaults.standard.array(forKey: "plantLevels") as? [Int] ?? [0, 0, 0]
     @State private var isShowSelectPlantView = false
     
     private let notAvailableLine = "현재 식물의 성장 완료 후 잠금 해제됩니다."
@@ -22,60 +24,68 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image(gameManager.chapter.chatperBackgroundImage)
-                    .resizable()
-                    .ignoresSafeArea()
-                
-                VStack(spacing: 0) {
-                    mainHeader
+                ZStack {
+                    Image(gameManager.chapter.chatperBackgroundImage)
+                        .resizable()
+                        .ignoresSafeArea()
+                    VStack(spacing: 0) {
+                        mainHeader
+                        
+                        if !gameManager.isPlantSelected[selectedTab] {
+                            EmptyPlantPotView(isShowSelectPlantView: $isShowSelectPlantView)
+                                .transition(.opacity)
+                        } else {
+                            PlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                                .environmentObject(gameManager)
+                                .environmentObject(viewModel)
+                        }
+                        
+                        notAvailableAlert
+                        
+                        customTabBar
+                    }
                     
-                    PlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    SelectPlantView( isShowSelectPlantView: $isShowSelectPlantView, tabIndex: selectedTab)
                         .environmentObject(gameManager)
-                        .environmentObject(viewModel)
-                    
-                    notAvailableText
-                    
-                    customTabBar
                 }
-                
-                showSelectPlantView
-                
-                showCompleteMission
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
-            .fullScreenCover(isPresented: $viewModel.isShowHistoryView) {
-                WriteHistoryView(
-                    isComplete: $viewModel.isCompleteTodayMission,
-                    isShowHistoryView: $viewModel.isShowHistoryView,
-                    currentStatus: $viewModel.missionStatus,
-                    plantName: viewModel.plantName
-                )
-                .environmentObject(keyboardHandler)
+
+            showCompleteMission
+        }
+        .ignoresSafeArea()
+        .fullScreenCover(isPresented: $viewModel.isShowHistoryView) {
+            WriteHistoryView(
+                isComplete: $viewModel.isCompleteTodayMission,
+                isShowHistoryView: $viewModel.isShowHistoryView,
+                currentStatus: $viewModel.missionStatus,
+                plantName: viewModel.plantName
+            )
+            .environmentObject(keyboardHandler)
+        }
+        .onAppear {
+            if gameManager.isSelectPlant {
+                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
+            } else {
+                viewModel.setEmptyPot()
             }
-            .onAppear {
-                if gameManager.isSelectPlant {
-                    viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-                } else {
-                    viewModel.setEmptyPot()
-                }
+        }
+        .onChange(of: gameManager.isSelectPlant) { _ in
+            if gameManager.isSelectPlant {
+                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
+            } else {
+                viewModel.setEmptyPot()
             }
-            .onChange(of: gameManager.isSelectPlant) { _ in
-                if gameManager.isSelectPlant {
-                    viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-                } else {
-                    viewModel.setEmptyPot()
-                }
+        }
+        .onChange(of: viewModel.showEnding) { _ in
+            gameManager.completeMission()
+            withAnimation {
+                serviceStateViewModel.state = .ending
             }
-            .onChange(of: viewModel.showEnding) { _ in
-                gameManager.completeMission()
-                withAnimation {
-                    serviceStateViewModel.state = .ending
-                }
-            }
-            .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
-                if let newPlantName {
-                    notificationManager.scheduleNotification(for: newPlantName)
-                }
+        }
+        .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+            if let newPlantName {
+                notificationManager.scheduleNotification(for: newPlantName)
             }
         }
     }
@@ -114,7 +124,7 @@ extension MainView {
         .padding(.bottom, 8)
     }
     
-    private var notAvailableText: some View {
+    private var notAvailableAlert: some View {
         Text(notAvailableLine)
             .font(.bodyM)
             .foregroundStyle(.white)
@@ -133,61 +143,78 @@ extension MainView {
             Button {
                 selectedTab = 0
             } label: {
-                Image(selectedTab == 0 ? "PotSelectedButton" : "PotLockedButton")
+                tabIcon(0)
             }
             
             Button {
                 selectedTab = 1
             } label: {
-                Image(selectedTab == 1 ? "PotSelectedButton" : "PotLockedButton")
+                tabIcon(1)
             }
-            .disabled(true)
+            .disabled(!gameManager.plantPlayStatus[1])
             .onTapGesture {
-                viewModel.showNotAvailable()
+                if !gameManager.plantPlayStatus[1] {
+                    viewModel.showNotAvailableAlert()
+                }
             }
             
             Button {
                 selectedTab = 2
             } label: {
-                Image(selectedTab == 2 ? "PotSelectedButton" : "PotLockedButton")
+                tabIcon(2)
             }
-            .disabled(true)
+            .disabled(!gameManager.plantPlayStatus[2])
             .onTapGesture {
-                viewModel.showNotAvailable()
+                if !gameManager.plantPlayStatus[2] {
+                    viewModel.showNotAvailableAlert()
+                }
             }
         }
         .padding(.bottom, 42)
     }
 }
 
+extension MainView {
+    @ViewBuilder
+    func tabIcon(_ index: Int) -> some View {
+        if index == selectedTab {
+            Image(.potSelectedButton)
+        } else if gameManager.plantPlayStatus[index] {
+            Image(.potButton)
+        } else {
+            Image(.potLockedButton)
+        }
+    }
+}
+
 // MARK: elements shown based on conditions
 
 extension MainView {
-    private var showSelectPlantView: some View {
-        ZStack {
-            if isShowSelectPlantView {
-                Color.black.opacity(0.4)
-                    .ignoresSafeArea()
-                    .onTapGesture {
-                        withAnimation {
-                            isShowSelectPlantView = false
-                        }
-                    }
-                    .transition(.opacity)
-                
-                Text("식물 친구를 선택해주세요")
-                    .font(.titleM)
-                    .foregroundColor(.white)
-                    .padding(.top, 160)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                    .transition(.move(edge: .bottom))
-                
-                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                    .environmentObject(gameManager)
-                    .transition(.move(edge: .bottom))
-            }
-        }
-    }
+//    private var showSelectPlantView: some View {
+//        ZStack {
+//            if isShowSelectPlantView {
+//                Color.black.opacity(0.4)
+//                    .ignoresSafeArea()
+//                    .onTapGesture {
+//                        withAnimation {
+//                            isShowSelectPlantView = false
+//                        }
+//                    }
+//                    .transition(.opacity)
+//                
+//                Text("식물 친구를 선택해주세요")
+//                    .font(.titleM)
+//                    .foregroundColor(.white)
+//                    .padding(.top, 160)
+//                    .frame(maxHeight: .infinity, alignment: .top)
+//                    .transition(.move(edge: .bottom))
+//                
+//                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+//                    .environmentObject(gameManager)
+//                    .transition(.move(edge: .bottom))
+//            }
+//        }
+//    }
     
     private var showCompleteMission: some View {
         ZStack {

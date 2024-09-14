@@ -181,7 +181,7 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    func showNotAvailable() {
+    func showNotAvailableAlert() {
         withAnimation(.easeInOut(duration: 1)) {
             isShowNotAvailable = true
         }

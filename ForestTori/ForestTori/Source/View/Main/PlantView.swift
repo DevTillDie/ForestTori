@@ -14,7 +14,7 @@ struct PlantView: View {
     @Binding var isShowSelectPlantView: Bool
     
     private let url = "https://www.1365.go.kr/vols/1472176623798/wpge/volsguide1365.do"
-    
+   
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
@@ -32,9 +32,6 @@ struct PlantView: View {
             }
             
             Spacer()
-            
-            addNewPlantButton
-                .hidden(viewModel.missionStatus == .none)
             
             PlantPotView(sceneViewName: viewModel.plant3DFileName)
                 .scaledToFit()

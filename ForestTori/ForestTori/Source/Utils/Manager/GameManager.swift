@@ -14,6 +14,9 @@ import SwiftUI
 /// - isSelectPlant: 식물 선택 여부
 class GameManager: ObservableObject {
     @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
+    
+    @Published var plantPlayStatus: [Bool] = UserDefaults.standard.array(forKey: "plantPlayStatus") as? [Bool] ?? [true, false, false]
+    @Published var isPlantSelected: [Bool] = UserDefaults.standard.array(forKey: "isPlantSelected") as? [Bool] ?? [false, false, false]
     @Published var user = User()
     @Published var chapter: Chapter
     @AppStorage("isSelectPlant") var isSelectPlant = false

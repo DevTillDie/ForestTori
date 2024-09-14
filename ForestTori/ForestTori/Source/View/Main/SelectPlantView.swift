@@ -13,21 +13,45 @@ struct SelectPlantView: View {
     @State private var currentIndex = 0
     @Binding var isShowSelectPlantView: Bool
     
+    var tabIndex: Int
+    
     var body: some View {
-        PlantCarousel(index: $currentIndex, plants: gameManager.chapter.chapterPlants) { plant in
-            GeometryReader { proxy in
-                let width = proxy.size.width
-                let height = proxy.size.height/2
-                let offset = currentIndex == plant.id-1 ? 1 : 0.8
-                let spacing: CGFloat = 16
+        ZStack {
+            if isShowSelectPlantView {
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        withAnimation {
+                            isShowSelectPlantView = false
+                        }
+                    }
+                    .transition(.opacity)
                 
-                PlantCardView(
-                    isShowSelectPlantView: $isShowSelectPlantView,
-                    plant: plant
-                )
-                .environmentObject(gameManager)
-                .frame(width: width, height: height * offset + spacing)
-                .position(x: width/2, y: height)
+                Text("식물 친구를 선택해주세요")
+                    .font(.titleM)
+                    .foregroundColor(.white)
+                    .padding(.top, 160)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .transition(.move(edge: .bottom))
+                
+                PlantCarousel(index: $currentIndex, plants: gameManager.chapter.chapterPlants) { plant in
+                    GeometryReader { proxy in
+                        let width = proxy.size.width
+                        let height = proxy.size.height/2
+                        let offset = currentIndex == plant.id-1 ? 1 : 0.8
+                        let spacing: CGFloat = 16
+                        
+                        PlantCardView(
+                            isShowSelectPlantView: $isShowSelectPlantView,
+                            plant: plant,
+                            tabIndex: tabIndex
+                        )
+                        .environmentObject(gameManager)
+                        .frame(width: width, height: height * offset + spacing)
+                        .position(x: width/2, y: height)
+                    }
+                }
+                .transition(.move(edge: .bottom))
             }
         }
     }
