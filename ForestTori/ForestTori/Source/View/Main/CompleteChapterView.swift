@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CompleteMissionView: View {
+struct CompleteChapterView: View {
     @EnvironmentObject var gameManager: GameManager
     @EnvironmentObject var mainViewModel: MainViewModel
     
@@ -51,9 +51,6 @@ struct CompleteMissionView: View {
                     NavigationLink(destination: GardenView(totalProgressValue: mainViewModel.totalProgressValue)
                         .environmentObject(gameManager)
                         .navigationBarBackButtonHidden(true)
-//                        .onAppear {
-//                            mainViewModel.isShowCompleteMissionView = false
-//                        }
                         .onDisappear {
                             gameManager.startNewGame()
                         }
@@ -71,6 +68,7 @@ struct CompleteMissionView: View {
                     
                     Button {
                         gameManager.startNewGame()
+                        mainViewModel.isCompleteChapter = false
                     } label: {
                         Text("메인으로")
                             .font(.titleS)
@@ -95,7 +93,7 @@ struct CompleteMissionView: View {
 }
 
 #Preview {
-    CompleteMissionView()
+    CompleteChapterView()
         .environmentObject(GameManager())
         .environmentObject(ServiceStateViewModel())
 }

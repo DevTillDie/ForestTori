@@ -28,7 +28,7 @@
 		0E4AB2412BD1090B00ADB623 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2402BD1090B00ADB623 /* Date+.swift */; };
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
-		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
+		0E58AB8F2B8E05AA00EB8C78 /* CompleteChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteChapterView.swift */; };
 		0E62B72C2BFB0C1C0011B34E /* Cottontree1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */; };
 		0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72D2BFB0C240011B34E /* Cottontree2.scn */; };
 		0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */; };
@@ -147,7 +147,7 @@
 		0E4AB2402BD1090B00ADB623 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
-		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
+		0E58AB8E2B8E05AA00EB8C78 /* CompleteChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteChapterView.swift; sourceTree = "<group>"; };
 		0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree1.scn; sourceTree = "<group>"; };
 		0E62B72D2BFB0C240011B34E /* Cottontree2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree2.scn; sourceTree = "<group>"; };
 		0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree3.scn; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 				0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */,
 				0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */,
 				0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */,
-				0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */,
+				0E58AB8E2B8E05AA00EB8C78 /* CompleteChapterView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -886,7 +886,7 @@
 				5BE672842C71DE6B00D9F0E8 /* ImageCropView.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
 				5BA395642B7E4A230019A545 /* OnboardingViewModel.swift in Sources */,
-				0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */,
+				0E58AB8F2B8E05AA00EB8C78 /* CompleteChapterView.swift in Sources */,
 				0E4AB2382BCD721700ADB623 /* History.swift in Sources */,
 				5BA931112B62602200F48AF1 /* User.swift in Sources */,
 				5BEA73062BD77F6E00BF5ADA /* ServiceStateViewModel.swift in Sources */,

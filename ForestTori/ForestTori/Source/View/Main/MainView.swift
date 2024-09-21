@@ -20,62 +20,46 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                ZStack {
-                    Image(gameManager.chapter.chatperBackgroundImage)
-                        .resizable()
-                        .ignoresSafeArea()
-                    VStack(spacing: 0) {
-                        mainHeader
-                        
-                        if viewModel.plantStatuses[viewModel.currentTab]?.plant == nil {
-                            EmptyPlantPotView(isShowSelectPlantView: $isShowSelectPlantView)
-                                .transition(.opacity)
-                        } else {
-                            PlantContentView(index: viewModel.currentTab)
-                                .environmentObject(gameManager)
-                                .environmentObject(viewModel)
-                        }
-                        
-                        notAvailableAlert
-                        
-                        customTabBar
+                Image(gameManager.chapter.chatperBackgroundImage)
+                    .resizable()
+                    .ignoresSafeArea()
+                VStack(spacing: 0) {
+                    mainHeader
+                    
+                    if viewModel.plantStatuses[viewModel.currentTab]?.plant == nil {
+                        EmptyPlantPotView(isShowSelectPlantView: $isShowSelectPlantView)
+                            .transition(.opacity)
+                    } else {
+                        PlantContentView(index: viewModel.currentTab)
+                            .environmentObject(gameManager)
+                            .environmentObject(viewModel)
                     }
                     
-                    SelectPlantView( isShowSelectPlantView: $isShowSelectPlantView)
-                        .environmentObject(gameManager)
-                        .environmentObject(viewModel)
+                    notAvailableAlert
+                    
+                    customTabBar
                 }
-                .ignoresSafeArea()
+                
+                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    .environmentObject(gameManager)
+                    .environmentObject(viewModel)
+                
+                showCompleteChapter
             }
-
-//            showCompleteMission
+            .ignoresSafeArea()
         }
         .ignoresSafeArea()
-//        .onAppear {
-//            if gameManager.isSelectPlant {
-//                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-//            } else {
-//                viewModel.setEmptyPot()
-//            }
-//        }
-//        .onChange(of: viewModel.plantPlayStatus) { _ in
-//            if gameManager.isSelectPlant {
-//                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-//            } else {
-//                viewModel.setEmptyPot()
-//            }
-//        }
-//        .onChange(of: viewModel.showEnding) { _ in
-//            gameManager.completeMission()
-//            withAnimation {
-//                serviceStateViewModel.state = .ending
-//            }
-//        }
-//        .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
-//            if let newPlantName {
-//                notificationManager.scheduleNotification(for: newPlantName)
-//            }
-//        }
+        .onChange(of: viewModel.isShowEnding) { _ in
+            gameManager.completePlant()
+            withAnimation {
+                serviceStateViewModel.state = .ending
+            }
+        }
+        .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+            if let newPlantName {
+                notificationManager.scheduleNotification(for: newPlantName)
+            }
+        }
     }
 }
 
@@ -179,24 +163,22 @@ extension MainView {
 // MARK: elements shown based on conditions
 
 extension MainView {
-//    private var showCompleteMission: some View {
-//        ZStack {
-//            if viewModel.isCompleteMission {
-//                Color.black.opacity(0.4)
-//                
-//                CompleteMissionView()
-//                    .environmentObject(gameManager)
-//                    .environmentObject(viewModel)
-//                    .onAppear {
-//                        if gameManager.user.selectedPlant != nil {
-//                            viewModel.isShowCompleteMissionView = true
-//                            gameManager.completePlant()
-//                        }
-//                    }
-//            }
-//        }
-//        .hidden(viewModel.isShowCompleteMissionView)
-//    }
+    private var showCompleteChapter: some View {
+        ZStack {
+            if viewModel.isCompleteChapter {
+                Color.black.opacity(0.4)
+                
+                CompleteChapterView()
+                    .environmentObject(gameManager)
+                    .environmentObject(viewModel)
+                    .onAppear {
+                        if gameManager.user.selectedPlant != nil {
+                            gameManager.completePlant()
+                        }
+                    }
+            }
+        }
+    }
 }
 
 #Preview {

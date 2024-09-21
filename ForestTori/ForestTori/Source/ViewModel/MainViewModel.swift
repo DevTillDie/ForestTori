@@ -24,6 +24,7 @@ class MainViewModel: ObservableObject {
     }
     @Published var dialogueText = ""
     @Published var missionText = ""
+    @Published var isCompleteChapter = false
     @Published var isCompleteTodayMission = false {
         didSet {
             if isCompleteTodayMission == true {
@@ -34,6 +35,7 @@ class MainViewModel: ObservableObject {
         }
     }
     @Published var isShowNotAvailable = false
+    @Published var isShowEnding = false
     @Published var isShowHistoryView = false
     
     private var dialogues = [Dialogue]()
@@ -42,6 +44,14 @@ class MainViewModel: ObservableObject {
     
     init() {
         loadStatuses()
+    }
+    
+    private func startNewChapter() {
+        plantStatuses = [
+            0: PlantStatus(),
+            1: PlantStatus(),
+            2: PlantStatus()
+        ]
     }
     
     private func resetData() {
@@ -120,9 +130,12 @@ class MainViewModel: ObservableObject {
     func completeCurrentTab() {
         resetData()
         
-        if currentTab < 3 {
+        if currentTab < 2 {
             currentTab += 1
+            resetData()
         } else {
+            isCompleteChapter = true
+            startNewChapter()
             currentTab = 0
         }
     }
