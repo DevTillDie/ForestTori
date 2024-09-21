@@ -9,9 +9,13 @@ import SwiftUI
 
 class MainViewModel: ObservableObject {
     @AppStorage("currentTab") var currentTab = 0
+    @AppStorage("currentDialogueIndex") var currentDialogueIndex = 0
+    @AppStorage("currentLineIndex") var currentLineIndex = 0
+    @AppStorage("dialogueText") var dialogueText = ""
+    @AppStorage("missionText") var missionText = ""
+    @AppStorage("dialogues") var storedDialogues = Data()
     @AppStorage("plantStatuses") private var storedStatuses = Data()
     @AppStorage("totalProgressValue") var totalProgressValue = 0.0
-    @AppStorage("currentDialogueIndex") var currentDialogueIndex = 0
     
     @Published var plantStatuses = [
         0: PlantStatus(),
@@ -22,8 +26,6 @@ class MainViewModel: ObservableObject {
             saveStatuses()
         }
     }
-    @Published var dialogueText = ""
-    @Published var missionText = ""
     @Published var isCompleteChapter = false
     @Published var isCompleteTodayMission = false {
         didSet {
@@ -40,10 +42,10 @@ class MainViewModel: ObservableObject {
     
     private var dialogues = [Dialogue]()
     private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? "토리"
-    var currentLineIndex = 0
     
     init() {
         loadStatuses()
+        loadDialogues()
     }
     
     private func startNewChapter() {
@@ -65,6 +67,7 @@ class MainViewModel: ObservableObject {
     func setNewPlant(plant: Plant) {
         plantStatuses[currentTab]?.plant = plant
         getDialogue(plant.characterFileName)
+        saveDialogues()
         
         plantStatuses[currentTab]?.missionStatus = .receivingMission
         
@@ -148,6 +151,18 @@ class MainViewModel: ObservableObject {
     private func loadStatuses() {
         if let decoded = try? JSONDecoder().decode([Int: PlantStatus].self, from: storedStatuses) {
             plantStatuses = decoded
+        }
+    }
+    
+    private func saveDialogues() {
+        if let encoded = try? JSONEncoder().encode(dialogues) {
+            storedDialogues = encoded
+        }
+    }
+    
+    private func loadDialogues() {
+        if let decoded = try? JSONDecoder().decode([Dialogue].self, from: storedDialogues) {
+            dialogues = decoded
         }
     }
     
