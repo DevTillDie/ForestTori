@@ -72,7 +72,7 @@ extension MainView {
                 .environmentObject(gameManager)
                 .navigationBarBackButtonHidden(true)
             ) {
-                Image("MainButton")
+                Image(.mainButton)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 45, height: 45)

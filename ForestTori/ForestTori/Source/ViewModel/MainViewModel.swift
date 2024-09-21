@@ -104,14 +104,9 @@ class MainViewModel: ObservableObject {
                     showNextDialogue(index: index)
                 }
             } else {
-                if plant.characterFileName.contains("Winter") {
-                    //                    showEnding = true
-                } else {
-                    //                    isCompleteMission = true
-                    plantStatuses[index]?.missionStatus = .none
-                    plantStatuses[index]?.completeStory()
-                    completeCurrentTab()
-                }
+                plantStatuses[index]?.missionStatus = .none
+                plantStatuses[index]?.completeStory()
+                completeCurrentTab()
             }
         }
     }
@@ -134,9 +129,13 @@ class MainViewModel: ObservableObject {
             currentTab += 1
             resetData()
         } else {
-            isCompleteChapter = true
-            startNewChapter()
-            currentTab = 0
+            if let fileName =  plantStatuses[currentTab]?.plant?.characterFileName, fileName.contains("Winter") {
+                isShowEnding = true
+            } else {
+                isCompleteChapter = true
+                startNewChapter()
+                currentTab = 0
+            }
         }
     }
     
