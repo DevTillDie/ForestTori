@@ -1,109 +1,76 @@
 //
-//  MainViewModel.swift
+//  TempViewModel.swift
 //  ForestTori
 //
-//  Created by hyebin on 2/17/24.
+//  Created by Nayeon Kim on 9/21/24.
 //
 
 import SwiftUI
 
-//  - dialogueText: View에서 보여지는 대사
-//  - dialogues: 파일에서 읽어온 데이터를 저장하는 배열
-//  - currentDialogueIndex: dialogues 배열에 접근하기 위한 index
-//  - currentLineIndex: dialogues배열 중 currentDialogueIndex에 해당하는 lines 배열에 접근하기 위한 index
-
-enum MissionStatus: String, Codable {
-    case none             // 미션 없음
-    case receivingMission // 미션을 받는 중
-    case inProgress       // 미션 하는 중
-    case done             // 미션 완료
-    case completed        // 식물일지 작성까지 완료
-}
-
 class MainViewModel: ObservableObject {
-    @AppStorage("missionDay") var missionDay = 0
-    @AppStorage("currentDialogueIndex") var currentDialogueIndex = 0
-    @AppStorage("progressValue") var progressValue = 0.0
+    @AppStorage("currentTab") var currentTab = 0
+    @AppStorage("plantStatuses") private var storedStatuses = Data()
     @AppStorage("totalProgressValue") var totalProgressValue = 0.0
-    @AppStorage("missionStatus") var missionStatus: MissionStatus = .none
+    @AppStorage("currentDialogueIndex") var currentDialogueIndex = 0
     
-    @Published var plant3DFileName = "Emptypot.scn"
-    @Published var plantWidth: CGFloat = 250
-    
+    @Published var plantStatuses = [
+        0: PlantStatus(),
+        1: PlantStatus(),
+        2: PlantStatus()
+    ] {
+        didSet {
+            saveStatuses()
+        }
+    }
     @Published var dialogueText = ""
     @Published var missionText = ""
-    
-    @Published var isShowHistoryView = false
-    @Published var isCompleteMission = false
-    @Published var isShowCompleteMissionView = false
-    
     @Published var isCompleteTodayMission = false {
         didSet {
             if isCompleteTodayMission == true {
                 isShowHistoryView = false
-                completMission()
+                completMission(index: self.currentTab)
                 isCompleteTodayMission = false
             }
         }
     }
-    
     @Published var isShowNotAvailable = false
+    @Published var isShowHistoryView = false
     
-    @Published var showEnding = false
-    @Published var plantName = ""
-    
-    private var plant: Plant?
     private var dialogues = [Dialogue]()
-    private var currentLineIndex = 0
     private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? "토리"
+    var currentLineIndex = 0
     
-    func setNewPlant(plant: Plant?) {
-        self.plant = plant
-        
-        if let plant = plant {
-            getDialogue(plant.characterFileName)
-            
-            plant3DFileName = plant.character3DFiles[missionDay]
-            plantWidth = 350
-            plantName = plant.characterName
-            
-            if missionStatus == .none {
-                missionStatus = .receivingMission
-            } else if missionStatus == .done {
-                missionStatus = .inProgress
-            }
-            
-            if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
-                dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
-            }
-
-            missionText = plant.missions[missionDay].content
-        }
+    init() {
+        loadStatuses()
     }
     
-    func setEmptyPot() {
-        plant3DFileName = "Emptypot.scn"
-        missionDay = 0
-        plantWidth = 200
-        progressValue = 0.0
-        plantName = ""
-        
+    private func resetData() {
         dialogueText = ""
         missionText = ""
-        
-        missionStatus = .none
-        isCompleteMission = false
         
         currentDialogueIndex = 0
         currentLineIndex = 0
     }
     
-    func showNextDialogue() {
+    func setNewPlant(plant: Plant) {
+        plantStatuses[currentTab]?.plant = plant
+        getDialogue(plant.characterFileName)
+        
+        plantStatuses[currentTab]?.missionStatus = .receivingMission
+        
+        if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
+            dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
+        }
+
+        missionText = plant.missions[0].content
+    }
+    
+    func showNextDialogue(index: Int) {
         if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
-            missionStatus = .inProgress
+            plantStatuses[index]?.missionStatus = .inProgress
 
             if dialogues[currentDialogueIndex].type == "Ending" {
-                nextDay()
+                goNextDay(index: index)
             }
         } else {
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
@@ -111,19 +78,70 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    func completMission() {
-        currentDialogueIndex += 1
-        currentLineIndex = 0
-        progressValue = (Double(missionDay + 1)/Double(plant?.totalDay ?? 0)) * 100
-        totalProgressValue += (1 / Double(plant?.totalDay ?? 1)) * 25
-        
-        missionStatus = .completed
-        showNextDialogue()
+    func goNextDay(index: Int) {
+        if let plant = plantStatuses[index]?.plant {
+            if plantStatuses[index]!.missionDay < plant.totalDay - 1 {
+                plantStatuses[index]?.missionDay += 1
+                
+                missionText = plant.missions[plantStatuses[index]!.missionDay].content
+                
+                if dialogues[currentDialogueIndex + 1].type == "Opening" {
+                    currentDialogueIndex += 1
+                    currentLineIndex = 0
+                    
+                    plantStatuses[index]?.missionStatus = .receivingMission
+                    
+                    showNextDialogue(index: index)
+                }
+            } else {
+                if plant.characterFileName.contains("Winter") {
+                    //                    showEnding = true
+                } else {
+                    //                    isCompleteMission = true
+                    plantStatuses[index]?.missionStatus = .none
+                    plantStatuses[index]?.completeStory()
+                    completeCurrentTab()
+                }
+            }
+        }
     }
     
-    // csv 파일에 저장된 식물의 대사를 반환
+    func completMission(index: Int) {
+        currentDialogueIndex += 1
+        currentLineIndex = 0
+        
+        plantStatuses[index]!.progressValue = (Double(plantStatuses[index]!.missionDay + 1)/Double(plantStatuses[index]!.plant?.totalDay ?? 0)) * 100
+        totalProgressValue += (1 / Double(plantStatuses[index]!.plant?.totalDay ?? 1)) * 25
+        
+        plantStatuses[index]!.missionStatus = .completed
+        showNextDialogue(index: index)
+    }
+    
+    func completeCurrentTab() {
+        resetData()
+        
+        if currentTab < 3 {
+            currentTab += 1
+        } else {
+            currentTab = 0
+        }
+    }
+    
+    private func saveStatuses() {
+        if let encoded = try? JSONEncoder().encode(plantStatuses) {
+            storedStatuses = encoded
+        }
+    }
+    
+    private func loadStatuses() {
+        if let decoded = try? JSONDecoder().decode([Int: PlantStatus].self, from: storedStatuses) {
+            plantStatuses = decoded
+        }
+    }
+    
+    // tsv 파일에 저장된 식물의 대사를 반환
     private func getDialogue(_ fileName: String) {
-        dialogues = []
+        dialogues = [Dialogue]()
         
         guard let path = Bundle.main.path(forResource: fileName, ofType: "tsv") else {
             return
@@ -151,33 +169,7 @@ class MainViewModel: ObservableObject {
                 }
             }
         } catch {
-            print("Error reading CSV file")
-        }
-    }
-    
-    private func nextDay() {
-        missionDay += 1
-
-        if let plant = plant {
-            if missionDay == plant.totalDay {
-                if plant.characterFileName.contains("Winter") {
-                    showEnding = true
-                } else {
-                    isCompleteMission = true
-                    missionStatus = .none
-                }
-            } else {
-                plant3DFileName = plant.character3DFiles[missionDay]
-                missionText = plant.missions[missionDay].content
-                
-                if dialogues[currentDialogueIndex + 1].type == "Opening" {
-                    currentDialogueIndex += 1
-                    currentLineIndex = 0
-                    
-                    missionStatus = .receivingMission
-                    showNextDialogue()
-                }
-            }
+            print("Error reading TSV file")
         }
     }
     
@@ -197,5 +189,25 @@ class MainViewModel: ObservableObject {
         if let url = URL(string: urlString) {
             UIApplication.shared.open(url)
         }
+    }
+}
+
+enum MissionStatus: String, Codable {
+    case none             // 미션 없음
+    case receivingMission // 미션을 받는 중
+    case inProgress       // 미션 하는 중
+    case done             // 미션 완료
+    case completed        // 식물일지 작성까지 완료
+}
+
+struct PlantStatus: Codable {
+    var plant: Plant?
+    var isStoryCompleted = false
+    var missionStatus: MissionStatus = .none
+    var missionDay = 0
+    var progressValue = 0.0
+    
+    mutating func completeStory() {
+        isStoryCompleted = true
     }
 }

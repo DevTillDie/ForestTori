@@ -11,15 +11,13 @@ import SwiftUI
 ///
 /// - user: 사용자 정보 모델
 /// - dataManager: 게임 데이터를 관리하는 클래스
-/// - isSelectPlant: 식물 선택 여부
+/// - isPlantSelected: 식물 선택 여부
 class GameManager: ObservableObject {
-    @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
-    
-    @Published var plantPlayStatus: [Bool] = UserDefaults.standard.array(forKey: "plantPlayStatus") as? [Bool] ?? [true, false, false]
-    @Published var isPlantSelected: [Bool] = UserDefaults.standard.array(forKey: "isPlantSelected") as? [Bool] ?? [false, false, false]
+    @AppStorage("isPlantSelected") var isPlantSelected = false
+    @AppStorage("isGameCompleted") var isGameCompleted = false
+
     @Published var user = User()
     @Published var chapter: Chapter
-    @AppStorage("isSelectPlant") var isSelectPlant = false
     
     private let dataManager = DataManager()
     
@@ -41,8 +39,7 @@ class GameManager: ObservableObject {
     
     /// 새로운 스토리 시작
     func startNewGame() {
-        isSelectPlant = false
-        
+        isPlantSelected = false
         saveUserDataToUserDefaults()
     }
     
@@ -51,15 +48,14 @@ class GameManager: ObservableObject {
     /// - Parameter plant: 사용자가 식물 선택 화면에서 선택한 식물 이름
     func selectPlant(plant: Plant) {
         user.selectedPlant = plant
-        isSelectPlant = true
-        
+        isPlantSelected = true
         saveUserDataToUserDefaults()
     }
     
     /// 미션 완료 레벨업 및 챕터 진행 체크
     ///
     /// 미션 완료 후 호출되어 사용자의 레벌업 및 챕터 진행 상태를 확인합니다
-    func completeMission() {
+    func completePlant() {
         if let plant = user.selectedPlant {
             if let data = dataManager.gardenPlants.first(where: {
                 $0.id == plant.id
@@ -69,11 +65,12 @@ class GameManager: ObservableObject {
         }
         
         user.selectedPlant = nil
-    
         user.chapterProgress += 1
         
         if user.chapterProgress < 5 {
             chapter = dataManager.chapters[user.chapterProgress - 1]
+        } else {
+            isGameCompleted = true
         }
         
         saveUserDataToUserDefaults()

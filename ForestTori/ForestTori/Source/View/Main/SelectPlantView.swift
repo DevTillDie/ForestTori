@@ -9,11 +9,10 @@ import SwiftUI
 
 struct SelectPlantView: View {
     @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var mainViewModel: MainViewModel
     
     @State private var currentIndex = 0
     @Binding var isShowSelectPlantView: Bool
-    
-    var tabIndex: Int
     
     var body: some View {
         ZStack {
@@ -43,10 +42,10 @@ struct SelectPlantView: View {
                         
                         PlantCardView(
                             isShowSelectPlantView: $isShowSelectPlantView,
-                            plant: plant,
-                            tabIndex: tabIndex
+                            plant: plant
                         )
                         .environmentObject(gameManager)
+                        .environmentObject(mainViewModel)
                         .frame(width: width, height: height * offset + spacing)
                         .position(x: width/2, y: height)
                     }
@@ -118,7 +117,7 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
 }
 
 #Preview {
-    MainView()
+    SelectPlantView(isShowSelectPlantView: .constant(true))
         .environmentObject(GameManager())
         .environmentObject(ServiceStateViewModel())
 }

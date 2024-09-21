@@ -11,11 +11,11 @@ import SwiftUI
 
 struct PlantCardView: View {
     @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var mainViewModel: MainViewModel
     
     @Binding var isShowSelectPlantView: Bool
     
     var plant: Plant
-    var tabIndex: Int
     
     var body: some View {
         ZStack {
@@ -48,9 +48,9 @@ struct PlantCardView: View {
                 
                 Button {
                     gameManager.selectPlant(plant: plant)
+                    mainViewModel.setNewPlant(plant: plant)
+                    
                     withAnimation(.easeInOut(duration: 0.6)) {
-                        gameManager.isPlantSelected[tabIndex]
-                        = true
                         isShowSelectPlantView = false
                     }
                 } label: {
@@ -69,7 +69,6 @@ struct PlantCardView: View {
                     }
                 }
                 .disabled(plant.id != 1)
-                
             }
             .padding(20)
         }

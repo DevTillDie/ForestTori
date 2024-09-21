@@ -51,9 +51,9 @@ struct CompleteMissionView: View {
                     NavigationLink(destination: GardenView(totalProgressValue: mainViewModel.totalProgressValue)
                         .environmentObject(gameManager)
                         .navigationBarBackButtonHidden(true)
-                        .onAppear {
-                            mainViewModel.isShowCompleteMissionView = false
-                        }
+//                        .onAppear {
+//                            mainViewModel.isShowCompleteMissionView = false
+//                        }
                         .onDisappear {
                             gameManager.startNewGame()
                         }
