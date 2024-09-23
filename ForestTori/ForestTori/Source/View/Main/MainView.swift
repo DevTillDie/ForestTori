@@ -12,10 +12,10 @@ struct MainView: View {
     @EnvironmentObject var notificationManager: NotificationManager
     @EnvironmentObject var serviceStateViewModel: ServiceStateViewModel
     @StateObject var viewModel = MainViewModel()
-    @StateObject private var keyboardHandler = KeyboardHandler()
     
-    @State private var selectedTab = 0
     @State private var isShowSelectPlantView = false
+    
+    private let notAvailableLine = "현재 식물의 성장 완료 후 잠금 해제됩니다."
     
     var body: some View {
         NavigationView {
@@ -23,57 +23,41 @@ struct MainView: View {
                 Image(gameManager.chapter.chatperBackgroundImage)
                     .resizable()
                     .ignoresSafeArea()
-                
-                VStack {
+                VStack(spacing: 0) {
                     mainHeader
                     
-                    Spacer()
+                    if viewModel.plantStatuses[viewModel.currentTab]?.plant == nil {
+                        EmptyPlantPotView(isShowSelectPlantView: $isShowSelectPlantView)
+                            .transition(.opacity)
+                    } else {
+                        PlantContentView(index: viewModel.currentTab)
+                            .environmentObject(gameManager)
+                            .environmentObject(viewModel)
+                    }
                     
-                    PlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                        .environmentObject(gameManager)
-                        .environmentObject(viewModel)
+                    notAvailableAlert
                     
                     customTabBar
                 }
                 
-                showSelectPlantView
+                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    .environmentObject(gameManager)
+                    .environmentObject(viewModel)
                 
-                showCompleteMission
+                showCompleteChapter
             }
             .ignoresSafeArea()
-            .fullScreenCover(isPresented: $viewModel.isShowHistoryView) {
-                WriteHistoryView(
-                    isComplete: $viewModel.isCompleteTodayMission,
-                    isShowHistoryView: $viewModel.isShowHistoryView,
-                    currentStatus: $viewModel.missionStatus,
-                    plantName: viewModel.plantName
-                )
-                .environmentObject(keyboardHandler)
+        }
+        .ignoresSafeArea()
+        .onChange(of: viewModel.isShowEnding) { _ in
+            gameManager.completePlant()
+            withAnimation {
+                serviceStateViewModel.state = .ending
             }
-            .onAppear {
-                if gameManager.isSelectPlant {
-                    viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-                } else {
-                    viewModel.setEmptyPot()
-                }
-            }
-            .onChange(of: gameManager.isSelectPlant) { _ in
-                if gameManager.isSelectPlant {
-                    viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-                } else {
-                    viewModel.setEmptyPot()
-                }
-            }
-            .onChange(of: viewModel.showEnding) { _ in
-                gameManager.completeMission()
-                withAnimation {
-                    serviceStateViewModel.state = .ending
-                }
-            }
-            .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
-                if let newPlantName {
-                    notificationManager.scheduleNotification(for: newPlantName)
-                }
+        }
+        .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+            if let newPlantName {
+                notificationManager.scheduleNotification(for: newPlantName)
             }
         }
     }
@@ -88,7 +72,7 @@ extension MainView {
                 .environmentObject(gameManager)
                 .navigationBarBackButtonHidden(true)
             ) {
-                Image("MainButton")
+                Image(.mainButton)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 45, height: 45)
@@ -96,94 +80,104 @@ extension MainView {
             
             Spacer()
             
-            ProgressView(value: viewModel.progressValue, total: 100)
-                .frame(width: 119, height: 50)
-                .progressViewStyle(
-                    ProgressStyle(
-                        width: 119,
-                        color: .brown.opacity(0.8),
-                        text: viewModel.plantName
+            if let plantName = viewModel.plantStatuses[viewModel.currentTab]?.plant?.characterName {
+                ProgressView(value: viewModel.plantStatuses[viewModel.currentTab]!.progressValue, total: 100)
+                    .frame(width: 119, height: 50)
+                    .progressViewStyle(
+                        ProgressStyle(
+                            width: 119,
+                            color: .brown.opacity(0.8),
+                            text: plantName
+                        )
                     )
-                )
-                .hidden(gameManager.isSelectPlant)
+            }
         }
         .padding(.horizontal, 20)
         .padding(.top, 69)
         .padding(.bottom, 8)
     }
     
+    private var notAvailableAlert: some View {
+        Text(notAvailableLine)
+            .font(.bodyM)
+            .foregroundStyle(.white)
+            .padding(.horizontal, 25)
+            .padding(.vertical, 6)
+            .background {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(.black.opacity(0.4))
+            }
+            .padding(.bottom, 10)
+            .hidden(viewModel.isShowNotAvailable)
+    }
+    
     private var customTabBar: some View {
         HStack(spacing: 20) {
             Button {
-                selectedTab = 0
+                viewModel.currentTab = 0
             } label: {
-                Image(selectedTab == 0 ? "PotSelectedButton" : "PotLockedButton")
+                tabIcon(0)
             }
             
             Button {
-                selectedTab = 1
+                viewModel.currentTab = 1
             } label: {
-                Image(selectedTab == 1 ? "PotSelectedButton" : "PotLockedButton")
+                tabIcon(1)
             }
-            .disabled(true)
+            .disabled(!viewModel.plantStatuses[0]!.isStoryCompleted)
+            .onTapGesture {
+                if !viewModel.plantStatuses[0]!.isStoryCompleted {
+                    viewModel.showNotAvailableAlert()
+                }
+            }
             
             Button {
-                selectedTab = 2
+                viewModel.currentTab = 2
             } label: {
-                Image(selectedTab == 2 ? "PotSelectedButton" : "PotLockedButton")
+                tabIcon(2)
             }
-            .disabled(true)
+            .disabled(!viewModel.plantStatuses[1]!.isStoryCompleted)
+            .onTapGesture {
+                if !viewModel.plantStatuses[1]!.isStoryCompleted {
+                    viewModel.showNotAvailableAlert()
+                }
+            }
         }
         .padding(.bottom, 42)
+    }
+}
+
+extension MainView {
+    @ViewBuilder
+    func tabIcon(_ index: Int) -> some View {
+        if index == viewModel.currentTab {
+            Image(.potSelectedButton)
+        } else if (index == 0) || (viewModel.plantStatuses[index - 1]!.isStoryCompleted)  {
+            Image(.potButton)
+        } else {
+            Image(.potLockedButton)
+        }
     }
 }
 
 // MARK: elements shown based on conditions
 
 extension MainView {
-    private var showSelectPlantView: some View {
+    private var showCompleteChapter: some View {
         ZStack {
-            if isShowSelectPlantView {
-                Color.black.opacity(0.4)
-                    .ignoresSafeArea()
-                    .onTapGesture {
-                        withAnimation {
-                            isShowSelectPlantView = false
-                        }
-                    }
-                    .transition(.opacity)
-                
-                Text("식물 친구를 선택해주세요")
-                    .font(.titleM)
-                    .foregroundColor(.white)
-                    .padding(.top, 160)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                    .transition(.move(edge: .bottom))
-                
-                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                    .environmentObject(gameManager)
-                    .transition(.move(edge: .bottom))
-            }
-        }
-    }
-    
-    private var showCompleteMission: some View {
-        ZStack {
-            if viewModel.isCompleteMission {
+            if viewModel.isCompleteChapter {
                 Color.black.opacity(0.4)
                 
-                CompleteMissionView()
+                CompleteChapterView()
                     .environmentObject(gameManager)
                     .environmentObject(viewModel)
                     .onAppear {
                         if gameManager.user.selectedPlant != nil {
-                            viewModel.isShowCompleteMissionView = true
-                            gameManager.completeMission()
+                            gameManager.completePlant()
                         }
                     }
             }
         }
-        .hidden(viewModel.isShowCompleteMissionView)
     }
 }
 

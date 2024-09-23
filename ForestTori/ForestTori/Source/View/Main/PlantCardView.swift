@@ -11,6 +11,7 @@ import SwiftUI
 
 struct PlantCardView: View {
     @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var mainViewModel: MainViewModel
     
     @Binding var isShowSelectPlantView: Bool
     
@@ -47,7 +48,11 @@ struct PlantCardView: View {
                 
                 Button {
                     gameManager.selectPlant(plant: plant)
-                    isShowSelectPlantView = false
+                    mainViewModel.setNewPlant(plant: plant)
+                    
+                    withAnimation(.easeInOut(duration: 0.6)) {
+                        isShowSelectPlantView = false
+                    }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
@@ -64,7 +69,6 @@ struct PlantCardView: View {
                     }
                 }
                 .disabled(plant.id != 1)
-                
             }
             .padding(20)
         }
