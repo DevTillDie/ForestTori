@@ -23,6 +23,7 @@ struct MainView: View {
                 Image(gameManager.chapter.chatperBackgroundImage)
                     .resizable()
                     .ignoresSafeArea()
+                
                 VStack(spacing: 0) {
                     mainHeader
                     

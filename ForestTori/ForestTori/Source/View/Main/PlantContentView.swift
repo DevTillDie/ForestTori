@@ -15,7 +15,8 @@ struct PlantContentView: View {
     @Binding var isShowSelectPlantView: Bool
     
     private let emptyPotFileName = "Emptypot.scn"
-    private let potWidth: CGFloat = 240
+    private let emptyPotWidth: CGFloat = 240
+    private let potHeight: CGFloat = 380
     private let url = "https://www.1365.go.kr/vols/1472176623798/wpge/volsguide1365.do"
     let index: Int
     
@@ -24,19 +25,20 @@ struct PlantContentView: View {
             if let plant = viewModel.plantStatuses[index]?.plant {
                 PlantPotView(sceneViewName: plant.character3DFiles[viewModel.plantStatuses[index]!.missionDay])
                     .scaledToFit()
+                    .frame(height: potHeight, alignment: .bottom)
             } else {
                 VStack {
                     addNewPlantButton
                     
                     PlantPotView(sceneViewName: emptyPotFileName)
                         .scaledToFit()
-                        .frame(width: potWidth)
+                        .frame(width: emptyPotWidth)
                 }
-                .padding(.top, 120)
+                .frame(height: potHeight, alignment: .bottom)
             }
-                
+            
             VStack(spacing: 0) {
-                ZStack {
+                ZStack(alignment: .bottom) {
                     dialogueBox
                         .hidden(viewModel.plantStatuses[index]!.missionStatus == .receivingMission || viewModel.plantStatuses[index]!.missionStatus == .completed)
                     
@@ -64,7 +66,7 @@ struct PlantContentView: View {
                                 viewModel.plantStatuses[index]!.missionStatus = .inProgress
                             }
                     }
-                        ),
+                ),
                 plantName: viewModel.plantStatuses[index]!.plant!.characterName
             )
             .environmentObject(keyboardHandler)
