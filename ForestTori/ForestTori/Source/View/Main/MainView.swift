@@ -73,6 +73,7 @@ extension MainView {
                     .scaledToFit()
                     .frame(width: 45, height: 45)
             }
+            .padding(.vertical, 2.5)
             
             Spacer()
             
