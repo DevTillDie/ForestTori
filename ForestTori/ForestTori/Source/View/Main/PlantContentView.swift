@@ -15,7 +15,7 @@ struct PlantContentView: View {
     @Binding var isShowSelectPlantView: Bool
     
     private let emptyPotFileName = "Emptypot.scn"
-    private let potWidth: CGFloat = 300
+    private let potWidth: CGFloat = 240
     private let url = "https://www.1365.go.kr/vols/1472176623798/wpge/volsguide1365.do"
     let index: Int
     
@@ -32,7 +32,7 @@ struct PlantContentView: View {
                         .scaledToFit()
                         .frame(width: potWidth)
                 }
-                .padding(.top, 100)
+                .padding(.top,  120)
             }
             
             VStack(spacing: 0) {
