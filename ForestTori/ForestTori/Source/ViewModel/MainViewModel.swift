@@ -65,9 +65,7 @@ class MainViewModel: ObservableObject {
     }
     
     func setNewPlant(plant: Plant) {
-        withAnimation(.easeInOut(duration: 0.5)) {
-            plantStatuses[currentTab]?.plant = plant
-        }
+        plantStatuses[currentTab]?.plant = plant
         
         getDialogue(plant.characterFileName)
         saveDialogues()
@@ -86,9 +84,7 @@ class MainViewModel: ObservableObject {
             plantStatuses[index]?.missionStatus = .inProgress
 
             if dialogues[currentDialogueIndex].type == "Ending" {
-                withAnimation(.easeInOut(duration: 0.5)) {
-                    goNextDay(index: index)
-                }
+                goNextDay(index: index)
             }
         } else {
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]

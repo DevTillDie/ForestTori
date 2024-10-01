@@ -48,7 +48,10 @@ struct PlantCardView: View {
                 
                 Button {
                     gameManager.selectPlant(plant: plant)
-                    mainViewModel.setNewPlant(plant: plant)
+                    
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        mainViewModel.setNewPlant(plant: plant)
+                    }
                     
                     withAnimation(.easeInOut(duration: 0.6)) {
                         isShowSelectPlantView = false

@@ -32,9 +32,9 @@ struct PlantContentView: View {
                         .scaledToFit()
                         .frame(width: potWidth)
                 }
-                .padding(.top,  120)
+                .padding(.top, 120)
             }
-            
+                
             VStack(spacing: 0) {
                 ZStack {
                     dialogueBox
@@ -114,7 +114,9 @@ extension PlantContentView {
             .padding(.horizontal, 20)
             .padding(.bottom, 26)
             .onTapGesture {
-                viewModel.showNextDialogue(index: index)
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    viewModel.showNextDialogue(index: index)
+                }
             }
             .hidden(!(viewModel.plantStatuses[index]!.isStoryCompleted))
     }
