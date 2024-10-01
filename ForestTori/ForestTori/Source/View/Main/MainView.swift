@@ -26,14 +26,9 @@ struct MainView: View {
                 VStack(spacing: 0) {
                     mainHeader
                     
-                    if viewModel.plantStatuses[viewModel.currentTab]?.plant == nil {
-                        EmptyPlantPotView(isShowSelectPlantView: $isShowSelectPlantView)
-                            .transition(.opacity)
-                    } else {
-                        PlantContentView(index: viewModel.currentTab)
-                            .environmentObject(gameManager)
-                            .environmentObject(viewModel)
-                    }
+                    PlantContentView(isShowSelectPlantView: $isShowSelectPlantView, index: viewModel.currentTab)
+                        .environmentObject(gameManager)
+                        .environmentObject(viewModel)
                     
                     notAvailableAlert
                     

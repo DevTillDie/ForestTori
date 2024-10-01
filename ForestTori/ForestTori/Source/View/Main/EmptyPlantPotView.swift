@@ -11,17 +11,19 @@ struct EmptyPlantPotView: View {
     @Binding var isShowSelectPlantView: Bool
     
     private let emptyPotFileName = "Emptypot.scn"
-    private let potWidth: CGFloat = 250
+    private let potWidth: CGFloat = 320
     
     var body: some View {
-        VStack(spacing: 0) {
-            Spacer()
-            
-            addNewPlantButton
-            
+        ZStack {
             PlantPotView(sceneViewName: emptyPotFileName)
                 .scaledToFit()
                 .frame(width: potWidth)
+            
+            VStack(spacing: 0) {
+                addNewPlantButton
+                Spacer()
+            }
+            .padding(.top, 24)
         }
         .padding(.top, 24)
         .padding(.bottom, 20)
