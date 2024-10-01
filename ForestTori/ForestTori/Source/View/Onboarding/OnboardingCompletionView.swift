@@ -47,5 +47,8 @@ struct OnboardingCompletionView: View {
 }
 
 #Preview {
-    OnboardingView()
+    OnboardingView(onboardingViewModel: OnboardingViewModel())
+        .environmentObject(NotificationManager.instance)
+        .environmentObject(ServiceStateViewModel())
+        .environmentObject(OnboardingViewModel())
 }

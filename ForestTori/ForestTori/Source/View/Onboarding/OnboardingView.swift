@@ -50,4 +50,7 @@ extension OnboardingView {
 
 #Preview {
     OnboardingView(onboardingViewModel: OnboardingViewModel())
+        .environmentObject(NotificationManager.instance)
+        .environmentObject(ServiceStateViewModel())
+        .environmentObject(OnboardingViewModel())
 }
