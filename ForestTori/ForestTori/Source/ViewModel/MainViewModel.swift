@@ -65,7 +65,10 @@ class MainViewModel: ObservableObject {
     }
     
     func setNewPlant(plant: Plant) {
-        plantStatuses[currentTab]?.plant = plant
+        withAnimation(.easeInOut(duration: 0.5)) {
+            plantStatuses[currentTab]?.plant = plant
+        }
+        
         getDialogue(plant.characterFileName)
         saveDialogues()
         
@@ -83,7 +86,9 @@ class MainViewModel: ObservableObject {
             plantStatuses[index]?.missionStatus = .inProgress
 
             if dialogues[currentDialogueIndex].type == "Ending" {
-                goNextDay(index: index)
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    goNextDay(index: index)
+                }
             }
         } else {
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
@@ -135,7 +140,9 @@ class MainViewModel: ObservableObject {
             if let fileName =  plantStatuses[currentTab]?.plant?.characterFileName, fileName.contains("Winter") {
                 isShowEnding = true
             } else {
-                isCompleteChapter = true
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    isCompleteChapter = true
+                }
                 startNewChapter()
                 currentTab = 0
             }
