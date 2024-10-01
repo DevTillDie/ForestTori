@@ -109,7 +109,7 @@ extension PlantContentView {
                         .padding(.bottom, 18)
                         .padding(.trailing, 18)
                 }
-                .padding(.vertical, 10)
+                .padding(.vertical, 8)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 26)
