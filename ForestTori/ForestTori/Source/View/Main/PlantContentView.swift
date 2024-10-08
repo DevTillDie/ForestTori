@@ -12,25 +12,45 @@ struct PlantContentView: View {
     @EnvironmentObject var viewModel: MainViewModel
     @StateObject private var keyboardHandler = KeyboardHandler()
     
+    @Binding var isShowSelectPlantView: Bool
+    
+    private let emptyPotFileName = "Emptypot.scn"
+    private let emptyPotWidth: CGFloat = 240
+    private let potHeight: CGFloat = 380
     private let url = "https://www.1365.go.kr/vols/1472176623798/wpge/volsguide1365.do"
     let index: Int
     
     var body: some View {
-        VStack(spacing: 0) {
-            ZStack {
-                dialogueBox
-                    .hidden(viewModel.plantStatuses[index]!.missionStatus == .receivingMission || viewModel.plantStatuses[index]!.missionStatus == .completed)
-                
-                infoButton
-                    .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress && viewModel.plantStatuses[index]!.plant!.characterName == "목화나무")
-            }
-            
+        ZStack {
             if let plant = viewModel.plantStatuses[index]?.plant {
                 PlantPotView(sceneViewName: plant.character3DFiles[viewModel.plantStatuses[index]!.missionDay])
+                    .scaledToFit()
+                    .frame(height: potHeight, alignment: .bottom)
+            } else {
+                VStack {
+                    addNewPlantButton
+                    
+                    PlantPotView(sceneViewName: emptyPotFileName)
+                        .scaledToFit()
+                        .frame(width: emptyPotWidth)
+                }
+                .frame(height: potHeight, alignment: .bottom)
             }
             
-            missionBox
-                .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress || viewModel.plantStatuses[index]!.missionStatus == .completed)
+            VStack(spacing: 0) {
+                ZStack(alignment: .bottom) {
+                    dialogueBox
+                        .hidden(viewModel.plantStatuses[index]!.missionStatus == .receivingMission || viewModel.plantStatuses[index]!.missionStatus == .completed)
+                    
+                    infoButton
+                        .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress && viewModel.plantStatuses[index]!.plant!.characterName == "목화나무")
+                }
+                
+                Spacer()
+                
+                missionBox
+                    .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress || viewModel.plantStatuses[index]!.missionStatus == .completed)
+            }
         }
         .padding(.top, 24)
         .padding(.bottom, 10)
@@ -46,7 +66,7 @@ struct PlantContentView: View {
                                 viewModel.plantStatuses[index]!.missionStatus = .inProgress
                             }
                     }
-                        ),
+                ),
                 plantName: viewModel.plantStatuses[index]!.plant!.characterName
             )
             .environmentObject(keyboardHandler)
@@ -55,6 +75,20 @@ struct PlantContentView: View {
 }
 
 extension PlantContentView {
+    private var addNewPlantButton: some View {
+        Button {
+            withAnimation {
+                isShowSelectPlantView = true
+            }
+        } label: {
+            Image(systemName: "plus.square.fill")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(.greenSecondary)
+                .padding(.bottom, 4)
+        }
+    }
+    
     private var dialogueBox: some View {
         let fontSize: CGFloat = 17.5
         
@@ -77,12 +111,14 @@ extension PlantContentView {
                         .padding(.bottom, 18)
                         .padding(.trailing, 18)
                 }
-                .padding(.vertical, 10)
+                .padding(.vertical, 8)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 26)
             .onTapGesture {
-                viewModel.showNextDialogue(index: index)
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    viewModel.showNextDialogue(index: index)
+                }
             }
             .hidden(!(viewModel.plantStatuses[index]!.isStoryCompleted))
     }
@@ -127,7 +163,7 @@ extension PlantContentView {
 }
 
 #Preview {
-    PlantContentView(index: 0)
+    PlantContentView(isShowSelectPlantView: .constant(false), index: 0)
         .environmentObject(GameManager())
         .environmentObject(MainViewModel())
 }

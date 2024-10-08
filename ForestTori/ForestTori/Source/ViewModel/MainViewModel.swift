@@ -66,6 +66,7 @@ class MainViewModel: ObservableObject {
     
     func setNewPlant(plant: Plant) {
         plantStatuses[currentTab]?.plant = plant
+        
         getDialogue(plant.characterFileName)
         saveDialogues()
         
@@ -135,7 +136,9 @@ class MainViewModel: ObservableObject {
             if let fileName =  plantStatuses[currentTab]?.plant?.characterFileName, fileName.contains("Winter") {
                 isShowEnding = true
             } else {
-                isCompleteChapter = true
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    isCompleteChapter = true
+                }
                 startNewChapter()
                 currentTab = 0
             }

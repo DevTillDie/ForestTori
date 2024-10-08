@@ -120,11 +120,11 @@ extension NameSettingView {
     }
     
     private func setButtonBackgroundStroke() -> Color {
-        return isNameAvailable ? .clear : .brownPrimary
+        return isCompleted ? .greenSecondary : isNameAvailable ? .clear : .brownPrimary
     }
     
     private func setButtonLabelColor() -> Color {
-        return isNameAvailable ? .yellowTertiary : .brownPrimary
+        return isCompleted || isNameAvailable ? .yellowTertiary : .brownPrimary
     }
     
     private func setNameColor() -> Color {
@@ -133,5 +133,8 @@ extension NameSettingView {
 }
 
 #Preview {
-    NameSettingView(isCompleted: .constant(false), isPresented: .constant(true), textIndex: .constant(0))
+    OnboardingView(onboardingViewModel: OnboardingViewModel())
+        .environmentObject(NotificationManager.instance)
+        .environmentObject(ServiceStateViewModel())
+        .environmentObject(OnboardingViewModel())
 }

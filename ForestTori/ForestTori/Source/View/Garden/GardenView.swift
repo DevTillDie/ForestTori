@@ -61,7 +61,7 @@ struct GardenView: View {
                         
                         ZStack {
                             noPlantCaptionBox
-                                .hidden(viewModel.isShowNoPlantBox)
+                                .hidden(viewModel.isShowNoPlantBox && !viewModel.isShowNotChapterBox)
                             
                             notOpenChapterBox
                                 .hidden(viewModel.isShowNotChapterBox)

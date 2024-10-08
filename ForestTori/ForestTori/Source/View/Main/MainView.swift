@@ -23,17 +23,13 @@ struct MainView: View {
                 Image(gameManager.chapter.chatperBackgroundImage)
                     .resizable()
                     .ignoresSafeArea()
+                
                 VStack(spacing: 0) {
                     mainHeader
                     
-                    if viewModel.plantStatuses[viewModel.currentTab]?.plant == nil {
-                        EmptyPlantPotView(isShowSelectPlantView: $isShowSelectPlantView)
-                            .transition(.opacity)
-                    } else {
-                        PlantContentView(index: viewModel.currentTab)
-                            .environmentObject(gameManager)
-                            .environmentObject(viewModel)
-                    }
+                    PlantContentView(isShowSelectPlantView: $isShowSelectPlantView, index: viewModel.currentTab)
+                        .environmentObject(gameManager)
+                        .environmentObject(viewModel)
                     
                     notAvailableAlert
                     
@@ -77,6 +73,7 @@ extension MainView {
                     .scaledToFit()
                     .frame(width: 45, height: 45)
             }
+            .padding(.vertical, 2.5)
             
             Spacer()
             
@@ -114,13 +111,17 @@ extension MainView {
     private var customTabBar: some View {
         HStack(spacing: 20) {
             Button {
-                viewModel.currentTab = 0
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    viewModel.currentTab = 0
+                }
             } label: {
                 tabIcon(0)
             }
             
             Button {
-                viewModel.currentTab = 1
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    viewModel.currentTab = 1
+                }
             } label: {
                 tabIcon(1)
             }
@@ -132,7 +133,9 @@ extension MainView {
             }
             
             Button {
-                viewModel.currentTab = 2
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    viewModel.currentTab = 2
+                }
             } label: {
                 tabIcon(2)
             }

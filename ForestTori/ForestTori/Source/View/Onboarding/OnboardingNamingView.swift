@@ -103,5 +103,8 @@ extension OnboardingNamingView {
 }
 
 #Preview {
-    OnboardingView()
+    OnboardingView(onboardingViewModel: OnboardingViewModel())
+        .environmentObject(NotificationManager.instance)
+        .environmentObject(ServiceStateViewModel())
+        .environmentObject(OnboardingViewModel())
 }

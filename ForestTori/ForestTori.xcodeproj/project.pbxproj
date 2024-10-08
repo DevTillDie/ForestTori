@@ -113,7 +113,6 @@
 		5BBABDE12BCD180A00F51288 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE02BCD180A00F51288 /* CameraPreview.swift */; };
 		5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */; };
 		5BC6F8782C9582A8005CA85C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EE630DC2C7DBADC00F2A021 /* RealmSwift */; };
-		5BC6F87A2C95C61E005CA85C /* EmptyPlantPotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6F8792C95C61E005CA85C /* EmptyPlantPotView.swift */; };
 		5BC6F87C2C95D13B005CA85C /* PlantContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6F87B2C95D13B005CA85C /* PlantContentView.swift */; };
 		5BC6F8802C9F03D9005CA85C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6F87F2C9F03D9005CA85C /* MainViewModel.swift */; };
 		5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA85462BCC156400C5C67C /* GardenARView.swift */; };
@@ -231,7 +230,6 @@
 		5BABC2C82B899D8B00C74E3C /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
 		5BBABDE02BCD180A00F51288 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARViewModel.swift; sourceTree = "<group>"; };
-		5BC6F8792C95C61E005CA85C /* EmptyPlantPotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlantPotView.swift; sourceTree = "<group>"; };
 		5BC6F87B2C95D13B005CA85C /* PlantContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantContentView.swift; sourceTree = "<group>"; };
 		5BC6F87F2C9F03D9005CA85C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5BDA85462BCC156400C5C67C /* GardenARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARView.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 				0E4AB2292BCD3E6F00ADB623 /* History */,
 				0E1AE6FF2B7E1880001C9A30 /* MainView.swift */,
 				5BC6F87B2C95D13B005CA85C /* PlantContentView.swift */,
-				5BC6F8792C95C61E005CA85C /* EmptyPlantPotView.swift */,
 				0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */,
 				0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */,
 				0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */,
@@ -850,7 +847,6 @@
 				0E214B612BDFD52900558004 /* HistoryDetailView.swift in Sources */,
 				0E4AB2342BCD6CE900ADB623 /* WriteHistoryViewModel.swift in Sources */,
 				5B68A4372B845E200004E89A /* View+.swift in Sources */,
-				5BC6F87A2C95C61E005CA85C /* EmptyPlantPotView.swift in Sources */,
 				5BA395842B82495B0019A545 /* OnboardingNamingView.swift in Sources */,
 				5BA885842B90698900041393 /* EpilogueView.swift in Sources */,
 				0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */,
