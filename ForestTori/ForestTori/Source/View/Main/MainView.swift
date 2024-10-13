@@ -56,6 +56,13 @@ struct MainView: View {
                 notificationManager.scheduleNotification(for: newPlantName)
             }
         }
+        .onAppear {
+            viewModel.checkMissionAvailability()
+            viewModel.startTimerToCheckDate()
+        }
+        .onDisappear {
+            viewModel.stopTimer()
+        }
     }
 }
 

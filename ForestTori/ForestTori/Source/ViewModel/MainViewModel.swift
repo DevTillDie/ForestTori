@@ -16,6 +16,8 @@ class MainViewModel: ObservableObject {
     @AppStorage("dialogues") var storedDialogues = Data()
     @AppStorage("plantStatuses") private var storedStatuses = Data()
     @AppStorage("totalProgressValue") var totalProgressValue = 0.0
+    @AppStorage("canPerformMission") var canPerformMission = true
+    @AppStorage("lastMissionDate") var lastMissionDate = ""
     
     @Published var plantStatuses = [
         0: PlantStatus(),
@@ -41,11 +43,14 @@ class MainViewModel: ObservableObject {
     @Published var isShowHistoryView = false
     
     private var dialogues = [Dialogue]()
+    private var timer: Timer?
     private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? "토리"
     
     init() {
         loadStatuses()
         loadDialogues()
+        checkMissionAvailability()
+        startTimerToCheckDate()
     }
     
     private func startNewChapter() {
@@ -84,6 +89,10 @@ class MainViewModel: ObservableObject {
             plantStatuses[index]?.missionStatus = .inProgress
 
             if dialogues[currentDialogueIndex].type == "Ending" {
+                let today = Date().toString()
+                lastMissionDate = today
+                canPerformMission = false
+                
                 goNextDay(index: index)
             }
         } else {
@@ -201,6 +210,24 @@ class MainViewModel: ObservableObject {
         } catch {
             print("Error reading TSV file")
         }
+    }
+    
+    func checkMissionAvailability() {
+        let today = Date().toString()
+        if today != lastMissionDate {
+            canPerformMission = true
+        }
+    }
+    
+    func startTimerToCheckDate() {
+        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+            self?.checkMissionAvailability()
+        }
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
     
     func showNotAvailableAlert() {
