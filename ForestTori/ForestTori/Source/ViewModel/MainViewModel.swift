@@ -80,14 +80,14 @@ class MainViewModel: ObservableObject {
         if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
         }
-
+        
         missionText = plant.missions[0].content
     }
     
     func showNextDialogue(index: Int) {
         if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
             plantStatuses[index]?.missionStatus = .inProgress
-
+            
             if dialogues[currentDialogueIndex].type == "Ending" {
                 let today = Date().toString()
                 lastMissionDate = today
@@ -234,12 +234,18 @@ class MainViewModel: ObservableObject {
         withAnimation(.easeInOut(duration: 1)) {
             isShowNotAvailable = true
         }
-            
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             withAnimation(.easeInOut(duration: 1)) {
                 self.isShowNotAvailable = false
             }
         }
+    }
+    
+    func shouldHideDialogueBox(for index: Int) -> Bool {
+        guard let status = plantStatuses[index]?.missionStatus else { return true }
+        
+        return status == .receivingMission || (status == .completed && canPerformMission)
     }
     
     func openWebsite(urlString: String) {

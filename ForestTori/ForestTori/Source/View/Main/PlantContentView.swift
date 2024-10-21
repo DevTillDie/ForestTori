@@ -40,7 +40,7 @@ struct PlantContentView: View {
             VStack(spacing: 0) {
                 ZStack(alignment: .bottom) {
                     dialogueBox
-                        .hidden(viewModel.plantStatuses[index]!.missionStatus == .receivingMission || (viewModel.plantStatuses[index]!.missionStatus == .completed && viewModel.canPerformMission))
+                        .hidden(viewModel.shouldHideDialogueBox(for: index))
                     
                     infoButton
                         .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress && viewModel.plantStatuses[index]!.plant!.characterName == "목화나무")
