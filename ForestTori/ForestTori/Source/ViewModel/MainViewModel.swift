@@ -220,8 +220,13 @@ class MainViewModel: ObservableObject {
     }
     
     func startTimerToCheckDate() {
-        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
-            self?.checkMissionAvailability()
+        DispatchQueue.global(qos: .background).async {
+            let timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+                self?.checkMissionAvailability()
+            }
+            
+            RunLoop.current.add(timer, forMode: .common)
+            RunLoop.current.run()
         }
     }
     
