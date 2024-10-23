@@ -33,11 +33,11 @@ struct SelectPlantView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
                     .transition(.move(edge: .bottom))
                 
-                PlantCarousel(index: $currentIndex, plants: gameManager.chapter.chapterPlants) { plant in
+                PlantCarousel(index: $currentIndex, plants: gameManager.chapter.chapterPlants) { idx, plant in
                     GeometryReader { proxy in
                         let width = proxy.size.width
                         let height = proxy.size.height/2
-                        let offset = currentIndex == plant.id-1 ? 1 : 0.8
+                        let offset = currentIndex == idx ? 1 : 0.8
                         let spacing: CGFloat = 16
                         
                         PlantCardView(
@@ -73,10 +73,10 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
     private let spacing: CGFloat = 22
     private let horizontalSpace: CGFloat = 100
     
-    var content: (T) -> Content
+    var content: (Int, T) -> Content
     var plants: [T]
     
-    init(index: Binding<Int>, plants: [T], @ViewBuilder content: @escaping (T) -> Content) {
+    init(index: Binding<Int>, plants: [T], @ViewBuilder content: @escaping (Int, T) -> Content) {
         self.plants = plants
         self._index = index
         self.content = content
@@ -88,8 +88,8 @@ struct PlantCarousel<Content: View, T: Identifiable>: View {
             let adjustMentWidh = (horizontalSpace / 2) - spacing
             
             HStack(spacing: spacing) {
-                ForEach(plants) { item in
-                    content(item)
+                ForEach(Array(plants.enumerated()), id: \.offset) { idx, item in
+                    content(idx, item)
                         .frame(width: proxy.size.width - horizontalSpace)
                 }
             }
