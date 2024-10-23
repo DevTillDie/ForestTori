@@ -40,7 +40,7 @@ struct PlantContentView: View {
             VStack(spacing: 0) {
                 ZStack(alignment: .bottom) {
                     dialogueBox
-                        .hidden(viewModel.plantStatuses[index]!.missionStatus == .receivingMission || viewModel.plantStatuses[index]!.missionStatus == .completed)
+                        .hidden(viewModel.shouldHideDialogueBox(for: index))
                     
                     infoButton
                         .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress && viewModel.plantStatuses[index]!.plant!.characterName == "목화나무")
@@ -154,7 +154,7 @@ extension PlantContentView {
                             .frame(width: 38, height: 38)
                             .foregroundColor(viewModel.plantStatuses[index]!.missionStatus == .done || viewModel.plantStatuses[index]!.missionStatus == .completed ? .greenPrimary : .brownSecondary)
                     }
-                    .disabled(viewModel.plantStatuses[index]!.missionStatus != .inProgress)
+                    .disabled(viewModel.plantStatuses[index]!.missionStatus != .inProgress || !viewModel.canPerformMission)
                 }
                 .padding(.horizontal, 20)
             }

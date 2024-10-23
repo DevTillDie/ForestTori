@@ -16,6 +16,8 @@ class MainViewModel: ObservableObject {
     @AppStorage("dialogues") var storedDialogues = Data()
     @AppStorage("plantStatuses") private var storedStatuses = Data()
     @AppStorage("totalProgressValue") var totalProgressValue = 0.0
+    @AppStorage("canPerformMission") var canPerformMission = true
+    @AppStorage("lastMissionDate") var lastMissionDate = ""
     
     @Published var plantStatuses = [
         0: PlantStatus(),
@@ -41,11 +43,14 @@ class MainViewModel: ObservableObject {
     @Published var isShowHistoryView = false
     
     private var dialogues = [Dialogue]()
+    private var timer: Timer?
     private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? "토리"
     
     init() {
         loadStatuses()
         loadDialogues()
+        checkMissionAvailability()
+        startTimerToCheckDate()
     }
     
     private func startNewChapter() {
@@ -75,15 +80,19 @@ class MainViewModel: ObservableObject {
         if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
         }
-
+        
         missionText = plant.missions[0].content
     }
     
     func showNextDialogue(index: Int) {
         if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
             plantStatuses[index]?.missionStatus = .inProgress
-
+            
             if dialogues[currentDialogueIndex].type == "Ending" {
+                let today = Date().toString()
+                lastMissionDate = today
+                canPerformMission = false
+                
                 goNextDay(index: index)
             }
         } else {
@@ -203,16 +212,45 @@ class MainViewModel: ObservableObject {
         }
     }
     
+    func checkMissionAvailability() {
+        let today = Date().toString()
+        if today != lastMissionDate {
+            canPerformMission = true
+        }
+    }
+    
+    func startTimerToCheckDate() {
+        DispatchQueue.global(qos: .background).async {
+            let timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+                self?.checkMissionAvailability()
+            }
+            
+            RunLoop.current.add(timer, forMode: .common)
+            RunLoop.current.run()
+        }
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
     func showNotAvailableAlert() {
         withAnimation(.easeInOut(duration: 1)) {
             isShowNotAvailable = true
         }
-            
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             withAnimation(.easeInOut(duration: 1)) {
                 self.isShowNotAvailable = false
             }
         }
+    }
+    
+    func shouldHideDialogueBox(for index: Int) -> Bool {
+        guard let status = plantStatuses[index]?.missionStatus else { return true }
+        
+        return status == .receivingMission || (status == .completed && canPerformMission)
     }
     
     func openWebsite(urlString: String) {
