@@ -82,6 +82,10 @@
 		0EF36DCD2CEDC70E00867365 /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DC72CEDC70E00867365 /* Chapters.tsv */; };
 		0EF36DCE2CEDC70E00867365 /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DC92CEDC70E00867365 /* SummerPlants.tsv */; };
 		0EF36DCF2CEDC70E00867365 /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DCA2CEDC70E00867365 /* WinterPlants.tsv */; };
+		0EF36DD92CEDC7E400867365 /* Gardenground_Autumn.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DD82CEDC7E400867365 /* Gardenground_Autumn.scn */; };
+		0EF36DDB2CEDC7F900867365 /* Gardenground_Spring.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DDA2CEDC7F900867365 /* Gardenground_Spring.scn */; };
+		0EF36DDD2CEDC80600867365 /* Gardenground_Summer.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DDC2CEDC80600867365 /* Gardenground_Summer.scn */; };
+		0EF36DDF2CEDC81300867365 /* Gardenground_Winter.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DDE2CEDC81300867365 /* Gardenground_Winter.scn */; };
 		0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */; };
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
@@ -205,6 +209,10 @@
 		0EF36DC82CEDC70E00867365 /* SpringPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
 		0EF36DC92CEDC70E00867365 /* SummerPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
 		0EF36DCA2CEDC70E00867365 /* WinterPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
+		0EF36DD82CEDC7E400867365 /* Gardenground_Autumn.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground_Autumn.scn; sourceTree = "<group>"; };
+		0EF36DDA2CEDC7F900867365 /* Gardenground_Spring.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground_Spring.scn; sourceTree = "<group>"; };
+		0EF36DDC2CEDC80600867365 /* Gardenground_Summer.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground_Summer.scn; sourceTree = "<group>"; };
+		0EF36DDE2CEDC81300867365 /* Gardenground_Winter.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground_Winter.scn; sourceTree = "<group>"; };
 		0EF5FE922B4FC02100D64E5E /* ForestTori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForestTori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestToriApp.swift; sourceTree = "<group>"; };
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -410,6 +418,10 @@
 				0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */,
 				0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */,
 				0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */,
+				0EF36DD82CEDC7E400867365 /* Gardenground_Autumn.scn */,
+				0EF36DDA2CEDC7F900867365 /* Gardenground_Spring.scn */,
+				0EF36DDC2CEDC80600867365 /* Gardenground_Summer.scn */,
+				0EF36DDE2CEDC81300867365 /* Gardenground_Winter.scn */,
 			);
 			path = 3D_Components;
 			sourceTree = "<group>";
@@ -772,6 +784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
+				0EF36DDF2CEDC81300867365 /* Gardenground_Winter.scn in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
 				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
@@ -793,6 +806,7 @@
 				0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */,
 				0EF36DCB2CEDC70E00867365 /* SpringPlants.tsv in Resources */,
 				0EF36DCC2CEDC70E00867365 /* AutumnPlants.tsv in Resources */,
+				0EF36DD92CEDC7E400867365 /* Gardenground_Autumn.scn in Resources */,
 				0EF36DCD2CEDC70E00867365 /* Chapters.tsv in Resources */,
 				0EF36DCE2CEDC70E00867365 /* SummerPlants.tsv in Resources */,
 				0EF36DCF2CEDC70E00867365 /* WinterPlants.tsv in Resources */,
@@ -815,6 +829,7 @@
 				0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */,
 				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
 				0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */,
+				0EF36DDB2CEDC7F900867365 /* Gardenground_Spring.scn in Resources */,
 				0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */,
 				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
 				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
@@ -831,6 +846,7 @@
 				0EADEA962B7DEB4F0036D190 /* DandelionAnimation2.scn in Resources */,
 				0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */,
 				0EEBB6F82B7DEAD7003E09C6 /* Cactus2.scn in Resources */,
+				0EF36DDD2CEDC80600867365 /* Gardenground_Summer.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
