@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -248,6 +248,10 @@
 		5BEA73052BD77F6E00BF5ADA /* ServiceStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStateViewModel.swift; sourceTree = "<group>"; };
 		5BEA730B2BD7D17700BF5ADA /* EndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0E7B729A2CC639A500B8C5C3 /* Spring */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Spring; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0EF5FE8F2B4FC02100D64E5E /* Frameworks */ = {
@@ -628,7 +632,7 @@
 		5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */ = {
 			isa = PBXGroup;
 			children = (
-				5B9030CF2CD2202C002CFBBD /* Spring */,
+				0E7B729A2CC639A500B8C5C3 /* Spring */,
 				0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */,
 				0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */,
 				0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */,
@@ -721,6 +725,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0E7B729A2CC639A500B8C5C3 /* Spring */,
 			);
 			name = ForestTori;
 			packageProductDependencies = (
