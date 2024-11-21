@@ -28,50 +28,13 @@
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
 		0E58AB8F2B8E05AA00EB8C78 /* CompleteChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteChapterView.swift */; };
-		0E62B72C2BFB0C1C0011B34E /* Cottontree1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */; };
-		0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72D2BFB0C240011B34E /* Cottontree2.scn */; };
-		0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */; };
 		0E62B7412BFB184C0011B34E /* UnevenRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */; };
-		0E7B72B22CC6494A00B8C5C3 /* Garden_Morningglory_Animation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E7B72B12CC6494A00B8C5C3 /* Garden_Morningglory_Animation.scn */; };
 		0E804A092C465B3000582121 /* GardenPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E804A082C465B3000582121 /* GardenPlant.swift */; };
 		0E9532FA2BDCB9580081DCE0 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532F92BDCB9580081DCE0 /* HistoryView.swift */; };
 		0E9532FC2BDCBB1A0081DCE0 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */; };
-		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
-		0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */; };
-		0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA552B7DEB0C0036D190 /* ground_none.usdz */; };
-		0EADEA5B2B7DEB0C0036D190 /* ground_dandelion.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA562B7DEB0C0036D190 /* ground_dandelion.usdz */; };
-		0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA572B7DEB0C0036D190 /* ground_cactus.usdz */; };
-		0EADEA852B7DEB4F0036D190 /* FreesiaAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA5E2B7DEB4F0036D190 /* FreesiaAnimation.scn */; };
-		0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA642B7DEB4F0036D190 /* CottontreeAnimation1.scn */; };
-		0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA652B7DEB4F0036D190 /* CottontreeAnimation3.scn */; };
-		0EADEA8C2B7DEB4F0036D190 /* CottontreeAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA662B7DEB4F0036D190 /* CottontreeAnimation2.scn */; };
-		0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA6B2B7DEB4F0036D190 /* CactusAnimation1.scn */; };
-		0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA6C2B7DEB4F0036D190 /* CactusAnimation2.scn */; };
-		0EADEA922B7DEB4F0036D190 /* CactusAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA6D2B7DEB4F0036D190 /* CactusAnimation3.scn */; };
-		0EADEA962B7DEB4F0036D190 /* DandelionAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA722B7DEB4F0036D190 /* DandelionAnimation2.scn */; };
-		0EADEA972B7DEB4F0036D190 /* DandelionAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA732B7DEB4F0036D190 /* DandelionAnimation3.scn */; };
-		0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA742B7DEB4F0036D190 /* DandelionAnimation1.scn */; };
-		0EADEA9A2B7DEB4F0036D190 /* Garden_CactusAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA772B7DEB4F0036D190 /* Garden_CactusAnimation.scn */; };
-		0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA782B7DEB4F0036D190 /* Garden_DandelionAnimation.scn */; };
-		0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7A2B7DEB4F0036D190 /* Garden_MapleAnimation.scn */; };
-		0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7D2B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn */; };
-		0EADEAA12B7DEB4F0036D190 /* MapleAnimation2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */; };
-		0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */; };
-		0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */; };
 		0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */; };
 		0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */; };
 		0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */; };
-		0EEBB6EC2B7DEAD7003E09C6 /* Freesia.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */; };
-		0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */; };
-		0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */; };
-		0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */; };
-		0EEBB6F32B7DEAD7003E09C6 /* Dandelion1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6DA2B7DEAD7003E09C6 /* Dandelion1.scn */; };
-		0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6DF2B7DEAD7003E09C6 /* Cactus3.scn */; };
-		0EEBB6F82B7DEAD7003E09C6 /* Cactus2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6E02B7DEAD7003E09C6 /* Cactus2.scn */; };
-		0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6E12B7DEAD7003E09C6 /* Cactus1.scn */; };
-		0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6E92B7DEAD7003E09C6 /* Maple3.scn */; };
-		0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */; };
-		0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */; };
 		0EF36DC12CEDC6E900867365 /* Lotus.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DBE2CEDC6E900867365 /* Lotus.tsv */; };
 		0EF36DC22CEDC6E900867365 /* Morningglory.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DBF2CEDC6E900867365 /* Morningglory.tsv */; };
 		0EF36DC32CEDC6E900867365 /* Dandelion.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DBD2CEDC6E900867365 /* Dandelion.tsv */; };
@@ -86,6 +49,55 @@
 		0EF36DDB2CEDC7F900867365 /* Gardenground_Spring.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DDA2CEDC7F900867365 /* Gardenground_Spring.scn */; };
 		0EF36DDD2CEDC80600867365 /* Gardenground_Summer.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DDC2CEDC80600867365 /* Gardenground_Summer.scn */; };
 		0EF36DDF2CEDC81300867365 /* Gardenground_Winter.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36DDE2CEDC81300867365 /* Gardenground_Winter.scn */; };
+		0EF36E572CEEFF5200867365 /* Freesia.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E562CEEFF5200867365 /* Freesia.scn */; };
+		0EF36E592CEEFF6600867365 /* Morningglory1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E582CEEFF6600867365 /* Morningglory1.scn */; };
+		0EF36E5B2CEEFF6E00867365 /* Morningglory2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E5A2CEEFF6E00867365 /* Morningglory2.scn */; };
+		0EF36E5D2CEEFF7800867365 /* Morningglory3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E5C2CEEFF7800867365 /* Morningglory3.scn */; };
+		0EF36E5F2CEEFF7C00867365 /* Morningglory_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E5E2CEEFF7C00867365 /* Morningglory_Garden.scn */; };
+		0EF36E612CEEFF9000867365 /* Sanseberia1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E602CEEFF9000867365 /* Sanseberia1.scn */; };
+		0EF36E632CEEFF9600867365 /* Sanseberia2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E622CEEFF9600867365 /* Sanseberia2.scn */; };
+		0EF36E652CEEFF9B00867365 /* Sanseberia3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E642CEEFF9B00867365 /* Sanseberia3.scn */; };
+		0EF36E672CEEFF9F00867365 /* Sanseberia_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E662CEEFF9F00867365 /* Sanseberia_Garden.scn */; };
+		0EF36E692CEEFFB300867365 /* Dandelion1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E682CEEFFB300867365 /* Dandelion1.scn */; };
+		0EF36E6B2CEEFFB800867365 /* Dandelion2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E6A2CEEFFB800867365 /* Dandelion2.scn */; };
+		0EF36E6D2CEEFFBC00867365 /* Dandelion3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E6C2CEEFFBC00867365 /* Dandelion3.scn */; };
+		0EF36E6F2CEEFFC000867365 /* Dandelion_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E6E2CEEFFC000867365 /* Dandelion_Garden.scn */; };
+		0EF36E712CEEFFD600867365 /* Lotus1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E702CEEFFD600867365 /* Lotus1.scn */; };
+		0EF36E732CEEFFDA00867365 /* Lotus2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E722CEEFFDA00867365 /* Lotus2.scn */; };
+		0EF36E752CEEFFDE00867365 /* Lotus3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E742CEEFFDE00867365 /* Lotus3.scn */; };
+		0EF36E772CEEFFE300867365 /* Lotus_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E762CEEFFE300867365 /* Lotus_Garden.scn */; };
+		0EF36E792CEEFFF200867365 /* Broom1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E782CEEFFF200867365 /* Broom1.scn */; };
+		0EF36E7B2CEEFFF700867365 /* Broom2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E7A2CEEFFF700867365 /* Broom2.scn */; };
+		0EF36E7D2CEEFFFB00867365 /* Broom3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E7C2CEEFFFB00867365 /* Broom3.scn */; };
+		0EF36E7F2CEEFFFF00867365 /* Broom_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E7E2CEEFFFF00867365 /* Broom_Garden.scn */; };
+		0EF36E812CEF001F00867365 /* Lavender1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E802CEF001F00867365 /* Lavender1.scn */; };
+		0EF36E832CEF002300867365 /* Lavender2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E822CEF002300867365 /* Lavender2.scn */; };
+		0EF36E852CEF002700867365 /* Lavender3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E842CEF002700867365 /* Lavender3.scn */; };
+		0EF36E872CEF002B00867365 /* Lavender_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E862CEF002B00867365 /* Lavender_Garden.scn */; };
+		0EF36E892CEF003800867365 /* Hanamaru1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E882CEF003800867365 /* Hanamaru1.scn */; };
+		0EF36E8B2CEF003C00867365 /* Hanamaru2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E8A2CEF003C00867365 /* Hanamaru2.scn */; };
+		0EF36E8D2CEF004000867365 /* Hanamaru3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E8C2CEF004000867365 /* Hanamaru3.scn */; };
+		0EF36E8F2CEF004500867365 /* Hanamaru_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E8E2CEF004500867365 /* Hanamaru_Garden.scn */; };
+		0EF36E912CEF005900867365 /* Cactus1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E902CEF005900867365 /* Cactus1.scn */; };
+		0EF36E932CEF005F00867365 /* Cactus2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E922CEF005F00867365 /* Cactus2.scn */; };
+		0EF36E952CEF006700867365 /* Cactus3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E942CEF006700867365 /* Cactus3.scn */; };
+		0EF36E972CEF006B00867365 /* Cactus_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E962CEF006B00867365 /* Cactus_Garden.scn */; };
+		0EF36E992CEF007900867365 /* Pasqueflower1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E982CEF007900867365 /* Pasqueflower1.scn */; };
+		0EF36E9B2CEF007D00867365 /* Pasqueflower2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E9A2CEF007D00867365 /* Pasqueflower2.scn */; };
+		0EF36E9D2CEF008200867365 /* Pasqueflower3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E9C2CEF008200867365 /* Pasqueflower3.scn */; };
+		0EF36E9F2CEF008700867365 /* Pasqueflower_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36E9E2CEF008700867365 /* Pasqueflower_Garden.scn */; };
+		0EF36EA12CEF009400867365 /* Compass1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EA02CEF009400867365 /* Compass1.scn */; };
+		0EF36EA32CEF009900867365 /* Compass2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EA22CEF009900867365 /* Compass2.scn */; };
+		0EF36EA52CEF009D00867365 /* Compass3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EA42CEF009D00867365 /* Compass3.scn */; };
+		0EF36EA72CEF00A100867365 /* Compass_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EA62CEF00A100867365 /* Compass_Garden.scn */; };
+		0EF36EA92CEF00C600867365 /* Maple1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EA82CEF00C600867365 /* Maple1.scn */; };
+		0EF36EAB2CEF00CD00867365 /* Maple2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EAA2CEF00CD00867365 /* Maple2.scn */; };
+		0EF36EAD2CEF00D100867365 /* Maple3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EAC2CEF00D100867365 /* Maple3.scn */; };
+		0EF36EAF2CEF00D600867365 /* Maple_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EAE2CEF00D600867365 /* Maple_Garden.scn */; };
+		0EF36EB12CEF00E700867365 /* Cottontree1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EB02CEF00E700867365 /* Cottontree1.scn */; };
+		0EF36EB32CEF00EC00867365 /* Cottontree2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EB22CEF00EC00867365 /* Cottontree2.scn */; };
+		0EF36EB52CEF00F000867365 /* Cottontree3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EB42CEF00F000867365 /* Cottontree3.scn */; };
+		0EF36EB72CEF00F500867365 /* Cottontree_Garden.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EF36EB62CEF00F500867365 /* Cottontree_Garden.scn */; };
 		0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */; };
 		0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE992B4FC02200D64E5E /* Assets.xcassets */; };
 		0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF5FE9C2B4FC02200D64E5E /* Preview Assets.xcassets */; };
@@ -155,50 +167,13 @@
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		0E58AB8E2B8E05AA00EB8C78 /* CompleteChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteChapterView.swift; sourceTree = "<group>"; };
-		0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree1.scn; sourceTree = "<group>"; };
-		0E62B72D2BFB0C240011B34E /* Cottontree2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree2.scn; sourceTree = "<group>"; };
-		0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree3.scn; sourceTree = "<group>"; };
 		0E62B7402BFB184C0011B34E /* UnevenRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnevenRoundedRectangle.swift; sourceTree = "<group>"; };
-		0E7B72B12CC6494A00B8C5C3 /* Garden_Morningglory_Animation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_Morningglory_Animation.scn; sourceTree = "<group>"; };
 		0E804A082C465B3000582121 /* GardenPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlant.swift; sourceTree = "<group>"; };
 		0E9532F92BDCB9580081DCE0 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
-		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
-		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
-		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
-		0EADEA562B7DEB0C0036D190 /* ground_dandelion.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_dandelion.usdz; sourceTree = "<group>"; };
-		0EADEA572B7DEB0C0036D190 /* ground_cactus.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cactus.usdz; sourceTree = "<group>"; };
-		0EADEA5E2B7DEB4F0036D190 /* FreesiaAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = FreesiaAnimation.scn; sourceTree = "<group>"; };
-		0EADEA642B7DEB4F0036D190 /* CottontreeAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CottontreeAnimation1.scn; sourceTree = "<group>"; };
-		0EADEA652B7DEB4F0036D190 /* CottontreeAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CottontreeAnimation3.scn; sourceTree = "<group>"; };
-		0EADEA662B7DEB4F0036D190 /* CottontreeAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CottontreeAnimation2.scn; sourceTree = "<group>"; };
-		0EADEA6B2B7DEB4F0036D190 /* CactusAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CactusAnimation1.scn; sourceTree = "<group>"; };
-		0EADEA6C2B7DEB4F0036D190 /* CactusAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CactusAnimation2.scn; sourceTree = "<group>"; };
-		0EADEA6D2B7DEB4F0036D190 /* CactusAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CactusAnimation3.scn; sourceTree = "<group>"; };
-		0EADEA722B7DEB4F0036D190 /* DandelionAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DandelionAnimation2.scn; sourceTree = "<group>"; };
-		0EADEA732B7DEB4F0036D190 /* DandelionAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DandelionAnimation3.scn; sourceTree = "<group>"; };
-		0EADEA742B7DEB4F0036D190 /* DandelionAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DandelionAnimation1.scn; sourceTree = "<group>"; };
-		0EADEA772B7DEB4F0036D190 /* Garden_CactusAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_CactusAnimation.scn; sourceTree = "<group>"; };
-		0EADEA782B7DEB4F0036D190 /* Garden_DandelionAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_DandelionAnimation.scn; sourceTree = "<group>"; };
-		0EADEA7A2B7DEB4F0036D190 /* Garden_MapleAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_MapleAnimation.scn; sourceTree = "<group>"; };
-		0EADEA7D2B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Garden_CottontreeAnimation.scn; sourceTree = "<group>"; };
-		0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation2.scn; sourceTree = "<group>"; };
-		0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation3.scn; sourceTree = "<group>"; };
-		0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MapleAnimation1.scn; sourceTree = "<group>"; };
 		0EEBB6C62B7DDA6E003E09C6 /* Emptypot.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Emptypot.scn; sourceTree = "<group>"; };
 		0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bubble.scn; sourceTree = "<group>"; };
 		0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground.scn; sourceTree = "<group>"; };
-		0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Freesia.dae; sourceTree = "<group>"; };
-		0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion2.scn; sourceTree = "<group>"; };
-		0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion3.scn; sourceTree = "<group>"; };
-		0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dandelion.png; sourceTree = "<group>"; };
-		0EEBB6DA2B7DEAD7003E09C6 /* Dandelion1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion1.scn; sourceTree = "<group>"; };
-		0EEBB6DF2B7DEAD7003E09C6 /* Cactus3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus3.scn; sourceTree = "<group>"; };
-		0EEBB6E02B7DEAD7003E09C6 /* Cactus2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus2.scn; sourceTree = "<group>"; };
-		0EEBB6E12B7DEAD7003E09C6 /* Cactus1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus1.scn; sourceTree = "<group>"; };
-		0EEBB6E92B7DEAD7003E09C6 /* Maple3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple3.scn; sourceTree = "<group>"; };
-		0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple2.scn; sourceTree = "<group>"; };
-		0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple1.scn; sourceTree = "<group>"; };
 		0EF36DBC2CEDC6E900867365 /* Broom.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Broom.tsv; sourceTree = "<group>"; };
 		0EF36DBD2CEDC6E900867365 /* Dandelion.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dandelion.tsv; sourceTree = "<group>"; };
 		0EF36DBE2CEDC6E900867365 /* Lotus.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Lotus.tsv; sourceTree = "<group>"; };
@@ -213,6 +188,55 @@
 		0EF36DDA2CEDC7F900867365 /* Gardenground_Spring.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground_Spring.scn; sourceTree = "<group>"; };
 		0EF36DDC2CEDC80600867365 /* Gardenground_Summer.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground_Summer.scn; sourceTree = "<group>"; };
 		0EF36DDE2CEDC81300867365 /* Gardenground_Winter.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground_Winter.scn; sourceTree = "<group>"; };
+		0EF36E562CEEFF5200867365 /* Freesia.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Freesia.scn; sourceTree = "<group>"; };
+		0EF36E582CEEFF6600867365 /* Morningglory1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Morningglory1.scn; sourceTree = "<group>"; };
+		0EF36E5A2CEEFF6E00867365 /* Morningglory2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Morningglory2.scn; sourceTree = "<group>"; };
+		0EF36E5C2CEEFF7800867365 /* Morningglory3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Morningglory3.scn; sourceTree = "<group>"; };
+		0EF36E5E2CEEFF7C00867365 /* Morningglory_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Morningglory_Garden.scn; sourceTree = "<group>"; };
+		0EF36E602CEEFF9000867365 /* Sanseberia1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sanseberia1.scn; sourceTree = "<group>"; };
+		0EF36E622CEEFF9600867365 /* Sanseberia2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sanseberia2.scn; sourceTree = "<group>"; };
+		0EF36E642CEEFF9B00867365 /* Sanseberia3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sanseberia3.scn; sourceTree = "<group>"; };
+		0EF36E662CEEFF9F00867365 /* Sanseberia_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sanseberia_Garden.scn; sourceTree = "<group>"; };
+		0EF36E682CEEFFB300867365 /* Dandelion1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion1.scn; sourceTree = "<group>"; };
+		0EF36E6A2CEEFFB800867365 /* Dandelion2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion2.scn; sourceTree = "<group>"; };
+		0EF36E6C2CEEFFBC00867365 /* Dandelion3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion3.scn; sourceTree = "<group>"; };
+		0EF36E6E2CEEFFC000867365 /* Dandelion_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion_Garden.scn; sourceTree = "<group>"; };
+		0EF36E702CEEFFD600867365 /* Lotus1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lotus1.scn; sourceTree = "<group>"; };
+		0EF36E722CEEFFDA00867365 /* Lotus2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lotus2.scn; sourceTree = "<group>"; };
+		0EF36E742CEEFFDE00867365 /* Lotus3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lotus3.scn; sourceTree = "<group>"; };
+		0EF36E762CEEFFE300867365 /* Lotus_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lotus_Garden.scn; sourceTree = "<group>"; };
+		0EF36E782CEEFFF200867365 /* Broom1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Broom1.scn; sourceTree = "<group>"; };
+		0EF36E7A2CEEFFF700867365 /* Broom2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Broom2.scn; sourceTree = "<group>"; };
+		0EF36E7C2CEEFFFB00867365 /* Broom3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Broom3.scn; sourceTree = "<group>"; };
+		0EF36E7E2CEEFFFF00867365 /* Broom_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Broom_Garden.scn; sourceTree = "<group>"; };
+		0EF36E802CEF001F00867365 /* Lavender1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lavender1.scn; sourceTree = "<group>"; };
+		0EF36E822CEF002300867365 /* Lavender2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lavender2.scn; sourceTree = "<group>"; };
+		0EF36E842CEF002700867365 /* Lavender3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lavender3.scn; sourceTree = "<group>"; };
+		0EF36E862CEF002B00867365 /* Lavender_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Lavender_Garden.scn; sourceTree = "<group>"; };
+		0EF36E882CEF003800867365 /* Hanamaru1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Hanamaru1.scn; sourceTree = "<group>"; };
+		0EF36E8A2CEF003C00867365 /* Hanamaru2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Hanamaru2.scn; sourceTree = "<group>"; };
+		0EF36E8C2CEF004000867365 /* Hanamaru3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Hanamaru3.scn; sourceTree = "<group>"; };
+		0EF36E8E2CEF004500867365 /* Hanamaru_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Hanamaru_Garden.scn; sourceTree = "<group>"; };
+		0EF36E902CEF005900867365 /* Cactus1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus1.scn; sourceTree = "<group>"; };
+		0EF36E922CEF005F00867365 /* Cactus2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus2.scn; sourceTree = "<group>"; };
+		0EF36E942CEF006700867365 /* Cactus3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus3.scn; sourceTree = "<group>"; };
+		0EF36E962CEF006B00867365 /* Cactus_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cactus_Garden.scn; sourceTree = "<group>"; };
+		0EF36E982CEF007900867365 /* Pasqueflower1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Pasqueflower1.scn; sourceTree = "<group>"; };
+		0EF36E9A2CEF007D00867365 /* Pasqueflower2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Pasqueflower2.scn; sourceTree = "<group>"; };
+		0EF36E9C2CEF008200867365 /* Pasqueflower3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Pasqueflower3.scn; sourceTree = "<group>"; };
+		0EF36E9E2CEF008700867365 /* Pasqueflower_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Pasqueflower_Garden.scn; sourceTree = "<group>"; };
+		0EF36EA02CEF009400867365 /* Compass1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Compass1.scn; sourceTree = "<group>"; };
+		0EF36EA22CEF009900867365 /* Compass2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Compass2.scn; sourceTree = "<group>"; };
+		0EF36EA42CEF009D00867365 /* Compass3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Compass3.scn; sourceTree = "<group>"; };
+		0EF36EA62CEF00A100867365 /* Compass_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Compass_Garden.scn; sourceTree = "<group>"; };
+		0EF36EA82CEF00C600867365 /* Maple1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple1.scn; sourceTree = "<group>"; };
+		0EF36EAA2CEF00CD00867365 /* Maple2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple2.scn; sourceTree = "<group>"; };
+		0EF36EAC2CEF00D100867365 /* Maple3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple3.scn; sourceTree = "<group>"; };
+		0EF36EAE2CEF00D600867365 /* Maple_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Maple_Garden.scn; sourceTree = "<group>"; };
+		0EF36EB02CEF00E700867365 /* Cottontree1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree1.scn; sourceTree = "<group>"; };
+		0EF36EB22CEF00EC00867365 /* Cottontree2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree2.scn; sourceTree = "<group>"; };
+		0EF36EB42CEF00F000867365 /* Cottontree3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree3.scn; sourceTree = "<group>"; };
+		0EF36EB62CEF00F500867365 /* Cottontree_Garden.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree_Garden.scn; sourceTree = "<group>"; };
 		0EF5FE922B4FC02100D64E5E /* ForestTori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForestTori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF5FE952B4FC02100D64E5E /* ForestToriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestToriApp.swift; sourceTree = "<group>"; };
 		0EF5FE992B4FC02200D64E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -316,66 +340,6 @@
 			path = Chapters;
 			sourceTree = "<group>";
 		};
-		0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0EADEA5E2B7DEB4F0036D190 /* FreesiaAnimation.scn */,
-			);
-			path = Freesia_WithAnimation;
-			sourceTree = "<group>";
-		};
-		0EADEA602B7DEB4F0036D190 /* Cottontree_WithAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0EADEA642B7DEB4F0036D190 /* CottontreeAnimation1.scn */,
-				0EADEA662B7DEB4F0036D190 /* CottontreeAnimation2.scn */,
-				0EADEA652B7DEB4F0036D190 /* CottontreeAnimation3.scn */,
-			);
-			path = Cottontree_WithAnimation;
-			sourceTree = "<group>";
-		};
-		0EADEA672B7DEB4F0036D190 /* Cactus_WithAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0EADEA6B2B7DEB4F0036D190 /* CactusAnimation1.scn */,
-				0EADEA6C2B7DEB4F0036D190 /* CactusAnimation2.scn */,
-				0EADEA6D2B7DEB4F0036D190 /* CactusAnimation3.scn */,
-			);
-			path = Cactus_WithAnimation;
-			sourceTree = "<group>";
-		};
-		0EADEA6E2B7DEB4F0036D190 /* Dandelion_WithAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0EADEA742B7DEB4F0036D190 /* DandelionAnimation1.scn */,
-				0EADEA722B7DEB4F0036D190 /* DandelionAnimation2.scn */,
-				0EADEA732B7DEB4F0036D190 /* DandelionAnimation3.scn */,
-			);
-			path = Dandelion_WithAnimation;
-			sourceTree = "<group>";
-		};
-		0EADEA752B7DEB4F0036D190 /* GardenPlant_WithAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0E7B72B12CC6494A00B8C5C3 /* Garden_Morningglory_Animation.scn */,
-				0EADEA772B7DEB4F0036D190 /* Garden_CactusAnimation.scn */,
-				0EADEA782B7DEB4F0036D190 /* Garden_DandelionAnimation.scn */,
-				0EADEA7A2B7DEB4F0036D190 /* Garden_MapleAnimation.scn */,
-				0EADEA7D2B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn */,
-			);
-			path = GardenPlant_WithAnimation;
-			sourceTree = "<group>";
-		};
-		0EADEA7E2B7DEB4F0036D190 /* Maple_WithAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0EADEA7F2B7DEB4F0036D190 /* MapleAnimation2.scn */,
-				0EADEA802B7DEB4F0036D190 /* MapleAnimation3.scn */,
-				0EADEA812B7DEB4F0036D190 /* MapleAnimation1.scn */,
-			);
-			path = Maple_WithAnimation;
-			sourceTree = "<group>";
-		};
 		0EADEAAE2B7DF4E90036D190 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,8 +370,6 @@
 			children = (
 				0EEBB6CC2B7DEA77003E09C6 /* 3D_Components */,
 				0EEBB6CD2B7DEA8D003E09C6 /* 3D_Plants */,
-				0EEBB6CE2B7DEA98003E09C6 /* AR_Objects */,
-				0EEBB6CF2B7DEAB2003E09C6 /* WithAnimation */,
 			);
 			path = 3D_Objects;
 			sourceTree = "<group>";
@@ -430,43 +392,18 @@
 			isa = PBXGroup;
 			children = (
 				0EEBB6D02B7DEAD6003E09C6 /* Freesia */,
-				0EEBB6D62B7DEAD7003E09C6 /* Dandelion */,
-				0EEBB6DE2B7DEAD7003E09C6 /* Cactus */,
-				0EEBB6E52B7DEAD7003E09C6 /* Maple */,
-				0EEBB6D22B7DEAD7003E09C6 /* Cottontree */,
+				0EF36DE02CEDC84200867365 /* Spring */,
+				0EF36DE12CEDC84800867365 /* Summer */,
+				0EF36DE22CEDC85100867365 /* Autumn */,
+				0EF36DE32CEDC85800867365 /* Winter */,
 			);
 			path = 3D_Plants;
-			sourceTree = "<group>";
-		};
-		0EEBB6CE2B7DEA98003E09C6 /* AR_Objects */ = {
-			isa = PBXGroup;
-			children = (
-				0EADEA572B7DEB0C0036D190 /* ground_cactus.usdz */,
-				0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */,
-				0EADEA562B7DEB0C0036D190 /* ground_dandelion.usdz */,
-				0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */,
-				0EADEA552B7DEB0C0036D190 /* ground_none.usdz */,
-			);
-			path = AR_Objects;
-			sourceTree = "<group>";
-		};
-		0EEBB6CF2B7DEAB2003E09C6 /* WithAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */,
-				0EADEA6E2B7DEB4F0036D190 /* Dandelion_WithAnimation */,
-				0EADEA672B7DEB4F0036D190 /* Cactus_WithAnimation */,
-				0EADEA7E2B7DEB4F0036D190 /* Maple_WithAnimation */,
-				0EADEA602B7DEB4F0036D190 /* Cottontree_WithAnimation */,
-				0EADEA752B7DEB4F0036D190 /* GardenPlant_WithAnimation */,
-			);
-			path = WithAnimation;
 			sourceTree = "<group>";
 		};
 		0EEBB6D02B7DEAD6003E09C6 /* Freesia */ = {
 			isa = PBXGroup;
 			children = (
-				0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */,
+				0EF36E562CEEFF5200867365 /* Freesia.scn */,
 			);
 			path = Freesia;
 			sourceTree = "<group>";
@@ -474,40 +411,21 @@
 		0EEBB6D22B7DEAD7003E09C6 /* Cottontree */ = {
 			isa = PBXGroup;
 			children = (
-				0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */,
-				0E62B72D2BFB0C240011B34E /* Cottontree2.scn */,
-				0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */,
+				0EF36EB02CEF00E700867365 /* Cottontree1.scn */,
+				0EF36EB22CEF00EC00867365 /* Cottontree2.scn */,
+				0EF36EB42CEF00F000867365 /* Cottontree3.scn */,
+				0EF36EB62CEF00F500867365 /* Cottontree_Garden.scn */,
 			);
 			path = Cottontree;
-			sourceTree = "<group>";
-		};
-		0EEBB6D62B7DEAD7003E09C6 /* Dandelion */ = {
-			isa = PBXGroup;
-			children = (
-				0EEBB6DA2B7DEAD7003E09C6 /* Dandelion1.scn */,
-				0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */,
-				0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */,
-				0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */,
-			);
-			path = Dandelion;
-			sourceTree = "<group>";
-		};
-		0EEBB6DE2B7DEAD7003E09C6 /* Cactus */ = {
-			isa = PBXGroup;
-			children = (
-				0EEBB6E12B7DEAD7003E09C6 /* Cactus1.scn */,
-				0EEBB6E02B7DEAD7003E09C6 /* Cactus2.scn */,
-				0EEBB6DF2B7DEAD7003E09C6 /* Cactus3.scn */,
-			);
-			path = Cactus;
 			sourceTree = "<group>";
 		};
 		0EEBB6E52B7DEAD7003E09C6 /* Maple */ = {
 			isa = PBXGroup;
 			children = (
-				0EEBB6EB2B7DEAD7003E09C6 /* Maple1.scn */,
-				0EEBB6EA2B7DEAD7003E09C6 /* Maple2.scn */,
-				0EEBB6E92B7DEAD7003E09C6 /* Maple3.scn */,
+				0EF36EA82CEF00C600867365 /* Maple1.scn */,
+				0EF36EAA2CEF00CD00867365 /* Maple2.scn */,
+				0EF36EAC2CEF00D100867365 /* Maple3.scn */,
+				0EF36EAE2CEF00D600867365 /* Maple_Garden.scn */,
 			);
 			path = Maple;
 			sourceTree = "<group>";
@@ -522,6 +440,156 @@
 				0EF36DC02CEDC6E900867365 /* Sanseberia.tsv */,
 			);
 			path = Spring;
+			sourceTree = "<group>";
+		};
+		0EF36DE02CEDC84200867365 /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36DEE2CEEFB5800867365 /* MorningGlory */,
+				0EF36DED2CEEFB4E00867365 /* Sanseberia */,
+				0EF36DEC2CEEFB4600867365 /* Dandelion */,
+				0EF36DEB2CEEFB3C00867365 /* Lotus */,
+				0EF36DEA2CEEFB3300867365 /* Broom */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		0EF36DE12CEDC84800867365 /* Summer */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E1B2CEEFDC600867365 /* Lavender */,
+				0EF36E1A2CEEFDBE00867365 /* Hanamaru */,
+				0EF36E192CEEFDB500867365 /* Cactus */,
+				0EF36E182CEEFDA900867365 /* PasqueFlower */,
+				0EF36E172CEEFD9D00867365 /* Compass */,
+			);
+			path = Summer;
+			sourceTree = "<group>";
+		};
+		0EF36DE22CEDC85100867365 /* Autumn */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6E52B7DEAD7003E09C6 /* Maple */,
+			);
+			path = Autumn;
+			sourceTree = "<group>";
+		};
+		0EF36DE32CEDC85800867365 /* Winter */ = {
+			isa = PBXGroup;
+			children = (
+				0EEBB6D22B7DEAD7003E09C6 /* Cottontree */,
+			);
+			path = Winter;
+			sourceTree = "<group>";
+		};
+		0EF36DEA2CEEFB3300867365 /* Broom */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E782CEEFFF200867365 /* Broom1.scn */,
+				0EF36E7A2CEEFFF700867365 /* Broom2.scn */,
+				0EF36E7C2CEEFFFB00867365 /* Broom3.scn */,
+				0EF36E7E2CEEFFFF00867365 /* Broom_Garden.scn */,
+			);
+			path = Broom;
+			sourceTree = "<group>";
+		};
+		0EF36DEB2CEEFB3C00867365 /* Lotus */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E702CEEFFD600867365 /* Lotus1.scn */,
+				0EF36E722CEEFFDA00867365 /* Lotus2.scn */,
+				0EF36E742CEEFFDE00867365 /* Lotus3.scn */,
+				0EF36E762CEEFFE300867365 /* Lotus_Garden.scn */,
+			);
+			path = Lotus;
+			sourceTree = "<group>";
+		};
+		0EF36DEC2CEEFB4600867365 /* Dandelion */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E682CEEFFB300867365 /* Dandelion1.scn */,
+				0EF36E6A2CEEFFB800867365 /* Dandelion2.scn */,
+				0EF36E6C2CEEFFBC00867365 /* Dandelion3.scn */,
+				0EF36E6E2CEEFFC000867365 /* Dandelion_Garden.scn */,
+			);
+			path = Dandelion;
+			sourceTree = "<group>";
+		};
+		0EF36DED2CEEFB4E00867365 /* Sanseberia */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E602CEEFF9000867365 /* Sanseberia1.scn */,
+				0EF36E622CEEFF9600867365 /* Sanseberia2.scn */,
+				0EF36E642CEEFF9B00867365 /* Sanseberia3.scn */,
+				0EF36E662CEEFF9F00867365 /* Sanseberia_Garden.scn */,
+			);
+			path = Sanseberia;
+			sourceTree = "<group>";
+		};
+		0EF36DEE2CEEFB5800867365 /* MorningGlory */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E582CEEFF6600867365 /* Morningglory1.scn */,
+				0EF36E5A2CEEFF6E00867365 /* Morningglory2.scn */,
+				0EF36E5C2CEEFF7800867365 /* Morningglory3.scn */,
+				0EF36E5E2CEEFF7C00867365 /* Morningglory_Garden.scn */,
+			);
+			path = MorningGlory;
+			sourceTree = "<group>";
+		};
+		0EF36E172CEEFD9D00867365 /* Compass */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36EA02CEF009400867365 /* Compass1.scn */,
+				0EF36EA22CEF009900867365 /* Compass2.scn */,
+				0EF36EA42CEF009D00867365 /* Compass3.scn */,
+				0EF36EA62CEF00A100867365 /* Compass_Garden.scn */,
+			);
+			path = Compass;
+			sourceTree = "<group>";
+		};
+		0EF36E182CEEFDA900867365 /* PasqueFlower */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E982CEF007900867365 /* Pasqueflower1.scn */,
+				0EF36E9A2CEF007D00867365 /* Pasqueflower2.scn */,
+				0EF36E9C2CEF008200867365 /* Pasqueflower3.scn */,
+				0EF36E9E2CEF008700867365 /* Pasqueflower_Garden.scn */,
+			);
+			path = PasqueFlower;
+			sourceTree = "<group>";
+		};
+		0EF36E192CEEFDB500867365 /* Cactus */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E902CEF005900867365 /* Cactus1.scn */,
+				0EF36E922CEF005F00867365 /* Cactus2.scn */,
+				0EF36E942CEF006700867365 /* Cactus3.scn */,
+				0EF36E962CEF006B00867365 /* Cactus_Garden.scn */,
+			);
+			path = Cactus;
+			sourceTree = "<group>";
+		};
+		0EF36E1A2CEEFDBE00867365 /* Hanamaru */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E882CEF003800867365 /* Hanamaru1.scn */,
+				0EF36E8A2CEF003C00867365 /* Hanamaru2.scn */,
+				0EF36E8C2CEF004000867365 /* Hanamaru3.scn */,
+				0EF36E8E2CEF004500867365 /* Hanamaru_Garden.scn */,
+			);
+			path = Hanamaru;
+			sourceTree = "<group>";
+		};
+		0EF36E1B2CEEFDC600867365 /* Lavender */ = {
+			isa = PBXGroup;
+			children = (
+				0EF36E802CEF001F00867365 /* Lavender1.scn */,
+				0EF36E822CEF002300867365 /* Lavender2.scn */,
+				0EF36E842CEF002700867365 /* Lavender3.scn */,
+				0EF36E862CEF002B00867365 /* Lavender_Garden.scn */,
+			);
+			path = Lavender;
 			sourceTree = "<group>";
 		};
 		0EF5FE892B4FC02100D64E5E = {
@@ -783,69 +851,81 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
+				0EF36E6D2CEEFFBC00867365 /* Dandelion3.scn in Resources */,
+				0EF36EAF2CEF00D600867365 /* Maple_Garden.scn in Resources */,
+				0EF36E932CEF005F00867365 /* Cactus2.scn in Resources */,
+				0EF36E672CEEFF9F00867365 /* Sanseberia_Garden.scn in Resources */,
+				0EF36E5B2CEEFF6E00867365 /* Morningglory2.scn in Resources */,
+				0EF36E7D2CEEFFFB00867365 /* Broom3.scn in Resources */,
 				0EF36DDF2CEDC81300867365 /* Gardenground_Winter.scn in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
 				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
+				0EF36E912CEF005900867365 /* Cactus1.scn in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
-				0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */,
-				0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */,
-				0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */,
-				0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */,
+				0EF36E732CEEFFDA00867365 /* Lotus2.scn in Resources */,
+				0EF36E752CEEFFDE00867365 /* Lotus3.scn in Resources */,
 				5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */,
-				0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */,
+				0EF36EB52CEF00F000867365 /* Cottontree3.scn in Resources */,
+				0EF36E9D2CEF008200867365 /* Pasqueflower3.scn in Resources */,
+				0EF36E5D2CEEFF7800867365 /* Morningglory3.scn in Resources */,
 				0EF5FEA52B4FC0E700D64E5E /* .swiftlint.yml in Resources */,
-				0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */,
-				0EADEA8C2B7DEB4F0036D190 /* CottontreeAnimation2.scn in Resources */,
-				0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */,
 				5BA3956B2B7F54F60019A545 /* Pretendard-Regular.ttf in Resources */,
-				0EEBB6F32B7DEAD7003E09C6 /* Dandelion1.scn in Resources */,
-				0EADEA922B7DEB4F0036D190 /* CactusAnimation3.scn in Resources */,
-				0EEBB7012B7DEAD7003E09C6 /* Maple2.scn in Resources */,
-				0EADEA852B7DEB4F0036D190 /* FreesiaAnimation.scn in Resources */,
-				0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */,
+				0EF36E7F2CEEFFFF00867365 /* Broom_Garden.scn in Resources */,
+				0EF36E692CEEFFB300867365 /* Dandelion1.scn in Resources */,
 				0EF36DCB2CEDC70E00867365 /* SpringPlants.tsv in Resources */,
 				0EF36DCC2CEDC70E00867365 /* AutumnPlants.tsv in Resources */,
+				0EF36EAB2CEF00CD00867365 /* Maple2.scn in Resources */,
+				0EF36E972CEF006B00867365 /* Cactus_Garden.scn in Resources */,
+				0EF36E8D2CEF004000867365 /* Hanamaru3.scn in Resources */,
+				0EF36E9B2CEF007D00867365 /* Pasqueflower2.scn in Resources */,
 				0EF36DD92CEDC7E400867365 /* Gardenground_Autumn.scn in Resources */,
 				0EF36DCD2CEDC70E00867365 /* Chapters.tsv in Resources */,
+				0EF36EA92CEF00C600867365 /* Maple1.scn in Resources */,
+				0EF36EA12CEF009400867365 /* Compass1.scn in Resources */,
 				0EF36DCE2CEDC70E00867365 /* SummerPlants.tsv in Resources */,
 				0EF36DCF2CEDC70E00867365 /* WinterPlants.tsv in Resources */,
-				0EADEA9A2B7DEB4F0036D190 /* Garden_CactusAnimation.scn in Resources */,
-				0E7B72B22CC6494A00B8C5C3 /* Garden_Morningglory_Animation.scn in Resources */,
-				0E62B72C2BFB0C1C0011B34E /* Cottontree1.scn in Resources */,
 				0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */,
-				0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */,
+				0EF36E632CEEFF9600867365 /* Sanseberia2.scn in Resources */,
 				5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */,
-				0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */,
-				0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */,
-				0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */,
-				0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */,
-				0EADEA5B2B7DEB0C0036D190 /* ground_dandelion.usdz in Resources */,
-				0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */,
-				0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */,
+				0EF36E5F2CEEFF7C00867365 /* Morningglory_Garden.scn in Resources */,
+				0EF36E952CEF006700867365 /* Cactus3.scn in Resources */,
+				0EF36E612CEEFF9000867365 /* Sanseberia1.scn in Resources */,
+				0EF36E8F2CEF004500867365 /* Hanamaru_Garden.scn in Resources */,
 				0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */,
-				0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */,
-				0EADEA972B7DEB4F0036D190 /* DandelionAnimation3.scn in Resources */,
+				0EF36E872CEF002B00867365 /* Lavender_Garden.scn in Resources */,
+				0EF36E832CEF002300867365 /* Lavender2.scn in Resources */,
 				0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */,
-				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
-				0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */,
+				0EF36EA72CEF00A100867365 /* Compass_Garden.scn in Resources */,
+				0EF36E812CEF001F00867365 /* Lavender1.scn in Resources */,
+				0EF36E652CEEFF9B00867365 /* Sanseberia3.scn in Resources */,
 				0EF36DDB2CEDC7F900867365 /* Gardenground_Spring.scn in Resources */,
-				0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */,
+				0EF36E7B2CEEFFF700867365 /* Broom2.scn in Resources */,
 				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
-				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
 				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
-				0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */,
-				0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */,
-				0EEBB6EC2B7DEAD7003E09C6 /* Freesia.dae in Resources */,
-				0EADEAA12B7DEB4F0036D190 /* MapleAnimation2.scn in Resources */,
+				0EF36E9F2CEF008700867365 /* Pasqueflower_Garden.scn in Resources */,
+				0EF36E712CEEFFD600867365 /* Lotus1.scn in Resources */,
+				0EF36EA32CEF009900867365 /* Compass2.scn in Resources */,
+				0EF36EB32CEF00EC00867365 /* Cottontree2.scn in Resources */,
+				0EF36E6B2CEEFFB800867365 /* Dandelion2.scn in Resources */,
+				0EF36E8B2CEF003C00867365 /* Hanamaru2.scn in Resources */,
+				0EF36E852CEF002700867365 /* Lavender3.scn in Resources */,
 				0EF36DC12CEDC6E900867365 /* Lotus.tsv in Resources */,
+				0EF36EA52CEF009D00867365 /* Compass3.scn in Resources */,
+				0EF36E6F2CEEFFC000867365 /* Dandelion_Garden.scn in Resources */,
+				0EF36EB72CEF00F500867365 /* Cottontree_Garden.scn in Resources */,
+				0EF36EB12CEF00E700867365 /* Cottontree1.scn in Resources */,
 				0EF36DC22CEDC6E900867365 /* Morningglory.tsv in Resources */,
+				0EF36EAD2CEF00D100867365 /* Maple3.scn in Resources */,
+				0EF36E572CEEFF5200867365 /* Freesia.scn in Resources */,
+				0EF36E772CEEFFE300867365 /* Lotus_Garden.scn in Resources */,
+				0EF36E592CEEFF6600867365 /* Morningglory1.scn in Resources */,
 				0EF36DC32CEDC6E900867365 /* Dandelion.tsv in Resources */,
+				0EF36E792CEEFFF200867365 /* Broom1.scn in Resources */,
 				0EF36DC42CEDC6E900867365 /* Sanseberia.tsv in Resources */,
+				0EF36E992CEF007900867365 /* Pasqueflower1.scn in Resources */,
 				0EF36DC52CEDC6E900867365 /* Broom.tsv in Resources */,
-				0EADEA962B7DEB4F0036D190 /* DandelionAnimation2.scn in Resources */,
+				0EF36E892CEF003800867365 /* Hanamaru1.scn in Resources */,
 				0EF5FE9A2B4FC02200D64E5E /* Assets.xcassets in Resources */,
-				0EEBB6F82B7DEAD7003E09C6 /* Cactus2.scn in Resources */,
 				0EF36DDD2CEDC80600867365 /* Gardenground_Summer.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
