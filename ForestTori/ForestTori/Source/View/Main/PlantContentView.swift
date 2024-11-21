@@ -22,8 +22,8 @@ struct PlantContentView: View {
     
     var body: some View {
         ZStack {
-            if let plant = viewModel.plantStatuses[index]?.plant {
-                PlantPotView(sceneViewName: plant.character3DFiles[viewModel.plantStatuses[index]!.missionDay])
+            if let plant = viewModel.plantStatuses[index].plant {
+                PlantPotView(sceneViewName: plant.character3DFiles[viewModel.plantStatuses[index].missionDay])
                     .scaledToFit()
                     .frame(height: potHeight, alignment: .bottom)
             } else {
@@ -43,13 +43,13 @@ struct PlantContentView: View {
                         .hidden(viewModel.shouldHideDialogueBox(for: index))
                     
                     infoButton
-                        .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress && viewModel.plantStatuses[index]!.plant!.characterName == "목화나무")
+                        .hidden(viewModel.plantStatuses[index].missionStatus == .inProgress && viewModel.plantStatuses[index].plant!.characterName == "목화나무")
                 }
                 
                 Spacer()
                 
                 missionBox
-                    .hidden(viewModel.plantStatuses[index]!.missionStatus == .inProgress || viewModel.plantStatuses[index]!.missionStatus == .completed)
+                    .hidden(viewModel.plantStatuses[index].missionStatus == .inProgress || viewModel.plantStatuses[index].missionStatus == .completed)
             }
         }
         .padding(.top, 24)
@@ -59,15 +59,15 @@ struct PlantContentView: View {
                 isComplete: $viewModel.isCompleteTodayMission,
                 isShowHistoryView: $viewModel.isShowHistoryView,
                 currentStatus: Binding(
-                    get: { viewModel.plantStatuses[index]!.missionStatus },
+                    get: { viewModel.plantStatuses[index].missionStatus },
                     set: { _ in
                         if viewModel.isCompleteTodayMission {
-                            viewModel.plantStatuses[index]!.missionStatus = .completed } else {
-                                viewModel.plantStatuses[index]!.missionStatus = .inProgress
+                            viewModel.plantStatuses[index].missionStatus = .completed } else {
+                                viewModel.plantStatuses[index].missionStatus = .inProgress
                             }
                     }
                 ),
-                plantName: viewModel.plantStatuses[index]!.plant!.characterName
+                plantName: viewModel.plantStatuses[index].plant!.characterName
             )
             .environmentObject(keyboardHandler)
         }
@@ -120,7 +120,7 @@ extension PlantContentView {
                     viewModel.showNextDialogue(index: index)
                 }
             }
-            .hidden(!(viewModel.plantStatuses[index]!.isStoryCompleted))
+            .hidden(!(viewModel.plantStatuses[index].isStoryCompleted))
     }
     
     private var infoButton: some View {
@@ -146,15 +146,15 @@ extension PlantContentView {
                     Spacer()
                     
                     Button {
-                        viewModel.plantStatuses[index]!.missionStatus = .done
+                        viewModel.plantStatuses[index].missionStatus = .done
                         viewModel.isShowHistoryView = true
                     } label: {
-                        Image(systemName: viewModel.plantStatuses[index]!.missionStatus == .done || viewModel.plantStatuses[index]!.missionStatus == .completed ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: viewModel.plantStatuses[index].missionStatus == .done || viewModel.plantStatuses[index].missionStatus == .completed ? "checkmark.circle.fill" : "circle")
                             .resizable()
                             .frame(width: 38, height: 38)
-                            .foregroundColor(viewModel.plantStatuses[index]!.missionStatus == .done || viewModel.plantStatuses[index]!.missionStatus == .completed ? .greenPrimary : .brownSecondary)
+                            .foregroundColor(viewModel.plantStatuses[index].missionStatus == .done || viewModel.plantStatuses[index].missionStatus == .completed ? .greenPrimary : .brownSecondary)
                     }
-                    .disabled(viewModel.plantStatuses[index]!.missionStatus != .inProgress || !viewModel.canPerformMission)
+                    .disabled(viewModel.plantStatuses[index].missionStatus != .inProgress || !viewModel.canPerformMission)
                 }
                 .padding(.horizontal, 20)
             }
