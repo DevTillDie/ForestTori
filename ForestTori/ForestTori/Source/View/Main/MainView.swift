@@ -84,8 +84,8 @@ extension MainView {
             
             Spacer()
             
-            if let plantName = viewModel.plantStatuses[viewModel.currentTab]?.plant?.characterName {
-                ProgressView(value: viewModel.plantStatuses[viewModel.currentTab]!.progressValue, total: 100)
+            if let plantName = viewModel.plantStatuses[viewModel.currentTab].plant?.characterName {
+                ProgressView(value: viewModel.plantStatuses[viewModel.currentTab].progressValue, total: 100)
                     .frame(width: 119, height: 50)
                     .progressViewStyle(
                         ProgressStyle(
@@ -132,9 +132,9 @@ extension MainView {
             } label: {
                 tabIcon(1)
             }
-            .disabled(!viewModel.plantStatuses[0]!.isStoryCompleted)
+            .disabled(!viewModel.plantStatuses[0].isStoryCompleted)
             .onTapGesture {
-                if !viewModel.plantStatuses[0]!.isStoryCompleted {
+                if !viewModel.plantStatuses[0].isStoryCompleted {
                     viewModel.showNotAvailableAlert()
                 }
             }
@@ -146,9 +146,9 @@ extension MainView {
             } label: {
                 tabIcon(2)
             }
-            .disabled(!viewModel.plantStatuses[1]!.isStoryCompleted)
+            .disabled(!viewModel.plantStatuses[1].isStoryCompleted)
             .onTapGesture {
-                if !viewModel.plantStatuses[1]!.isStoryCompleted {
+                if !viewModel.plantStatuses[1].isStoryCompleted {
                     viewModel.showNotAvailableAlert()
                 }
             }
@@ -162,7 +162,7 @@ extension MainView {
     func tabIcon(_ index: Int) -> some View {
         if index == viewModel.currentTab {
             Image(.potSelectedButton)
-        } else if (index == 0) || (viewModel.plantStatuses[index - 1]!.isStoryCompleted)  {
+        } else if (index == 0) || (viewModel.plantStatuses[index - 1].isStoryCompleted)  {
             Image(.potButton)
         } else {
             Image(.potLockedButton)

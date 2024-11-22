@@ -19,11 +19,7 @@ class MainViewModel: ObservableObject {
     @AppStorage("canPerformMission") var canPerformMission = true
     @AppStorage("lastMissionDate") var lastMissionDate = ""
     
-    @Published var plantStatuses = [
-        0: PlantStatus(),
-        1: PlantStatus(),
-        2: PlantStatus()
-    ] {
+    @Published var plantStatuses = [PlantStatus(), PlantStatus(),PlantStatus()] {
         didSet {
             saveStatuses()
         }
@@ -54,11 +50,7 @@ class MainViewModel: ObservableObject {
     }
     
     private func startNewChapter() {
-        plantStatuses = [
-            0: PlantStatus(),
-            1: PlantStatus(),
-            2: PlantStatus()
-        ]
+        plantStatuses = [PlantStatus(), PlantStatus(), PlantStatus()]
     }
     
     private func resetData() {
@@ -70,12 +62,12 @@ class MainViewModel: ObservableObject {
     }
     
     func setNewPlant(plant: Plant) {
-        plantStatuses[currentTab]?.plant = plant
+        plantStatuses[currentTab].plant = plant
         
         getDialogue(plant.characterFileName)
         saveDialogues()
         
-        plantStatuses[currentTab]?.missionStatus = .receivingMission
+        plantStatuses[currentTab].missionStatus = .receivingMission
         
         if currentLineIndex < dialogues[currentDialogueIndex].lines.count {
             dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
@@ -86,7 +78,7 @@ class MainViewModel: ObservableObject {
     
     func showNextDialogue(index: Int) {
         if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
-            plantStatuses[index]?.missionStatus = .inProgress
+            plantStatuses[index].missionStatus = .inProgress
             
             if dialogues[currentDialogueIndex].type == "Ending" {
                 let today = Date().toString()
@@ -102,23 +94,23 @@ class MainViewModel: ObservableObject {
     }
     
     func goNextDay(index: Int) {
-        if let plant = plantStatuses[index]?.plant {
-            if plantStatuses[index]!.missionDay < plant.totalDay - 1 {
-                plantStatuses[index]?.missionDay += 1
+        if let plant = plantStatuses[index].plant {
+            if plantStatuses[index].missionDay < plant.totalDay - 1 {
+                plantStatuses[index].missionDay += 1
                 
-                missionText = plant.missions[plantStatuses[index]!.missionDay].content
+                missionText = plant.missions[plantStatuses[index].missionDay].content
                 
                 if dialogues[currentDialogueIndex + 1].type == "Opening" {
                     currentDialogueIndex += 1
                     currentLineIndex = 0
                     
-                    plantStatuses[index]?.missionStatus = .receivingMission
+                    plantStatuses[index].missionStatus = .receivingMission
                     
                     showNextDialogue(index: index)
                 }
             } else {
-                plantStatuses[index]?.missionStatus = .none
-                plantStatuses[index]?.completeStory()
+                plantStatuses[index].missionStatus = .none
+                plantStatuses[index].completeStory()
                 completeCurrentTab()
             }
         }
@@ -128,10 +120,10 @@ class MainViewModel: ObservableObject {
         currentDialogueIndex += 1
         currentLineIndex = 0
         
-        plantStatuses[index]!.progressValue = (Double(plantStatuses[index]!.missionDay + 1)/Double(plantStatuses[index]!.plant?.totalDay ?? 0)) * 100
-        totalProgressValue += (1 / Double(plantStatuses[index]!.plant?.totalDay ?? 1)) * 25
+        plantStatuses[index].progressValue = (Double(plantStatuses[index].missionDay + 1)/Double(plantStatuses[index].plant?.totalDay ?? 0)) * 100
+        totalProgressValue += (1 / Double(plantStatuses[index].plant?.totalDay ?? 1)) * 25
         
-        plantStatuses[index]!.missionStatus = .completed
+        plantStatuses[index].missionStatus = .completed
         showNextDialogue(index: index)
     }
     
@@ -142,7 +134,7 @@ class MainViewModel: ObservableObject {
             currentTab += 1
             resetData()
         } else {
-            if let fileName =  plantStatuses[currentTab]?.plant?.characterFileName, fileName.contains("Winter") {
+            if let fileName =  plantStatuses[currentTab].plant?.characterFileName, fileName.contains("Winter") {
                 isShowEnding = true
             } else {
                 withAnimation(.easeInOut(duration: 0.5)) {
@@ -161,7 +153,7 @@ class MainViewModel: ObservableObject {
     }
     
     private func loadStatuses() {
-        if let decoded = try? JSONDecoder().decode([Int: PlantStatus].self, from: storedStatuses) {
+        if let decoded = try? JSONDecoder().decode([PlantStatus].self, from: storedStatuses) {
             plantStatuses = decoded
         }
     }
@@ -248,7 +240,7 @@ class MainViewModel: ObservableObject {
     }
     
     func shouldHideDialogueBox(for index: Int) -> Bool {
-        guard let status = plantStatuses[index]?.missionStatus else { return true }
+        let status = plantStatuses[index].missionStatus
         
         return status == .receivingMission || (status == .completed && canPerformMission)
     }
