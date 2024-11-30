@@ -11,7 +11,7 @@ struct NameSettingView: View {
     @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     @State var name = ""
-    @State var isNameAvailable = false
+    @State var isNameNotAvailable = true
     @State var isNameLong = false
     @Binding var isCompleted: Bool
     @Binding var isPresented: Bool
@@ -62,7 +62,7 @@ struct NameSettingView: View {
             VStack {
                 Spacer()
                 
-                OnboardingDoneButton(action: completeSetting, label: doneButtonLabel)
+                OnboardingDoneButton(action: completeSetting, label: doneButtonLabel, disabled: (isNameNotAvailable || isNameLong))
                     .font(.titleL)
                     .foregroundColor(setButtonLabelColor())
                     .background {
@@ -85,9 +85,9 @@ struct NameSettingView: View {
 extension NameSettingView {
     private func checkNameAvailable(_ name: String) {
         if !name.isEmpty && name.count < 9 {
-            isNameAvailable = true
+            isNameNotAvailable = false
         } else {
-            isNameAvailable = false
+            isNameNotAvailable = true
         }
     }
     
@@ -116,19 +116,19 @@ extension NameSettingView {
 
 extension NameSettingView {
     private func setButtonBackgroundColor() -> Color {
-        return isCompleted ? .greenSecondary : isNameAvailable ? .brownPrimary : .clear
+        return isCompleted ? .greenSecondary : isNameNotAvailable ? .clear : .brownPrimary
     }
     
     private func setButtonBackgroundStroke() -> Color {
-        return isCompleted ? .greenSecondary : isNameAvailable ? .clear : .brownPrimary
+        return isCompleted ? .greenSecondary : isNameNotAvailable ? .brownPrimary : .clear
     }
     
     private func setButtonLabelColor() -> Color {
-        return isCompleted || isNameAvailable ? .yellowTertiary : .brownPrimary
+        return isCompleted || !isNameNotAvailable ? .yellowTertiary : .brownPrimary
     }
     
     private func setNameColor() -> Color {
-        return isNameAvailable ? .greenSecondary : isNameLong ? .redPrimary : .brownPrimary
+        return !isNameNotAvailable ? .greenSecondary : isNameLong ? .redPrimary : .brownPrimary
     }
 }
 

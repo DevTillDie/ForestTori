@@ -40,7 +40,7 @@ class MainViewModel: ObservableObject {
     
     private var dialogues = [Dialogue]()
     private var timer: Timer?
-    private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? "토리"
+    private let userName = UserDefaults.standard.value(forKey: "userName") as? String ?? ""
     
     init() {
         loadStatuses()
