@@ -45,8 +45,12 @@ struct MainView: View {
             .ignoresSafeArea()
         }
         .ignoresSafeArea()
+        .onChange(of: viewModel.isCompletePlant) { _ in
+            gameManager.completePlant()
+        }
         .onChange(of: viewModel.isShowEnding) { _ in
             gameManager.completePlant()
+            gameManager.completeChapter()
             withAnimation {
                 serviceStateViewModel.state = .ending
             }
@@ -183,7 +187,7 @@ extension MainView {
                     .environmentObject(viewModel)
                     .onAppear {
                         if gameManager.user.selectedPlant != nil {
-                            gameManager.completePlant()
+                            gameManager.completeChapter()
                         }
                     }
             }
