@@ -41,13 +41,14 @@ struct CompletePlantView: View {
                 
                 HStack(spacing: 16) {
                     Button {
-                        // action
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            mainViewModel.isCompletePlant = false
+                        }
                     } label: {
                         Text("닫기")
                             .font(.titleS)
                             .foregroundStyle(.white)
                             .frame(maxWidth: .infinity)
-                            .padding(.horizontal, 38)
                             .padding(.vertical, 10)
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
@@ -56,14 +57,18 @@ struct CompletePlantView: View {
                     }
                     
                     Button {
-                        // action
+                        if mainViewModel.currentTab < 2 {
+                            mainViewModel.currentTab += 1
+                        }
+                        
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            mainViewModel.isCompletePlant = false
+                        }
                     } label: {
                         Text("새 식물 만나기")
                             .font(.titleS)
                             .foregroundStyle(.white)
                             .frame(maxWidth: .infinity)
-                            .fixedSize()
-                            .padding(.horizontal, 38)
                             .padding(.vertical, 10)
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
@@ -74,6 +79,7 @@ struct CompletePlantView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
+                .padding(.horizontal, 20)
             }
             .padding(.top, 22)
         }
