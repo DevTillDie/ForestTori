@@ -14,6 +14,7 @@ class MainViewModel: ObservableObject {
     @AppStorage("currentLineIndex") var currentLineIndex = 0
     @AppStorage("dialogueText") var dialogueText = ""
     @AppStorage("missionText") var missionText = ""
+    @AppStorage("previousMissionText") var previousMissionText = ""
     @AppStorage("dialogues") var storedDialogues = Data()
     @AppStorage("plantStatuses") private var storedStatuses = Data()
     @AppStorage("totalProgressValue") var totalProgressValue = 0.0
@@ -36,7 +37,8 @@ class MainViewModel: ObservableObject {
             }
         }
     }
-    @Published var isShowNotAvailable = false
+    @Published var isShowNotAvailableToMove = false
+    @Published var isShowNotAvailableToSelect = false
     @Published var isShowEnding = false
     @Published var isShowHistoryView = false
     @Published var navigateToGarden = false
@@ -59,6 +61,7 @@ class MainViewModel: ObservableObject {
     private func resetData() {
         dialogueText = ""
         missionText = ""
+        previousMissionText = ""
         
         currentDialogueIndex = 0
         currentLineIndex = 0
@@ -80,44 +83,43 @@ class MainViewModel: ObservableObject {
     }
     
     func showNextDialogue(index: Int) {
-        if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
-            plantStatuses[index].missionStatus = .inProgress
-            
-            if dialogues[currentDialogueIndex].type == "Ending" {
-                let today = Date().toString()
-                lastMissionDate = today
-                canPerformMission = false
+            if currentLineIndex == dialogues[currentDialogueIndex].lines.count {
+                plantStatuses[index].missionStatus = .inProgress
                 
-                goNextDay(index: index)
-            }
-        } else {
-            dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
-            currentLineIndex += 1
-        }
-    }
-    
-    func goNextDay(index: Int) {
-        if let plant = plantStatuses[index].plant {
-            if plantStatuses[index].missionDay < plant.totalDay - 1 {
-                plantStatuses[index].missionDay += 1
-                
-                missionText = plant.missions[plantStatuses[index].missionDay].content
-                
-                if dialogues[currentDialogueIndex + 1].type == "Opening" {
-                    currentDialogueIndex += 1
-                    currentLineIndex = 0
+                if dialogues[currentDialogueIndex].type == "Ending" {
+                    let today = Date().toString()
+                    lastMissionDate = today
+                    canPerformMission = false
                     
-                    plantStatuses[index].missionStatus = .receivingMission
-                    
-                    showNextDialogue(index: index)
+                    goNextDay(index: index)
                 }
             } else {
-                plantStatuses[index].missionStatus = .none
-                plantStatuses[index].completeStory()
-                completeCurrentTab()
+                dialogueText = dialogues[currentDialogueIndex].lines[currentLineIndex]
+                currentLineIndex += 1
             }
         }
-    }
+        
+        func goNextDay(index: Int) {
+            if let plant = plantStatuses[index].plant {
+                if plantStatuses[index].missionDay < plant.totalDay - 1 {
+                    plantStatuses[index].missionDay += 1
+                    
+                    previousMissionText = missionText
+                    missionText = plant.missions[plantStatuses[index].missionDay].content
+                    
+                    if dialogues[currentDialogueIndex + 1].type == "Opening" {
+                        currentDialogueIndex += 1
+                        currentLineIndex = 0
+                        
+                        plantStatuses[index].missionStatus = .receivingMission
+                    }
+                } else {
+                    plantStatuses[index].missionStatus = .none
+                    plantStatuses[index].completeStory()
+                    completeCurrentTab()
+                }
+            }
+        }
     
     func completMission(index: Int) {
         currentDialogueIndex += 1
@@ -211,8 +213,8 @@ class MainViewModel: ObservableObject {
     
     func checkMissionAvailability() {
         let today = Date().toString()
-        if today != lastMissionDate {
-            canPerformMission = true
+        if today > lastMissionDate {
+            self.canPerformMission = true
         }
     }
     
@@ -232,14 +234,26 @@ class MainViewModel: ObservableObject {
         timer = nil
     }
     
-    func showNotAvailableAlert() {
+    func showNotAvailableToMoveAlert() {
         withAnimation(.easeInOut(duration: 1)) {
-            isShowNotAvailable = true
+            isShowNotAvailableToMove = true
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             withAnimation(.easeInOut(duration: 1)) {
-                self.isShowNotAvailable = false
+                self.isShowNotAvailableToMove = false
+            }
+        }
+    }
+    
+    func showNotAvailableToSelectAlert() {
+        withAnimation(.easeInOut(duration: 1)) {
+            isShowNotAvailableToSelect = true
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            withAnimation(.easeInOut(duration: 1)) {
+                self.isShowNotAvailableToSelect = false
             }
         }
     }
@@ -247,7 +261,13 @@ class MainViewModel: ObservableObject {
     func shouldHideDialogueBox(for index: Int) -> Bool {
         let status = plantStatuses[index].missionStatus
         
-        return status == .receivingMission || (status == .completed && canPerformMission)
+        return status == .receivingMission || (status == .completed && canPerformMission) || (status == .inProgress && !canPerformMission)
+    }
+    
+    func checkMissionBox(for index: Int) -> Bool {
+        let status = plantStatuses[index].missionStatus
+        
+        return status == .done || status == .completed || (status == .inProgress && !canPerformMission)
     }
     
     func openWebsite(urlString: String) {

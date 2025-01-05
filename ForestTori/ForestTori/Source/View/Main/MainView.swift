@@ -15,7 +15,8 @@ struct MainView: View {
     
     @State private var isShowSelectPlantView = false
     
-    private let notAvailableLine = "현재 식물의 성장 완료 후 잠금 해제됩니다."
+    private let notAvailableToMove = "현재 식물의 성장 완료 후 잠금 해제됩니다."
+    private let notAvailableToSelect = "내일부터 새로운 식물을 만날 수 있어요."
     
     var body: some View {
         NavigationView {
@@ -31,7 +32,12 @@ struct MainView: View {
                         .environmentObject(gameManager)
                         .environmentObject(viewModel)
                     
-                    notAvailableAlert
+                    ZStack {
+                        notAvailableToMoveAlert
+                            .hidden(!viewModel.isShowNotAvailableToSelect)
+                        notAvailableToSelectAlert
+                            .hidden(!viewModel.isShowNotAvailableToMove)
+                    }
                     
                     customTabBar
                 }
@@ -121,8 +127,8 @@ extension MainView {
         .padding(.bottom, 8)
     }
     
-    private var notAvailableAlert: some View {
-        Text(notAvailableLine)
+    private var notAvailableToMoveAlert: some View {
+        Text(notAvailableToMove)
             .font(.bodyM)
             .foregroundStyle(.white)
             .padding(.horizontal, 25)
@@ -132,7 +138,21 @@ extension MainView {
                     .fill(.black.opacity(0.4))
             }
             .padding(.bottom, 10)
-            .hidden(viewModel.isShowNotAvailable)
+            .hidden(viewModel.isShowNotAvailableToMove)
+    }
+    
+    private var notAvailableToSelectAlert: some View {
+        Text(notAvailableToSelect)
+            .font(.bodyM)
+            .foregroundStyle(.white)
+            .padding(.horizontal, 25)
+            .padding(.vertical, 6)
+            .background {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(.black.opacity(0.4))
+            }
+            .padding(.bottom, 10)
+            .hidden(viewModel.isShowNotAvailableToSelect)
     }
     
     private var customTabBar: some View {
@@ -155,7 +175,7 @@ extension MainView {
             .disabled(!viewModel.plantStatuses[0].isStoryCompleted)
             .onTapGesture {
                 if !viewModel.plantStatuses[0].isStoryCompleted {
-                    viewModel.showNotAvailableAlert()
+                    viewModel.showNotAvailableToMoveAlert()
                 }
             }
             
@@ -169,7 +189,7 @@ extension MainView {
             .disabled(!viewModel.plantStatuses[1].isStoryCompleted)
             .onTapGesture {
                 if !viewModel.plantStatuses[1].isStoryCompleted {
-                    viewModel.showNotAvailableAlert()
+                    viewModel.showNotAvailableToMoveAlert()
                 }
             }
         }

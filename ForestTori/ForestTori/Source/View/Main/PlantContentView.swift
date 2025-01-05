@@ -17,6 +17,7 @@ struct PlantContentView: View {
     private let emptyPotFileName = "Emptypot.scn"
     private let emptyPotWidth: CGFloat = 240
     private let potHeight: CGFloat = 380
+    private let todayMissionDoneText = "오늘 미션을 해내다니, 정말 대단해.\n우리 내일도 다시 만나서 미션을 성공해보자!"
     private let url = "https://www.1365.go.kr/vols/1472176623798/wpge/volsguide1365.do"
     let index: Int
     
@@ -87,6 +88,12 @@ extension PlantContentView {
                 .foregroundColor(.greenSecondary)
                 .padding(.bottom, 4)
         }
+        .disabled(!viewModel.canPerformMission)
+        .onTapGesture {
+            if !viewModel.canPerformMission {
+                viewModel.showNotAvailableToSelectAlert()
+            }
+        }
     }
     
     private var dialogueBox: some View {
@@ -97,12 +104,21 @@ extension PlantContentView {
             .scaledToFit()
             .overlay(alignment: .top) {
                 ZStack(alignment: .topLeading) {
-                    Text(viewModel.dialogueText)
-                        .font(.pretendard(size: fontSize, .regular))
-                        .tracking(-0.015 * fontSize)
-                        .foregroundStyle(.black)
-                        .multilineTextAlignment(.leading)
-                        .padding(.horizontal, 16)
+                    if viewModel.canPerformMission {
+                        Text(viewModel.dialogueText)
+                            .font(.pretendard(size: fontSize, .regular))
+                            .tracking(-0.015 * fontSize)
+                            .foregroundStyle(.black)
+                            .multilineTextAlignment(.leading)
+                            .padding(.horizontal, 16)
+                    } else {
+                        Text(todayMissionDoneText)
+                            .font(.pretendard(size: fontSize, .regular))
+                            .tracking(-0.015 * fontSize)
+                            .foregroundStyle(.black)
+                            .multilineTextAlignment(.leading)
+                            .padding(.horizontal, 16)
+                    }
                     
                     Image(.dialogButton)
                         .resizable()
@@ -110,6 +126,7 @@ extension PlantContentView {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                         .padding(.bottom, 18)
                         .padding(.trailing, 18)
+                        .hidden(viewModel.canPerformMission)
                 }
                 .padding(.vertical, 8)
             }
@@ -117,7 +134,9 @@ extension PlantContentView {
             .padding(.bottom, 26)
             .onTapGesture {
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    viewModel.showNextDialogue(index: index)
+                    if viewModel.canPerformMission {
+                        viewModel.showNextDialogue(index: index)
+                    }
                 }
             }
             .hidden(!(viewModel.plantStatuses[index].isStoryCompleted))
@@ -139,9 +158,15 @@ extension PlantContentView {
             .frame(height: 68)
             .overlay {
                 HStack {
-                    Text(viewModel.missionText)
-                        .font(.titleL)
-                        .foregroundColor(.brownPrimary)
+                    if viewModel.canPerformMission {
+                        Text(viewModel.missionText)
+                            .font(.titleL)
+                            .foregroundColor(.brownPrimary)
+                    } else {
+                        Text(viewModel.previousMissionText)
+                            .font(.titleL)
+                            .foregroundColor(.brownPrimary)
+                    }
                     
                     Spacer()
                     
@@ -149,10 +174,10 @@ extension PlantContentView {
                         viewModel.plantStatuses[index].missionStatus = .done
                         viewModel.isShowHistoryView = true
                     } label: {
-                        Image(systemName: viewModel.plantStatuses[index].missionStatus == .done || viewModel.plantStatuses[index].missionStatus == .completed ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: viewModel.checkMissionBox(for: index) ? "checkmark.circle.fill" : "circle")
                             .resizable()
                             .frame(width: 38, height: 38)
-                            .foregroundColor(viewModel.plantStatuses[index].missionStatus == .done || viewModel.plantStatuses[index].missionStatus == .completed ? .greenPrimary : .brownSecondary)
+                            .foregroundColor(viewModel.checkMissionBox(for: index) ? .greenPrimary : .brownSecondary)
                     }
                     .disabled(viewModel.plantStatuses[index].missionStatus != .inProgress || !viewModel.canPerformMission)
                 }
