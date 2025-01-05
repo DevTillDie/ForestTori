@@ -48,23 +48,22 @@ struct CompleteChapterView: View {
                 .padding(.horizontal, 23)
                 
                 HStack(spacing: 16) {
-                    NavigationLink(destination: GardenView(totalProgressValue: mainViewModel.totalProgressValue)
-                        .environmentObject(gameManager)
-                        .navigationBarBackButtonHidden(true)
-                        .onDisappear {
-                            gameManager.startNewGame()
-                        }
-                    ) {
-                        Text("정원으로")
-                            .font(.titleS)
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 38)
-                            .padding(.vertical, 10)
-                            .background {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(.brownPrimary)
-                            }
-                    }
+                    Button {
+                           mainViewModel.isCompleteChapter = false
+                           DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                               mainViewModel.navigateToGarden = true
+                           }
+                       } label: {
+                           Text("정원으로")
+                               .font(.titleS)
+                               .foregroundStyle(.white)
+                               .padding(.horizontal, 38)
+                               .padding(.vertical, 10)
+                               .background {
+                                   RoundedRectangle(cornerRadius: 10)
+                                       .fill(.brownPrimary)
+                               }
+                       }
                     
                     Button {
                         gameManager.startNewGame()

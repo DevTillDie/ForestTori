@@ -45,6 +45,20 @@ struct MainView: View {
                 showCompleteChapter
             }
             .ignoresSafeArea()
+            .background(
+                NavigationLink(
+                    destination: GardenView(totalProgressValue: viewModel.totalProgressValue)
+                        .environmentObject(gameManager)
+                        .navigationBarBackButtonHidden(true)
+                        .onDisappear {
+                            gameManager.startNewGame()
+                        },
+                    isActive: $viewModel.navigateToGarden
+                ) {
+                    EmptyView()
+                }
+                .hidden()
+            )
         }
         .ignoresSafeArea()
         .onChange(of: viewModel.isCompletePlant) { _ in
@@ -205,7 +219,7 @@ extension MainView {
                     .environmentObject(gameManager)
                     .environmentObject(viewModel)
                     .onAppear {
-                        if gameManager.user.selectedPlant != nil {
+                        if ((gameManager.user.selectedPlant != nil) && (gameManager.user.chapterProgress < viewModel.currentChapter)) {
                             gameManager.completeChapter()
                         }
                     }

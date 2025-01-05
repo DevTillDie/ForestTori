@@ -8,6 +8,7 @@
 import SwiftUI
 
 class MainViewModel: ObservableObject {
+    @AppStorage("currentChapter") var currentChapter = 1
     @AppStorage("currentTab") var currentTab = 0
     @AppStorage("currentDialogueIndex") var currentDialogueIndex = 0
     @AppStorage("currentLineIndex") var currentLineIndex = 0
@@ -38,6 +39,7 @@ class MainViewModel: ObservableObject {
     @Published var isShowNotAvailable = false
     @Published var isShowEnding = false
     @Published var isShowHistoryView = false
+    @Published var navigateToGarden = false
     
     private var dialogues = [Dialogue]()
     private var timer: Timer?
@@ -143,6 +145,7 @@ class MainViewModel: ObservableObject {
                     isCompleteChapter = true
                 }
                 startNewChapter()
+                currentChapter += 1
                 currentTab = 0
             }
         }
