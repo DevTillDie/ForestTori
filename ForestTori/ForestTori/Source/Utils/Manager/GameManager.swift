@@ -64,7 +64,10 @@ class GameManager: ObservableObject {
             }
         }
         
-        user.selectedPlant = nil
+        saveUserDataToUserDefaults()
+    }
+    
+    func completeChapter() {
         user.chapterProgress += 1
         
         if user.chapterProgress < 5 {

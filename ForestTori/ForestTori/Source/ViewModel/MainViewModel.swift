@@ -18,8 +18,9 @@ class MainViewModel: ObservableObject {
     @AppStorage("totalProgressValue") var totalProgressValue = 0.0
     @AppStorage("canPerformMission") var canPerformMission = true
     @AppStorage("lastMissionDate") var lastMissionDate = ""
+    @AppStorage("isCompletePlant") var isCompletePlant = false
     
-    @Published var plantStatuses = [PlantStatus(), PlantStatus(),PlantStatus()] {
+    @Published var plantStatuses = [PlantStatus(), PlantStatus(), PlantStatus()] {
         didSet {
             saveStatuses()
         }
@@ -131,8 +132,9 @@ class MainViewModel: ObservableObject {
         resetData()
         
         if currentTab < 2 {
-            currentTab += 1
-            resetData()
+            withAnimation(.easeInOut(duration: 0.5)) {
+                isCompletePlant = true
+            }
         } else {
             if let fileName =  plantStatuses[currentTab].plant?.characterFileName, fileName.contains("Winter") {
                 isShowEnding = true

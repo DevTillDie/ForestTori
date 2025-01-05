@@ -14,7 +14,7 @@ class DataManager: ObservableObject {
     @Published var chapters: [Chapter] = []
     @Published var gardenPlants: [GardenPlant] = []
     
-    private let backgrounds = ["DefaultBackground","SpringBackground", "SummerBackground", "AutumnBackground", "WinterBackground"]
+    private let backgrounds = ["DefaultBackground", "SpringBackground", "SummerBackground", "AutumnBackground", "WinterBackground"]
     
     // UserDefaults에 데이터가 있다면 그 데이터를 읽어오고, 없다면 파일에서 읽어와 UserDefaults에 저장
     init() {
@@ -95,17 +95,18 @@ extension DataManager {
                         .map {$0.replacingOccurrences(of: "\\n", with: "\n")}
                         .map {$0.replacingOccurrences(of: "\r", with: "")}
                     
-                    if data.count >= 12 {
+                    if data.count >= 14 {
                         let id = Int(data[0]) ?? 0
                         prevID = id
                         let characterName = data[1]
                         let characterImage = data[2]
-                        let characterDescription = data[3]
-                        let mainQuest = data[4]
+                        let characterCompleteImage = data[3]
+                        let characterDescription = data[4]
+                        let mainQuest = data[5]
                         
                         var missions = [Mission]()
-                        if !data[5].isEmpty {
-                            missions = data[5].components(separatedBy: "|").map { missionString in
+                        if !data[6].isEmpty {
+                            missions = data[6].components(separatedBy: "|").map { missionString in
                                 let missionData = missionString.components(separatedBy: ":")
                                 let day = Int(missionData[0]) ?? 0
                                 let content = missionData[1]
@@ -113,27 +114,30 @@ extension DataManager {
                             }
                         }
                         
-                        let characterFileName = data[6]
-                        let character3DFiles = data[7].components(separatedBy: "|").map {String($0)}
-                        let totalDay = Int(data[8]) ?? 0
-                        let characterEnding = data[9]
+                        let characterFileName = data[7]
+                        let character3DFiles = data[8].components(separatedBy: "|").map {String($0)}
+                        let totalDay = Int(data[9]) ?? 0
+                        let characterEndingTitle = data[10]
+                        let characterEnding = data[11]
                         
-                        let gardenMessage = data[10]
-                        let garden3DFile = data[11]
-                        let gardenPositionX = Float(data[12]) ?? 0.0
-                        let gardenPositionZ = Float(data[13]) ?? 0.0
+                        let gardenMessage = data[12]
+                        let garden3DFile = data[13]
+                        let gardenPositionX = Float(data[14]) ?? 0.0
+                        let gardenPositionZ = Float(data[15]) ?? 0.0
                         
                         plants.append(
                             Plant(
                                 id: id,
                                 characterName: characterName,
                                 characterImage: characterImage,
+                                characterCompleteImage: characterCompleteImage,
                                 characterDescription: characterDescription,
                                 mainQuest: mainQuest,
                                 missions: missions,
                                 characterFileName: characterFileName, 
                                 character3DFiles: character3DFiles,
                                 totalDay: totalDay,
+                                characterEndingTitle: characterEndingTitle,
                                 characterEnding: characterEnding
                             )
                         )

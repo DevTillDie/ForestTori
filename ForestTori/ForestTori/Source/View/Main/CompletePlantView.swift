@@ -1,13 +1,13 @@
 //
-//  CompleteMissionView.swift
+//  CompletePlantView.swift
 //  ForestTori
 //
-//  Created by hyebin on 2/27/24.
+//  Created by Nayeon Kim on 12/21/24.
 //
 
 import SwiftUI
 
-struct CompleteChapterView: View {
+struct CompletePlantView: View {
     @EnvironmentObject var gameManager: GameManager
     @EnvironmentObject var mainViewModel: MainViewModel
     
@@ -17,15 +17,15 @@ struct CompleteChapterView: View {
                 .fill(.white)
             
             VStack {
-                Text("챕터 완료!")
+                Text("성장 완료!")
                     .foregroundStyle(.greenSecondary)
                     .font(.titleL)
                     .padding(.bottom, 6)
                 
-                Text(gameManager.chapter.lastChapterEnding)
+                Text(gameManager.user.selectedPlant?.characterEndingTitle ?? "")
                     .font(.subtitleM)
                 
-                Image("ChapterThumbnail\( gameManager.user.chapterProgress)")
+                Image(gameManager.user.selectedPlant?.characterCompleteImage ?? "")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 186)
@@ -33,32 +33,22 @@ struct CompleteChapterView: View {
                     .padding(.horizontal, 20)
                     .cornerRadius(8)
                 
-                VStack(spacing: 0) {
-                    Text(gameManager.chapter.chapterTitle)
-                        .font(.titleS)
-                        .foregroundStyle(.brownPrimary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 4)
-                    
-                    Text(gameManager.chapter.chapterDescription)
-                        .font(.bodyS)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .padding(.horizontal, 23)
+                Text(gameManager.user.selectedPlant?.characterEnding ?? "")
+                    .font(.bodyS)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 23)
                 
                 HStack(spacing: 16) {
-                    NavigationLink(destination: GardenView(totalProgressValue: mainViewModel.totalProgressValue)
-                        .environmentObject(gameManager)
-                        .navigationBarBackButtonHidden(true)
-                        .onDisappear {
-                            gameManager.startNewGame()
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            mainViewModel.isCompletePlant = false
                         }
-                    ) {
-                        Text("정원으로")
+                    } label: {
+                        Text("닫기")
                             .font(.titleS)
                             .foregroundStyle(.white)
-                            .padding(.horizontal, 38)
+                            .frame(maxWidth: .infinity)
                             .padding(.vertical, 10)
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
@@ -67,13 +57,18 @@ struct CompleteChapterView: View {
                     }
                     
                     Button {
-                        gameManager.startNewGame()
-                        mainViewModel.isCompleteChapter = false
+                        if mainViewModel.currentTab < 2 {
+                            mainViewModel.currentTab += 1
+                        }
+                        
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            mainViewModel.isCompletePlant = false
+                        }
                     } label: {
-                        Text("메인으로")
+                        Text("새 식물 만나기")
                             .font(.titleS)
                             .foregroundStyle(.white)
-                            .padding(.horizontal, 38)
+                            .frame(maxWidth: .infinity)
                             .padding(.vertical, 10)
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
@@ -84,6 +79,7 @@ struct CompleteChapterView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
+                .padding(.horizontal, 20)
             }
             .padding(.top, 22)
         }
@@ -93,7 +89,7 @@ struct CompleteChapterView: View {
 }
 
 #Preview {
-    CompleteChapterView()
+    CompletePlantView()
         .environmentObject(GameManager())
         .environmentObject(MainViewModel())
 }

@@ -12,22 +12,26 @@ import Foundation
 /// - id: 식물의 id
 /// - characterName: 식물의 이름
 /// - characterImage: 식물의 이미지
+/// - characterCompleteImage: 성장 완료된 식물의 이미지
 /// - characterDescription: 식물 소개
 /// - mainQuest: 식물 메인 미션
 /// - missions: 해당 식물의 미션 목록
 /// - characterFileName: 식물 Dialogue file 이름
 /// - character3DFiles: 식물 3D file 이름
 /// - totalDay: 식물의 성장 완료에 필요한 총 일수
+/// - characterEndingTitle: 엔딩에 나타나는 소제목
 /// - characterEnding: 엔딩에 나타나는 문구
 struct Plant: Identifiable, Codable {
     var id: Int
     var characterName: String
     var characterImage: String
+    var characterCompleteImage: String
     var characterDescription: String
     var mainQuest: String
     var missions: [Mission]
     var characterFileName: String
     var character3DFiles: [String]
     var totalDay: Int
+    var characterEndingTitle: String
     var characterEnding: String
 }

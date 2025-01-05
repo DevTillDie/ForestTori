@@ -40,13 +40,19 @@ struct MainView: View {
                     .environmentObject(gameManager)
                     .environmentObject(viewModel)
                 
+                showCompletePlant
+                
                 showCompleteChapter
             }
             .ignoresSafeArea()
         }
         .ignoresSafeArea()
+        .onChange(of: viewModel.isCompletePlant) { _ in
+            gameManager.completePlant()
+        }
         .onChange(of: viewModel.isShowEnding) { _ in
             gameManager.completePlant()
+            gameManager.completeChapter()
             withAnimation {
                 serviceStateViewModel.state = .ending
             }
@@ -162,7 +168,7 @@ extension MainView {
     func tabIcon(_ index: Int) -> some View {
         if index == viewModel.currentTab {
             Image(.potSelectedButton)
-        } else if (index == 0) || (viewModel.plantStatuses[index - 1].isStoryCompleted)  {
+        } else if (index == 0) || (viewModel.plantStatuses[index - 1].isStoryCompleted) {
             Image(.potButton)
         } else {
             Image(.potLockedButton)
@@ -173,6 +179,23 @@ extension MainView {
 // MARK: elements shown based on conditions
 
 extension MainView {
+    private var showCompletePlant: some View {
+        ZStack {
+            if viewModel.isCompletePlant {
+                Color.black.opacity(0.4)
+                
+                CompletePlantView()
+                    .environmentObject(gameManager)
+                    .environmentObject(viewModel)
+                    .onAppear {
+                        if gameManager.user.selectedPlant != nil {
+                            gameManager.completePlant()
+                        }
+                    }
+            }
+        }
+    }
+    
     private var showCompleteChapter: some View {
         ZStack {
             if viewModel.isCompleteChapter {
@@ -183,7 +206,7 @@ extension MainView {
                     .environmentObject(viewModel)
                     .onAppear {
                         if gameManager.user.selectedPlant != nil {
-                            gameManager.completePlant()
+                            gameManager.completeChapter()
                         }
                     }
             }
