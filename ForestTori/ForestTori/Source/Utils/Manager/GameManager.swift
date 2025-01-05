@@ -56,18 +56,34 @@ class GameManager: ObservableObject {
     ///
     /// 미션 완료 후 호출되어 사용자의 레벌업 및 챕터 진행 상태를 확인합니다
     func completePlant() {
-        if let plant = user.selectedPlant {
-            if let data = dataManager.gardenPlants.first(where: {
-                $0.id == plant.id
-            }) {
-                user.completedPlants[user.chapterProgress, default: []].append(data)
-            }
+        // 선택된 식물이 있는지 확인
+        guard let selectedPlant = user.selectedPlant else {
+            print("No selected plant.")
+            return
+        }
+        
+        // 데이터 매니저에서 선택된 식물과 동일한 식물을 찾기
+        guard let matchingPlant = dataManager.gardenPlants.first(where: { $0.id == selectedPlant.id }) else {
+            print("No matching plant found in gardenPlants.")
+            return
+        }
+        
+        // 특정 챕터 진행도에 해당하는 배열을 가져와 데이터를 추가
+        var completedPlantsForChapter = user.completedPlants[user.chapterProgress, default: []]
+        
+        if !completedPlantsForChapter.contains(where: { $0.id == matchingPlant.id }) {
+            completedPlantsForChapter.append(matchingPlant)
+            user.completedPlants[user.chapterProgress] = completedPlantsForChapter
+            print("Plant added to completedPlants for chapter \(user.chapterProgress).")
+        } else {
+            print("Plant already exists in completedPlants for chapter \(user.chapterProgress).")
         }
         
         saveUserDataToUserDefaults()
     }
-    
+        
     func completeChapter() {
+        self.completePlant()
         user.chapterProgress += 1
         
         if user.chapterProgress < 5 {
