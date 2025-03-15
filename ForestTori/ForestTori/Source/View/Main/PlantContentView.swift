@@ -108,16 +108,12 @@ extension PlantContentView {
                         Text(viewModel.dialogueText)
                             .font(.pretendard(size: fontSize, .regular))
                             .tracking(-0.015 * fontSize)
-                            .foregroundStyle(.black)
-                            .multilineTextAlignment(.leading)
-                            .padding(.horizontal, 16)
+                            .modifier(DialgoueFontModifier())
                     } else {
                         Text(todayMissionDoneText)
                             .font(.pretendard(size: fontSize, .regular))
                             .tracking(-0.015 * fontSize)
-                            .foregroundStyle(.black)
-                            .multilineTextAlignment(.leading)
-                            .padding(.horizontal, 16)
+                            .modifier(DialgoueFontModifier())
                     }
                     
                     Image(.dialogButton)

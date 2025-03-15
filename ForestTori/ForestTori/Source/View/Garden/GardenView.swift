@@ -136,10 +136,8 @@ extension GardenView {
                 ZStack(alignment: .topLeading) {
                     Text(viewModel.dialogueMessage)
                         .font(.pretendard(size: 17.5, .regular))
-                        .foregroundStyle(Color.black)
-                        .multilineTextAlignment(.leading)
                         .lineSpacing(1)
-                        .padding(.horizontal, 16)
+                        .modifier(DialgoueFontModifier())
                     
                     Image("DialogButton")
                         .resizable()
