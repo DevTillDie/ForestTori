@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingDoneButton: View {
     let action: () -> Void
     let label: String
+    var disabled: Bool = false
     
     var body: some View {
         Button {
@@ -20,5 +21,6 @@ struct OnboardingDoneButton: View {
                 .padding()
                 .frame(maxWidth: .infinity)
         }
+        .disabled(disabled)
     }
 }
