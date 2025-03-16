@@ -93,45 +93,45 @@ struct WriteHistoryView: View {
 
 extension WriteHistoryView {
     private var hisoryViewHeader: some View {
-            VStack {
-                ZStack {
-                    Text("성장일지")
-                        .font(.subtitleL)
-                    
-                    HStack {
-                        Button {
-                            withAnimation {
-                                isShowHistoryView = false
-                                currentStatus = .inProgress
-                            }
-                        } label: {
-                            Text(Image(systemName: "chevron.backward"))
-                                .bold()
-                                .foregroundStyle(.gray40)
-                        }
-                        
-                        Spacer()
-                        
-                        Button {
-                            viewModel.saveHistory()
-                            isComplete = true
-                        } label: {
-                            Text("완료")
-                                .font(.subtitleM)
-                                .bold()
-                                .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
-                        }
-                        .disabled(viewModel.isCompleteButtonDisable)
-                    }
-                    .padding(.leading, 8)
-                    .padding(.trailing, 16)
-                }
-                .padding(.top, 11)
-                .padding(.bottom, 6)
+        VStack {
+            ZStack {
+                Text("성장일지")
+                    .font(.subtitleL)
                 
-                Rectangle()
-                    .fill(.gray30)
-                    .frame(height: 0.33)
+                HStack {
+                    Button {
+                        withAnimation {
+                            isShowHistoryView = false
+                            currentStatus = .inProgress
+                        }
+                    } label: {
+                        Text(Image(systemName: "chevron.backward"))
+                            .bold()
+                            .foregroundStyle(.gray40)
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        viewModel.saveHistory()
+                        isComplete = true
+                    } label: {
+                        Text("완료")
+                            .font(.subtitleM)
+                            .bold()
+                            .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
+                    }
+                    .disabled(viewModel.isCompleteButtonDisable)
+                }
+                .padding(.leading, 8)
+                .padding(.trailing, 16)
+            }
+            .padding(.top, 11)
+            .padding(.bottom, 6)
+            
+            Rectangle()
+                .fill(.gray30)
+                .frame(height: 0.33)
         }
     }
     
@@ -141,6 +141,8 @@ extension WriteHistoryView {
                 ZStack {
                     Image(uiImage: image)
                         .resizable()
+                        .scaledToFill()
+                        .frame(width: 358, height: 358) // snapshot과 동일한 사이즈
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                         .overlay(alignment: .bottomTrailing) {
                             Button {
@@ -270,5 +272,5 @@ extension WriteHistoryView {
 }
 
 #Preview {
-    WriteHistoryView(isComplete: .constant(true), isShowHistoryView: .constant(true), currentStatus: .constant(.completed), plantName: "나팔꽃")
+    WriteHistoryView(isComplete: .constant(true), isShowHistoryView: .constant(true), currentStatus: .constant(.completed), plantName: "preview")
 }
