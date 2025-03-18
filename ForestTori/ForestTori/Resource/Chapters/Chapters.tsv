@@ -1,5 +1,5 @@
-chapterId	chatperTitle	chatperDescription	lastChapterEnding	plantFileName
-1	봄, 숲을 만나다	토리의 숲 속 반짝이는 무언가	봄 식물들이 용기를 얻었어요	SpringPlants
-2	여름, 안녕? 토리야	여름이 찾아오고 장마가 시작되었어요. 오두막에서 홀로 반짝이는 빗방울을 구경하던 토리에게 "나는 누구일까?" 하는 궁금증이 생겼어요.	여름 식물들이 행복을 알게 됐어요	SummerPlants
-3	가을, 꿈의 형태	가을이 찾아온 토리의 숲이 알록달록해졌어요. 토리의 마음에도 변화가 시작된 것 같아요! 가을엔 어떤 반짝이는 도전들이 기다리고 있을까요?	가을 식물들이 용기를 얻었어요	AutumnPlants
-4	겨울, 새로운 봄을 기다리며	작은 눈송이들이 반짝이는 겨울이 찾아왔어요. 온통 새하얗게 바뀐 풍경을 바라보던 토리는 깨끗한 눈밭에 발자국을 남겨보고 싶어졌어요.	겨울 식물들이 용기를 얻었어요	WinterPlants
+chapterId	chatperTitle	chatperDescription	lastChapterEnding	plantFileName	firstPosition	secondPosition	thirdPosition	gardenGround
+1	봄, 숲을 만나다	토리의 숲 속 반짝이는 무언가	봄 식물들이 용기를 얻었어요	SpringPlants	-2.6|-3.4|0.5	1.2|-2|0.5	-1|2.3|0.5	Gardenground_Spring.scn
+2	여름, 안녕? 토리야	여름이 찾아오고 장마가 시작되었어요. 오두막에서 홀로 반짝이는 빗방울을 구경하던 토리에게 "나는 누구일까?" 하는 궁금증이 생겼어요.	여름 식물들이 행복을 알게 됐어요	SummerPlants	0.2|-3.3|0.5	-2.9|1.3|0.5	1.2|2.8|0.5	Gardenground_Summer.scn
+3	가을, 꿈의 형태	가을이 찾아온 토리의 숲이 알록달록해졌어요. 토리의 마음에도 변화가 시작된 것 같아요! 가을엔 어떤 반짝이는 도전들이 기다리고 있을까요?	가을 식물들이 용기를 얻었어요	AutumnPlants	1.3|-2.2|0.5	-2.1|-3|0.5	-1|-2.8|0.5	Gardenground_Autumn.scn
+4	겨울, 새로운 봄을 기다리며	작은 눈송이들이 반짝이는 겨울이 찾아왔어요. 온통 새하얗게 바뀐 풍경을 바라보던 토리는 깨끗한 눈밭에 발자국을 남겨보고 싶어졌어요.	겨울 식물들이 용기를 얻었어요	WinterPlants	-1.6|2.7|0.5	-3.3|0.8|0.5	-0.5|-3.1|0.5	Gardenground_Winter.scn
