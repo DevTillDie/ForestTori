@@ -31,27 +31,27 @@ struct HistoryDetailView: View {
 extension HistoryDetailView {
     private var viewHeader: some View {
         VStack {
-            HStack {
-                Button {
-                    withAnimation {
-                        selectedHistoryIndex = nil
-                        isShowHistoryDetailView = false
-                    }
-                } label: {
-                    Text(Image(systemName: "chevron.backward"))
-                        .bold()
-                        .foregroundStyle(.gray40)
-                }
-                
-                Spacer()
-                
+            ZStack {
                 Text(selectedHistory?.date ?? "0000.00.00")
                     .font(.subtitleL)
                 
-                Spacer()
+                HStack {
+                    Button {
+                        withAnimation {
+                            selectedHistoryIndex = nil
+                            isShowHistoryDetailView = false
+                        }
+                    } label: {
+                        Text(Image(systemName: "chevron.backward"))
+                            .bold()
+                            .foregroundStyle(.gray40)
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.horizontal, 8)
                 
             }
-            .padding(.horizontal, 8)
             .padding(.top, 11)
             .padding(.bottom, 6)
             

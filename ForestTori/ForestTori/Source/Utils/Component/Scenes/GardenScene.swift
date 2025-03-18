@@ -81,9 +81,9 @@ struct GardenScene: UIViewRepresentable {
                     }
                 }
                 
-                if let selectedName = hitNode.geometry?.name {
+                if let selectedName = hitNode.name {
                     if let selectedPlant = parent.chapterPlants?.first(where: {
-                        $0.garden3DFile.lowercased().contains(selectedName)
+                        $0.plantName.contains(selectedName)
                     }) {
                         parent.selectedPlant =  selectedPlant
                         parent.showHistoryView = true
@@ -129,6 +129,7 @@ extension GardenScene {
         let plantPositionZ = plant.gardenPositionZ
         
         for childNode in plantScene.rootNode.childNodes {
+            childNode.name = "\(plant.plantName)"
             plantNode.addChildNode(childNode)
         }
         
