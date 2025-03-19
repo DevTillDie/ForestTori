@@ -113,7 +113,6 @@ extension DataManager {
                             }
                         }
                         
-                        
                         let dialogueFile = data[6]
                         let plant3DFiles = data[7].components(separatedBy: "|").map {String($0)}
                         let totalDay = Int(data[8]) ?? 0

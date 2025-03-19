@@ -239,7 +239,7 @@ extension MainView {
                     .environmentObject(gameManager)
                     .environmentObject(viewModel)
                     .onAppear {
-                        if ((gameManager.user.selectedPlant != nil) && (gameManager.user.chapterProgress < viewModel.currentChapter)) {
+                        if (gameManager.user.selectedPlant != nil) && (gameManager.user.chapterProgress < viewModel.currentChapter) {
                             gameManager.completeChapter()
                         }
                     }
