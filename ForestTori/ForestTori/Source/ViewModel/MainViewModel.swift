@@ -70,7 +70,7 @@ class MainViewModel: ObservableObject {
     func setNewPlant(plant: Plant) {
         plantStatuses[currentTab].plant = plant
         
-        getDialogue(plant.characterFileName)
+        getDialogue(plant.dialogueFile)
         saveDialogues()
         
         plantStatuses[currentTab].missionStatus = .receivingMission
@@ -140,7 +140,7 @@ class MainViewModel: ObservableObject {
                 isCompletePlant = true
             }
         } else {
-            if let fileName =  plantStatuses[currentTab].plant?.characterFileName, fileName.contains("Winter") {
+            if let fileName =  plantStatuses[currentTab].plant?.dialogueFile, fileName.contains("Winter") {
                 isShowEnding = true
             } else {
                 withAnimation(.easeInOut(duration: 0.5)) {

@@ -52,6 +52,7 @@ struct GardenView: View {
                                     dialogueMessage: $viewModel.dialogueMessage,
                                     showDialogueBox: $isShowDialogueBox,
                                     chapterPlants: loadChapterPlants(),
+                                    positions: viewModel.positions[index],
                                     currentChapter: index)
                                 .scaledToFit()
                                 .tag(index)

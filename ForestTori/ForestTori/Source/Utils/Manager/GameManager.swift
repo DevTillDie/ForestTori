@@ -63,7 +63,7 @@ class GameManager: ObservableObject {
         }
         
         // 데이터 매니저에서 선택된 식물과 동일한 식물을 찾기
-        guard let matchingPlant = dataManager.gardenPlants.first(where: { $0.id == selectedPlant.id }) else {
+        guard var matchingPlant = dataManager.gardenPlants.first(where: { $0.id == selectedPlant.id }) else {
             print("No matching plant found in gardenPlants.")
             return
         }

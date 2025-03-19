@@ -50,6 +50,7 @@ extension GardenARView {
                     dialogueMessage: .constant(""),
                     showDialogueBox: .constant(false),
                     chapterPlants: chapterPlants,
+                    positions: [],
                     currentChapter: currentChapter
                 )
                 .scaledToFit()

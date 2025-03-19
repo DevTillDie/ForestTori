@@ -77,7 +77,7 @@ struct MainView: View {
                 serviceStateViewModel.state = .ending
             }
         }
-        .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+        .onChange(of: gameManager.user.selectedPlant?.name) { newPlantName in
             if let newPlantName {
                 notificationManager.scheduleNotification(for: newPlantName)
             }
@@ -110,7 +110,7 @@ extension MainView {
             
             Spacer()
             
-            if let plantName = viewModel.plantStatuses[viewModel.currentTab].plant?.characterName {
+            if let plantName = viewModel.plantStatuses[viewModel.currentTab].plant?.name {
                 ProgressView(value: viewModel.plantStatuses[viewModel.currentTab].progressValue, total: 100)
                     .frame(width: 119, height: 50)
                     .progressViewStyle(
