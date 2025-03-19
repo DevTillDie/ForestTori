@@ -17,7 +17,6 @@ class MainViewModel: ObservableObject {
     @AppStorage("previousMissionText") var previousMissionText = ""
     @AppStorage("dialogues") var storedDialogues = Data()
     @AppStorage("plantStatuses") private var storedStatuses = Data()
-    @AppStorage("totalProgressValue") var totalProgressValue = 0.0
     @AppStorage("canPerformMission") var canPerformMission = true
     @AppStorage("lastMissionDate") var lastMissionDate = ""
     @AppStorage("isCompletePlant") var isCompletePlant = false
@@ -126,7 +125,6 @@ class MainViewModel: ObservableObject {
         currentLineIndex = 0
         
         plantStatuses[index].progressValue = (Double(plantStatuses[index].missionDay + 1)/Double(plantStatuses[index].plant?.totalDay ?? 0)) * 100
-        totalProgressValue += (1 / Double(plantStatuses[index].plant?.totalDay ?? 1)) * 25
         
         plantStatuses[index].missionStatus = .completed
         showNextDialogue(index: index)

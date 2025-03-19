@@ -53,7 +53,7 @@ struct MainView: View {
             .ignoresSafeArea()
             .background(
                 NavigationLink(
-                    destination: GardenView(totalProgressValue: viewModel.totalProgressValue)
+                    destination: GardenView()
                         .environmentObject(gameManager)
                         .navigationBarBackButtonHidden(true)
                         .onDisappear {
@@ -97,7 +97,7 @@ struct MainView: View {
 extension MainView {
     private var mainHeader: some View {
         HStack {
-            NavigationLink(destination: GardenView(totalProgressValue: viewModel.totalProgressValue)
+            NavigationLink(destination: GardenView()
                 .environmentObject(gameManager)
                 .navigationBarBackButtonHidden(true)
             ) {

@@ -29,6 +29,7 @@ class GardenViewModel: ObservableObject {
     }
     
     @Published var dialogueMessage = ""
+    @Published var chapterProgress = [0.0, 0.0, 0.0, 0.0, 0.0]
     
     let chapter = ["", "봄", "여름", "가을", "겨울"]
     let backgroundImages = ["DefaultBackground", "SpringBackground", "SummerBackground", "AutumnBackground", "WinterBackground"]

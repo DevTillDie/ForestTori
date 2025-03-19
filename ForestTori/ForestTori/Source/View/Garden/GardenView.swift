@@ -25,7 +25,6 @@ struct GardenView: View {
     private let noPlantCaption = "아직 다 키운 식물이 없어요."
     private let notOpenChapterCaption = "아직 열리지 않은 계절이에요."
     private let summerMessage = "여름 하늘은 봄보다 더 높아져서 더 멀리까지 바라볼 수 있는 거 알아?"
-    var totalProgressValue: Double?
     
     var body: some View {
         NavigationView {
@@ -85,10 +84,15 @@ struct GardenView: View {
             }
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
+            .onAppear {
+                viewModel.chapterProgress[currentChapter] =  calProgress()
+            }
             .onChange(of: currentChapter) { _ in
                 if gameManager.user.completedPlants[currentChapter] == nil {
                     viewModel.isShowNoPlantBox = true
                 }
+                
+                viewModel.chapterProgress[currentChapter] =  calProgress()
             }
         }
     }
@@ -110,7 +114,7 @@ extension GardenView {
             
             Spacer()
             
-            ProgressView(value: totalProgressValue ?? 100, total: 100)
+            ProgressView(value: Double(viewModel.chapterProgress[currentChapter]), total: 100)
                 .frame(width: 241, height: 50)
                 .progressViewStyle(
                     ProgressStyle(
@@ -285,9 +289,17 @@ extension GardenView {
         
         return nil
     }
+    
+    func calProgress() -> Double {
+        if let plantCnt = gameManager.user.completedPlants[currentChapter]?.count {
+            return Double(plantCnt) / 3.0 * 100
+        } else {
+            return 0.0
+        }
+    }
 }
 
 #Preview {
-    GardenView(totalProgressValue: MainViewModel().totalProgressValue)
+    GardenView()
         .environmentObject(GameManager())
 }
