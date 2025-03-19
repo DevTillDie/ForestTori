@@ -33,6 +33,7 @@ class GardenViewModel: ObservableObject {
     let chapter = ["", "봄", "여름", "가을", "겨울"]
     let backgroundImages = ["DefaultBackground", "SpringBackground", "SummerBackground", "AutumnBackground", "WinterBackground"]
     let chapterTitle = ["", "봄, 숲을 만나다", "여름, 안녕? 토리야", "가을, 꿈의 형태", "겨울, 새로운 봄을 기다리며"]
+    let groundObjects = ["Gardenground.scn", "Gardenground_Spring.scn", "Gardenground_Summer.scn", "Gardenground_Autumn.scn", "Gardenground_Winter.scn"]
     let positions: [[(x: Float, y: Float, z: Float)]] = [
         [],
         [(-2.6, 0.5, 3.4), (1.2, 0.5, 2), (-1, 0.5, -2.3)],

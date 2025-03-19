@@ -15,9 +15,10 @@ struct GardenScene: UIViewRepresentable {
     @Binding var dialogueMessage: String
     @Binding var showDialogueBox: Bool
     
-    private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
     private let sceneView = SCNView()
+    
+    var groundObject: String
     var chapterPlants: [GardenPlant]?
     var positions: [(x: Float, y: Float, z: Float)]
     var currentChapter: Int
@@ -105,7 +106,7 @@ extension GardenScene {
         lightNode.position = SCNVector3(x: 100, y: 100, z: 100)
         
         sceneView.backgroundColor = .clear
-        sceneView.scene = SCNScene(named: gardenObject)
+        sceneView.scene = SCNScene(named: groundObject)
         sceneView.scene?.rootNode.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
         
         sceneView.scene?.rootNode.addChildNode(lightNode)

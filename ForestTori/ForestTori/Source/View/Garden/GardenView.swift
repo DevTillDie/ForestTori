@@ -51,6 +51,7 @@ struct GardenView: View {
                                     showHistoryView: $isShowHistoryView,
                                     dialogueMessage: $viewModel.dialogueMessage,
                                     showDialogueBox: $isShowDialogueBox,
+                                    groundObject: viewModel.groundObjects[index],
                                     chapterPlants: loadChapterPlants(),
                                     positions: viewModel.positions[index],
                                     currentChapter: index)
@@ -255,7 +256,9 @@ extension GardenView {
     @ViewBuilder private var ARButton: some View {
         NavigationLink(
             destination: GardenARView(
+                groundObject: viewModel.groundObjects[currentChapter],
                 chapterPlants: loadChapterPlants(),
+                
                 positions: viewModel.positions[currentChapter],
                 currentChapter: currentChapter
             )
