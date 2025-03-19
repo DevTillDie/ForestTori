@@ -21,6 +21,7 @@ struct GardenScene: UIViewRepresentable {
     var chapterPlants: [GardenPlant]?
     var positions: [(x: Float, y: Float, z: Float)]
     var currentChapter: Int
+    var isShowBubble: Bool = true
     
     func makeUIView(context: Context) -> some UIView {
         setSceneView()
@@ -46,12 +47,13 @@ struct GardenScene: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        // TODO: 대사 박스 조건 추가
-        guard let plants = chapterPlants else { return }
-                
-        for (idx, plant) in plants.enumerated() {
-            guard let newNode = addBubbleNode(plant: plant, idx: idx) else { return }
-            sceneView.scene?.rootNode.addChildNode(newNode)
+        if isShowBubble {
+            guard let plants = chapterPlants else { return }
+            
+            for (idx, plant) in plants.enumerated() {
+                guard let newNode = addBubbleNode(plant: plant, idx: idx) else { return }
+                sceneView.scene?.rootNode.addChildNode(newNode)
+            }
         }
     }
     

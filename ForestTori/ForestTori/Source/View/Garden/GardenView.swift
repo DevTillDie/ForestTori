@@ -256,6 +256,7 @@ extension GardenView {
         NavigationLink(
             destination: GardenARView(
                 chapterPlants: loadChapterPlants(),
+                positions: viewModel.positions[currentChapter],
                 currentChapter: currentChapter
             )
         ) {
