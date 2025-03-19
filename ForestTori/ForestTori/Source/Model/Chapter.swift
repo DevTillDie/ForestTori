@@ -21,6 +21,5 @@ struct Chapter: Codable {
     var chapterDescription: String
     var lastChapterEnding: String
     var chatperBackgroundImage: String
-    var gardenGround: String
     var chapterPlants: [Plant]
 }

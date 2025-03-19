@@ -58,7 +58,6 @@ extension DataManager {
                         let lastChapterEnding = data[3]
                         let chapterBackgroundImage = backgrounds[chapterId]
                         let chapterPlants = readChapterPlants(data[4])
-                        let gardenGround = data[5]
                         
                         chapters.append(
                             Chapter(
@@ -67,7 +66,6 @@ extension DataManager {
                                 chapterDescription: chapterDescription,
                                 lastChapterEnding: lastChapterEnding,
                                 chatperBackgroundImage: chapterBackgroundImage,
-                                gardenGround: gardenGround,
                                 chapterPlants: chapterPlants
                             )
                         )
