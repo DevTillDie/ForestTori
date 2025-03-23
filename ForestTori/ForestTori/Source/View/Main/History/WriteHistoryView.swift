@@ -23,6 +23,7 @@ struct WriteHistoryView: View {
     @Binding var currentStatus: MissionStatus
 
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
+    private let imageSize = UIScreen.main.bounds.width * 0.92
     var plantName: String
     
     var body: some View {
@@ -32,7 +33,6 @@ struct WriteHistoryView: View {
             ScrollViewReader { proxy in
                 ScrollView(showsIndicators: false) {
                     selectImageView
-                        .aspectRatio(1, contentMode: .fill)
                         .padding(.horizontal)
                         .padding(.vertical)
                     
@@ -94,38 +94,38 @@ struct WriteHistoryView: View {
 extension WriteHistoryView {
     private var hisoryViewHeader: some View {
         VStack {
-            HStack {
-                Button {
-                    withAnimation {
-                        isShowHistoryView = false
-                        currentStatus = .inProgress
-                    }
-                } label: {
-                    Text(Image(systemName: "chevron.backward"))
-                        .bold()
-                        .foregroundStyle(.gray40)
-                }
-                
-                Spacer()
-                
+            ZStack {
                 Text("성장일지")
                     .font(.subtitleL)
                 
-                Spacer()
-                
-                Button {
-                    viewModel.saveHistory()
-                    isComplete = true
-                } label: {
-                    Text("완료")
-                        .font(.subtitleM)
-                        .bold()
-                        .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
+                HStack {
+                    Button {
+                        withAnimation {
+                            isShowHistoryView = false
+                            currentStatus = .inProgress
+                        }
+                    } label: {
+                        Text(Image(systemName: "chevron.backward"))
+                            .bold()
+                            .foregroundStyle(.gray40)
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        viewModel.saveHistory()
+                        isComplete = true
+                    } label: {
+                        Text("완료")
+                            .font(.subtitleM)
+                            .bold()
+                            .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
+                    }
+                    .disabled(viewModel.isCompleteButtonDisable)
                 }
-                .disabled(viewModel.isCompleteButtonDisable)
+                .padding(.leading, 8)
+                .padding(.trailing, 16)
             }
-            .padding(.leading, 8)
-            .padding(.trailing, 16)
             .padding(.top, 11)
             .padding(.bottom, 6)
             
@@ -141,7 +141,11 @@ extension WriteHistoryView {
                 ZStack {
                     Image(uiImage: image)
                         .resizable()
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .scaledToFill()
+                        .frame(width: imageSize, height: imageSize)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 8)
+                        )
                         .overlay(alignment: .bottomTrailing) {
                             Button {
                                 withAnimation {
@@ -173,12 +177,13 @@ extension WriteHistoryView {
                 }
             }
         }
+        .frame(width: imageSize, height: imageSize)
     }
     
     private var writeHistoryView: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(Color.gray10)
-            .frame(height: 298)
+            .frame(width: UIScreen.main.bounds.width * 0.92, height: UIScreen.main.bounds.width * 0.75)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(.brownSecondary, lineWidth: 2)
@@ -270,5 +275,5 @@ extension WriteHistoryView {
 }
 
 #Preview {
-    MainView()
+    WriteHistoryView(isComplete: .constant(true), isShowHistoryView: .constant(true), currentStatus: .constant(.completed), plantName: "preview")
 }
