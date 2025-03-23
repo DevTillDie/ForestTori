@@ -48,6 +48,9 @@ struct GardenScene: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        guard let newNode = addFreesia() else { return}
+        sceneView.scene?.rootNode.addChildNode(newNode)
+        
         if isShowBubble {
             guard let plants = chapterPlants else { return }
             
@@ -122,6 +125,21 @@ extension GardenScene {
                 gestureRecognizer.isEnabled = false
             }
         }
+    }
+    
+    private func addFreesia() -> SCNNode? {
+        let plantNode = SCNNode()
+        
+        guard let plantScene = SCNScene(named: "Freesia.scn") else {return nil}
+        
+        for childNode in plantScene.rootNode.childNodes {
+            plantNode.addChildNode(childNode)
+        }
+        
+        plantNode.position = SCNVector3(x: Float(3.8), y: Float(1.0), z: Float(-1.0))
+        plantNode.scale = SCNVector3(x: 0.8, y: 0.8, z: 0.8)
+        
+        return plantNode
     }
     
     private func addNode(plant: GardenPlant, idx: Int) -> SCNNode? {
