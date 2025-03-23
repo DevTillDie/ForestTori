@@ -15,11 +15,14 @@ struct GardenScene: UIViewRepresentable {
     @Binding var dialogueMessage: String
     @Binding var showDialogueBox: Bool
     
-    private let gardenObject = "Gardenground.scn"
     private let lightNode = SCNNode()
     private let sceneView = SCNView()
+    
+    var groundObject: String
     var chapterPlants: [GardenPlant]?
+    var positions: [(x: Float, y: Float, z: Float)]
     var currentChapter: Int
+    var isShowBubble: Bool = true
     
     func makeUIView(context: Context) -> some UIView {
         setSceneView()
@@ -28,8 +31,8 @@ struct GardenScene: UIViewRepresentable {
             return sceneView
         }
                 
-        for plant in plants {
-            guard let newNode = addNode(plant: plant) else {
+        for (idx, plant) in plants.enumerated() {
+            guard let newNode = addNode(plant: plant, idx: idx) else {
                 return sceneView
             }
             sceneView.scene?.rootNode.addChildNode(newNode)
@@ -45,12 +48,16 @@ struct GardenScene: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        // TODO: 대사 박스 조건 추가
-        guard let plants = chapterPlants else { return }
-                
-        for plant in plants {
-            guard let newNode = addBubbleNode(plant: plant) else { return }
-            sceneView.scene?.rootNode.addChildNode(newNode)
+        guard let newNode = addFreesia() else { return}
+        sceneView.scene?.rootNode.addChildNode(newNode)
+        
+        if isShowBubble {
+            guard let plants = chapterPlants else { return }
+            
+            for (idx, plant) in plants.enumerated() {
+                guard let newNode = addBubbleNode(plant: plant, idx: idx) else { return }
+                sceneView.scene?.rootNode.addChildNode(newNode)
+            }
         }
     }
     
@@ -102,7 +109,7 @@ extension GardenScene {
         lightNode.position = SCNVector3(x: 100, y: 100, z: 100)
         
         sceneView.backgroundColor = .clear
-        sceneView.scene = SCNScene(named: gardenObject)
+        sceneView.scene = SCNScene(named: groundObject)
         sceneView.scene?.rootNode.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
         
         sceneView.scene?.rootNode.addChildNode(lightNode)
@@ -120,13 +127,28 @@ extension GardenScene {
         }
     }
     
-    private func addNode(plant: GardenPlant) -> SCNNode? {
+    private func addFreesia() -> SCNNode? {
+        let plantNode = SCNNode()
+        
+        guard let plantScene = SCNScene(named: "Freesia.scn") else {return nil}
+        
+        for childNode in plantScene.rootNode.childNodes {
+            plantNode.addChildNode(childNode)
+        }
+        
+        plantNode.position = SCNVector3(x: Float(3.8), y: Float(1.0), z: Float(-1.0))
+        plantNode.scale = SCNVector3(x: 0.8, y: 0.8, z: 0.8)
+        
+        return plantNode
+    }
+    
+    private func addNode(plant: GardenPlant, idx: Int) -> SCNNode? {
         let plantNode = SCNNode()
         
         guard let plantScene = SCNScene(named: plant.garden3DFile) else {return nil}
-        let plantPositionX = plant.gardenPositionX
-        let plantPositionY = plant.gardenPositionY
-        let plantPositionZ = plant.gardenPositionZ
+        let plantPositionX = positions[idx].x
+        let plantPositionY = positions[idx].y
+        let plantPositionZ = positions[idx].z
         
         for childNode in plantScene.rootNode.childNodes {
             childNode.name = "\(plant.plantName)"
@@ -139,13 +161,13 @@ extension GardenScene {
         return plantNode
     }
     
-    private func addBubbleNode(plant: GardenPlant) -> SCNNode? {
+    private func addBubbleNode(plant: GardenPlant, idx: Int) -> SCNNode? {
         let plantNode = SCNNode()
         
         guard let plantScene = SCNScene(named: "Bubble.scn") else {return nil}
-        let positionX = plant.gardenPositionX
-        let positionY = plant.gardenPositionY + 2.8
-        let positionZ = plant.gardenPositionZ
+        let positionX = positions[idx].x
+        let positionY = positions[idx].y + 2.8
+        let positionZ = positions[idx].z
         
         for childNode in plantScene.rootNode.childNodes {
             childNode.name = "\(plant.plantName)_bubble"

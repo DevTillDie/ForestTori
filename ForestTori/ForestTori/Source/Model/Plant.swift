@@ -23,15 +23,15 @@ import Foundation
 /// - characterEnding: 엔딩에 나타나는 문구
 struct Plant: Identifiable, Codable {
     var id: Int
-    var characterName: String
-    var characterImage: String
-    var characterCompleteImage: String
-    var characterDescription: String
+    var name: String
+    var image: String
+    var description: String
     var mainQuest: String
     var missions: [Mission]
-    var characterFileName: String
-    var character3DFiles: [String]
+    var dialogueFile: String
+    var plant3DFiles: [String]
     var totalDay: Int
-    var characterEndingTitle: String
-    var characterEnding: String
+    var completeImage: String
+    var completeTitle: String
+    var completeDescription: String
 }

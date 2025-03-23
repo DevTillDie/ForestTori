@@ -17,7 +17,6 @@ class MainViewModel: ObservableObject {
     @AppStorage("previousMissionText") var previousMissionText = ""
     @AppStorage("dialogues") var storedDialogues = Data()
     @AppStorage("plantStatuses") private var storedStatuses = Data()
-    @AppStorage("totalProgressValue") var totalProgressValue = 0.0
     @AppStorage("canPerformMission") var canPerformMission = true
     @AppStorage("lastMissionDate") var lastMissionDate = ""
     @AppStorage("isCompletePlant") var isCompletePlant = false
@@ -70,7 +69,7 @@ class MainViewModel: ObservableObject {
     func setNewPlant(plant: Plant) {
         plantStatuses[currentTab].plant = plant
         
-        getDialogue(plant.characterFileName)
+        getDialogue(plant.dialogueFile)
         saveDialogues()
         
         plantStatuses[currentTab].missionStatus = .receivingMission
@@ -126,7 +125,6 @@ class MainViewModel: ObservableObject {
         currentLineIndex = 0
         
         plantStatuses[index].progressValue = (Double(plantStatuses[index].missionDay + 1)/Double(plantStatuses[index].plant?.totalDay ?? 0)) * 100
-        totalProgressValue += (1 / Double(plantStatuses[index].plant?.totalDay ?? 1)) * 25
         
         plantStatuses[index].missionStatus = .completed
         showNextDialogue(index: index)
@@ -140,7 +138,7 @@ class MainViewModel: ObservableObject {
                 isCompletePlant = true
             }
         } else {
-            if let fileName =  plantStatuses[currentTab].plant?.characterFileName, fileName.contains("Winter") {
+            if let fileName =  plantStatuses[currentTab].plant?.dialogueFile, fileName.contains("Winter") {
                 isShowEnding = true
             } else {
                 withAnimation(.easeInOut(duration: 0.5)) {

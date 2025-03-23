@@ -14,7 +14,10 @@ struct GardenARView: View {
     private let backButtonLabel = "돌아가기"
     private let backButtonImage = "chevron.backward"
     private let cameraButtomImage = "button.programmable"
+    
+    var groundObject: String
     var chapterPlants: [GardenPlant]?
+    var positions: [(x: Float, y: Float, z: Float)]
     var currentChapter: Int
     
     var body: some View {
@@ -49,8 +52,11 @@ extension GardenARView {
                     showHistoryView: .constant(false),
                     dialogueMessage: .constant(""),
                     showDialogueBox: .constant(false),
+                    groundObject: groundObject,
                     chapterPlants: chapterPlants,
-                    currentChapter: currentChapter
+                    positions: positions,
+                    currentChapter: currentChapter,
+                    isShowBubble: false
                 )
                 .scaledToFit()
                 .padding(40)

@@ -53,7 +53,7 @@ struct MainView: View {
             .ignoresSafeArea()
             .background(
                 NavigationLink(
-                    destination: GardenView(totalProgressValue: viewModel.totalProgressValue)
+                    destination: GardenView()
                         .environmentObject(gameManager)
                         .navigationBarBackButtonHidden(true)
                         .onDisappear {
@@ -77,7 +77,7 @@ struct MainView: View {
                 serviceStateViewModel.state = .ending
             }
         }
-        .onChange(of: gameManager.user.selectedPlant?.characterName) { newPlantName in
+        .onChange(of: gameManager.user.selectedPlant?.name) { newPlantName in
             if let newPlantName {
                 notificationManager.scheduleNotification(for: newPlantName)
             }
@@ -97,7 +97,7 @@ struct MainView: View {
 extension MainView {
     private var mainHeader: some View {
         HStack {
-            NavigationLink(destination: GardenView(totalProgressValue: viewModel.totalProgressValue)
+            NavigationLink(destination: GardenView()
                 .environmentObject(gameManager)
                 .navigationBarBackButtonHidden(true)
             ) {
@@ -110,7 +110,7 @@ extension MainView {
             
             Spacer()
             
-            if let plantName = viewModel.plantStatuses[viewModel.currentTab].plant?.characterName {
+            if let plantName = viewModel.plantStatuses[viewModel.currentTab].plant?.name {
                 ProgressView(value: viewModel.plantStatuses[viewModel.currentTab].progressValue, total: 100)
                     .frame(width: 119, height: 50)
                     .progressViewStyle(
@@ -239,7 +239,7 @@ extension MainView {
                     .environmentObject(gameManager)
                     .environmentObject(viewModel)
                     .onAppear {
-                        if ((gameManager.user.selectedPlant != nil) && (gameManager.user.chapterProgress < viewModel.currentChapter)) {
+                        if (gameManager.user.selectedPlant != nil) && (gameManager.user.chapterProgress < viewModel.currentChapter) {
                             gameManager.completeChapter()
                         }
                     }

@@ -15,6 +15,13 @@ struct PlantCardView: View {
     
     @Binding var isShowSelectPlantView: Bool
     
+    private var isCompleted: Bool {
+        if gameManager.user.completedPlants.contains(where: {$0.value.contains(where: {$0.id == plant.id})}) {
+            return true
+        } else {
+            return false
+        }
+    }
     var plant: Plant
     
     var body: some View {
@@ -28,17 +35,17 @@ struct PlantCardView: View {
                     .font(.titleL)
                     .padding(.bottom, 6)
                 
-                Text(plant.characterName)
+                Text(plant.name)
                     .font(.subtitleM)
                     .padding(.bottom, 16)
                 
-                Image(plant.characterImage)
+                Image(plant.image)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(8)
                     .padding(.bottom, 16)
                 
-                Text(plant.characterDescription.splitCharacter())
+                Text(plant.description.splitCharacter())
                     .font(.bodyS)
                     .foregroundStyle(.gray50)
                     .lineSpacing(1)
@@ -62,16 +69,16 @@ struct PlantCardView: View {
                             .stroke(.brownPrimary, lineWidth: 2)
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .foregroundStyle(plant.id == 1 ? .brownPrimary : .white)
+                                    .foregroundStyle(isCompleted ? .white : .brownPrimary)
                             )
                             .frame(height: 41)
                         
                         Text("선택하기")
                             .font(.titleS)
-                            .foregroundColor(plant.id == 1 ? .white : .brownPrimary)
+                            .foregroundColor(isCompleted ? .brownPrimary : .white)
                     }
                 }
-                .disabled(plant.id != 1)
+                .disabled(isCompleted)
             }
             .padding(20)
         }

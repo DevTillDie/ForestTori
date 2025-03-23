@@ -24,7 +24,7 @@ struct PlantContentView: View {
     var body: some View {
         ZStack {
             if let plant = viewModel.plantStatuses[index].plant {
-                PlantPotView(sceneViewName: plant.character3DFiles[viewModel.plantStatuses[index].missionDay])
+                PlantPotView(sceneViewName: plant.plant3DFiles[viewModel.plantStatuses[index].missionDay])
                     .scaledToFit()
                     .frame(height: potHeight, alignment: .bottom)
             } else {
@@ -44,7 +44,7 @@ struct PlantContentView: View {
                         .hidden(viewModel.shouldHideDialogueBox(for: index))
                     
                     infoButton
-                        .hidden(viewModel.plantStatuses[index].missionStatus == .inProgress && viewModel.plantStatuses[index].plant!.characterName == "목화나무")
+                        .hidden(viewModel.plantStatuses[index].missionStatus == .inProgress && viewModel.plantStatuses[index].plant!.name == "목화나무")
                 }
                 
                 Spacer()
@@ -68,7 +68,7 @@ struct PlantContentView: View {
                             }
                     }
                 ),
-                plantName: viewModel.plantStatuses[index].plant!.characterName
+                plantName: viewModel.plantStatuses[index].plant!.name
             )
             .environmentObject(keyboardHandler)
         }

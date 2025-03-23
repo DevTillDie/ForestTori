@@ -22,10 +22,10 @@ struct CompletePlantView: View {
                     .font(.titleL)
                     .padding(.bottom, 6)
                 
-                Text(gameManager.user.selectedPlant?.characterEndingTitle ?? "")
+                Text(gameManager.user.selectedPlant?.completeTitle ?? "")
                     .font(.subtitleM)
                 
-                Image(gameManager.user.selectedPlant?.characterCompleteImage ?? "")
+                Image(gameManager.user.selectedPlant?.completeImage ?? "")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 186)
@@ -33,7 +33,7 @@ struct CompletePlantView: View {
                     .padding(.horizontal, 20)
                     .cornerRadius(8)
                 
-                Text(gameManager.user.selectedPlant?.characterEnding ?? "")
+                Text(gameManager.user.selectedPlant?.completeDescription ?? "")
                     .font(.bodyS)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .fixedSize(horizontal: false, vertical: true)

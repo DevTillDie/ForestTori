@@ -82,7 +82,6 @@ extension DataManager {
     // chapter에 해당하는 식물 파일을 읽어옴
     private func readChapterPlants(_ fileName: String) -> [Plant] {
         var plants = [Plant]()
-        var prevID = 0
         
         if let filePath = Bundle.main.path(forResource: fileName, ofType: "tsv") {
             do {
@@ -97,16 +96,14 @@ extension DataManager {
                     
                     if data.count >= 14 {
                         let id = Int(data[0]) ?? 0
-                        prevID = id
-                        let characterName = data[1]
-                        let characterImage = data[2]
-                        let characterCompleteImage = data[3]
-                        let characterDescription = data[4]
-                        let mainQuest = data[5]
+                        let name = data[1]
+                        let image = data[2]
+                        let description = data[3]
+                        let mainQuest = data[4]
                         
                         var missions = [Mission]()
-                        if !data[6].isEmpty {
-                            missions = data[6].components(separatedBy: "|").map { missionString in
+                        if !data[5].isEmpty {
+                            missions = data[5].components(separatedBy: "|").map { missionString in
                                 let missionData = missionString.components(separatedBy: ":")
                                 let day = Int(missionData[0]) ?? 0
                                 let content = missionData[1]
@@ -114,45 +111,42 @@ extension DataManager {
                             }
                         }
                         
-                        let characterFileName = data[7]
-                        let character3DFiles = data[8].components(separatedBy: "|").map {String($0)}
-                        let totalDay = Int(data[9]) ?? 0
-                        let characterEndingTitle = data[10]
-                        let characterEnding = data[11]
+                        let dialogueFile = data[6]
+                        let plant3DFiles = data[7].components(separatedBy: "|").map {String($0)}
+                        let totalDay = Int(data[8]) ?? 0
+                        let completeImage = data[9]
+                        let completeTitle = data[10]
+                        let completeDescription = data[11]
                         
                         let gardenMessage = data[12]
                         let garden3DFile = data[13]
-                        let gardenPositionX = Float(data[14]) ?? 0.0
-                        let gardenPositionZ = Float(data[15]) ?? 0.0
                         
                         plants.append(
                             Plant(
                                 id: id,
-                                characterName: characterName,
-                                characterImage: characterImage,
-                                characterCompleteImage: characterCompleteImage,
-                                characterDescription: characterDescription,
+                                name: name,
+                                image: image,
+                                description: description,
                                 mainQuest: mainQuest,
                                 missions: missions,
-                                characterFileName: characterFileName, 
-                                character3DFiles: character3DFiles,
+                                dialogueFile: dialogueFile,
+                                plant3DFiles: plant3DFiles,
                                 totalDay: totalDay,
-                                characterEndingTitle: characterEndingTitle,
-                                characterEnding: characterEnding
+                                completeImage: completeImage,
+                                completeTitle: completeTitle,
+                                completeDescription: completeDescription
                             )
                         )
                         
                         gardenPlants.append(
                             GardenPlant(
                                 id: id,
-                                plantName: characterName,
+                                plantName: name,
                                 gardenMessage: gardenMessage,
                                 garden3DFile: garden3DFile,
-                                gardenPositionX: gardenPositionX,
-                                gardenPositionZ: gardenPositionZ,
-                                completeDescription: characterEnding,
+                                completeDescription: completeDescription,
                                 plantMainQuest: mainQuest,
-                                plant3DFile: character3DFiles.last
+                                plant3DFile: plant3DFiles.last
                             )
                         )
                     }
