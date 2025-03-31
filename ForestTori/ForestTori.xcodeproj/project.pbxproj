@@ -11,15 +11,20 @@
 		0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */; };
 		0E1AE7152B80A833001C9A30 /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7142B80A833001C9A30 /* Dialogue.swift */; };
 		0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */; };
-		0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */; };
 		0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */; };
 		0E214B5F2BDFC85500558004 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B5E2BDFC85500558004 /* BottomSheet.swift */; };
 		0E214B612BDFD52900558004 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B602BDFD52900558004 /* HistoryDetailView.swift */; };
 		0E270BDF2D89795900332234 /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BDE2D89795900332234 /* WinterPlants.tsv */; };
 		0E270BE02D89795900332234 /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BDA2D89795900332234 /* AutumnPlants.tsv */; };
 		0E270BE12D89795900332234 /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BDC2D89795900332234 /* SpringPlants.tsv */; };
-		0E270BE22D89795900332234 /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BDD2D89795900332234 /* SummerPlants.tsv */; };
 		0E270BE72D8ADF7000332234 /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BE62D8ADF7000332234 /* Chapters.tsv */; };
+		0E270BE82D93DFB200332234 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 0EE630DC2C7DBADC00F2A021 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0E270BEB2D9A9EF800332234 /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BEA2D9A9EF800332234 /* SummerPlants.tsv */; };
+		0E270BF22D9A9F1B00332234 /* PasqueFlower.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BF12D9A9F1B00332234 /* PasqueFlower.tsv */; };
+		0E270BF32D9A9F1B00332234 /* Compass.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BEE2D9A9F1B00332234 /* Compass.tsv */; };
+		0E270BF42D9A9F1B00332234 /* Cactus.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BED2D9A9F1B00332234 /* Cactus.tsv */; };
+		0E270BF52D9A9F1B00332234 /* Hanamaru.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BEF2D9A9F1B00332234 /* Hanamaru.tsv */; };
+		0E270BF62D9A9F1B00332234 /* Lavender.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E270BF02D9A9F1B00332234 /* Lavender.tsv */; };
 		0E2F50A82C86E0010054628F /* GardenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F50A72C86E0010054628F /* GardenViewModel.swift */; };
 		0E2F50AA2C86F6010054628F /* ChapterButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F50A92C86F6010054628F /* ChapterButtonStyle.swift */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
@@ -145,22 +150,40 @@
 		5BEA730C2BD7D17700BF5ADA /* EndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA730B2BD7D17700BF5ADA /* EndingView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0E270BE92D93DFB200332234 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0E270BE82D93DFB200332234 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0E1AE6FD2B7E185B001C9A30 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		0E1AE6FF2B7E1880001C9A30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPotView.swift; sourceTree = "<group>"; };
 		0E1AE7142B80A833001C9A30 /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
 		0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterCharacter.tsv; sourceTree = "<group>"; };
-		0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerCharacter.tsv; sourceTree = "<group>"; };
 		0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnCharacter.tsv; sourceTree = "<group>"; };
 		0E214B5E2BDFC85500558004 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		0E214B602BDFD52900558004 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		0E214B642BE34B5A00558004 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0E270BDA2D89795900332234 /* AutumnPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
 		0E270BDC2D89795900332234 /* SpringPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
-		0E270BDD2D89795900332234 /* SummerPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
 		0E270BDE2D89795900332234 /* WinterPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
 		0E270BE62D8ADF7000332234 /* Chapters.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
+		0E270BEA2D9A9EF800332234 /* SummerPlants.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
+		0E270BED2D9A9F1B00332234 /* Cactus.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cactus.tsv; sourceTree = "<group>"; };
+		0E270BEE2D9A9F1B00332234 /* Compass.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Compass.tsv; sourceTree = "<group>"; };
+		0E270BEF2D9A9F1B00332234 /* Hanamaru.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Hanamaru.tsv; sourceTree = "<group>"; };
+		0E270BF02D9A9F1B00332234 /* Lavender.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Lavender.tsv; sourceTree = "<group>"; };
+		0E270BF12D9A9F1B00332234 /* PasqueFlower.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = PasqueFlower.tsv; sourceTree = "<group>"; };
 		0E2F50A72C86E0010054628F /* GardenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenViewModel.swift; sourceTree = "<group>"; };
 		0E2F50A92C86F6010054628F /* ChapterButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterButtonStyle.swift; sourceTree = "<group>"; };
 		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
@@ -312,6 +335,18 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		0E270BEC2D9A9F1100332234 /* Summer */ = {
+			isa = PBXGroup;
+			children = (
+				0E270BED2D9A9F1B00332234 /* Cactus.tsv */,
+				0E270BEE2D9A9F1B00332234 /* Compass.tsv */,
+				0E270BEF2D9A9F1B00332234 /* Hanamaru.tsv */,
+				0E270BF02D9A9F1B00332234 /* Lavender.tsv */,
+				0E270BF12D9A9F1B00332234 /* PasqueFlower.tsv */,
+			);
+			path = Summer;
+			sourceTree = "<group>";
+		};
 		0E4AB2292BCD3E6F00ADB623 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,9 +372,9 @@
 			isa = PBXGroup;
 			children = (
 				0E270BE62D8ADF7000332234 /* Chapters.tsv */,
+				0E270BEA2D9A9EF800332234 /* SummerPlants.tsv */,
 				0E270BDA2D89795900332234 /* AutumnPlants.tsv */,
 				0E270BDC2D89795900332234 /* SpringPlants.tsv */,
-				0E270BDD2D89795900332234 /* SummerPlants.tsv */,
 				0E270BDE2D89795900332234 /* WinterPlants.tsv */,
 			);
 			path = Chapters;
@@ -726,9 +761,9 @@
 		5B7E02AE2B5FE8BE0067B2FA /* CharacterDialogues */ = {
 			isa = PBXGroup;
 			children = (
+				0E270BEC2D9A9F1100332234 /* Summer */,
 				0EF36DBB2CEDC6D900867365 /* Spring */,
 				0E1AE71B2B80B9B2001C9A30 /* AutumnCharacter.tsv */,
-				0E1AE7192B80B9B1001C9A30 /* SummerCharacter.tsv */,
 				0E1AE7182B80B9B1001C9A30 /* WinterCharacter.tsv */,
 			);
 			path = CharacterDialogues;
@@ -803,6 +838,7 @@
 				0EF5FE8E2B4FC02100D64E5E /* Sources */,
 				0EF5FE8F2B4FC02100D64E5E /* Frameworks */,
 				0EF5FE902B4FC02100D64E5E /* Resources */,
+				0E270BE92D93DFB200332234 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -865,11 +901,15 @@
 				0EF36E7D2CEEFFFB00867365 /* Broom3.scn in Resources */,
 				0EF36DDF2CEDC81300867365 /* Gardenground_Winter.scn in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
-				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
 				0E270BE72D8ADF7000332234 /* Chapters.tsv in Resources */,
 				0EF36E912CEF005900867365 /* Cactus1.scn in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
 				0EF36E732CEEFFDA00867365 /* Lotus2.scn in Resources */,
+				0E270BF22D9A9F1B00332234 /* PasqueFlower.tsv in Resources */,
+				0E270BF32D9A9F1B00332234 /* Compass.tsv in Resources */,
+				0E270BF42D9A9F1B00332234 /* Cactus.tsv in Resources */,
+				0E270BF52D9A9F1B00332234 /* Hanamaru.tsv in Resources */,
+				0E270BF62D9A9F1B00332234 /* Lavender.tsv in Resources */,
 				0EF36E752CEEFFDE00867365 /* Lotus3.scn in Resources */,
 				5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */,
 				0EF36EB52CEF00F000867365 /* Cottontree3.scn in Resources */,
@@ -905,7 +945,7 @@
 				0E270BDF2D89795900332234 /* WinterPlants.tsv in Resources */,
 				0E270BE02D89795900332234 /* AutumnPlants.tsv in Resources */,
 				0E270BE12D89795900332234 /* SpringPlants.tsv in Resources */,
-				0E270BE22D89795900332234 /* SummerPlants.tsv in Resources */,
+				0E270BEB2D9A9EF800332234 /* SummerPlants.tsv in Resources */,
 				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
 				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
 				0EF36E9F2CEF008700867365 /* Pasqueflower_Garden.scn in Resources */,
