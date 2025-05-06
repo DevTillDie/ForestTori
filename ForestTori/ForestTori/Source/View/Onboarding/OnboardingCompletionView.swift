@@ -19,6 +19,7 @@ struct OnboardingCompletionView: View {
                 Image(.chapterThumbnail1)
                     .resizable()
                     .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
                     .padding(20)
                 
                 OnboardingTextBox(texts: onboardingViewModel.onboardingCompletionText)
