@@ -147,16 +147,16 @@ extension OnboardingViewModel {
         
         let secondText = [
             OnboardingText(text: "멋진 이름이네요."),
-            OnboardingText(text: "\(Text(userName).foregroundColor(.greenPrimary))\(Text("토리:)").foregroundColor(.greenPrimary))"),
+            OnboardingText(text: "\(Text(userName).foregroundColor(.greenPrimary))\(Text("토리").foregroundColor(.greenPrimary)) :)"),
         ]
         
         let thirdText = [
-            OnboardingText(text: "여기 \(Text(userName).foregroundColor(.greenPrimary))를 위해"),
+            OnboardingText(text: "여기 \(Text(userName).foregroundColor(.greenPrimary))\(Text("토리").foregroundColor(.greenPrimary))를 위해"),
             OnboardingText(text: "신비한 화분을 줄게요."),
         ]
         
         let fourthText = [
-            OnboardingText(text: "이제부터 \(Text(userName).foregroundColor(.greenPrimary))토리의"),
+            OnboardingText(text: "이제부터 \(Text(userName).foregroundColor(.greenPrimary))\(Text("토리").foregroundColor(.greenPrimary))의"),
             OnboardingText(text: "마법 능력으로 식물을 잘 키워주세요."),
         ]
         
@@ -167,7 +167,7 @@ extension OnboardingViewModel {
         let text = [
             OnboardingText(text: "첫 챕터는 새로운 시작을 의미하는"),
             OnboardingText(text: "새싹이 반짝이는 계절, 봄이에요."),
-            OnboardingText(text: "\(Text(userName).foregroundColor(.greenPrimary))토리의 시작을 응원할게요!"),
+            OnboardingText(text: "\(Text(userName).foregroundColor(.greenPrimary))\(Text("토리").foregroundColor(.greenPrimary))의 시작을 응원할게요!"),
         ]
         
         onboardingCompletionText = text
