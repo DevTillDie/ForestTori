@@ -92,7 +92,7 @@ struct GardenView: View {
                 if gameManager.user.completedPlants[currentChapter] == nil {
                     viewModel.isShowNoPlantBox = true
                 }
-                
+                isShowDialogueBox = false
                 viewModel.chapterProgress[currentChapter] =  calProgress()
             }
         }
