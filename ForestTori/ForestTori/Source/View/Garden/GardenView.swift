@@ -85,6 +85,7 @@ struct GardenView: View {
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
             .onAppear {
+                currentChapter = gameManager.user.chapterProgress
                 viewModel.chapterProgress[currentChapter] =  calProgress()
             }
             .onChange(of: currentChapter) { _ in
