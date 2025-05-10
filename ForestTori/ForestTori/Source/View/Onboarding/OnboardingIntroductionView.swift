@@ -25,18 +25,14 @@ struct OnboardingIntroductionView: View {
                     introductionContent(data: introduction)
                 }
             }
-            Button {
-                onboardingViewModel.type = .naming
-            } label: {
-                Text(doneButtonLabel)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.yellowTertiary)
-                    .background(.brownPrimary)
-                    .cornerRadius(50)
-            }
-            .hidden(isHidden)
-            .padding(20)
+            OnboardingDoneButton(action: onboardingViewModel.moveToOnboardingIntroductionView, label: doneButtonLabel)
+                .foregroundColor(.yellowTertiary)
+                .background {
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(.brownPrimary)
+                }
+                .hidden(isHidden)
+                .padding(20)
         }
         .toolbar {
             OnboardingSkipButton(action: onboardingViewModel.moveToOnboardingNamingView)
@@ -53,24 +49,15 @@ struct OnboardingIntroductionView: View {
 extension OnboardingIntroductionView {
     @ViewBuilder private func introductionContent(data: OnboardingIntroductionData) -> some View {
         VStack(spacing: 30) {
-            HStack {
-                Image(systemName: leftCompactChevron)
-                    .foregroundColor(.brownSecondary)
-                    .hidden(data.description != firstPageDescription)
-                
-                Image(data.imageName)
-                    .resizable()
-                    .scaledToFit()
-                
-                Image(systemName: rightCompactChevron)
-                    .foregroundColor(.brownSecondary)
-                    .hidden(data.description != lastPageDescription)
-            }
+            Image(data.imageName)
+                .resizable()
+                .scaledToFit()
+            
             OnboardingTextBox(texts: data.introductionTexts)
                 .font(.titleM)
                 .foregroundColor(.gray50)
         }
-        .padding(20)
+        .padding(32)
         .onAppear {
             showDoneButton(description: data.description)
         }
