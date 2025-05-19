@@ -77,19 +77,19 @@ struct GardenScene: UIViewRepresentable {
             let touchLocation = gestureRecognize.location(in: sceneView)
             let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
             
-            if let hitNode = hitTestResults.first?.node {
-                if let selectedName = hitNode.name, 
-                    selectedName.contains("bubble") {
-                    if let selectedPlant = parent.chapterPlants?.first(where: {
-                        selectedName.contains($0.plantName)
-                    }) {
-                        parent.dialogueMessage = selectedPlant.gardenMessage
-                        parent.showDialogueBox = true
-                    }
-                }
-                
-                if let selectedName = hitNode.name {
-                    if let selectedPlant = parent.chapterPlants?.first(where: {
+            guard let rootNode = hitTestResults.first?.node else { return }
+            let currentNode: SCNNode? = rootNode
+            
+            if let node = currentNode {
+                if let selectedName = node.name {
+                    if selectedName.contains("bubble") {
+                        if let selectedPlant = parent.chapterPlants?.first(where: {
+                            selectedName.contains($0.plantName)
+                        }) {
+                            parent.dialogueMessage = selectedPlant.gardenMessage
+                            parent.showDialogueBox = true
+                        }
+                    } else if let selectedPlant = parent.chapterPlants?.first(where: {
                         $0.plantName.contains(selectedName)
                     }) {
                         parent.selectedPlant =  selectedPlant
@@ -166,7 +166,7 @@ extension GardenScene {
         
         guard let plantScene = SCNScene(named: "Bubble.scn") else {return nil}
         let positionX = positions[idx].x
-        let positionY = positions[idx].y + 2.8
+        let positionY = positions[idx].y + 3.2
         let positionZ = positions[idx].z
         
         for childNode in plantScene.rootNode.childNodes {
