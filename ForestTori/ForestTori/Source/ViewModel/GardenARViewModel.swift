@@ -5,6 +5,7 @@
 //  Created by Nayeon Kim on 4/15/24.
 //
 
+import AVFoundation
 import SwiftUI
 
 class GardenARViewModel: ObservableObject {
@@ -20,5 +21,15 @@ class GardenARViewModel: ObservableObject {
         let capturedImage = UIGraphicsGetImageFromCurrentImageContext()
         
         return capturedImage
+    }
+    
+    func checkIsCameraDenied() -> Bool {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        if status == .authorized {
+            return false
+        } else {
+            return true
+        }
     }
 }

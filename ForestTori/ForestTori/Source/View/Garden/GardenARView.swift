@@ -11,6 +11,8 @@ struct GardenARView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var gardenARViewModel = GardenARViewModel()
     
+    @State var isCameraDenied = false
+    
     private let backButtonLabel = "돌아가기"
     private let backButtonImage = "chevron.backward"
     private let cameraButtomImage = "button.programmable"
@@ -32,6 +34,10 @@ struct GardenARView: View {
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+           isCameraDenied = gardenARViewModel.checkIsCameraDenied()
+        }
+
     }
 }
 
@@ -42,7 +48,7 @@ extension GardenARView {
         ZStack {
             Color.black
             
-            CameraPreview()
+            CameraPreview(isCameraDenied: $isCameraDenied)
             
             VStack {
                 Spacer()
@@ -63,6 +69,16 @@ extension GardenARView {
                 
                 Spacer()
                 Spacer()
+            }
+        }
+        .alert("카메라 접근이 허용되어 있지 않습니다. 설정화면으로 가시겠습니까?", isPresented: $isCameraDenied) {
+            Button("취소", role: .cancel) { }
+            Button("확인") {
+                // 설정 앱으로 이동
+                if let url = URL(string: UIApplication.openSettingsURLString),
+                   UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                }
             }
         }
     }

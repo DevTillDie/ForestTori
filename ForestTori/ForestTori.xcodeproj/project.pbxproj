@@ -111,7 +111,7 @@
 		5B2144662D85AF1F0080D59C /* DialgoueFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2144652D85AF1F0080D59C /* DialgoueFontModifier.swift */; };
 		5B2A5A1B2D16BA680026A079 /* CompletePlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A1A2D16BA680026A079 /* CompletePlantView.swift */; };
 		5B6351062BED17AF00A1C6AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B642BE34B5A00558004 /* String+.swift */; };
-		5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ServieStateView.swift */; };
+		5B68A4262B8454790004E89A /* ServiceStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4252B8454790004E89A /* ServiceStateView.swift */; };
 		5B68A4352B845DFE0004E89A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
 		5B68A4372B845E200004E89A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68A4362B845E200004E89A /* View+.swift */; };
 		5B72DDC82B91BA8B002EA734 /* EpilogueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */; };
@@ -140,6 +140,7 @@
 		5BABC2C92B899D8B00C74E3C /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABC2C82B899D8B00C74E3C /* GardenView.swift */; };
 		5BBABDE12BCD180A00F51288 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE02BCD180A00F51288 /* CameraPreview.swift */; };
 		5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */; };
+		5BC3013A2DE198A9009E37B0 /* MediaPermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC301392DE198A9009E37B0 /* MediaPermissionManager.swift */; };
 		5BC6F8782C9582A8005CA85C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EE630DC2C7DBADC00F2A021 /* RealmSwift */; };
 		5BC6F87C2C95D13B005CA85C /* PlantContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6F87B2C95D13B005CA85C /* PlantContentView.swift */; };
 		5BC6F8802C9F03D9005CA85C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6F87F2C9F03D9005CA85C /* MainViewModel.swift */; };
@@ -270,7 +271,7 @@
 		5B1676E02C384B16009DA49F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5B2144652D85AF1F0080D59C /* DialgoueFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialgoueFontModifier.swift; sourceTree = "<group>"; };
 		5B2A5A1A2D16BA680026A079 /* CompletePlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePlantView.swift; sourceTree = "<group>"; };
-		5B68A4252B8454790004E89A /* ServieStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServieStateView.swift; sourceTree = "<group>"; };
+		5B68A4252B8454790004E89A /* ServiceStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStateView.swift; sourceTree = "<group>"; };
 		5B68A4362B845E200004E89A /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		5B72DDC72B91BA8B002EA734 /* EpilogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpilogueViewModel.swift; sourceTree = "<group>"; };
 		5B9152A72B84402C0068418F /* OnboardingTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextBox.swift; sourceTree = "<group>"; };
@@ -299,6 +300,7 @@
 		5BABC2C82B899D8B00C74E3C /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
 		5BBABDE02BCD180A00F51288 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARViewModel.swift; sourceTree = "<group>"; };
+		5BC301392DE198A9009E37B0 /* MediaPermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPermissionManager.swift; sourceTree = "<group>"; };
 		5BC6F87B2C95D13B005CA85C /* PlantContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantContentView.swift; sourceTree = "<group>"; };
 		5BC6F87F2C9F03D9005CA85C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5BDA85462BCC156400C5C67C /* GardenARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenARView.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				5BA931182B6260CC00F48AF1 /* DataManager.swift */,
 				0E4AB2352BCD70F400ADB623 /* RealmManager.swift */,
 				5B1676E02C384B16009DA49F /* NotificationManager.swift */,
+				5BC301392DE198A9009E37B0 /* MediaPermissionManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -684,7 +687,7 @@
 		0EF5FEA72B4FC2F500D64E5E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B68A4252B8454790004E89A /* ServieStateView.swift */,
+				5B68A4252B8454790004E89A /* ServiceStateView.swift */,
 				0E1AE7012B7E1883001C9A30 /* Main */,
 				5B9152A62B834AD90068418F /* Onboarding */,
 				5B314A222B8DE06300719C55 /* Garden */,
@@ -1025,12 +1028,13 @@
 				0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */,
 				0E4AB2412BD1090B00ADB623 /* Date+.swift in Sources */,
 				5BBABDE12BCD180A00F51288 /* CameraPreview.swift in Sources */,
-				5B68A4262B8454790004E89A /* ServieStateView.swift in Sources */,
+				5B68A4262B8454790004E89A /* ServiceStateView.swift in Sources */,
 				5BA3957F2B8235AF0019A545 /* OnboardingSkipButton.swift in Sources */,
 				0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
 				5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
+				5BC3013A2DE198A9009E37B0 /* MediaPermissionManager.swift in Sources */,
 				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
 				5BC6F8802C9F03D9005CA85C /* MainViewModel.swift in Sources */,
 				5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */,
