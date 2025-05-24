@@ -20,6 +20,7 @@ class GameManager: ObservableObject {
     @Published var chapter: Chapter
     
     private let dataManager = DataManager()
+    static let instance = GameManager()
     
     init() {
         // 진행 중인 정보를 유지하기 위해 UserDefault에 저장

@@ -77,14 +77,13 @@ struct MainView: View {
                 serviceStateViewModel.state = .ending
             }
         }
-        .onChange(of: gameManager.user.selectedPlant?.name) { newPlantName in
-            if let newPlantName {
-                notificationManager.scheduleNotification(for: newPlantName)
-            }
+        .onChange(of: gameManager.isPlantSelected) { _ in
+            viewModel.setNotification()
         }
         .onAppear {
             viewModel.checkMissionAvailability()
             viewModel.startTimerToCheckDate()
+            viewModel.setNotification()
         }
         .onDisappear {
             viewModel.stopTimer()

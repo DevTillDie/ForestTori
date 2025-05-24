@@ -12,6 +12,7 @@ class NotificationManager: ObservableObject {
     @Published var isNotificationSet = false
     
     static let instance = NotificationManager()
+    
     private init() { }
     
     func requestAuthorization() {
@@ -31,15 +32,17 @@ class NotificationManager: ObservableObject {
         }
     }
     
-    func scheduleNotification(for plantName: String) {
+    func scheduleNotification(line: String) {
         // 선택 식물이 바뀌면 과거에 설정된 알림 대기를 모두 지움
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         let times: [(hour: Int, minute: Int)] = [(10, 0), (20, 0)]
+        
         for time in times {
             let content = UNMutableNotificationContent()
             content.title = "숲토리"
-            content.body = "\(plantName)이/가 토리를 기다리고 있어요:)\n오늘 미션을 수행해서 \(plantName)을/를 키워보아요!"
+            
+            content.body = line
             content.sound = UNNotificationSound.default
             
             var dateComponents = DateComponents()
@@ -57,5 +60,9 @@ class NotificationManager: ObservableObject {
                 }
             }
         }
+    }
+    
+    func removeNotification() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }

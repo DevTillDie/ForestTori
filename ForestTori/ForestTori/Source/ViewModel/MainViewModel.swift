@@ -273,6 +273,26 @@ class MainViewModel: ObservableObject {
             UIApplication.shared.open(url)
         }
     }
+    
+    func setNotification() {
+        // 미션을 수행할 수 있는 경우
+        if canPerformMission {
+            // 식물을 선택한 경우
+            if GameManager.instance.isPlantSelected {
+                if let newPlantName = GameManager.instance.user.selectedPlant?.name {
+                    let line = "\(newPlantName)이 토리를 기다리고 있어요:)\n오늘 미션을 수행해서 \(newPlantName)을 키워보아요!"
+                    NotificationManager.instance.scheduleNotification(line: line)
+                }
+            // 식물을 선택하지 않은 경우
+            } else {
+                let line = "새 식물이 토리를 기다리고 있어요:)\n화분에 새 식물을 심어보아요!"
+                NotificationManager.instance.scheduleNotification(line: line)
+            }
+        // 미션을 수행할 수 없는 경우(오늘 플레이를 마친 경우) -> 알림 없음
+        } else {
+            NotificationManager.instance.removeNotification()
+        }
+    }
 }
 
 enum MissionStatus: String, Codable {
