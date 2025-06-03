@@ -8,6 +8,7 @@
 import SwiftUI
 import UserNotifications
 
+@MainActor
 class NotificationManager: ObservableObject {
     @Published var isNotificationSet = false
     
@@ -15,21 +16,15 @@ class NotificationManager: ObservableObject {
     
     private init() { }
     
-    func requestAuthorization() {
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in
-            DispatchQueue.main.async {
-                if let error {
-                    print("Request Notificaiton Authorization ERROR: \(error)")
-                } else if success {
-                    self.isNotificationSet = true
-                    print("permission granted")
-                } else {
-                    self.isNotificationSet = true
-                    print("permission denied")
-                }
+    func requestAuthorization() async {
+        let center = UNUserNotificationCenter.current()
+        let granted = await withCheckedContinuation { continuation in
+            center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+                continuation.resume(returning: granted)
             }
         }
+        print("Notification: permission \(granted ? "granted" : "denied")")
+        self.isNotificationSet = true
     }
     
     func scheduleNotification(line: String) {

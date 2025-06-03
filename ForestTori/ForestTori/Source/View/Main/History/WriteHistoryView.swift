@@ -5,6 +5,8 @@
 //  Created by hyebin on 4/15/24.
 //
 
+import AVFoundation
+import PhotosUI
 import SwiftUI
 
 struct WriteHistoryView: View {
@@ -16,6 +18,7 @@ struct WriteHistoryView: View {
     @State private var isShowSelectImagePopup = false
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
+    @State private var isShowPermissionAlert = false
     @State var isShowCropView = false
     
     @Binding var isComplete: Bool
@@ -51,21 +54,21 @@ struct WriteHistoryView: View {
         .fullScreenCover(isPresented: $isShowCameraPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage,
                         sourceType: .camera)
-                .ignoresSafeArea()
-                .onAppear {
-                    isShowSelectImagePopup = false
-                }
+            .ignoresSafeArea()
+            .onAppear {
+                isShowSelectImagePopup = false
+            }
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage,
                         sourceType: .photoLibrary)
-                .ignoresSafeArea()
-                .onAppear {
-                    isShowSelectImagePopup = false
-                }
-                .onDisappear {
-                    isShowCropView = true
-                }
+            .ignoresSafeArea()
+            .onAppear {
+                isShowSelectImagePopup = false
+            }
+            .onDisappear {
+                isShowCropView = true
+            }
         }
         .sheet(isPresented: $isShowCropView) {
             isShowCropView = false
@@ -77,6 +80,15 @@ struct WriteHistoryView: View {
             ) { croppedImage, _ in
                 if let croppedImage {
                     viewModel.selectedImage = croppedImage
+                }
+            }
+        }
+        .alert("사진 혹은 카메라 접근이 허용되어 있지 않습니다. 설정으로 이동하시겠습니까?", isPresented: $isShowPermissionAlert) {
+            Button("취소", role: .cancel) {}
+            Button("확인") {
+                if let url = URL(string: UIApplication.openSettingsURLString),
+                   UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
                 }
             }
         }
@@ -238,7 +250,11 @@ extension WriteHistoryView {
             VStack {
                 Button {
                     isFocused = false
-                    isShowCameraPicker = true
+                    if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+                        isShowCameraPicker = true
+                    } else {
+                        isShowPermissionAlert = true
+                    }
                 }label: {
                     HStack {
                         Text("사진 찍기")
@@ -252,7 +268,12 @@ extension WriteHistoryView {
                 
                 Button {
                     isFocused = false
-                    isShowPhotoLibraryPicker = true
+                    let photoStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+                    if photoStatus == .authorized || photoStatus == .limited {
+                        isShowPhotoLibraryPicker = true
+                    } else {
+                        isShowPermissionAlert = true
+                    }
                 }label: {
                     HStack {
                         Text("사진 선택")

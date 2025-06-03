@@ -5,6 +5,8 @@
 //  Created by hyebin on 4/15/24.
 //
 
+import AVFoundation
+import PhotosUI
 import SwiftUI
 
 class WriteHistoryViewModel: ObservableObject {
@@ -21,7 +23,7 @@ class WriteHistoryViewModel: ObservableObject {
     }
     
     @Published var isCompleteButtonDisable = true
-
+    
     var plantName = ""
     
     func saveHistory() {
