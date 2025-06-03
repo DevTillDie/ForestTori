@@ -167,7 +167,6 @@ extension PlantContentView {
                     Spacer()
                     
                     Button {
-                        viewModel.plantStatuses[index].missionStatus = .done
                         viewModel.isShowHistoryView = true
                     } label: {
                         Image(systemName: viewModel.checkMissionBox(for: index) ? "checkmark.circle.fill" : "circle")
