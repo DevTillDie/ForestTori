@@ -10,12 +10,17 @@ import SwiftUI
 struct ServiceStateView: View {
     @StateObject var gameManager = GameManager()
     @StateObject private var notificationManager = NotificationManager.instance
+    @StateObject private var mediaPermissionManager = MediaPermissionManager.instance
     @StateObject var serviceStateViewModel = ServiceStateViewModel()
     
     var body: some View {
         stateBasedView
             .onAppear {
-                notificationManager.requestAuthorization()
+                Task {
+                    await mediaPermissionManager.requestCameraPermission()
+                    await mediaPermissionManager.requestPhotosPermission()
+                    await notificationManager.requestAuthorization()
+                }
             }
     }
 }
