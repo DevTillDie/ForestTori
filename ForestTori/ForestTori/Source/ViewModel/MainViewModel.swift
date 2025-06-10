@@ -265,7 +265,7 @@ class MainViewModel: ObservableObject {
     func checkMissionBox(for index: Int) -> Bool {
         let status = plantStatuses[index].missionStatus
         
-        return status == .done || status == .completed || (status == .inProgress && !canPerformMission)
+        return status == .completed || (status == .inProgress && !canPerformMission)
     }
     
     func openWebsite(urlString: String) {
@@ -300,7 +300,6 @@ enum MissionStatus: String, Codable {
     case none             // 미션 없음
     case receivingMission // 미션을 받는 중
     case inProgress       // 미션 하는 중
-    case done             // 미션 완료
     case completed        // 식물일지 작성까지 완료
 }
 
