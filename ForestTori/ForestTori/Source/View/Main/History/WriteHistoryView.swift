@@ -20,7 +20,7 @@ struct WriteHistoryView: View {
     @State private var isShowPhotoLibraryPicker = false
     @State private var isShowPermissionAlert = false
     @State private var isShowCropView = false
-    @State private var tempSelectedImage: UIImage? // 임시 이미지 저장용
+    @State private var tempSelectedImage: UIImage?
     
     @Binding var isComplete: Bool
     @Binding var isShowHistoryView: Bool
@@ -76,7 +76,7 @@ struct WriteHistoryView: View {
                 if isConfirmed, let croppedImage = croppedImage {
                     viewModel.selectedImage = croppedImage
                 }
-                // 크롭뷰 닫힐 때 임시 이미지 정리
+
                 tempSelectedImage = nil
                 isShowCropView = false
             }
@@ -91,7 +91,6 @@ struct WriteHistoryView: View {
             }
         }
         .onChange(of: tempSelectedImage) { newImage in
-            // 이미지가 선택되면 크롭뷰 표시
             if newImage != nil {
                 isShowCropView = true
             }
@@ -109,7 +108,7 @@ struct WriteHistoryView: View {
 
 extension WriteHistoryView {
     private var hisoryViewHeader: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack {
                 Text("성장일지")
                     .font(.subtitleL)
@@ -121,9 +120,10 @@ extension WriteHistoryView {
                             currentStatus = .inProgress
                         }
                     } label: {
-                        Text(Image(systemName: "chevron.backward"))
-                            .bold()
+                        Image(systemName: "chevron.backward")
+                            .font(.system(size: 18, weight: .medium))
                             .foregroundStyle(.gray40)
+                            .frame(height: 40)
                     }
                     
                     Spacer()
@@ -136,18 +136,18 @@ extension WriteHistoryView {
                             .font(.subtitleM)
                             .bold()
                             .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
+                            .frame(height: 44)
                     }
                     .disabled(viewModel.isCompleteButtonDisable)
                 }
-                .padding(.leading, 8)
-                .padding(.trailing, 16)
+                .padding(.horizontal, 16)
             }
-            .padding(.top, 11)
+            .padding(.top, 8)
             .padding(.bottom, 6)
             
             Rectangle()
                 .fill(.gray30)
-                .frame(height: 0.33)
+                .frame(height: 0.5)
         }
     }
     
@@ -254,7 +254,7 @@ extension WriteHistoryView {
             VStack {
                 Button {
                     isFocused = false
-                    isShowSelectImagePopup = false // 팝업 닫기
+                    isShowSelectImagePopup = false
                     if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
                         isShowCameraPicker = true
                     } else {
@@ -273,7 +273,7 @@ extension WriteHistoryView {
                 
                 Button {
                     isFocused = false
-                    isShowSelectImagePopup = false // 팝업 닫기
+                    isShowSelectImagePopup = false
                     let photoStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
                     if photoStatus == .authorized || photoStatus == .limited {
                         isShowPhotoLibraryPicker = true

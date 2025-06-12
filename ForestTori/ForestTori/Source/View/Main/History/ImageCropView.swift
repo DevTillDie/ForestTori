@@ -36,7 +36,7 @@ struct ImageCropView: View {
                     ToolbarItemGroup(placement: .bottomBar) {
                         HStack {
                             Button("취소") {
-                                onCrop(nil, false) // 취소 시 false 전달
+                                onCrop(nil, false)
                                 dismiss()
                             }
 
@@ -54,7 +54,6 @@ struct ImageCropView: View {
                 }
         }
         .onAppear {
-            // 뷰가 나타날 때마다 상태 초기화
             resetCropState()
         }
     }
