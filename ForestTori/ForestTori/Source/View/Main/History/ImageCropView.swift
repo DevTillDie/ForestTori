@@ -36,6 +36,7 @@ struct ImageCropView: View {
                     ToolbarItemGroup(placement: .bottomBar) {
                         HStack {
                             Button("취소") {
+                                onCrop(nil, false)
                                 dismiss()
                             }
 
@@ -45,13 +46,23 @@ struct ImageCropView: View {
                                 let image = imageView(true).offset(y: yOffset)
                                 let img = image.snapshot()
                                 onCrop(img, true)
-                                isShowCropView = false
+                                dismiss()
                             }
                         }
                         .foregroundColor(.white)
                     }
                 }
         }
+        .onAppear {
+            resetCropState()
+        }
+    }
+    
+    private func resetCropState() {
+        scale = 1
+        lastScale = 0
+        offset = .zero
+        lastStoredOffset = .zero
     }
 
     @ViewBuilder
@@ -160,9 +171,4 @@ struct ImageCropView: View {
             }
         }
     }
-}
-
-#Preview {
-    ImageCropView(isShowCropView: .constant(true), onCrop: { _, _ in
-    })
 }
