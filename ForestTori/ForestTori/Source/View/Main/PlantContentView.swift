@@ -12,8 +12,10 @@ struct PlantContentView: View {
     @EnvironmentObject var viewModel: MainViewModel
     @StateObject private var keyboardHandler = KeyboardHandler()
     
+    @State private var dialogueHeight: CGFloat = 76
     @Binding var isShowSelectPlantView: Bool
     
+    private let defaultDialgoueHeight: CGFloat = 76
     private let emptyPotFileName = "Emptypot.scn"
     private let emptyPotWidth: CGFloat = 240
     private let potHeight: CGFloat = 380
@@ -101,19 +103,13 @@ extension PlantContentView {
         
         return Image(.dialogFrame)
             .resizable()
-            .scaledToFit()
+            .frame(height: dialogueHeight + 24)
             .overlay(alignment: .top) {
                 ZStack(alignment: .topLeading) {
                     if viewModel.canPerformMission {
-                        Text(viewModel.dialogueText)
-                            .font(.pretendard(size: fontSize, .regular))
-                            .tracking(-0.015 * fontSize)
-                            .modifier(DialgoueFontModifier())
+                        dialogueTextView(viewModel.dialogueText, fontSize: fontSize)
                     } else {
-                        Text(todayMissionDoneText)
-                            .font(.pretendard(size: fontSize, .regular))
-                            .tracking(-0.015 * fontSize)
-                            .modifier(DialgoueFontModifier())
+                        dialogueTextView(todayMissionDoneText, fontSize: fontSize)
                     }
                     
                     Image(.dialogButton)
@@ -124,7 +120,8 @@ extension PlantContentView {
                         .padding(.trailing, 18)
                         .hidden(viewModel.canPerformMission)
                 }
-                .padding(.vertical, 8)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 4)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 26)
@@ -179,6 +176,32 @@ extension PlantContentView {
                 .padding(.horizontal, 20)
             }
             .padding(.horizontal, 20)
+    }
+    
+    @ViewBuilder
+    private func dialogueTextView(_ text: String, fontSize: CGFloat) -> some View {
+        Text(text)
+            .font(.pretendard(size: fontSize, .regular))
+            .tracking(-0.015 * fontSize)
+            .modifier(DialgoueFontModifier())
+            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.bottom, 20)
+            .background(
+                GeometryReader { geo in
+                    Color.clear
+                        .onAppear {
+                            updateDialogueHeight(with: geo.size.height)
+                        }
+                        .onChange(of: geo.size.height) { newHeight in
+                            updateDialogueHeight(with: newHeight)
+                        }
+                }
+            )
+    }
+
+    private func updateDialogueHeight(with newHeight: CGFloat) {
+        dialogueHeight = max(newHeight, defaultDialgoueHeight)
     }
 }
 
