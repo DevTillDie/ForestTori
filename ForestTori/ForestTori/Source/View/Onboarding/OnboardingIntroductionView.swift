@@ -25,7 +25,7 @@ struct OnboardingIntroductionView: View {
                     introductionContent(data: introduction)
                 }
             }
-            OnboardingDoneButton(action: onboardingViewModel.moveToOnboardingIntroductionView, label: doneButtonLabel)
+            OnboardingDoneButton(action: onboardingViewModel.moveToOnboardingNamingView, label: doneButtonLabel)
                 .foregroundColor(.yellowTertiary)
                 .background {
                     RoundedRectangle(cornerRadius: 50)
