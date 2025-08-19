@@ -104,6 +104,7 @@ extension PlantContentView {
         return Image(.dialogFrame)
             .resizable()
             .frame(height: dialogueHeight + 24)
+            .animation(.easeInOut(duration: 0.3), value: dialogueHeight)
             .overlay(alignment: .top) {
                 ZStack(alignment: .topLeading) {
                     if viewModel.canPerformMission {
