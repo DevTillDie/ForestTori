@@ -31,7 +31,7 @@ struct GardenView: View {
             ZStack {
                 Image(viewModel.backgroundImages[currentChapter])
                     .resizable()
-                    .scaledToFit()
+                    .ignoresSafeArea()
                 
                 VStack {
                     gardenHeader

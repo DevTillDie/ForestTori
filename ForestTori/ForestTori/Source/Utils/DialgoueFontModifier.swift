@@ -12,6 +12,7 @@ struct DialgoueFontModifier: ViewModifier {
         content
             .foregroundStyle(.black)
             .multilineTextAlignment(.leading)
+            .padding(.vertical, 4)
             .padding(.horizontal, 16)
     }
 }

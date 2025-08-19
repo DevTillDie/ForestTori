@@ -205,6 +205,8 @@ extension WriteHistoryView {
                     .stroke(.brownSecondary, lineWidth: 2)
             }
             .overlay(alignment: .center) {
+                VStack {
+                ZStack(alignment: .topLeading) {
                     TextEditor(
                         text: Binding(
                             get: {viewModel.todayHistory},
@@ -217,12 +219,10 @@ extension WriteHistoryView {
                             })
                     )
                     .padding(-8)
-                .overlay(alignment: .topLeading) {
                     Text(placeHolder)
                         .foregroundStyle(viewModel.todayHistory.isEmpty ? .gray30 : .clear)
                         .padding(.horizontal, -4)
                 }
-                .overlay(alignment: .bottomTrailing) {
                     Text("\(viewModel.todayHistory.count) / 300")
                         .foregroundStyle(.gray30)
                         .onChange(of: viewModel.todayHistory) { newValue in
@@ -230,6 +230,7 @@ extension WriteHistoryView {
                                 viewModel.todayHistory = String(newValue.prefix(300))
                             }
                         }
+                        .frame(maxWidth: .infinity, alignment: .bottomTrailing)
                 }
                 .transparentScrolling()
                 .focused($isFocused)
@@ -299,4 +300,8 @@ extension WriteHistoryView {
             Spacer(minLength: 56)
         }
     }
+}
+
+#Preview {
+    WriteHistoryView(isComplete: .constant(true), isShowHistoryView: .constant(true), currentStatus: .constant(.completed), plantName: "나팔꽃")
 }
